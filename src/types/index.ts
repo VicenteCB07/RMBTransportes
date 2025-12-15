@@ -3,18 +3,45 @@
 // ============================================
 
 export type RolUsuario =
-  | 'super_admin'
-  | 'gerente_general'
-  | 'gerente_operaciones'
-  | 'dispatcher'
-  | 'conductor'
-  | 'jefe_mantenimiento'
-  | 'tecnico'
-  | 'almacenista'
-  | 'gerente_finanzas'
-  | 'tesorero'
-  | 'contable'
-  | 'inspector'
+  | 'admin'       // Acceso total al sistema
+  | 'dispatcher'  // Parte operativa - coordina rutas y viajes
+  | 'manager'     // Parte administrativa - finanzas, reportes
+  | 'operador'    // Conductores de los vehículos
+  | 'maniobrista' // Ayudantes de los conductores
+  | 'seguridad'   // Seguristas en base - solo lectura de entradas/salidas
+
+export const ROLES_INFO: Record<RolUsuario, { label: string; descripcion: string; color: string }> = {
+  admin: {
+    label: 'Administrador',
+    descripcion: 'Acceso total al sistema',
+    color: 'red',
+  },
+  dispatcher: {
+    label: 'Dispatcher',
+    descripcion: 'Coordinación operativa de rutas y viajes',
+    color: 'blue',
+  },
+  manager: {
+    label: 'Manager',
+    descripcion: 'Administración, finanzas y reportes',
+    color: 'purple',
+  },
+  operador: {
+    label: 'Operador',
+    descripcion: 'Conductor de vehículos',
+    color: 'green',
+  },
+  maniobrista: {
+    label: 'Maniobrista',
+    descripcion: 'Ayudante de operadores',
+    color: 'yellow',
+  },
+  seguridad: {
+    label: 'Seguridad',
+    descripcion: 'Vigilancia de entradas y salidas',
+    color: 'gray',
+  },
+}
 
 export interface Usuario {
   id: string
@@ -27,6 +54,10 @@ export interface Usuario {
   fechaCreacion: Date
   ultimoAcceso?: Date
   avatar?: string
+  // Campos adicionales para operadores/maniobristas
+  licencia?: string
+  licenciaVencimiento?: Date
+  nss?: string // Número de seguro social
 }
 
 // ============================================
@@ -36,15 +67,15 @@ export interface Usuario {
 export type TipoVehiculo =
   | 'tractocamion'
   | 'lowboy'
-  | 'plataforma'
+  | 'plataforma_rolloff'
   | 'gondola'
   | 'remolque'
 
+// Estados del vehículo - Determinados por Mantenimiento
 export type EstadoVehiculo =
-  | 'disponible'
-  | 'en_ruta'
-  | 'mantenimiento'
-  | 'fuera_servicio'
+  | 'disponible'      // Listo para operar
+  | 'servicio_menor'  // Requiere servicio menor pero puede operar
+  | 'fuera_servicio'  // No puede operar hasta reparación
 
 export interface Vehiculo {
   id: string

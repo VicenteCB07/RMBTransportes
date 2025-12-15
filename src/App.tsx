@@ -5,13 +5,16 @@ import { AuthProvider, useAuth } from './context/AuthContext'
 import MainLayout from './components/layout/MainLayout'
 
 // Páginas
+import Landing from './pages/Landing'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import Flota from './pages/Flota'
 import Mantenimiento from './pages/Mantenimiento'
+import Combustible from './pages/Combustible'
 import Finanzas from './pages/Finanzas'
 import Rutas from './pages/Rutas'
 import Usuarios from './pages/Usuarios'
+import Legal from './pages/Legal'
 
 // Componente de ruta protegida
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
@@ -29,7 +32,7 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
   }
 
   if (!user) {
-    return <Navigate to="/login" replace />
+    return <Navigate to="/" replace />
   }
 
   return <>{children}</>
@@ -51,7 +54,7 @@ function PublicRoute({ children }: { children: React.ReactNode }) {
   }
 
   if (user) {
-    return <Navigate to="/" replace />
+    return <Navigate to="/panel" replace />
   }
 
   return <>{children}</>
@@ -60,7 +63,10 @@ function PublicRoute({ children }: { children: React.ReactNode }) {
 function AppRoutes() {
   return (
     <Routes>
-      {/* Ruta pública */}
+      {/* Landing Page - Pública */}
+      <Route path="/" element={<Landing />} />
+
+      {/* Login - Pública (redirige a panel si ya está autenticado) */}
       <Route
         path="/login"
         element={
@@ -70,7 +76,7 @@ function AppRoutes() {
         }
       />
 
-      {/* Rutas protegidas */}
+      {/* Rutas protegidas - Panel de administración */}
       <Route
         element={
           <ProtectedRoute>
@@ -78,12 +84,14 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       >
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/panel" element={<Dashboard />} />
         <Route path="/flota" element={<Flota />} />
         <Route path="/mantenimiento" element={<Mantenimiento />} />
+        <Route path="/combustible" element={<Combustible />} />
         <Route path="/finanzas" element={<Finanzas />} />
         <Route path="/rutas" element={<Rutas />} />
         <Route path="/usuarios" element={<Usuarios />} />
+        <Route path="/legal" element={<Legal />} />
       </Route>
 
       {/* Redirigir rutas no encontradas */}

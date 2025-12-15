@@ -1,16 +1,30 @@
 @import "tailwindcss";
 
-/* Variables de colores - Se actualizarán con el manual de identidad */
+/* ===========================================
+   RMB TRANSPORTES - Colores Corporativos
+   Manual de Identidad Corporativa
+   =========================================== */
+
 :root {
-  --color-primary: #1e40af;
-  --color-primary-light: #3b82f6;
-  --color-primary-dark: #1e3a8a;
-  --color-secondary: #f59e0b;
-  --color-secondary-light: #fbbf24;
-  --color-secondary-dark: #d97706;
+  /* Colores Principales - Manual de Identidad */
+  --color-rmb-black: #000000;        /* Negro puro - Principal */
+  --color-rmb-gray-dark: #3D3D3D;    /* Gris oscuro - PANTONE P 173-13 C */
+  --color-rmb-red: #BB0034;          /* Rojo RMB - PANTONE 199 C (RGB 187,0,52) */
+  --color-rmb-gray-light: #C4C4C4;   /* Gris claro - Fondos */
+  --color-rmb-gray-bg: #E8E8E8;      /* Gris fondo - Background */
+
+  /* Colores funcionales */
+  --color-primary: #1a1a1a;          /* Basado en negro RMB */
+  --color-primary-light: #3D3D3D;
+  --color-primary-dark: #000000;
+  --color-accent: #BB0034;           /* Rojo RMB para acentos */
+  --color-accent-light: #D4003D;
+  --color-accent-dark: #8A0027;
+
+  /* Estados */
   --color-success: #10b981;
   --color-warning: #f59e0b;
-  --color-error: #ef4444;
+  --color-error: #BB0034;            /* Usar rojo RMB para errores */
   --color-info: #3b82f6;
 }
 
@@ -19,8 +33,43 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--color-rmb-gray-bg);
 }
 
 #root {
   min-height: 100vh;
+}
+
+/* Clases utilitarias personalizadas RMB */
+.bg-rmb-black { background-color: var(--color-rmb-black); }
+.bg-rmb-gray-dark { background-color: var(--color-rmb-gray-dark); }
+.bg-rmb-red { background-color: var(--color-rmb-red); }
+.bg-rmb-gray-light { background-color: var(--color-rmb-gray-light); }
+.bg-rmb-gray-bg { background-color: var(--color-rmb-gray-bg); }
+
+.text-rmb-black { color: var(--color-rmb-black); }
+.text-rmb-gray-dark { color: var(--color-rmb-gray-dark); }
+.text-rmb-red { color: var(--color-rmb-red); }
+
+.border-rmb-red { border-color: var(--color-rmb-red); }
+.border-rmb-black { border-color: var(--color-rmb-black); }
+
+/* Botón primario RMB */
+.btn-rmb-primary {
+  background-color: var(--color-rmb-black);
+  color: white;
+  transition: background-color 0.2s;
+}
+.btn-rmb-primary:hover {
+  background-color: var(--color-rmb-gray-dark);
+}
+
+/* Botón acento RMB */
+.btn-rmb-accent {
+  background-color: var(--color-rmb-red);
+  color: white;
+  transition: background-color 0.2s;
+}
+.btn-rmb-accent:hover {
+  background-color: var(--color-accent-dark);
 }
