@@ -26,6 +26,7 @@ import type {
   ObraCliente,
   ObraFormInput,
   ContactoObra,
+  CondicionesAccesoObra,
 } from '../types/client.types';
 
 const COLLECTION = 'clientes';
@@ -108,37 +109,45 @@ export async function crearCliente(input: ClienteFormInput): Promise<Cliente> {
     };
 
     // Procesar obras si existen
-    const obras: ObraCliente[] = (input.obras || []).map((obra, index) => ({
-      id: obra.id || `obra-${Date.now()}-${index}`,
-      nombre: obra.nombre,
-      alias: obra.alias || undefined,
-      tipo: obra.tipo,
-      direccion: {
-        calle: obra.direccion.calle || '',
-        numeroExterior: obra.direccion.numeroExterior || undefined,
-        numeroInterior: obra.direccion.numeroInterior || undefined,
-        colonia: obra.direccion.colonia || '',
-        municipio: obra.direccion.municipio || '',
-        estado: obra.direccion.estado || '',
-        codigoPostal: obra.direccion.codigoPostal || '',
-        pais: obra.direccion.pais || 'México',
-      },
-      contactos: obra.contactos.map((c, cIndex) => ({
-        id: c.id || `contacto-${Date.now()}-${cIndex}`,
-        nombre: c.nombre,
-        puesto: c.puesto || undefined,
-        telefono: c.telefono || undefined,
-        celular: c.celular || undefined,
-        email: c.email || undefined,
-        horarioDisponible: c.horarioDisponible || undefined,
-        esPrincipal: c.esPrincipal,
-      })),
-      condicionesAcceso: obra.condicionesAcceso || undefined,
-      activa: true,
-      notas: obra.notas || undefined,
-      createdAt: ahora.toDate(),
-      updatedAt: ahora.toDate(),
-    }));
+    const obras: ObraCliente[] = (input.obras || []).map((obra, index) => {
+      // Filtrar contactos vacíos (sin nombre)
+      const contactosValidos: ContactoObra[] = (obra.contactos || [])
+        .filter(c => c.nombre && c.nombre.trim())
+        .map((c, cIndex) => ({
+          id: c.id || `contacto-${Date.now()}-${cIndex}`,
+          nombre: c.nombre.trim(),
+          puesto: c.puesto || undefined,
+          telefono: c.telefono || undefined,
+          celular: c.celular || undefined,
+          email: c.email || undefined,
+          horarioDisponible: c.horarioDisponible || undefined,
+          esPrincipal: c.esPrincipal ?? false,
+          notas: undefined,
+        }));
+
+      return {
+        id: obra.id || `obra-${Date.now()}-${index}`,
+        nombre: obra.nombre,
+        alias: obra.alias || undefined,
+        tipo: obra.tipo,
+        direccion: {
+          calle: obra.direccion?.calle || '',
+          numeroExterior: obra.direccion?.numeroExterior || undefined,
+          numeroInterior: obra.direccion?.numeroInterior || undefined,
+          colonia: obra.direccion?.colonia || '',
+          municipio: obra.direccion?.municipio || '',
+          estado: obra.direccion?.estado || '',
+          codigoPostal: obra.direccion?.codigoPostal || '',
+          pais: obra.direccion?.pais || 'México',
+        },
+        contactos: contactosValidos,
+        condicionesAcceso: obra.condicionesAcceso as CondicionesAccesoObra | undefined,
+        activa: true,
+        notas: obra.notas || undefined,
+        createdAt: ahora.toDate(),
+        updatedAt: ahora.toDate(),
+      };
+    });
 
     const clienteData = {
       nombre: input.nombre,
@@ -148,18 +157,18 @@ export async function crearCliente(input: ClienteFormInput): Promise<Cliente> {
       telefono: input.telefono || null,
       email: input.email || null,
       direccion: {
-        calle: input.direccion.calle || '',
-        numeroExterior: input.direccion.numeroExterior || null,
-        numeroInterior: input.direccion.numeroInterior || null,
-        colonia: input.direccion.colonia || '',
-        municipio: input.direccion.municipio || '',
-        estado: input.direccion.estado || '',
-        codigoPostal: input.direccion.codigoPostal || '',
-        pais: input.direccion.pais || 'México',
-        coordenadas: input.direccion.coordenadas || null,
-        instruccionesAcceso: input.direccion.instruccionesAcceso || null,
-        horarioRecepcion: input.direccion.horarioRecepcion || null,
-        restriccionesAcceso: input.direccion.restriccionesAcceso || [],
+        calle: input.direccion?.calle || '',
+        numeroExterior: input.direccion?.numeroExterior || null,
+        numeroInterior: input.direccion?.numeroInterior || null,
+        colonia: input.direccion?.colonia || '',
+        municipio: input.direccion?.municipio || '',
+        estado: input.direccion?.estado || '',
+        codigoPostal: input.direccion?.codigoPostal || '',
+        pais: input.direccion?.pais || 'México',
+        coordenadas: input.direccion?.coordenadas || null,
+        instruccionesAcceso: input.direccion?.instruccionesAcceso || null,
+        horarioRecepcion: input.direccion?.horarioRecepcion || null,
+        restriccionesAcceso: input.direccion?.restriccionesAcceso || [],
       },
       obras: obras,
       requiereFactura: input.requiereFactura,
@@ -214,37 +223,47 @@ export async function actualizarCliente(
 
     // Procesar obras si existen
     if (input.obras !== undefined) {
-      updateData.obras = (input.obras || []).map((obra, index) => ({
-        id: obra.id || `obra-${Date.now()}-${index}`,
-        nombre: obra.nombre,
-        alias: obra.alias || null,
-        tipo: obra.tipo,
-        direccion: {
-          calle: obra.direccion?.calle || '',
-          numeroExterior: obra.direccion?.numeroExterior || null,
-          numeroInterior: obra.direccion?.numeroInterior || null,
-          colonia: obra.direccion?.colonia || '',
-          municipio: obra.direccion?.municipio || '',
-          estado: obra.direccion?.estado || '',
-          codigoPostal: obra.direccion?.codigoPostal || '',
-          pais: obra.direccion?.pais || 'México',
-        },
-        contactos: (obra.contactos || []).map((c, cIndex) => ({
-          id: c.id || `contacto-${Date.now()}-${cIndex}`,
-          nombre: c.nombre,
-          puesto: c.puesto || null,
-          telefono: c.telefono || null,
-          celular: c.celular || null,
-          email: c.email || null,
-          horarioDisponible: c.horarioDisponible || null,
-          esPrincipal: c.esPrincipal || false,
-        })),
-        condicionesAcceso: obra.condicionesAcceso || null,
-        activa: obra.activa !== undefined ? obra.activa : true,
-        notas: obra.notas || null,
-        createdAt: obra.createdAt || ahora.toDate(),
-        updatedAt: ahora.toDate(),
-      }));
+      updateData.obras = (input.obras || []).map((obra, index) => {
+        // Filtrar contactos vacíos (sin nombre)
+        const contactosValidos = (obra.contactos || [])
+          .filter(c => c.nombre && c.nombre.trim())
+          .map((c, cIndex) => ({
+            id: c.id || `contacto-${Date.now()}-${cIndex}`,
+            nombre: c.nombre.trim(),
+            puesto: c.puesto || null,
+            telefono: c.telefono || null,
+            celular: c.celular || null,
+            email: c.email || null,
+            horarioDisponible: c.horarioDisponible || null,
+            esPrincipal: c.esPrincipal ?? false,
+          }));
+
+        // Obtener valores de activa y createdAt si existen (pueden venir de una obra existente)
+        const obraExtendida = obra as ObraFormInput & { activa?: boolean; createdAt?: Date };
+
+        return {
+          id: obra.id || `obra-${Date.now()}-${index}`,
+          nombre: obra.nombre,
+          alias: obra.alias || null,
+          tipo: obra.tipo,
+          direccion: {
+            calle: obra.direccion?.calle || '',
+            numeroExterior: obra.direccion?.numeroExterior || null,
+            numeroInterior: obra.direccion?.numeroInterior || null,
+            colonia: obra.direccion?.colonia || '',
+            municipio: obra.direccion?.municipio || '',
+            estado: obra.direccion?.estado || '',
+            codigoPostal: obra.direccion?.codigoPostal || '',
+            pais: obra.direccion?.pais || 'México',
+          },
+          contactos: contactosValidos,
+          condicionesAcceso: obra.condicionesAcceso || null,
+          activa: obraExtendida.activa !== undefined ? obraExtendida.activa : true,
+          notas: obra.notas || null,
+          createdAt: obraExtendida.createdAt || ahora.toDate(),
+          updatedAt: ahora.toDate(),
+        };
+      });
     }
 
     await updateDoc(docRef, updateData);

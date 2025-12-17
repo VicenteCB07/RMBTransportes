@@ -104,7 +104,7 @@ async function consultarApiAlternativa(cp: string): Promise<DatosCp | null> {
       codigoPostal: cp,
       estado: normalizarEstado(estado),
       municipio: municipio,
-      colonias: [...new Set(colonias)].sort(),
+      colonias: ([...new Set(colonias)] as string[]).sort(),
     };
 
     cache.set(cp, resultado);

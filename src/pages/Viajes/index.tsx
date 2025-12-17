@@ -44,16 +44,15 @@ import {
   obtenerEstadisticasViajes,
   obtenerViajesActivos,
 } from '../../services/trip.service';
-import { obtenerClientes, crearCliente } from '../../services/client.service';
+import { obtenerClientes } from '../../services/client.service';
 import { obtenerTractocamionesSelect } from '../../services/truck.service';
 import { obtenerOperadoresSelect } from '../../services/operator.service';
 import { obtenerAditamentosSelect } from '../../services/attachment.service';
 import { obtenerManiobristasSelect } from '../../services/maniobrista.service';
-import type { ClienteFormInput, Cliente, ObraCliente } from '../../types/client.types';
+import type { Cliente, ObraCliente } from '../../types/client.types';
 import toast from 'react-hot-toast';
 import { useAuth } from '../../context/AuthContext';
 import { Container, Users, AlertTriangle, History } from 'lucide-react';
-import ClienteForm from '../../components/forms/ClienteForm';
 import type { Viaje, ViajeFormInput, FiltrosViaje, StatusViaje, TipoServicioViaje, CondicionesSeguridad, ArchivoAdjunto } from '../../types/trip.types';
 import { CONDICIONES_SEGURIDAD_DEFAULT } from '../../types/trip.types';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
@@ -122,30 +121,6 @@ export default function Viajes() {
   const [subiendoImagen, setSubiendoImagen] = useState(false);
   const [documentosViaje, setDocumentosViaje] = useState<ArchivoAdjunto[]>([]);
   const [imagenesViaje, setImagenesViaje] = useState<ArchivoAdjunto[]>([]);
-  const [modalNuevoCliente, setModalNuevoCliente] = useState(false);
-  const [guardandoCliente, setGuardandoCliente] = useState(false);
-
-  // Handler para guardar cliente desde modal anidado
-  async function handleGuardarNuevoCliente(data: ClienteFormInput) {
-    setGuardandoCliente(true);
-    try {
-      const nuevoCliente = await crearCliente(data);
-      // Recargar lista de clientes
-      const clientesActualizados = await obtenerClientes({ activo: true });
-      setClientes(clientesActualizados);
-      // Seleccionar el cliente recién creado
-      const clienteCompleto = clientesActualizados.find(c => c.id === nuevoCliente.id);
-      if (clienteCompleto) {
-        handleClienteChange(clienteCompleto.id);
-      }
-      setModalNuevoCliente(false);
-    } catch (error) {
-      console.error('Error al crear cliente:', error);
-      throw error;
-    } finally {
-      setGuardandoCliente(false);
-    }
-  }
 
   // Handler cuando se selecciona un cliente
   function handleClienteChange(clienteId: string) {
@@ -1056,14 +1031,6 @@ export default function Viajes() {
                         <option key={c.id} value={c.id}>{c.nombreComercial || c.nombre}</option>
                       ))}
                     </select>
-                    <button
-                      type="button"
-                      onClick={() => setModalNuevoCliente(true)}
-                      className="px-3 py-2 bg-[#BB0034] text-white rounded-lg hover:bg-[#9a002b] transition-colors"
-                      title="Agregar nuevo cliente"
-                    >
-                      <Plus className="w-5 h-5" />
-                    </button>
                   </div>
                 </div>
               </div>
@@ -1094,44 +1061,54 @@ export default function Viajes() {
                 </div>
               )}
 
-              {/* Selector de Obra (si el cliente tiene obras) */}
-              {clienteSeleccionado && (clienteSeleccionado.obras?.filter(o => o.activa) || []).length > 0 && (
+              {/* Selector de Obra */}
+              {clienteSeleccionado && (
                 <div className="bg-blue-50 rounded-lg p-4 space-y-3">
                   <h3 className="font-medium flex items-center gap-2 text-blue-800">
                     <Building2 className="w-4 h-4" />
-                    Seleccionar Obra / Sucursal
+                    Obras / Sucursales
                   </h3>
-                  <p className="text-sm text-blue-600">
-                    {(clienteSeleccionado.obras?.filter(o => o.activa) || []).length === 1
-                      ? 'Este cliente tiene 1 obra registrada:'
-                      : `Este cliente tiene ${clienteSeleccionado.obras?.filter(o => o.activa).length} obras registradas. Selecciona el destino:`}
-                  </p>
-                  <div className="grid gap-2">
-                    {clienteSeleccionado.obras?.filter(o => o.activa).map(obra => (
-                      <button
-                        key={obra.id}
-                        type="button"
-                        onClick={() => handleObraChange(obra)}
-                        className={`text-left p-3 rounded-lg border transition-colors ${
-                          obraSeleccionada?.id === obra.id
-                            ? 'border-[#BB0034] bg-red-50'
-                            : 'border-gray-200 bg-white hover:border-gray-300'
-                        }`}
-                      >
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <p className="font-medium">{obra.nombre}</p>
-                            <p className="text-sm text-gray-500">
-                              {obra.direccion.calle} {obra.direccion.numeroExterior}, {obra.direccion.colonia}, {obra.direccion.municipio}
-                            </p>
-                          </div>
-                          {obraSeleccionada?.id === obra.id && (
-                            <Check className="w-5 h-5 text-[#BB0034]" />
-                          )}
-                        </div>
-                      </button>
-                    ))}
-                  </div>
+
+                  {/* Lista de obras existentes */}
+                  {(clienteSeleccionado.obras?.filter(o => o.activa) || []).length > 0 ? (
+                    <>
+                      <p className="text-sm text-blue-600">
+                        {(clienteSeleccionado.obras?.filter(o => o.activa) || []).length === 1
+                          ? 'Este cliente tiene 1 obra registrada:'
+                          : `Este cliente tiene ${clienteSeleccionado.obras?.filter(o => o.activa).length} obras registradas. Selecciona el destino:`}
+                      </p>
+                      <div className="grid gap-2">
+                        {clienteSeleccionado.obras?.filter(o => o.activa).map(obra => (
+                          <button
+                            key={obra.id}
+                            type="button"
+                            onClick={() => handleObraChange(obra)}
+                            className={`text-left p-3 rounded-lg border transition-colors ${
+                              obraSeleccionada?.id === obra.id
+                                ? 'border-[#BB0034] bg-red-50'
+                                : 'border-gray-200 bg-white hover:border-gray-300'
+                            }`}
+                          >
+                            <div className="flex items-center justify-between">
+                              <div>
+                                <p className="font-medium">{obra.nombre}</p>
+                                <p className="text-sm text-gray-500">
+                                  {obra.direccion.calle} {obra.direccion.numeroExterior}, {obra.direccion.colonia}, {obra.direccion.municipio}
+                                </p>
+                              </div>
+                              {obraSeleccionada?.id === obra.id && (
+                                <Check className="w-5 h-5 text-[#BB0034]" />
+                              )}
+                            </div>
+                          </button>
+                        ))}
+                      </div>
+                    </>
+                  ) : (
+                    <p className="text-sm text-blue-600">
+                      Este cliente no tiene obras registradas. Agrega una o usa la dirección fiscal.
+                    </p>
+                  )}
                 </div>
               )}
 
@@ -1970,28 +1947,6 @@ export default function Viajes() {
         </div>
       )}
 
-      {/* Modal de Nuevo Cliente (anidado) - Usa el mismo componente que Catálogos/Clientes */}
-      {modalNuevoCliente && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[60] p-4">
-          <div className="bg-white rounded-xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
-            <div className="p-6 border-b flex items-center justify-between sticky top-0 bg-white z-10">
-              <h2 className="text-xl font-bold">Nuevo Cliente</h2>
-              <button onClick={() => setModalNuevoCliente(false)}>
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-
-            <div className="p-6">
-              <ClienteForm
-                onSubmit={handleGuardarNuevoCliente}
-                onCancel={() => setModalNuevoCliente(false)}
-                isLoading={guardandoCliente}
-                submitLabel="Guardar Cliente"
-              />
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

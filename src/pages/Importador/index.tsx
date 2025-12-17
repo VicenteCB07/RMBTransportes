@@ -233,14 +233,18 @@ export default function Importador() {
             if (tipoLower.includes('tractocamion') || tipoLower.includes('tractocamión') || tipoLower.includes('tracto')) {
               return 'tractocamion';
             }
-            if (tipoLower.includes('lowboy')) {
-              return 'lowboy';
+            if (tipoLower.includes('lowboy') || tipoLower.includes('remolque')) {
+              // Lowboy y remolque se mapean a plataforma_rolloff
+              return 'plataforma_rolloff';
             }
             if (tipoLower.includes('plataforma') || tipoLower.includes('roll-off') || tipoLower.includes('rolloff')) {
               return 'plataforma_rolloff';
             }
-            if (tipoLower.includes('remolque')) {
-              return 'remolque';
+            if (tipoLower.includes('torton') || tipoLower.includes('tortón')) {
+              return 'torton';
+            }
+            if (tipoLower.includes('rabon') || tipoLower.includes('rabón')) {
+              return 'rabon';
             }
             return null;
           };

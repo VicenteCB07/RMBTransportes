@@ -16,6 +16,7 @@ import Usuarios from './pages/Usuarios'
 import Legal from './pages/Legal'
 import Clientes from './pages/Clientes'
 import Viajes from './pages/Viajes'
+import Planificador from './pages/Planificador'
 import Casetas from './pages/Casetas'
 import Telemetria from './pages/Telemetria'
 import Importador from './pages/Importador'
@@ -98,6 +99,7 @@ function AppRoutes() {
       >
         <Route path="/panel" element={<Dashboard />} />
         <Route path="/viajes" element={<Viajes />} />
+        <Route path="/planificador" element={<Planificador />} />
         <Route path="/rutas" element={<Rutas />} />
 
         {/* Catálogos de Flota */}

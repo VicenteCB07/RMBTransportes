@@ -24,6 +24,7 @@ import {
   Settings,
   Container,
   Package,
+  Calendar,
   type LucideIcon,
 } from 'lucide-react'
 import { useState, useEffect } from 'react'
@@ -58,6 +59,7 @@ const menuStructure: MenuEntry[] = [
   // Flujo operativo principal (sin agrupar)
   { path: '/panel', icon: LayoutDashboard, label: 'Dashboard' },
   { path: '/viajes', icon: ClipboardList, label: 'Viajes' },
+  { path: '/planificador', icon: Calendar, label: 'Planificador' },
   { path: '/rutas', icon: MapPin, label: 'Rutas' },
 
   // Grupo: Flota
