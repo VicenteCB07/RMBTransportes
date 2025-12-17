@@ -38,7 +38,7 @@ export default function AddressSearch({
 
   const inputRef = useRef<HTMLInputElement>(null)
   const dropdownRef = useRef<HTMLDivElement>(null)
-  const debounceRef = useRef<NodeJS.Timeout>()
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   // Actualizar query cuando cambia value externo
   useEffect(() => {

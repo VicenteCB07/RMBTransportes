@@ -327,6 +327,17 @@ export async function getTruckDirections(
 // ============================================
 
 /**
+ * Interfaz para parada con ventana de tiempo
+ */
+export interface ParadaConVentana {
+  coordenadas: Coordenadas
+  nombre: string
+  ventanaInicio?: string  // HH:MM formato 24h
+  ventanaFin?: string     // HH:MM formato 24h
+  duracionServicio?: number // minutos en el punto
+}
+
+/**
  * Optimiza el orden de múltiples puntos de entrega
  * @param waypoints Puntos a visitar (el primero es origen y destino)
  * @param options Opciones de optimización
@@ -352,7 +363,7 @@ export async function optimizeRoute(
   }
 
   const {
-    roundtrip = true,
+    roundtrip = false,
     source = 'first',
     destination = 'last',
     geometries = 'polyline',
@@ -409,6 +420,239 @@ export async function optimizeRoute(
     console.error('Error optimizando ruta:', error)
     return null
   }
+}
+
+/**
+ * Optimiza ruta con ventanas de tiempo usando algoritmo greedy + mejoras locales
+ * Considera: distancia, tiempo de viaje y restricciones de ventana
+ */
+export async function optimizeRouteWithTimeWindows(
+  origen: Coordenadas,
+  destino: Coordenadas,
+  paradas: ParadaConVentana[],
+  horaInicio: string = '08:00' // Hora de salida
+): Promise<{
+  ordenOptimo: number[]
+  distanciaTotal: number
+  tiempoTotal: number
+  llegadasEstimadas: string[]
+  cumpleVentanas: boolean[]
+  geometry?: string
+} | null> {
+  if (paradas.length === 0) {
+    return {
+      ordenOptimo: [],
+      distanciaTotal: 0,
+      tiempoTotal: 0,
+      llegadasEstimadas: [],
+      cumpleVentanas: [],
+    }
+  }
+
+  // Calcular matriz de distancias/tiempos
+  const todosLosPuntos = [origen, ...paradas.map(p => p.coordenadas), destino]
+  const n = todosLosPuntos.length
+  const matrizTiempo: number[][] = Array(n).fill(null).map(() => Array(n).fill(0))
+  const matrizDistancia: number[][] = Array(n).fill(null).map(() => Array(n).fill(0))
+
+  // Calcular tiempos entre todos los pares de puntos
+  // Velocidad promedio para vehículo pesado: 30 km/h
+  // (considera tráfico, maniobras, zonas urbanas, pendientes)
+  const VELOCIDAD_PROMEDIO_KMH = 30
+
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      if (i !== j) {
+        const dist = calculateDistance(todosLosPuntos[i], todosLosPuntos[j])
+        matrizDistancia[i][j] = dist
+        matrizTiempo[i][j] = (dist / VELOCIDAD_PROMEDIO_KMH) * 60 // en minutos
+      }
+    }
+  }
+
+  // Algoritmo de inserción más cercana considerando ventanas de tiempo
+  const visitados = new Set<number>([0, n - 1]) // Origen y destino fijos
+  const ruta: number[] = [0] // Empieza en origen
+
+  // Índices de paradas (1 a n-2)
+  const paradasDisponibles = paradas.map((_, i) => i + 1)
+
+  // Ordenar paradas por ventana de inicio (las más tempranas primero)
+  const paradasOrdenadas = [...paradasDisponibles].sort((a, b) => {
+    const ventanaA = paradas[a - 1].ventanaInicio || '23:59'
+    const ventanaB = paradas[b - 1].ventanaInicio || '23:59'
+    return ventanaA.localeCompare(ventanaB)
+  })
+
+  // Inserción greedy considerando tiempo
+  let tiempoActual = parseTime(horaInicio)
+
+  for (const paradaIdx of paradasOrdenadas) {
+    if (visitados.has(paradaIdx)) continue
+
+    // Encontrar mejor posición para insertar esta parada
+    let mejorPosicion = ruta.length
+    let mejorCosto = Infinity
+
+    for (let pos = 1; pos <= ruta.length; pos++) {
+      const prevIdx = ruta[pos - 1]
+      const nextIdx = pos < ruta.length ? ruta[pos] : n - 1
+
+      // Costo de inserción = tiempo adicional
+      const costoActual = matrizTiempo[prevIdx][nextIdx]
+      const costoNuevo = matrizTiempo[prevIdx][paradaIdx] + matrizTiempo[paradaIdx][nextIdx]
+      const costoAdicional = costoNuevo - costoActual
+
+      // Penalizar si no cumple ventana de tiempo
+      const parada = paradas[paradaIdx - 1]
+      let penalizacion = 0
+      if (parada.ventanaInicio || parada.ventanaFin) {
+        const tiempoLlegada = calcularTiempoLlegada(ruta, pos, paradaIdx, matrizTiempo, horaInicio)
+        if (parada.ventanaInicio && tiempoLlegada < parseTime(parada.ventanaInicio)) {
+          penalizacion += (parseTime(parada.ventanaInicio) - tiempoLlegada) * 2 // Espera
+        }
+        if (parada.ventanaFin && tiempoLlegada > parseTime(parada.ventanaFin)) {
+          penalizacion += (tiempoLlegada - parseTime(parada.ventanaFin)) * 10 // Penalización fuerte por llegar tarde
+        }
+      }
+
+      const costoTotal = costoAdicional + penalizacion
+
+      if (costoTotal < mejorCosto) {
+        mejorCosto = costoTotal
+        mejorPosicion = pos
+      }
+    }
+
+    // Insertar en mejor posición
+    ruta.splice(mejorPosicion, 0, paradaIdx)
+    visitados.add(paradaIdx)
+  }
+
+  // Agregar destino al final
+  ruta.push(n - 1)
+
+  // Mejora local: 2-opt
+  let mejorado = true
+  while (mejorado) {
+    mejorado = false
+    for (let i = 1; i < ruta.length - 2; i++) {
+      for (let j = i + 1; j < ruta.length - 1; j++) {
+        // Solo intercambiar paradas intermedias (no origen/destino)
+        if (ruta[i] === 0 || ruta[j] === n - 1) continue
+
+        const costoActual =
+          matrizDistancia[ruta[i - 1]][ruta[i]] +
+          matrizDistancia[ruta[j]][ruta[j + 1]]
+
+        const costoNuevo =
+          matrizDistancia[ruta[i - 1]][ruta[j]] +
+          matrizDistancia[ruta[i]][ruta[j + 1]]
+
+        if (costoNuevo < costoActual - 0.1) {
+          // Invertir segmento entre i y j
+          const segmento = ruta.slice(i, j + 1).reverse()
+          ruta.splice(i, j - i + 1, ...segmento)
+          mejorado = true
+        }
+      }
+    }
+  }
+
+  // Calcular métricas finales
+  let distanciaTotal = 0
+  let tiempoTotal = 0
+  let tiempoAcumulado = parseTime(horaInicio)
+
+  // Crear arrays temporales para almacenar info por orden de visita
+  const infoParadas: Array<{
+    indiceOriginal: number
+    llegadaEstimada: string
+    cumpleVentana: boolean
+  }> = []
+
+  for (let i = 0; i < ruta.length - 1; i++) {
+    const desde = ruta[i]
+    const hasta = ruta[i + 1]
+
+    distanciaTotal += matrizDistancia[desde][hasta]
+    tiempoTotal += matrizTiempo[desde][hasta]
+    tiempoAcumulado += matrizTiempo[desde][hasta]
+
+    // Si es una parada intermedia
+    if (hasta !== 0 && hasta !== n - 1) {
+      const indiceOriginal = hasta - 1
+      const parada = paradas[indiceOriginal]
+      const llegadaEstimada = formatTimeFromMinutes(tiempoAcumulado)
+
+      const cumpleVentana =
+        (!parada.ventanaInicio || tiempoAcumulado >= parseTime(parada.ventanaInicio)) &&
+        (!parada.ventanaFin || tiempoAcumulado <= parseTime(parada.ventanaFin))
+
+      infoParadas.push({
+        indiceOriginal,
+        llegadaEstimada,
+        cumpleVentana,
+      })
+
+      // Agregar tiempo de servicio
+      if (parada.duracionServicio) {
+        tiempoAcumulado += parada.duracionServicio
+        tiempoTotal += parada.duracionServicio
+      }
+    }
+  }
+
+  // Obtener geometría de la ruta optimizada
+  const waypointsOrdenados = ruta.map(idx => todosLosPuntos[idx])
+  const rutaMapbox = await getDirections(waypointsOrdenados)
+
+  // El ordenOptimo son los índices originales en el nuevo orden de visita
+  const ordenOptimo = infoParadas.map(info => info.indiceOriginal)
+
+  // llegadasEstimadas y cumpleVentanas están en el NUEVO orden (orden de visita)
+  // Esto es correcto porque en el componente, las paradas se reordenan con ordenOptimo
+  const llegadasEstimadas = infoParadas.map(info => info.llegadaEstimada)
+  const cumpleVentanas = infoParadas.map(info => info.cumpleVentana)
+
+  return {
+    ordenOptimo,
+    distanciaTotal: Math.round(distanciaTotal * 10) / 10,
+    tiempoTotal: Math.round(tiempoTotal),
+    llegadasEstimadas,
+    cumpleVentanas,
+    geometry: rutaMapbox?.geometry,
+  }
+}
+
+// Helpers para tiempo
+function parseTime(time: string): number {
+  const [hours, minutes] = time.split(':').map(Number)
+  return hours * 60 + minutes
+}
+
+function formatTimeFromMinutes(minutes: number): string {
+  const h = Math.floor(minutes / 60) % 24
+  const m = Math.floor(minutes % 60)
+  return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`
+}
+
+function calcularTiempoLlegada(
+  rutaParcial: number[],
+  posInsercion: number,
+  paradaIdx: number,
+  matrizTiempo: number[][],
+  horaInicio: string
+): number {
+  let tiempo = parseTime(horaInicio)
+
+  for (let i = 0; i < posInsercion; i++) {
+    const desde = i === 0 ? rutaParcial[0] : rutaParcial[i]
+    const hasta = i === posInsercion - 1 ? paradaIdx : rutaParcial[i + 1]
+    tiempo += matrizTiempo[desde][hasta]
+  }
+
+  return tiempo
 }
 
 // ============================================

@@ -535,14 +535,14 @@ export default function Finanzas() {
                         cx="50%"
                         cy="50%"
                         outerRadius={100}
-                        label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                        label={({ name, percent }) => `${name} ${((percent ?? 0) * 100).toFixed(0)}%`}
                         labelLine={false}
                       >
                         {pieChartData.map((entry, index) => (
                           <Cell key={`cell-${index}`} fill={entry.color} />
                         ))}
                       </Pie>
-                      <Tooltip formatter={(value: number) => formatCurrency(value)} />
+                      <Tooltip formatter={(value) => formatCurrency(value as number)} />
                     </PieChart>
                   </ResponsiveContainer>
                 ) : (

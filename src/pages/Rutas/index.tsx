@@ -12,14 +12,11 @@ import {
   Truck,
   Route,
   AlertTriangle,
-  Play,
   Eye,
-  Edit,
   Trash2,
   Navigation,
   ChevronRight,
   RefreshCw,
-  Shield,
   X,
   Loader2,
   Map as MapIcon,
@@ -32,10 +29,12 @@ import { formatCurrency } from '../../services/currency.service'
 import {
   getDirections,
   optimizeRoute,
+  optimizeRouteWithTimeWindows,
   metersToKm,
   formatDuration,
   estimateTollCost,
   isMapboxConfigured,
+  type ParadaConVentana,
 } from '../../services/mapbox.service'
 import { estimarCostoCombustibleRuta } from '../../services/fuel.service'
 import { PRECIO_DIESEL_REFERENCIA } from '../../types/fuel.types'
@@ -94,9 +93,12 @@ interface PuntoGuardado {
 // Interfaz para vehículos
 interface VehiculoSimple {
   id: string
+  numeroInterno: string
   placa: string
   modelo: string
   tipo: string
+  categoria: 'vehiculo' | 'accesorio'
+  asignadoA?: string // Para accesorios: ID del tractocamión
 }
 
 export default function Rutas() {
@@ -114,10 +116,26 @@ export default function Rutas() {
     coordenadas: { lat: 19.7129, lng: -98.9688 },
   }
 
+  // Interfaz extendida para parada con ventana de tiempo
+  interface ParadaConTiempo {
+    nombre: string
+    coordenadas: Coordenadas
+    ventanaInicio?: string
+    ventanaFin?: string
+    duracionServicio?: number
+  }
+
   // Estado para planificación de nueva ruta
   const [origen, setOrigen] = useState<{ nombre: string; coordenadas: Coordenadas } | null>(ORIGEN_DEFAULT)
   const [destino, setDestino] = useState<{ nombre: string; coordenadas: Coordenadas } | null>(null)
-  const [paradas, setParadas] = useState<Array<{ nombre: string; coordenadas: Coordenadas }>>([])
+  const [destinoVentanaInicio, setDestinoVentanaInicio] = useState<string>('')
+  const [destinoVentanaFin, setDestinoVentanaFin] = useState<string>('')
+  const [paradas, setParadas] = useState<ParadaConTiempo[]>([])
+  const [horaSalida, setHoraSalida] = useState('08:00')
+  const [llegadasEstimadas, setLlegadasEstimadas] = useState<string[]>([])
+  const [cumpleVentanas, setCumpleVentanas] = useState<boolean[]>([])
+  const [horaLlegadaDestino, setHoraLlegadaDestino] = useState<string>('')
+  const [cumpleVentanaDestino, setCumpleVentanaDestino] = useState<boolean>(true)
   const [rutaCalculada, setRutaCalculada] = useState<{
     geometry: string
     distanciaKm: number
@@ -131,6 +149,7 @@ export default function Rutas() {
   const [calculandoRuta, setCalculandoRuta] = useState(false)
   const [optimizandoRuta, setOptimizandoRuta] = useState(false)
   const [vehiculoSeleccionado, setVehiculoSeleccionado] = useState('')
+  const [accesorioSeleccionado, setAccesorioSeleccionado] = useState('')
 
   // Estado para modal de guardar ruta
   const [showSaveModal, setShowSaveModal] = useState(false)
@@ -174,9 +193,12 @@ export default function Rutas() {
       const vehiculosSnapshot = await getDocs(vehiculosRef)
       const vehiculosData = vehiculosSnapshot.docs.map((doc) => ({
         id: doc.id,
+        numeroInterno: doc.data().numeroInterno || '',
         placa: doc.data().placa || '',
         modelo: doc.data().modelo || '',
         tipo: doc.data().tipo || 'torton',
+        categoria: doc.data().categoria || 'vehiculo',
+        asignadoA: doc.data().asignadoA || undefined,
       }))
       setVehiculos(vehiculosData)
     } catch (error) {
@@ -219,6 +241,69 @@ export default function Rutas() {
           vehiculo?.tipo
         )
 
+        // Calcular hora de llegada al destino
+        const [horaH, horaM] = horaSalida.split(':').map(Number)
+        const salidaMinutos = horaH * 60 + horaM
+
+        // Sumar tiempo de viaje + tiempos de servicio en paradas
+        let tiempoTotalMinutos = tiempoMin
+        paradas.forEach(p => {
+          tiempoTotalMinutos += p.duracionServicio || 30 // 30 min por defecto
+        })
+
+        const llegadaMinutos = salidaMinutos + tiempoTotalMinutos
+        const llegadaHora = Math.floor(llegadaMinutos / 60) % 24
+        const llegadaMin = llegadaMinutos % 60
+        const horaLlegada = `${llegadaHora.toString().padStart(2, '0')}:${llegadaMin.toString().padStart(2, '0')}`
+        setHoraLlegadaDestino(horaLlegada)
+
+        // Verificar si cumple ventana de tiempo del destino
+        if (destinoVentanaInicio || destinoVentanaFin) {
+          const llegadaMinutosDestino = llegadaHora * 60 + llegadaMin
+          const inicioMinutos = destinoVentanaInicio
+            ? parseInt(destinoVentanaInicio.split(':')[0]) * 60 + parseInt(destinoVentanaInicio.split(':')[1])
+            : 0
+          const finMinutos = destinoVentanaFin
+            ? parseInt(destinoVentanaFin.split(':')[0]) * 60 + parseInt(destinoVentanaFin.split(':')[1])
+            : 1440
+          setCumpleVentanaDestino(llegadaMinutosDestino >= inicioMinutos && llegadaMinutosDestino <= finMinutos)
+        } else {
+          setCumpleVentanaDestino(true)
+        }
+
+        // Calcular llegadas estimadas a cada parada
+        if (result.legs && result.legs.length > 0) {
+          let tiempoAcumulado = salidaMinutos
+          const llegadas: string[] = []
+
+          for (let i = 0; i < result.legs.length - 1; i++) {
+            tiempoAcumulado += Math.round(result.legs[i].duration / 60)
+            const h = Math.floor(tiempoAcumulado / 60) % 24
+            const m = tiempoAcumulado % 60
+            llegadas.push(`${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`)
+
+            // Agregar tiempo de servicio de la parada
+            if (paradas[i]) {
+              tiempoAcumulado += paradas[i].duracionServicio || 30
+            }
+          }
+          setLlegadasEstimadas(llegadas)
+
+          // Verificar cumplimiento de ventanas
+          const cumple = paradas.map((p, i) => {
+            if (!p.ventanaInicio && !p.ventanaFin) return true
+            const llegadaStr = llegadas[i]
+            if (!llegadaStr) return true
+
+            const llegadaMinutosParada = parseInt(llegadaStr.split(':')[0]) * 60 + parseInt(llegadaStr.split(':')[1])
+            const inicioMinutos = p.ventanaInicio ? parseInt(p.ventanaInicio.split(':')[0]) * 60 + parseInt(p.ventanaInicio.split(':')[1]) : 0
+            const finMinutos = p.ventanaFin ? parseInt(p.ventanaFin.split(':')[0]) * 60 + parseInt(p.ventanaFin.split(':')[1]) : 1440
+
+            return llegadaMinutosParada >= inicioMinutos && llegadaMinutosParada <= finMinutos
+          })
+          setCumpleVentanas(cumple)
+        }
+
         setRutaCalculada({
           geometry: result.geometry,
           distanciaKm,
@@ -244,9 +329,9 @@ export default function Rutas() {
     } finally {
       setCalculandoRuta(false)
     }
-  }, [origen, destino, paradas])
+  }, [origen, destino, paradas, horaSalida, vehiculoSeleccionado, vehiculos, destinoVentanaInicio, destinoVentanaFin])
 
-  // Optimizar orden de paradas
+  // Optimizar orden de paradas con ventanas de tiempo
   const optimizarParadas = useCallback(async () => {
     if (!origen || !destino || paradas.length < 1) {
       toast.error('Necesitas al menos una parada intermedia')
@@ -255,31 +340,99 @@ export default function Rutas() {
 
     setOptimizandoRuta(true)
     try {
-      const waypoints: Coordenadas[] = [
-        origen.coordenadas,
-        ...paradas.map((p) => p.coordenadas),
-        destino.coordenadas,
-      ]
+      // Verificar si hay ventanas de tiempo definidas
+      const tieneVentanas = paradas.some(p => p.ventanaInicio || p.ventanaFin)
 
-      const result = await optimizeRoute(waypoints, {
-        roundtrip: false,
-        source: 'first',
-        destination: 'last',
-      })
+      if (tieneVentanas) {
+        // Usar algoritmo con ventanas de tiempo
+        const paradasConVentana: ParadaConVentana[] = paradas.map(p => ({
+          coordenadas: p.coordenadas,
+          nombre: p.nombre,
+          ventanaInicio: p.ventanaInicio,
+          ventanaFin: p.ventanaFin,
+          duracionServicio: p.duracionServicio || 30, // 30 min por defecto
+        }))
 
-      if (result && result.waypoints) {
-        // Reordenar paradas según optimización
-        const nuevoOrden = result.waypoints
-          .filter((wp) => wp.waypoint_index !== 0 && wp.waypoint_index !== waypoints.length - 1)
-          .sort((a, b) => a.trips_index - b.trips_index)
-          .map((wp) => paradas[wp.waypoint_index - 1])
-          .filter(Boolean)
+        const resultado = await optimizeRouteWithTimeWindows(
+          origen.coordenadas,
+          destino.coordenadas,
+          paradasConVentana,
+          horaSalida
+        )
 
-        setParadas(nuevoOrden)
+        if (resultado) {
+          // Reordenar paradas según el orden óptimo
+          const paradasReordenadas = resultado.ordenOptimo.map(idx => paradas[idx])
+          setParadas(paradasReordenadas)
+          setLlegadasEstimadas(resultado.llegadasEstimadas)
+          setCumpleVentanas(resultado.cumpleVentanas)
 
-        // Recalcular ruta con nuevo orden
-        setTimeout(() => calcularRuta(), 100)
-        toast.success('Paradas optimizadas')
+          // Actualizar ruta calculada con nueva geometría
+          if (resultado.geometry) {
+            const vehiculo = vehiculos.find((v) => v.id === vehiculoSeleccionado)
+            const estimacionCombustible = await estimarCostoCombustibleRuta(
+              resultado.distanciaTotal,
+              vehiculoSeleccionado || undefined,
+              vehiculo?.tipo
+            )
+
+            setRutaCalculada({
+              geometry: resultado.geometry,
+              distanciaKm: resultado.distanciaTotal,
+              tiempoMin: resultado.tiempoTotal,
+              costoCasetas: estimateTollCost(resultado.distanciaTotal, 'camion_2ejes'),
+              costoCombustible: estimacionCombustible.costoEstimado,
+              litrosEstimados: estimacionCombustible.litrosEstimados,
+              rendimientoUsado: estimacionCombustible.rendimientoUsado,
+              esRendimientoReal: estimacionCombustible.esRendimientoReal,
+            })
+          }
+
+          const ventanasIncumplidas = resultado.cumpleVentanas.filter(c => !c).length
+          if (ventanasIncumplidas > 0) {
+            toast.error(`Ruta optimizada pero ${ventanasIncumplidas} ventana(s) no se pueden cumplir`)
+          } else {
+            toast.success('Ruta optimizada respetando ventanas de tiempo')
+          }
+        }
+      } else {
+        // Usar algoritmo simple de Mapbox sin ventanas
+        const waypoints: Coordenadas[] = [
+          origen.coordenadas,
+          ...paradas.map((p) => p.coordenadas),
+          destino.coordenadas,
+        ]
+
+        const result = await optimizeRoute(waypoints, {
+          roundtrip: false,
+          source: 'first',
+          destination: 'last',
+        })
+
+        if (result && result.waypoints) {
+          // Reordenar paradas según optimización
+          const ordenMap = new Map<number, number>()
+          result.waypoints.forEach((wp, idx) => {
+            ordenMap.set(wp.waypoint_index, idx)
+          })
+
+          // Filtrar solo las paradas intermedias (excluyendo origen y destino)
+          const paradasConOrden = paradas.map((parada, idx) => ({
+            parada,
+            nuevoOrden: ordenMap.get(idx + 1) || idx + 1
+          }))
+
+          paradasConOrden.sort((a, b) => a.nuevoOrden - b.nuevoOrden)
+          const nuevoOrden = paradasConOrden.map(p => p.parada)
+
+          setParadas(nuevoOrden)
+          setLlegadasEstimadas([])
+          setCumpleVentanas([])
+
+          // Recalcular ruta con nuevo orden
+          setTimeout(() => calcularRuta(), 100)
+          toast.success('Paradas optimizadas por distancia')
+        }
       }
     } catch (error) {
       console.error('Error optimizando:', error)
@@ -287,7 +440,7 @@ export default function Rutas() {
     } finally {
       setOptimizandoRuta(false)
     }
-  }, [origen, destino, paradas, calcularRuta])
+  }, [origen, destino, paradas, horaSalida, vehiculoSeleccionado, vehiculos, calcularRuta])
 
   // Guardar ruta
   const guardarRuta = async () => {
@@ -335,8 +488,14 @@ export default function Rutas() {
       setCodigoRuta('')
       setOrigen(ORIGEN_DEFAULT)
       setDestino(null)
+      setDestinoVentanaInicio('')
+      setDestinoVentanaFin('')
       setParadas([])
       setRutaCalculada(null)
+      setHoraLlegadaDestino('')
+      setCumpleVentanaDestino(true)
+      setLlegadasEstimadas([])
+      setCumpleVentanas([])
       setActiveTab('rutas')
     } catch (error) {
       console.error('Error guardando ruta:', error)
@@ -366,12 +525,24 @@ export default function Rutas() {
       toast.error('Máximo 10 paradas intermedias')
       return
     }
-    setParadas([...paradas, { nombre: '', coordenadas: { lat: 0, lng: 0 } }])
+    setParadas([...paradas, {
+      nombre: '',
+      coordenadas: { lat: 0, lng: 0 },
+      ventanaInicio: undefined,
+      ventanaFin: undefined,
+      duracionServicio: 30, // 30 minutos por defecto
+    }])
+    // Limpiar estimaciones previas
+    setLlegadasEstimadas([])
+    setCumpleVentanas([])
   }
 
   // Remover parada
   const removerParada = (index: number) => {
     setParadas(paradas.filter((_, i) => i !== index))
+    // Actualizar estimaciones
+    setLlegadasEstimadas(prev => prev.filter((_, i) => i !== index))
+    setCumpleVentanas(prev => prev.filter((_, i) => i !== index))
   }
 
   // Filtrar rutas
@@ -648,34 +819,138 @@ export default function Rutas() {
                   />
                 </div>
 
-                {/* Paradas intermedias */}
+                {/* Hora de salida */}
+                <div>
+                  <label className="block text-sm font-medium text-[#3D3D3D] mb-1">
+                    Hora de Salida
+                  </label>
+                  <input
+                    type="time"
+                    value={horaSalida}
+                    onChange={(e) => setHoraSalida(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#BB0034] focus:border-[#BB0034] outline-none"
+                  />
+                </div>
+
+                {/* Paradas intermedias con ventanas de tiempo */}
                 {paradas.map((parada, index) => (
-                  <div key={index}>
-                    <label className="block text-sm font-medium text-[#3D3D3D] mb-1">
-                      Parada {index + 1}
-                    </label>
-                    <div className="flex gap-2">
-                      <div className="flex-1">
-                        <AddressSearch
-                          value={parada.nombre}
-                          placeholder={`Buscar parada ${index + 1}...`}
-                          onSelect={(result) => {
-                            const nuevasParadas = [...paradas]
-                            nuevasParadas[index] = {
-                              nombre: result.placeName,
-                              coordenadas: result.coordinates,
-                            }
-                            setParadas(nuevasParadas)
-                          }}
-                          proximity={origen?.coordenadas}
-                        />
-                      </div>
+                  <div key={`parada-${index}-${parada.nombre}`} className="border border-gray-200 rounded-lg p-3 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <label className="text-sm font-medium text-[#3D3D3D]">
+                        Parada {index + 1}
+                        {llegadasEstimadas.length === paradas.length && llegadasEstimadas[index] && (
+                          <span className={cn(
+                            'ml-2 text-xs px-2 py-0.5 rounded',
+                            cumpleVentanas[index]
+                              ? 'bg-green-100 text-green-700'
+                              : 'bg-red-100 text-red-700'
+                          )}>
+                            ETA: {llegadasEstimadas[index]}
+                            {!cumpleVentanas[index] && ' ⚠️'}
+                          </span>
+                        )}
+                      </label>
                       <button
                         onClick={() => removerParada(index)}
-                        className="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+                        className="p-1 text-red-500 hover:bg-red-50 rounded transition-colors"
                       >
-                        <X size={20} />
+                        <X size={18} />
                       </button>
+                    </div>
+
+                    {/* Dirección */}
+                    <AddressSearch
+                      value={parada.nombre}
+                      placeholder={`Buscar parada ${index + 1}...`}
+                      onSelect={(result) => {
+                        const nuevasParadas = [...paradas]
+                        nuevasParadas[index] = {
+                          ...nuevasParadas[index],
+                          nombre: result.placeName,
+                          coordenadas: result.coordinates,
+                        }
+                        setParadas(nuevasParadas)
+                        // Limpiar estimaciones al modificar dirección
+                        setLlegadasEstimadas([])
+                        setCumpleVentanas([])
+                      }}
+                      proximity={origen?.coordenadas}
+                    />
+
+                    {/* Ventana de tiempo */}
+                    <div className="grid grid-cols-3 gap-2">
+                      <div>
+                        <label className="block text-xs text-gray-500 mb-1">
+                          <Clock size={12} className="inline mr-1" />
+                          Desde
+                        </label>
+                        <input
+                          type="time"
+                          value={parada.ventanaInicio || ''}
+                          onChange={(e) => {
+                            const nuevasParadas = [...paradas]
+                            nuevasParadas[index] = {
+                              ...nuevasParadas[index],
+                              ventanaInicio: e.target.value || undefined,
+                            }
+                            setParadas(nuevasParadas)
+                            // Limpiar estimaciones al modificar ventana
+                            setLlegadasEstimadas([])
+                            setCumpleVentanas([])
+                          }}
+                          className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-[#BB0034] outline-none"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs text-gray-500 mb-1">
+                          Hasta
+                        </label>
+                        <input
+                          type="time"
+                          value={parada.ventanaFin || ''}
+                          onChange={(e) => {
+                            const nuevasParadas = [...paradas]
+                            nuevasParadas[index] = {
+                              ...nuevasParadas[index],
+                              ventanaFin: e.target.value || undefined,
+                            }
+                            setParadas(nuevasParadas)
+                            // Limpiar estimaciones al modificar ventana
+                            setLlegadasEstimadas([])
+                            setCumpleVentanas([])
+                          }}
+                          className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-[#BB0034] outline-none"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs text-gray-500 mb-1">
+                          Servicio (min)
+                        </label>
+                        <input
+                          type="text"
+                          inputMode="numeric"
+                          pattern="[0-9]*"
+                          value={parada.duracionServicio ?? ''}
+                          onChange={(e) => {
+                            const inputValue = e.target.value
+                            // Permitir campo vacío o solo números
+                            if (inputValue === '' || /^\d+$/.test(inputValue)) {
+                              const valor = inputValue === '' ? undefined : Math.min(480, parseInt(inputValue))
+                              const nuevasParadas = [...paradas]
+                              nuevasParadas[index] = {
+                                ...nuevasParadas[index],
+                                duracionServicio: valor,
+                              }
+                              setParadas(nuevasParadas)
+                              // Limpiar estimaciones al modificar duración
+                              setLlegadasEstimadas([])
+                              setCumpleVentanas([])
+                            }
+                          }}
+                          placeholder="30"
+                          className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-[#BB0034] outline-none"
+                        />
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -690,8 +965,8 @@ export default function Rutas() {
                 </button>
 
                 {/* Destino */}
-                <div>
-                  <label className="block text-sm font-medium text-[#3D3D3D] mb-1">
+                <div className="border border-gray-200 rounded-lg p-3 space-y-3">
+                  <label className="block text-sm font-medium text-[#3D3D3D]">
                     Destino *
                   </label>
                   <AddressSearch
@@ -705,6 +980,74 @@ export default function Rutas() {
                     }
                     proximity={origen?.coordenadas}
                   />
+
+                  {/* Ventana de tiempo del destino */}
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <label className="block text-xs text-gray-500 mb-1">
+                        <Clock size={12} className="inline mr-1" />
+                        Recepción desde
+                      </label>
+                      <input
+                        type="time"
+                        value={destinoVentanaInicio}
+                        onChange={(e) => {
+                          setDestinoVentanaInicio(e.target.value)
+                          setCumpleVentanaDestino(true) // Reset al cambiar
+                        }}
+                        className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-[#BB0034] outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs text-gray-500 mb-1">
+                        Recepción hasta
+                      </label>
+                      <input
+                        type="time"
+                        value={destinoVentanaFin}
+                        onChange={(e) => {
+                          setDestinoVentanaFin(e.target.value)
+                          setCumpleVentanaDestino(true) // Reset al cambiar
+                        }}
+                        className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-[#BB0034] outline-none"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Hora de llegada estimada al destino */}
+                  {horaLlegadaDestino && rutaCalculada && (
+                    <div className={cn(
+                      'mt-2 p-3 border rounded-lg',
+                      cumpleVentanaDestino
+                        ? 'bg-green-50 border-green-200'
+                        : 'bg-red-50 border-red-200'
+                    )}>
+                      <div className="flex items-center justify-between">
+                        <span className={cn(
+                          'text-sm font-medium',
+                          cumpleVentanaDestino ? 'text-green-700' : 'text-red-700'
+                        )}>
+                          Llegada estimada al destino
+                          {!cumpleVentanaDestino && ' ⚠️'}
+                        </span>
+                        <span className={cn(
+                          'text-lg font-bold',
+                          cumpleVentanaDestino ? 'text-green-800' : 'text-red-800'
+                        )}>
+                          {horaLlegadaDestino}
+                        </span>
+                      </div>
+                      <p className={cn(
+                        'text-xs mt-1',
+                        cumpleVentanaDestino ? 'text-green-600' : 'text-red-600'
+                      )}>
+                        {cumpleVentanaDestino
+                          ? `Basado en salida a las ${horaSalida} + ${rutaCalculada.tiempoMin} min de viaje${paradas.length > 0 ? ` + ${paradas.reduce((sum, p) => sum + (p.duracionServicio || 30), 0)} min en paradas` : ''}`
+                          : `No cumple con la ventana de recepción (${destinoVentanaInicio || '00:00'} - ${destinoVentanaFin || '23:59'})`
+                        }
+                      </p>
+                    </div>
+                  )}
                 </div>
 
                 {/* Vehículo (opcional para cálculo de combustible) */}
@@ -714,20 +1057,55 @@ export default function Rutas() {
                   </label>
                   <select
                     value={vehiculoSeleccionado}
-                    onChange={(e) => setVehiculoSeleccionado(e.target.value)}
+                    onChange={(e) => {
+                      setVehiculoSeleccionado(e.target.value)
+                      // Limpiar accesorio si cambia el vehículo
+                      setAccesorioSeleccionado('')
+                    }}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#BB0034] focus:border-[#BB0034] outline-none"
                   >
                     <option value="">Usar estimado general</option>
-                    {vehiculos.map((v) => (
-                      <option key={v.id} value={v.id}>
-                        {v.placa} - {v.modelo} ({v.tipo})
-                      </option>
-                    ))}
+                    {vehiculos
+                      .filter((v) => v.categoria === 'vehiculo' || !v.categoria)
+                      .map((v) => (
+                        <option key={v.id} value={v.id}>
+                          {v.numeroInterno} - {v.modelo} ({v.tipo})
+                        </option>
+                      ))}
                   </select>
                   <p className="text-xs text-gray-500 mt-1">
                     Selecciona un vehículo para usar su rendimiento real de combustible
                   </p>
                 </div>
+
+                {/* Selector de Accesorio (solo si el vehículo es tractocamión) */}
+                {vehiculoSeleccionado && vehiculos.find(v => v.id === vehiculoSeleccionado)?.tipo === 'tractocamion' && (
+                  <div>
+                    <label className="block text-sm font-medium text-[#3D3D3D] mb-1">
+                      Accesorio / Remolque
+                    </label>
+                    <select
+                      value={accesorioSeleccionado}
+                      onChange={(e) => setAccesorioSeleccionado(e.target.value)}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#BB0034] focus:border-[#BB0034] outline-none"
+                    >
+                      <option value="">Sin accesorio</option>
+                      {vehiculos
+                        .filter((v) => v.categoria === 'accesorio')
+                        .map((acc) => (
+                          <option key={acc.id} value={acc.id}>
+                            {acc.numeroInterno} - {acc.tipo}
+                            {acc.asignadoA && acc.asignadoA !== vehiculoSeleccionado
+                              ? ' (asignado a otro tracto)'
+                              : ''}
+                          </option>
+                        ))}
+                    </select>
+                    <p className="text-xs text-gray-500 mt-1">
+                      Selecciona el remolque o accesorio para este viaje
+                    </p>
+                  </div>
+                )}
 
                 {/* Botones de acción */}
                 <div className="flex gap-2 pt-4">

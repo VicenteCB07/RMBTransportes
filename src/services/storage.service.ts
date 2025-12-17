@@ -8,7 +8,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
   deleteObject,
-  UploadTaskSnapshot,
+  type UploadTaskSnapshot,
 } from 'firebase/storage'
 import { storage } from './firebase'
 

@@ -64,25 +64,41 @@ export interface Usuario {
 // TIPOS DE FLOTA Y VEHÍCULOS
 // ============================================
 
+// Categoría principal: Vehículo motorizado vs Accesorio/Remolque
+export type CategoriaFlota = 'vehiculo' | 'accesorio'
+
+// Tipos de vehículos motorizados
 export type TipoVehiculo =
   | 'tractocamion'
-  | 'lowboy'
+  | 'torton'
+  | 'rabon'
   | 'plataforma_rolloff'
-  | 'gondola'
-  | 'remolque'
 
-// Estados del vehículo - Determinados por Mantenimiento
+// Tipos de accesorios (enganchables a tractocamiones)
+export type TipoAccesorio =
+  | 'lowboy'
+  | 'cama_baja'
+  | 'plataforma'
+  | 'gondola'
+  | 'tolva'
+  | 'caja_seca'
+  | 'dolly'
+  | 'contenedor'
+
+// Estados del vehículo/accesorio - Determinados por Mantenimiento
 export type EstadoVehiculo =
   | 'disponible'      // Listo para operar
   | 'servicio_menor'  // Requiere servicio menor pero puede operar
   | 'fuera_servicio'  // No puede operar hasta reparación
 
+// Interfaz unificada para vehículos y accesorios
 export interface Vehiculo {
   id: string
   numeroInterno: string
   placa: string
   vin: string
-  tipo: TipoVehiculo
+  categoria: CategoriaFlota // 'vehiculo' o 'accesorio'
+  tipo: TipoVehiculo | TipoAccesorio
   marca: string
   modelo: string
   anio: number
@@ -94,10 +110,39 @@ export interface Vehiculo {
     lng: number
   }
   conductorAsignado?: string
+  // Para accesorios: tracto al que está asignado
+  asignadoA?: string // ID del tractocamión
+  // Dimensiones (principalmente para accesorios)
+  dimensiones?: {
+    largo: number // metros
+    ancho: number // metros
+    alto: number // metros
+  }
   fechaRegistro: Date
   ultimoMantenimiento?: Date
   proximoMantenimiento?: Date
   documentos: DocumentoVehiculo[]
+}
+
+// Interfaz legacy para accesorios (compatibilidad)
+export interface Accesorio {
+  id: string
+  numeroInterno: string
+  tipo: TipoAccesorio
+  marca: string
+  modelo: string
+  anio: number
+  capacidadCarga: number // toneladas
+  estado: EstadoVehiculo
+  asignadoA?: string // ID del tractocamión
+  dimensiones?: {
+    largo: number // metros
+    ancho: number // metros
+    alto: number // metros
+  }
+  activo: boolean
+  notas?: string
+  fechaRegistro: Date
 }
 
 export interface DocumentoVehiculo {

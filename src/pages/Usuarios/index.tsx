@@ -12,6 +12,10 @@ import {
   Pencil,
   Trash2,
   UserCircle,
+  Key,
+  RefreshCw,
+  Copy,
+  Mail,
 } from 'lucide-react'
 import {
   collection,
@@ -22,10 +26,15 @@ import {
   updateDoc,
   serverTimestamp,
 } from 'firebase/firestore'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+import {
+  createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
+} from 'firebase/auth'
 import { db, auth } from '../../services/firebase'
+import toast from 'react-hot-toast'
 import type { Usuario, RolUsuario } from '../../types'
 import { ROLES_INFO } from '../../types'
+import { useAuthStore } from '../../store/authStore'
 
 const roleColors: Record<string, string> = {
   red: 'bg-[#BB0034]/10 text-[#BB0034]',
@@ -37,6 +46,9 @@ const roleColors: Record<string, string> = {
 }
 
 export default function UsuariosPage() {
+  const { user: currentUser } = useAuthStore()
+  const isAdmin = currentUser?.rol === 'admin'
+
   const [usuarios, setUsuarios] = useState<Usuario[]>([])
   const [loading, setLoading] = useState(true)
   const [showModal, setShowModal] = useState(false)
@@ -46,6 +58,14 @@ export default function UsuariosPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
+  const [showPasswordModal, setShowPasswordModal] = useState(false)
+  const [passwordUser, setPasswordUser] = useState<Usuario | null>(null)
+  const [showStoredPassword, setShowStoredPassword] = useState(false)
+  const [newGeneratedPassword, setNewGeneratedPassword] = useState('')
+  const [savingPassword, setSavingPassword] = useState(false)
+  const [manualPassword, setManualPassword] = useState('')
+  const [showManualPassword, setShowManualPassword] = useState(false)
+  const [sendingResetEmail, setSendingResetEmail] = useState(false)
 
   // Form state
   const [formData, setFormData] = useState({
@@ -189,8 +209,132 @@ export default function UsuariosPage() {
         activo: !user.activo,
       })
       fetchUsuarios()
+      toast.success(`Usuario ${user.activo ? 'desactivado' : 'activado'}`)
     } catch (err) {
       console.error('Error al actualizar estado:', err)
+      toast.error('Error al actualizar estado')
+    }
+  }
+
+  // Abrir modal de cambio de contraseña (solo admin)
+  const handleOpenPasswordModal = (user: Usuario) => {
+    setPasswordUser(user)
+    setShowStoredPassword(false)
+    setNewGeneratedPassword('')
+    setManualPassword('')
+    setShowManualPassword(false)
+    setShowPasswordModal(true)
+  }
+
+  // Generar nueva contraseña segura
+  const generatePassword = (): string => {
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789'
+    const specialChars = '!@#$%&*'
+    let password = 'Rmb'
+    for (let i = 0; i < 6; i++) {
+      password += chars.charAt(Math.floor(Math.random() * chars.length))
+    }
+    password += specialChars.charAt(Math.floor(Math.random() * specialChars.length))
+    return password
+  }
+
+  // Generar y guardar nueva contraseña
+  const handleGenerateNewPassword = async () => {
+    if (!passwordUser) return
+
+    const newPassword = generatePassword()
+    setNewGeneratedPassword(newPassword)
+    setSavingPassword(true)
+
+    try {
+      // Guardar la nueva contraseña en Firestore
+      await updateDoc(doc(db, 'usuarios', passwordUser.id), {
+        passwordTemporal: newPassword,
+        passwordActualizada: serverTimestamp(),
+      })
+
+      toast.success('Nueva contraseña generada y guardada')
+
+      // Actualizar el usuario local
+      setPasswordUser({
+        ...passwordUser,
+        passwordTemporal: newPassword,
+      } as Usuario & { passwordTemporal?: string })
+
+      fetchUsuarios()
+    } catch (err) {
+      console.error('Error:', err)
+      toast.error('Error al guardar la contraseña')
+    } finally {
+      setSavingPassword(false)
+    }
+  }
+
+  // Copiar contraseña al portapapeles
+  const copyToClipboard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text)
+      toast.success('Contraseña copiada al portapapeles')
+    } catch (err) {
+      toast.error('Error al copiar')
+    }
+  }
+
+  // Enviar correo de reset de contraseña (solo admin)
+  const handleSendResetEmail = async () => {
+    if (!passwordUser) return
+
+    setSendingResetEmail(true)
+    try {
+      await sendPasswordResetEmail(auth, passwordUser.email)
+      toast.success(`Se envió un correo de recuperación a ${passwordUser.email}`)
+    } catch (err: any) {
+      console.error('Error:', err)
+      if (err?.code === 'auth/user-not-found') {
+        toast.error('El usuario no existe en Firebase Auth')
+      } else {
+        toast.error('Error al enviar correo de recuperación')
+      }
+    } finally {
+      setSendingResetEmail(false)
+    }
+  }
+
+  // Guardar contraseña manual asignada por el admin
+  const handleSaveManualPassword = async () => {
+    if (!passwordUser || !manualPassword.trim()) {
+      toast.error('Ingresa una contraseña válida')
+      return
+    }
+
+    if (manualPassword.length < 6) {
+      toast.error('La contraseña debe tener al menos 6 caracteres')
+      return
+    }
+
+    setSavingPassword(true)
+    try {
+      await updateDoc(doc(db, 'usuarios', passwordUser.id), {
+        passwordTemporal: manualPassword,
+        passwordActualizada: serverTimestamp(),
+      })
+
+      toast.success('Contraseña guardada correctamente')
+      setNewGeneratedPassword(manualPassword)
+      setManualPassword('')
+
+      // Actualizar usuario local
+      setPasswordUser({
+        ...passwordUser,
+        passwordTemporal: manualPassword,
+      } as Usuario & { passwordTemporal?: string })
+
+      fetchUsuarios()
+    } catch (err) {
+      console.error('Error:', err)
+      toast.error('Error al guardar la contraseña')
+    } finally {
+      setSavingPassword(false)
     }
   }
 
@@ -391,21 +535,34 @@ export default function UsuariosPage() {
                       {user.telefono || '-'}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-right">
-                      <div className="flex items-center justify-end gap-2">
+                      <div className="flex items-center justify-end gap-1">
                         <button
                           onClick={() => handleEditUser(user)}
                           className="p-2 text-gray-500 hover:text-[#BB0034] hover:bg-gray-100 rounded-lg transition-colors"
-                          title="Editar"
+                          title="Editar datos"
                         >
                           <Pencil size={18} />
                         </button>
-                        <button
-                          onClick={() => handleDeleteUser(user.id)}
-                          className="p-2 text-gray-500 hover:text-red-600 hover:bg-gray-100 rounded-lg transition-colors"
-                          title="Eliminar"
-                        >
-                          <Trash2 size={18} />
-                        </button>
+                        {/* Solo admin puede gestionar contraseñas */}
+                        {isAdmin && (
+                          <button
+                            onClick={() => handleOpenPasswordModal(user)}
+                            className="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                            title="Cambiar contraseña"
+                          >
+                            <Key size={18} />
+                          </button>
+                        )}
+                        {/* Solo admin puede eliminar usuarios */}
+                        {isAdmin && (
+                          <button
+                            onClick={() => handleDeleteUser(user.id)}
+                            className="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                            title="Eliminar usuario"
+                          >
+                            <Trash2 size={18} />
+                          </button>
+                        )}
                       </div>
                     </td>
                   </tr>
@@ -634,6 +791,197 @@ export default function UsuariosPage() {
                   </button>
                 </div>
               </form>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modal de Gestión de Contraseña */}
+      {showPasswordModal && passwordUser && (
+        <div className="fixed inset-0 z-50 overflow-y-auto">
+          <div className="flex items-center justify-center min-h-screen px-4">
+            <div
+              className="fixed inset-0 bg-black/50"
+              onClick={() => setShowPasswordModal(false)}
+            />
+
+            <div className="relative bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-blue-100 rounded-lg">
+                    <Key size={24} className="text-blue-600" />
+                  </div>
+                  <div>
+                    <h2 className="text-xl font-semibold text-[#1a1a1a]">
+                      Gestión de Contraseña
+                    </h2>
+                    <p className="text-sm text-gray-500">
+                      {passwordUser.nombre} {passwordUser.apellidos}
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setShowPasswordModal(false)}
+                  className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+
+              <div className="space-y-4">
+                {/* Contraseña actual guardada */}
+                <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm font-medium text-gray-700">
+                      Contraseña Guardada
+                    </span>
+                    {(passwordUser as any).passwordTemporal && (
+                      <div className="flex items-center gap-1">
+                        <button
+                          onClick={() => setShowStoredPassword(!showStoredPassword)}
+                          className="p-1.5 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded transition-colors"
+                          title={showStoredPassword ? 'Ocultar' : 'Mostrar'}
+                        >
+                          {showStoredPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                        </button>
+                        <button
+                          onClick={() => copyToClipboard((passwordUser as any).passwordTemporal)}
+                          className="p-1.5 text-gray-500 hover:text-green-600 hover:bg-green-50 rounded transition-colors"
+                          title="Copiar"
+                        >
+                          <Copy size={16} />
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                  {(passwordUser as any).passwordTemporal ? (
+                    <div className="font-mono text-lg bg-white px-3 py-2 rounded border">
+                      {showStoredPassword
+                        ? (passwordUser as any).passwordTemporal
+                        : '••••••••••'}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-gray-500 italic">
+                      No hay contraseña guardada
+                    </p>
+                  )}
+                </div>
+
+                {/* Nueva contraseña generada */}
+                {newGeneratedPassword && (
+                  <div className="p-4 bg-green-50 rounded-lg border border-green-200">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm font-medium text-green-700">
+                        Nueva Contraseña Generada
+                      </span>
+                      <button
+                        onClick={() => copyToClipboard(newGeneratedPassword)}
+                        className="p-1.5 text-green-600 hover:bg-green-100 rounded transition-colors"
+                        title="Copiar"
+                      >
+                        <Copy size={16} />
+                      </button>
+                    </div>
+                    <div className="font-mono text-lg bg-white px-3 py-2 rounded border border-green-300 text-green-800">
+                      {newGeneratedPassword}
+                    </div>
+                    <p className="text-xs text-green-600 mt-2">
+                      Esta contraseña ha sido guardada. El usuario debe cambiarla en Firebase.
+                    </p>
+                  </div>
+                )}
+
+                {/* Asignar contraseña manual */}
+                <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Asignar Contraseña Manual
+                  </label>
+                  <div className="flex gap-2">
+                    <div className="relative flex-1">
+                      <input
+                        type={showManualPassword ? 'text' : 'password'}
+                        value={manualPassword}
+                        onChange={(e) => setManualPassword(e.target.value)}
+                        placeholder="Nueva contraseña..."
+                        className="w-full px-3 py-2 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowManualPassword(!showManualPassword)}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-gray-500 hover:text-gray-700"
+                      >
+                        {showManualPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                      </button>
+                    </div>
+                    <button
+                      onClick={handleSaveManualPassword}
+                      disabled={savingPassword || !manualPassword.trim()}
+                      className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      Guardar
+                    </button>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-1">
+                    Mínimo 6 caracteres
+                  </p>
+                </div>
+
+                {/* Acciones */}
+                <div className="space-y-3 pt-2">
+                  {/* Generar nueva contraseña automática */}
+                  <button
+                    onClick={handleGenerateNewPassword}
+                    disabled={savingPassword}
+                    className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-[#1a1a1a] text-white rounded-lg hover:bg-[#3D3D3D] transition-colors disabled:opacity-50"
+                  >
+                    {savingPassword ? (
+                      <>
+                        <RefreshCw size={18} className="animate-spin" />
+                        Generando...
+                      </>
+                    ) : (
+                      <>
+                        <RefreshCw size={18} />
+                        Generar Contraseña Automática
+                      </>
+                    )}
+                  </button>
+
+                  {/* Enviar correo de reset */}
+                  <button
+                    onClick={handleSendResetEmail}
+                    disabled={sendingResetEmail}
+                    className="w-full flex items-center justify-center gap-2 px-4 py-3 border border-blue-300 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors disabled:opacity-50"
+                  >
+                    {sendingResetEmail ? (
+                      <>
+                        <RefreshCw size={18} className="animate-spin" />
+                        Enviando...
+                      </>
+                    ) : (
+                      <>
+                        <Mail size={18} />
+                        Enviar Correo de Recuperación
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                {/* Info */}
+                <div className="p-3 bg-amber-50 border border-amber-200 rounded-lg">
+                  <p className="text-xs text-amber-700">
+                    <strong>Nota:</strong> La contraseña guardada es solo de referencia.
+                    El usuario debe usar "Correo de Recuperación" para establecer su contraseña en Firebase Auth.
+                  </p>
+                </div>
+
+                <button
+                  onClick={() => setShowPasswordModal(false)}
+                  className="w-full px-4 py-2 border border-gray-300 text-[#3D3D3D] rounded-lg hover:bg-gray-50 transition-colors"
+                >
+                  Cerrar
+                </button>
+              </div>
             </div>
           </div>
         </div>

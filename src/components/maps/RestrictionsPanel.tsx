@@ -66,7 +66,7 @@ export default function RestrictionsPanel({
     const placasRestringidas = HOY_NO_CIRCULA[diaActual] || []
 
     return {
-      restringido: placasRestringidas.includes(ultimoDigito),
+      restringido: placasRestringidas.includes(ultimoDigito as never),
       dia: DIAS_SEMANA.find((d) => d.value === diaSemana)?.label || '',
       ultimoDigito,
     }

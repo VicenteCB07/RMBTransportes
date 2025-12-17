@@ -8,13 +8,25 @@ import MainLayout from './components/layout/MainLayout'
 import Landing from './pages/Landing'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
-import Flota from './pages/Flota'
 import Mantenimiento from './pages/Mantenimiento'
 import Combustible from './pages/Combustible'
 import Finanzas from './pages/Finanzas'
 import Rutas from './pages/Rutas'
 import Usuarios from './pages/Usuarios'
 import Legal from './pages/Legal'
+import Clientes from './pages/Clientes'
+import Viajes from './pages/Viajes'
+import Casetas from './pages/Casetas'
+import Telemetria from './pages/Telemetria'
+import Importador from './pages/Importador'
+
+// Catálogos
+import Operadores from './pages/Operadores'
+import Maniobristas from './pages/Maniobristas'
+import Tractocamiones from './pages/Tractocamiones'
+import Aditamentos from './pages/Aditamentos'
+import Inventario from './pages/Inventario'
+import Estaciones from './pages/Estaciones'
 
 // Componente de ruta protegida
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
@@ -85,13 +97,33 @@ function AppRoutes() {
         }
       >
         <Route path="/panel" element={<Dashboard />} />
-        <Route path="/flota" element={<Flota />} />
-        <Route path="/mantenimiento" element={<Mantenimiento />} />
-        <Route path="/combustible" element={<Combustible />} />
-        <Route path="/finanzas" element={<Finanzas />} />
+        <Route path="/viajes" element={<Viajes />} />
         <Route path="/rutas" element={<Rutas />} />
-        <Route path="/usuarios" element={<Usuarios />} />
+
+        {/* Catálogos de Flota */}
+        <Route path="/tractocamiones" element={<Tractocamiones />} />
+        <Route path="/aditamentos" element={<Aditamentos />} />
+
+        {/* Catálogos de Personal */}
+        <Route path="/operadores" element={<Operadores />} />
+        <Route path="/maniobristas" element={<Maniobristas />} />
+
+        {/* Catálogos Generales */}
+        <Route path="/clientes" element={<Clientes />} />
+        <Route path="/inventario" element={<Inventario />} />
+        <Route path="/estaciones" element={<Estaciones />} />
+
+        {/* Operaciones */}
+        <Route path="/combustible" element={<Combustible />} />
+        <Route path="/casetas" element={<Casetas />} />
+        <Route path="/telemetria" element={<Telemetria />} />
+        <Route path="/finanzas" element={<Finanzas />} />
+        <Route path="/mantenimiento" element={<Mantenimiento />} />
+
+        {/* Sistema */}
         <Route path="/legal" element={<Legal />} />
+        <Route path="/usuarios" element={<Usuarios />} />
+        <Route path="/importador" element={<Importador />} />
       </Route>
 
       {/* Redirigir rutas no encontradas */}

@@ -237,7 +237,7 @@ export async function actualizarRendimientoVehiculo(
 
   // Guardar/actualizar en Firestore
   const rendimientoRef = doc(db, 'rendimientoVehiculos', vehiculoId)
-  await updateDoc(rendimientoRef, rendimiento).catch(async () => {
+  await updateDoc(rendimientoRef, rendimiento as unknown as Record<string, unknown>).catch(async () => {
     // Si no existe, crear
     await addDoc(collection(db, 'rendimientoVehiculos'), {
       ...rendimiento,
@@ -523,20 +523,28 @@ export async function estimarCostoCombustibleRuta(
   rendimientoUsado: number
   esRendimientoReal: boolean
 }> {
-  let rendimiento: number
+  // Rendimiento por defecto para tractocamiones
+  const rendimientoDefault = 3.5 // km/L
+  let rendimiento: number = rendimientoDefault
   let esRendimientoReal = false
 
-  if (vehiculoId) {
-    const rendimientoVehiculo = await obtenerRendimientoVehiculo(vehiculoId)
-    if (rendimientoVehiculo && rendimientoVehiculo.numeroCargas >= 3) {
-      rendimiento = rendimientoVehiculo.rendimientoPromedio
-      esRendimientoReal = true
+  try {
+    if (vehiculoId) {
+      const rendimientoVehiculo = await obtenerRendimientoVehiculo(vehiculoId)
+      if (rendimientoVehiculo && rendimientoVehiculo.numeroCargas >= 3) {
+        rendimiento = rendimientoVehiculo.rendimientoPromedio
+        esRendimientoReal = true
+      } else {
+        rendimiento = await obtenerRendimientoParaEstimacion(vehiculoId, tipoVehiculo)
+      }
     } else {
-      rendimiento = await obtenerRendimientoParaEstimacion(vehiculoId, tipoVehiculo)
+      const tipo = tipoVehiculo?.toLowerCase() || 'torton'
+      rendimiento = RENDIMIENTO_ESPERADO[tipo]?.promedio || rendimientoDefault
     }
-  } else {
-    const tipo = tipoVehiculo?.toLowerCase() || 'torton'
-    rendimiento = RENDIMIENTO_ESPERADO[tipo]?.promedio || 4.0
+  } catch (error) {
+    // Si hay error al obtener rendimiento, usar valor por defecto
+    console.warn('Error al obtener rendimiento, usando valor por defecto:', error)
+    rendimiento = rendimientoDefault
   }
 
   const litrosEstimados = Math.round((distanciaKm / rendimiento) * 100) / 100

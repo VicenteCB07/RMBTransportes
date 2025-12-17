@@ -314,7 +314,7 @@ export default function Landing() {
                   </div>
                   <div>
                     <p className="font-medium text-[#1a1a1a]">Correo</p>
-                    <p className="text-[#3D3D3D]">contacto@rmbtransportes.com</p>
+                    <p className="text-[#3D3D3D]">contacto@rmb.com.mx</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">

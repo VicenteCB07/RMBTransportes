@@ -54,7 +54,7 @@ const DOCUMENTOS_LEGALES: DocumentoLegal[] = [
       'Altura máxima: 4.25 metros',
       'Largo máximo según configuración vehicular',
     ],
-    aplicaA: ['tractocamion', 'lowboy', 'plataforma_rolloff', 'gondola', 'remolque'],
+    aplicaA: ['tractocamion', 'lowboy', 'plataforma_rolloff', 'remolque'],
   },
   {
     id: '2',
@@ -73,7 +73,7 @@ const DOCUMENTOS_LEGALES: DocumentoLegal[] = [
       'Multa de 100 UMAs por incumplimiento',
       'Sistema de frenos, dirección, suspensión y luces',
     ],
-    aplicaA: ['tractocamion', 'lowboy', 'plataforma_rolloff', 'gondola', 'remolque'],
+    aplicaA: ['tractocamion', 'lowboy', 'plataforma_rolloff', 'remolque'],
   },
   {
     id: '3',
@@ -109,7 +109,7 @@ const DOCUMENTOS_LEGALES: DocumentoLegal[] = [
       'Capacitación especial para operadores',
       'Equipo de emergencia obligatorio',
     ],
-    aplicaA: ['tractocamion', 'gondola'],
+    aplicaA: ['tractocamion'],
   },
   {
     id: '5',
@@ -128,7 +128,7 @@ const DOCUMENTOS_LEGALES: DocumentoLegal[] = [
       'Regula circulación en puentes y carreteras federales',
       'Sanciones por exceso de peso',
     ],
-    aplicaA: ['tractocamion', 'lowboy', 'plataforma_rolloff', 'gondola', 'remolque'],
+    aplicaA: ['tractocamion', 'lowboy', 'plataforma_rolloff', 'remolque'],
   },
 ]
 
@@ -465,9 +465,7 @@ export default function Legal() {
                                       ? 'Lowboy'
                                       : t === 'plataforma_rolloff'
                                         ? 'Plataforma Roll-off'
-                                        : t === 'gondola'
-                                          ? 'Góndola'
-                                          : 'Remolque'
+                                        : 'Remolque'
                                 )
                                 .join(', ')}
                             </p>
