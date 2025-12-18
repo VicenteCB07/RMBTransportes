@@ -64,7 +64,8 @@ import type { MarcaEquipo } from '../../types/equipment.types';
 import { Package } from 'lucide-react';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage } from '../../services/firebase';
-import { Image, FileUp, Trash2 } from 'lucide-react';
+import { Image, FileUp, Trash2, Move } from 'lucide-react';
+import EditorCargaVisual from '../../components/viajes/EditorCargaVisual';
 
 // Generador simple de ID único
 const generarId = () => `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
@@ -297,6 +298,9 @@ export default function Viajes() {
 
   // Timeline - estado de carga
   const [procesandoTimeline, setProcesandoTimeline] = useState(false);
+
+  // Editor visual de carga
+  const [mostrarEditorCarga, setMostrarEditorCarga] = useState(false);
 
   // AbortController para cancelar operaciones de upload pendientes
   const uploadAbortControllerRef = useRef<AbortController | null>(null);
@@ -1831,6 +1835,27 @@ export default function Viajes() {
                         )}
                       </div>
                     )}
+
+                    {/* Botón para abrir editor visual de acomodo */}
+                    {(() => {
+                      const tractoSeleccionado = tractocamiones.find(t => t.id === formData.tractoId);
+                      const tieneCapacidadDefinida =
+                        (tractoSeleccionado?.tipoUnidad === 'rolloff-plataforma' && tractoSeleccionado?.plataformaCarga) ||
+                        (tractoSeleccionado?.tipoUnidad === 'tractocamion' && equiposSeleccionados.length > 0);
+
+                      if (!tieneCapacidadDefinida) return null;
+
+                      return (
+                        <button
+                          type="button"
+                          onClick={() => setMostrarEditorCarga(true)}
+                          className="w-full mt-2 px-3 py-2 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 rounded-lg text-indigo-700 text-sm flex items-center justify-center gap-2 transition-colors"
+                        >
+                          <Move className="w-4 h-4" />
+                          Abrir Editor Visual de Acomodo
+                        </button>
+                      );
+                    })()}
                   </div>
                 )}
 
@@ -2695,6 +2720,114 @@ export default function Viajes() {
                     <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
                   )}
                   {modoEdicion ? 'Guardar Cambios' : 'Crear Orden'}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modal del Editor Visual de Carga */}
+      {mostrarEditorCarga && (
+        <div className="fixed inset-0 z-[60] overflow-y-auto">
+          <div className="flex items-center justify-center min-h-screen px-4 py-4">
+            <div
+              className="fixed inset-0 bg-black/50"
+              onClick={() => setMostrarEditorCarga(false)}
+            />
+
+            <div className="relative bg-white rounded-2xl shadow-xl w-full max-w-[95vw] max-h-[95vh] overflow-auto">
+              {/* Header */}
+              <div className="flex items-center justify-between p-4 border-b sticky top-0 bg-white z-10">
+                <h2 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
+                  <Move size={20} />
+                  Editor Visual de Acomodo
+                </h2>
+                <button
+                  onClick={() => setMostrarEditorCarga(false)}
+                  className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                >
+                  <X size={20} className="text-gray-500" />
+                </button>
+              </div>
+
+              {/* Contenido */}
+              <div className="p-4">
+                {(() => {
+                  const tractoSeleccionado = tractocamiones.find(t => t.id === formData.tractoId);
+
+                  // Determinar configuración de plataforma
+                  let plataformaConfig = {
+                    largo: 0,
+                    ancho: 0,
+                    capacidadTon: 0,
+                    nombre: 'Sin seleccionar',
+                  };
+
+                  if (tractoSeleccionado?.tipoUnidad === 'rolloff-plataforma' && tractoSeleccionado.plataformaCarga) {
+                    plataformaConfig = {
+                      largo: tractoSeleccionado.plataformaCarga.largo,
+                      ancho: tractoSeleccionado.plataformaCarga.ancho,
+                      capacidadTon: tractoSeleccionado.plataformaCarga.capacidadToneladas,
+                      nombre: `${tractoSeleccionado.label} (Roll-Off)`,
+                    };
+                  } else if (tractoSeleccionado?.tipoUnidad === 'tractocamion' && equiposSeleccionados.length > 0) {
+                    // Buscar el aditamento seleccionado
+                    const aditamento = aditamentos.find(a => equiposSeleccionados.includes(a.id));
+                    if (aditamento) {
+                      plataformaConfig = {
+                        largo: aditamento.largo || 12,
+                        ancho: aditamento.ancho || 2.6,
+                        capacidadTon: aditamento.capacidadCarga || 40,
+                        nombre: `${aditamento.label}`,
+                      };
+                    }
+                  }
+
+                  if (plataformaConfig.largo === 0) {
+                    return (
+                      <div className="text-center py-8 text-gray-500">
+                        <AlertCircle className="w-12 h-12 mx-auto mb-2 text-gray-400" />
+                        <p>No hay una plataforma seleccionada con dimensiones definidas.</p>
+                        <p className="text-sm mt-1">
+                          Selecciona un tractocamión con aditamento o una unidad Roll-Off.
+                        </p>
+                      </div>
+                    );
+                  }
+
+                  if (equiposCargaSeleccionados.length === 0) {
+                    return (
+                      <div className="text-center py-8 text-gray-500">
+                        <Package className="w-12 h-12 mx-auto mb-2 text-gray-400" />
+                        <p>No hay equipos de carga seleccionados.</p>
+                        <p className="text-sm mt-1">
+                          Agrega equipos desde el catálogo para visualizar el acomodo.
+                        </p>
+                      </div>
+                    );
+                  }
+
+                  return (
+                    <EditorCargaVisual
+                      plataforma={plataformaConfig}
+                      equipos={equiposCargaSeleccionados}
+                      onAcomodoCambiado={(equiposAcomodados) => {
+                        // Aquí podríamos guardar el orden/posición de los equipos
+                        console.log('Acomodo cambiado:', equiposAcomodados);
+                      }}
+                    />
+                  );
+                })()}
+              </div>
+
+              {/* Footer */}
+              <div className="p-4 border-t flex justify-end gap-3 sticky bottom-0 bg-white">
+                <button
+                  onClick={() => setMostrarEditorCarga(false)}
+                  className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+                >
+                  Cerrar
                 </button>
               </div>
             </div>
