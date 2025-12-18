@@ -1,0 +1,2643 @@
+{
+  "24000": {
+    "municipio": "Campeche",
+    "colonias": [
+      "San Francisco de Campeche Centro"
+    ]
+  },
+  "24010": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Guadalupe",
+      "Pablo Garcia",
+      "San Francisco",
+      "Villa del Río"
+    ]
+  },
+  "24014": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Ah-kim-pech"
+    ]
+  },
+  "24020": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Ampliación Bellavista",
+      "Bellavista",
+      "Benito Juárez",
+      "Buenos Aires",
+      "Camino Real",
+      "Dzarbay",
+      "Emiliano Zapata",
+      "La Ermita",
+      "Residencial del Bosque",
+      "San Caralampio",
+      "San Joaquín",
+      "Santa Lucia",
+      "Sotavento",
+      "Villamar"
+    ]
+  },
+  "24022": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Carzabela",
+      "Montecarlo"
+    ]
+  },
+  "24023": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Ernesto Zedillo",
+      "Fidel Velázquez",
+      "Hacienda Real el Fenix",
+      "Las Murallas",
+      "Nachi Cocom",
+      "Quinta Hermosa",
+      "Residencial Algarrobo",
+      "Residencial Campestre"
+    ]
+  },
+  "24024": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Mártires de Río Blanco"
+    ]
+  },
+  "24025": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Solidaridad Nacional"
+    ]
+  },
+  "24026": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Ampliación Josefa Ortiz de Domínguez",
+      "Cumbres",
+      "Diana Laura",
+      "Divino Niño",
+      "Elvia María Pérez de González",
+      "Granjas",
+      "Luis Donaldo Colosio",
+      "Minas",
+      "Mirador",
+      "Morelos",
+      "Palma Real",
+      "San José el Alto",
+      "Valle Dorado",
+      "Viveros"
+    ]
+  },
+  "24027": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Palmas",
+      "San Miguel",
+      "Villa Mercedes"
+    ]
+  },
+  "24028": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Cocotero de las Palmas",
+      "Villas de Ah-kim-Pech"
+    ]
+  },
+  "24029": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Centro SCT Campeche"
+    ]
+  },
+  "24030": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Bosques de Campeche",
+      "Héroes de Chapultepec (FOVI)",
+      "Lomas del Castillo",
+      "Miramar",
+      "Prado",
+      "Villas Universidad"
+    ]
+  },
+  "24035": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Burócratas Pensiones",
+      "Cerro de La Eminencia",
+      "Invasión San Arturo",
+      "Lomas del Pedregal",
+      "Lomas del Rey",
+      "Prado",
+      "Residencial Pedregal",
+      "San Arturo",
+      "San Cayetano",
+      "Vicente Guerrero",
+      "Villas de Allende"
+    ]
+  },
+  "24036": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Adolfo López Mateos (SUTERM)",
+      "El Pedregal",
+      "Electricistas"
+    ]
+  },
+  "24037": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Ciudad Militar"
+    ]
+  },
+  "24038": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Kaniste",
+      "Kanisté",
+      "Monte Verde",
+      "Rinconada del Valle"
+    ]
+  },
+  "24039": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Buenavista"
+    ]
+  },
+  "24040": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Privada Narciso Mendoza",
+      "San José",
+      "San Román"
+    ]
+  },
+  "24044": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Lazareto",
+      "Montecristo",
+      "Residencial Resurgimiento"
+    ]
+  },
+  "24049": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Bicentenario I y II"
+    ]
+  },
+  "24050": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Campeche 1",
+      "FOVISSSTE Belén",
+      "Hollywood",
+      "La Huerta",
+      "La Paz",
+      "Parque Residencial La Noria",
+      "Privada Guadalupana",
+      "Santa Ana",
+      "Villa Tulipanes"
+    ]
+  },
+  "24058": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Caribe"
+    ]
+  },
+  "24060": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Altavista",
+      "Ampliación Polvorín",
+      "Casa Blanca",
+      "Colinas del Sur",
+      "El Polvorín",
+      "Jardines",
+      "Las Quintas",
+      "Leovigildo Gómez",
+      "Lomas",
+      "Lomas Delicias",
+      "Lomas de las Flores",
+      "Lomas de las Flores II",
+      "Lomas del Polvorín",
+      "Montebello",
+      "Naval Campeche III",
+      "Residencial Bugambilias",
+      "Residencial Delicias",
+      "Sector Las Flores",
+      "Solidaridad Urbana",
+      "Tabachines",
+      "Tacubaya",
+      "Tomas Aznar",
+      "Unidad y Esperanza",
+      "Valle del Águila",
+      "Villareal",
+      "Villas de Monte Real"
+    ]
+  },
+  "24063": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Bicentenario"
+    ]
+  },
+  "24069": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Flor de Limón"
+    ]
+  },
+  "24070": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Ampliación Cuatro Caminos",
+      "Aviación",
+      "Bello Horizonte",
+      "Colonia México",
+      "Cuatro Caminos",
+      "Hacienda Santa María",
+      "Huanal",
+      "Héroe de Nacozari",
+      "Justicia Social",
+      "Justo Sierra Méndez",
+      "Quinta de Los Españoles",
+      "Santa Bárbara"
+    ]
+  },
+  "24073": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Siglo XXI"
+    ]
+  },
+  "24075": {
+    "municipio": "Campeche",
+    "colonias": [
+      "El Carmelo"
+    ]
+  },
+  "24079": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Campeche (Ing. Alberto Acuña Ongay)"
+    ]
+  },
+  "24080": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Ampliación Esperanza",
+      "Ampliación Invasión Esperanza",
+      "Ampliación Revolución",
+      "Emiliano Zapata",
+      "Esperanza",
+      "Josefa Ortiz de Domínguez",
+      "Pablo Garcia",
+      "Revolución"
+    ]
+  },
+  "24083": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Fátima"
+    ]
+  },
+  "24084": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Nuevo San Antonio Ebulá",
+      "Siglo XXIII"
+    ]
+  },
+  "24085": {
+    "municipio": "Campeche",
+    "colonias": [
+      "20 de Noviembre",
+      "Altamira",
+      "Ampliación Ciudad Concordia",
+      "Bosque Real",
+      "Ciudad Concordia",
+      "Invasión Esperanza",
+      "Kala",
+      "Murallas FSTSE",
+      "Ramón Espíndola Blanco",
+      "Residencial La Hacienda",
+      "Villas de Kala"
+    ]
+  },
+  "24086": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Villa Flora",
+      "Villa Luisa",
+      "Villa Turquesa"
+    ]
+  },
+  "24087": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Ampliación Kala",
+      "Caminero",
+      "Colonial Campeche",
+      "Eduardo J. Lavalle Urbina",
+      "Hacienda San Antonio",
+      "Los Reyes",
+      "Privada Exhacienda Kala",
+      "Privada Residencial Colonial",
+      "Terranova",
+      "Tula",
+      "Vista Hermosa"
+    ]
+  },
+  "24088": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Alameda",
+      "Colonia",
+      "El Vergel",
+      "Fénix",
+      "Guadalupe Victoria",
+      "Héroes de la Revolución",
+      "Independencia",
+      "Insurgentes",
+      "Las Arboledas",
+      "Los Cedros",
+      "Los Álamos",
+      "Paseo de Campeche",
+      "Presidentes de México",
+      "Reforma",
+      "Unidad y Trabajo Plan-chac",
+      "VIVAH",
+      "Villa Naranjos",
+      "Villas la Hacienda"
+    ]
+  },
+  "24089": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Peña"
+    ]
+  },
+  "24090": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Ampliación San Rafael",
+      "Flor de Liz",
+      "Fracciorama 2000",
+      "Girasoles",
+      "Infonavit Samula",
+      "La Vista",
+      "Las Campanillas",
+      "Los Sauces",
+      "Nueva Era",
+      "Residencial Villas Colosio",
+      "Rinconada Samula",
+      "Samulá",
+      "San Andrés",
+      "San Rafael",
+      "Valle del Sol",
+      "Villa Jazmín",
+      "Villas de Samula"
+    ]
+  },
+  "24093": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Residencial La Arboleda",
+      "Villas Residencial (Ix-Lol-Be)"
+    ]
+  },
+  "24094": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Ampliación Ignacio Zaragoza",
+      "Ampliación Miguel Hidalgo",
+      "Ampliación Samulá",
+      "Esmeralda",
+      "La Cañada",
+      "Miguel Hidalgo",
+      "Miramar",
+      "Villa Laureles II"
+    ]
+  },
+  "24095": {
+    "municipio": "Campeche",
+    "colonias": [
+      "18 de Marzo",
+      "El Doral",
+      "Lázaro Cárdenas",
+      "Multunchac",
+      "Reforma Agraria",
+      "Residencial San Francisco",
+      "Residencial los Almendros",
+      "Sascalum",
+      "Villa Dalias",
+      "Villa Laureles"
+    ]
+  },
+  "24096": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Guadalajara",
+      "Lindavista C.T.M.",
+      "Los Laureles",
+      "Tepeyac"
+    ]
+  },
+  "24097": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Bugambilias",
+      "Las Flores",
+      "Las Rosas",
+      "Santa Cecilia"
+    ]
+  },
+  "24098": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Ignacio Zaragoza",
+      "Lomas de Zaragoza"
+    ]
+  },
+  "24099": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Ampliación San Antonio",
+      "Lomas de San Rafael",
+      "San Antonio",
+      "San Rafael"
+    ]
+  },
+  "24100": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Ciudad del Carmen Centro"
+    ]
+  },
+  "24108": {
+    "municipio": "Carmen",
+    "colonias": [
+      "CERESO Ciudad del Carmen"
+    ]
+  },
+  "24110": {
+    "municipio": "Carmen",
+    "colonias": [
+      "1 de Mayo (Playón)",
+      "Caleta",
+      "Fátima",
+      "Héctor Pérez Martínez",
+      "San Agustin del Palmar"
+    ]
+  },
+  "24114": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Justo Sierra"
+    ]
+  },
+  "24115": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Marina del Rey",
+      "Miami",
+      "Monte Bello",
+      "Morelos",
+      "Playa Norte"
+    ]
+  },
+  "24116": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Boquerón del Palmar",
+      "San Carlos"
+    ]
+  },
+  "24117": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Obrera"
+    ]
+  },
+  "24118": {
+    "municipio": "Carmen",
+    "colonias": [
+      "San Nicolás"
+    ]
+  },
+  "24119": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Aeropuerto",
+      "Ciudad del Carmen (Ciudad del Carmen)"
+    ]
+  },
+  "24120": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Electricistas",
+      "Revolución",
+      "Santa Margarita"
+    ]
+  },
+  "24129": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Puerto Pesquero"
+    ]
+  },
+  "24130": {
+    "municipio": "Carmen",
+    "colonias": [
+      "20 de Noviembre",
+      "Guadalupe",
+      "San Miguel"
+    ]
+  },
+  "24139": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Guanal",
+      "Puntilla"
+    ]
+  },
+  "24140": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Pallas"
+    ]
+  },
+  "24150": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Belisario Domínguez",
+      "La Rivera",
+      "Luis Donaldo Colosio"
+    ]
+  },
+  "24153": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Capistrano",
+      "Mundo Maya",
+      "Residencial Las Palmas",
+      "Santa Mónica"
+    ]
+  },
+  "24154": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Arcila",
+      "Compositores",
+      "Isla del Carmen 2000",
+      "Los Arcos",
+      "Los Ríos",
+      "Maderas",
+      "Palmira",
+      "Perla del Golfo",
+      "Pueblo Maya",
+      "Puente de La Unidad",
+      "Rafael del J Lozano Contreras",
+      "San Francisco",
+      "San Manuel"
+    ]
+  },
+  "24155": {
+    "municipio": "Carmen",
+    "colonias": [
+      "23 de Julio",
+      "Bugambilias",
+      "Isla de Tris",
+      "Plutarco Elías Calles",
+      "Renovación I",
+      "Renovación II",
+      "Renovación III",
+      "Solidaridad Urbana",
+      "Villa Conejo",
+      "Villa San José",
+      "Villa Universitaria",
+      "Villas de Santa Ana",
+      "Volcanes"
+    ]
+  },
+  "24156": {
+    "municipio": "Carmen",
+    "colonias": [
+      "El Dorado",
+      "Mediterráneo",
+      "Puerta de Hierro",
+      "Residencial El Cielo",
+      "Villa Encantada",
+      "Villa Florencia",
+      "Villa de Los Ángeles",
+      "Villa del Mar"
+    ]
+  },
+  "24157": {
+    "municipio": "Carmen",
+    "colonias": [
+      "18 de Marzo",
+      "Bicentenario",
+      "Buenavista",
+      "Canterías",
+      "Club Residencial Azul",
+      "Evergreén",
+      "Girasoles",
+      "Hacienda Dorada",
+      "Hacienda del Mar",
+      "José Ortiz Ávila",
+      "La Esperanza",
+      "Las Esperanzas",
+      "Mar Azul",
+      "Misión del Carmen",
+      "Paseo de los Bosques",
+      "Playa Palmas",
+      "Privada San Joaquín",
+      "Privada Santa Ana",
+      "Privanzas",
+      "Puesta del Sol",
+      "Raíces",
+      "Real del Carmen",
+      "Reforma II Sección",
+      "Residencial San Miguel",
+      "Residencial Vistancias",
+      "Rinconada",
+      "San Joaquín",
+      "San Román",
+      "Santa Isabel",
+      "Turquesa",
+      "Villa Magna",
+      "Villa Marina",
+      "Villa Palmeras",
+      "Villas del Carmen"
+    ]
+  },
+  "24158": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Bivalbo",
+      "Constelaciones",
+      "Constelaciones II",
+      "El Potrero",
+      "Héroes de Nacozari",
+      "Las Huertas",
+      "Mujeres Carmelitas",
+      "Orizaba",
+      "Reforma",
+      "Residencial del Lago",
+      "Santa Rita",
+      "Santa Rita II",
+      "Santa Rita III"
+    ]
+  },
+  "24160": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Burócrata"
+    ]
+  },
+  "24166": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Justo Sierra"
+    ]
+  },
+  "24167": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Lomas de Holche"
+    ]
+  },
+  "24169": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Asa Poniente",
+      "Camaroneros"
+    ]
+  },
+  "24170": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Aviación",
+      "Cuauhtémoc",
+      "Tila"
+    ]
+  },
+  "24178": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Tecolutla"
+    ]
+  },
+  "24179": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Petrolera"
+    ]
+  },
+  "24180": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Benito Juárez",
+      "Benito Juárez 2",
+      "Limonar",
+      "Tacubaya"
+    ]
+  },
+  "24185": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Estrella"
+    ]
+  },
+  "24186": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Miguel de La Madrid"
+    ]
+  },
+  "24187": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Manigua"
+    ]
+  },
+  "24188": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Caracol"
+    ]
+  },
+  "24189": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Salitral"
+    ]
+  },
+  "24190": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Francisco I Madero"
+    ]
+  },
+  "24195": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Las Pilas",
+      "Pedro Sainz de Baranda"
+    ]
+  },
+  "24197": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Independencia",
+      "Insurgentes",
+      "Malibrán",
+      "Santa Rosalía"
+    ]
+  },
+  "24198": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Emiliano Zapata"
+    ]
+  },
+  "24199": {
+    "municipio": "Carmen",
+    "colonias": [
+      "FOVISSSTE"
+    ]
+  },
+  "24200": {
+    "municipio": "Palizada",
+    "colonias": [
+      "Aviación",
+      "Justicia Social",
+      "La Esperanza",
+      "Palizada Centro"
+    ]
+  },
+  "24203": {
+    "municipio": "Palizada",
+    "colonias": [
+      "El Porvenir",
+      "Lagón Dulce",
+      "Puerto Arturo"
+    ]
+  },
+  "24204": {
+    "municipio": "Palizada",
+    "colonias": [
+      "El Mangal",
+      "Isla de San Isidro",
+      "Las Bodegas",
+      "Ribera Gómez",
+      "Ribera San Eduardo",
+      "Ribera de la Corriente",
+      "Rivera de la Viuda",
+      "Tila"
+    ]
+  },
+  "24205": {
+    "municipio": "Palizada",
+    "colonias": [
+      "Alamilla",
+      "El Borbotón",
+      "El Cuyo",
+      "El Paraíso",
+      "La Toza",
+      "Plan del Carmen",
+      "Ribera del Playón",
+      "San Agustín",
+      "San Joaquín",
+      "San Juan",
+      "Santa Cruz",
+      "Santa Isabel"
+    ]
+  },
+  "24206": {
+    "municipio": "Palizada",
+    "colonias": [
+      "Amatitán",
+      "El Cuerno",
+      "El Vergel",
+      "La Envidia",
+      "La Victoria",
+      "Los Laureles",
+      "Monterrey",
+      "Paso de los Caballos",
+      "San Francisco",
+      "San José",
+      "Santa Elena",
+      "Santa Mónica (Santa Rita)"
+    ]
+  },
+  "24207": {
+    "municipio": "Palizada",
+    "colonias": [
+      "Cronos",
+      "El Carmen (San Marcos)",
+      "El Juncal",
+      "El Popistal",
+      "El Retiro",
+      "Gardenias",
+      "La Candelaria",
+      "La Concepción",
+      "La Guadalupe",
+      "La Nueva Esperanza",
+      "Las Flores",
+      "Mata Larga",
+      "Mata del Chato",
+      "Río Blanco",
+      "San Antonio",
+      "San Carlos",
+      "San Hilario",
+      "San Jorge",
+      "San Ángel",
+      "Santa Adelaida",
+      "Santa Rosa",
+      "Tumbo de la Montaña",
+      "Villa Rosa"
+    ]
+  },
+  "24208": {
+    "municipio": "Palizada",
+    "colonias": [
+      "Ribera Boca Chica"
+    ]
+  },
+  "24300": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Banco de Piedra",
+      "Benito Juárez",
+      "El Paraíso",
+      "Emiliano Zapata",
+      "Guadalupe",
+      "Jabal",
+      "Juan Pablo Cetina",
+      "Nueva",
+      "Nueva Emiliano Zapata",
+      "Pénjamo",
+      "Sabancuy Centro"
+    ]
+  },
+  "24310": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Anonal",
+      "Calax",
+      "Ignacio Gutiérrez",
+      "La Pita",
+      "Los Morenos",
+      "Oxcabal",
+      "San Antonio (Punta de Piedra)"
+    ]
+  },
+  "24313": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Chekubul",
+      "Chic-bul",
+      "Chivoja",
+      "Colonia A López Mateos",
+      "General Abelardo L Rodriguez (el Jobal)",
+      "Independencia",
+      "José María Pino Suárez",
+      "La Cristalina",
+      "La Esperanza",
+      "La Lupita",
+      "Los Manantiales",
+      "Nicolás Bravo",
+      "Plan de Ayala",
+      "Santa Rosalía"
+    ]
+  },
+  "24314": {
+    "municipio": "Carmen",
+    "colonias": [
+      "18 de Marzo",
+      "Enrique Rodriguez Cano",
+      "Las Delicias"
+    ]
+  },
+  "24315": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Francisco Villa (mamantel)",
+      "La Concepción",
+      "La Providencia",
+      "Mamantel Viejo",
+      "Pital Nuevo",
+      "Pital Viejo",
+      "San Isidro"
+    ]
+  },
+  "24316": {
+    "municipio": "Carmen",
+    "colonias": [
+      "2 de Marzo",
+      "Carlos Quinto",
+      "El Encanto",
+      "Felipe Ángeles",
+      "Ignacio Zaragoza",
+      "Las Cruces",
+      "Nueva Chontalpa",
+      "Ojo de Agua",
+      "Quebranche",
+      "San Jorge de Coyoc",
+      "San Pablito Km. 59"
+    ]
+  },
+  "24317": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Allende Pejelagarto",
+      "Belisario Domínguez",
+      "Centauro del Norte",
+      "Cinco de Mayo",
+      "Conquista Campesina",
+      "El Aguacatal",
+      "El Carmen",
+      "El Chinal",
+      "El Triunfo",
+      "La Estrella",
+      "La Florida",
+      "Sacrificio",
+      "Venustiano Carranza"
+    ]
+  },
+  "24320": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Bella Palizada",
+      "María de La Luz",
+      "Polvoxal"
+    ]
+  },
+  "24322": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Arrozal",
+      "San José (El Deshecho)"
+    ]
+  },
+  "24323": {
+    "municipio": "Carmen",
+    "colonias": [
+      "El Mameyal",
+      "El Refugio",
+      "Fernando Foglio Miramontes",
+      "Generalísimo Morelos",
+      "Murallas de Campeche",
+      "San José Marentes",
+      "Santa Rita",
+      "Valle de Solidaridad"
+    ]
+  },
+  "24324": {
+    "municipio": "Carmen",
+    "colonias": [
+      "El Popistal",
+      "El Zapote",
+      "La Pimienta",
+      "Paso San Juan",
+      "San Elpidio",
+      "Tres Valles",
+      "Vista Alegre"
+    ]
+  },
+  "24325": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Cantarell [Planta de Nitrógeno]",
+      "El Pom",
+      "Emiliano Zapata",
+      "La Esperanza",
+      "Nuevo Campechito",
+      "Nuevo Progreso",
+      "Ribera Alta",
+      "Ribera Media",
+      "Ribera de San Francisco",
+      "San Antonio Cárdenas"
+    ]
+  },
+  "24326": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Atasta",
+      "Puerto Rico",
+      "Punta Zacatal",
+      "San Salvador de los Cerrillos"
+    ]
+  },
+  "24327": {
+    "municipio": "Carmen",
+    "colonias": [
+      "Boca Nueva",
+      "Isla Aguada Centro",
+      "La Lagartera",
+      "Puerto Real",
+      "Reubicación"
+    ]
+  },
+  "24330": {
+    "municipio": "Candelaria",
+    "colonias": [
+      "Acalan",
+      "Alejandría",
+      "Candelaria Centro",
+      "Coahuilita",
+      "Cuauhtémoc",
+      "Guanajuato",
+      "Independencia",
+      "San Isidro",
+      "San Martín",
+      "San Pablo"
+    ]
+  },
+  "24333": {
+    "municipio": "Candelaria",
+    "colonias": [
+      "El Capulín",
+      "El Chilar",
+      "El Pocito",
+      "El Sacrificio II",
+      "La Fortuna",
+      "La Nueva Lucha",
+      "La Unión",
+      "Las Américas",
+      "Las Maravillas (Campo Menonita)",
+      "Miguel Alemán",
+      "Nueva Esperanza",
+      "Nueva Rosita",
+      "Pejelagarto",
+      "Pejelagarto II",
+      "R-2007",
+      "San Antonio",
+      "Santo Domingo",
+      "Vicente Lombardo Toledano"
+    ]
+  },
+  "24334": {
+    "municipio": "Candelaria",
+    "colonias": [
+      "El Ramonal",
+      "El Tigre",
+      "Esperanza",
+      "Estado de México",
+      "Estrella del Sur",
+      "Francisco I. Madero",
+      "Hermanos Cruz",
+      "Justo Sierra Méndez",
+      "La Calzada",
+      "La Zanja (La Palma)",
+      "Las Golondrinas",
+      "Luinal",
+      "Lázaro Cárdenas",
+      "Miguel Hidalgo y Costilla",
+      "Monclova",
+      "Nueva Esperanza",
+      "Nuevo Coahuila",
+      "Pedro Baranda",
+      "Santo Domingo (El Cuyo)"
+    ]
+  },
+  "24335": {
+    "municipio": "Candelaria",
+    "colonias": [
+      "El Mamey",
+      "El Porvenir",
+      "El Tintal",
+      "El Treinta (Las Águilas)",
+      "La Pelusa",
+      "San Miguel"
+    ]
+  },
+  "24336": {
+    "municipio": "Candelaria",
+    "colonias": [
+      "California",
+      "Cuauhtémoc",
+      "El Encanto",
+      "El Escondido",
+      "El Esfuerzo",
+      "El Limón",
+      "El Machetazo",
+      "El Naranjo",
+      "El Paso del Cuervo (El Cuervo)",
+      "El Piedral (El Muerto)",
+      "El Ramonal II (Los Manguitos)",
+      "El Suspiro",
+      "La Florida (El Cuatro)",
+      "La Florida Tres",
+      "La Lucha",
+      "La Mojina",
+      "Las Campanas",
+      "Las Delicias",
+      "Las Margaritas Dos",
+      "Los Cuatro Hermanos",
+      "Los Jabines Uno",
+      "Los Limones",
+      "Pablo García",
+      "Paraíso Nuevo",
+      "Rancho Alegre",
+      "Rancho Alegre Tres",
+      "San Antonio",
+      "San Lorenzo",
+      "Tres Reyes"
+    ]
+  },
+  "24337": {
+    "municipio": "Candelaria",
+    "colonias": [
+      "Corte Pajaral",
+      "El Nuevo Ferrocarril",
+      "El Otoño",
+      "La Amapola",
+      "Las Palmitas",
+      "San Felipe",
+      "Santa Rita",
+      "Triunfo Dos",
+      "Triunfo Uno",
+      "Venustiano Carranza"
+    ]
+  },
+  "24338": {
+    "municipio": "Candelaria",
+    "colonias": [
+      "Benito Juárez Uno",
+      "Champas Quemadas",
+      "El Borbonal",
+      "General Francisco J. Mújica",
+      "La Isla del Esfuerzo",
+      "Primer Presidente de México (Guadalupe Victoria)",
+      "Vicente Guerrero"
+    ]
+  },
+  "24342": {
+    "municipio": "Candelaria",
+    "colonias": [
+      "Aguada Seca",
+      "Cinco Hermanos",
+      "El Diamante",
+      "El Manantial",
+      "El Pulguero",
+      "El Relámpago",
+      "El Tablón",
+      "El Último Esfuerzo",
+      "Las Palmas",
+      "Licenciado José Antonio González Curi",
+      "Los Cardenales",
+      "Nuevo Capricho",
+      "Nuevo Comalcalco",
+      "Nuevo Progreso",
+      "Río Caribe (Caribe)",
+      "Sal Si Puedes",
+      "San Cristóbal",
+      "Selva Negra"
+    ]
+  },
+  "24343": {
+    "municipio": "Candelaria",
+    "colonias": [
+      "El Chinal",
+      "El Marfil (Palo Alto)",
+      "El Milagro",
+      "El Pedregal",
+      "Emiliano Zapata III",
+      "Isla del Paraíso",
+      "La Guadalupe",
+      "La Olla",
+      "Nueva Rosita II",
+      "Pablo Torres Burgos",
+      "San Fernando",
+      "San José de las Montañas",
+      "San Rafael del Río Caribe",
+      "San Román",
+      "Santa Lucía",
+      "Tres Hermanos"
+    ]
+  },
+  "24344": {
+    "municipio": "Candelaria",
+    "colonias": [
+      "Agua Azul",
+      "Champas Quemadas",
+      "El Calabozo",
+      "El Chechenal",
+      "El Encanto",
+      "El Fantasma (Los Chileros)",
+      "El Pimiental Dos",
+      "La Esperancita",
+      "Montecristo",
+      "Naranjito",
+      "Nuevo Tabasco",
+      "San Juan",
+      "Tres de Mayo Tres"
+    ]
+  },
+  "24345": {
+    "municipio": "Candelaria",
+    "colonias": [
+      "Balancancito",
+      "El Cayuco",
+      "El Destino",
+      "El Mirador Primero",
+      "El Paraguas",
+      "El Taziztal",
+      "Emiliano Zapata",
+      "La Misteriosa",
+      "La Peregrina",
+      "La Tómbola",
+      "Los Pollos",
+      "Miguel de la Madrid (El Pañuelo)",
+      "San Román",
+      "Tres de Mayo Dos"
+    ]
+  },
+  "24346": {
+    "municipio": "Candelaria",
+    "colonias": [
+      "Adolfo López Mateos",
+      "Alianza Productora",
+      "Arroyo Veinticuatro de Mayo",
+      "Arroyo de Cuba",
+      "Arroyo del Julubal",
+      "Balankax",
+      "Blancas Mariposas",
+      "Carlos Sansores Pérez (La Paz)",
+      "Delicias I",
+      "El Desengaño",
+      "La Unión (Dos Arroyos)",
+      "Nego Eben-Ezer",
+      "San Dimas (Alianza II)",
+      "Santa Rosa",
+      "Solidaridad",
+      "Tres Reyes"
+    ]
+  },
+  "24347": {
+    "municipio": "Candelaria",
+    "colonias": [
+      "El Tigre Dos",
+      "El Tulipán (El Imposible)",
+      "Flor de Chiapas",
+      "Francisco Villa",
+      "Narcizo Mendoza",
+      "Nueva Delicias II",
+      "Rancho Alegre",
+      "San Miguel",
+      "Santo Domingo",
+      "Tenancingo",
+      "Vicente Guerrero Número 2"
+    ]
+  },
+  "24348": {
+    "municipio": "Candelaria",
+    "colonias": [
+      "Aguas Malas (Tres Cruces)",
+      "Arroyo San Juan (Las Golondrinas)",
+      "Héctor Pérez Morales",
+      "Ignacio Zaragoza (El Salvaje)",
+      "La Esmeralda",
+      "La Esperancita Dos",
+      "La Ilusión",
+      "Laguna San Ramón I",
+      "Laguna la Perdida",
+      "San Manuel Nuevo Canutillo"
+    ]
+  },
+  "24350": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "10 de Mayo",
+      "Benito Juárez",
+      "C. Salinas de Gortari",
+      "Concordia",
+      "Emiliano Zapata",
+      "Escárcega Centro",
+      "Esperanza",
+      "Fertimex",
+      "Flores Magón",
+      "Fátima",
+      "I. Zaragoza",
+      "Jesús García",
+      "La Jeringa",
+      "Morelos",
+      "Revolución",
+      "Sal Si Puedes I",
+      "Sal Si Puedes II",
+      "Unidad Esfuerzo y Trabajo I",
+      "Unidad Esfuerzo y Trabajo II",
+      "Vicente Fox"
+    ]
+  },
+  "24353": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "California",
+      "Colonia San Francisco (El Cinco)",
+      "El Arbolito",
+      "El Caracol",
+      "La Esperanza",
+      "Matamoros",
+      "Miguel Hidalgo (Caracol)"
+    ]
+  },
+  "24354": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "División del Norte",
+      "Don Samuel",
+      "Haro"
+    ]
+  },
+  "24355": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "El Calabozo"
+    ]
+  },
+  "24356": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "El Gallo Samuel (El Gallito)"
+    ]
+  },
+  "24357": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "Benito Juárez (La Polla)",
+      "Francisco I. Madero",
+      "Ignacio Magdaleno",
+      "La Flor",
+      "La Misteriosa",
+      "Luna"
+    ]
+  },
+  "24358": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "El Corriental",
+      "El Gallo",
+      "El Huiro",
+      "El Pozo",
+      "El Retiro",
+      "Guadalajara",
+      "Santa Cruz",
+      "Santa Isabel"
+    ]
+  },
+  "24364": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "Juan Escutia",
+      "Juan de la Barrera",
+      "Kilómetro Setenta y Cuatro",
+      "La Esperanza",
+      "San José"
+    ]
+  },
+  "24365": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "La Constancia",
+      "La Victoria",
+      "San Carlos",
+      "San Pedro"
+    ]
+  },
+  "24366": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "El Zacatecano",
+      "María de la Luz",
+      "San Luis"
+    ]
+  },
+  "24367": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "El Diamante",
+      "El Rosario (Puerto Escondido)",
+      "La Fe",
+      "Nuevo Progreso Dos",
+      "San José",
+      "Santa Martha (El Naranjito)"
+    ]
+  },
+  "24368": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "Herradero",
+      "José de la Cruz Blanco",
+      "Kilómetro Treinta y Seis",
+      "La Asunción",
+      "San Alejandro"
+    ]
+  },
+  "24369": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "Chambalita",
+      "El Hular",
+      "El Tornillo",
+      "La Chiquita",
+      "Miguel Hidalgo y Costilla"
+    ]
+  },
+  "24370": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "Altamira de Zináparo",
+      "Benito Juárez Número 3",
+      "Centenario",
+      "Flor de Chiapas",
+      "José López Portillo",
+      "Laguna Grande",
+      "Silvituc"
+    ]
+  },
+  "24372": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "Emiliano Zapata"
+    ]
+  },
+  "24373": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "Chan Laguna",
+      "El Jobal",
+      "Las Maravillas"
+    ]
+  },
+  "24374": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "Adolfo López Mateos",
+      "El Lechugal",
+      "Justicia Social",
+      "La Libertad",
+      "Nuevo Campeche (Tres Aguadas)"
+    ]
+  },
+  "24375": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "Belén",
+      "General Rodolfo Fierros",
+      "Miguel de la Madrid"
+    ]
+  },
+  "24376": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "Alto Río Caribe"
+    ]
+  },
+  "24377": {
+    "municipio": "Escárcega",
+    "colonias": [
+      "El Conejo"
+    ]
+  },
+  "24400": {
+    "municipio": "Champotón",
+    "colonias": [
+      "Arenal",
+      "Arrocera",
+      "Aserradero",
+      "Avenida",
+      "Camaroncito",
+      "Cardenal",
+      "Carolinas",
+      "Cañaveral",
+      "Centenario",
+      "Champotón Centro",
+      "Cocal",
+      "Concepción Duran",
+      "Cristóbal Colon",
+      "Cuauhtémoc",
+      "Flamboyan",
+      "Guadalupe",
+      "Guadalupe Victoria",
+      "Huanal",
+      "INFONAVIT",
+      "INFONAVIT Miraflores",
+      "ISSFAM",
+      "ISSSTE",
+      "La Cruz",
+      "La Playa",
+      "La Santa",
+      "Las Brisas",
+      "Las Mercedes",
+      "Las Palomas",
+      "Laureles",
+      "Lindavista",
+      "Lázaro Cárdenas",
+      "Malecón",
+      "Manguitos",
+      "Microondas",
+      "Mirador",
+      "Moch-Cohuo",
+      "Nueva Esperanza",
+      "Nueva Esperanza INFONAVIT",
+      "Nueva Jerusalén",
+      "Paraíso",
+      "Pedregal",
+      "Plan-chac",
+      "Pozo del Chenpek",
+      "Pozo del Monte",
+      "Puente Viejo",
+      "San Patricio",
+      "Tajonal",
+      "Tierra y Libertad",
+      "Ulises Sansores",
+      "Venustiano Carranza"
+    ]
+  },
+  "24402": {
+    "municipio": "Champotón",
+    "colonias": [
+      "Canasayab",
+      "El Zapote",
+      "Moquel",
+      "San Antonio del Río",
+      "Ulumal"
+    ]
+  },
+  "24404": {
+    "municipio": "Champotón",
+    "colonias": [
+      "San José Carpizo Dos",
+      "San José Carpizo Uno (San Fernando)"
+    ]
+  },
+  "24410": {
+    "municipio": "Champotón",
+    "colonias": [
+      "El Caporal",
+      "La Estrella",
+      "La Fraternidad",
+      "Ley Federal de Reforma Agraria",
+      "Punta Xen",
+      "San Felipe",
+      "San Luis Carpizo",
+      "San Marcos",
+      "San Pablo",
+      "Vicente Guerrero",
+      "Villamar"
+    ]
+  },
+  "24411": {
+    "municipio": "Champotón",
+    "colonias": [
+      "López Mateos (La Desconfianza)",
+      "Maya Tecún I",
+      "Maya Tecún II",
+      "Nueva Esperanza Número 2 (Santo Domingo)",
+      "Pustunich",
+      "San Antonio Yacasay"
+    ]
+  },
+  "24413": {
+    "municipio": "Champotón",
+    "colonias": [
+      "San Pablo Pixtún",
+      "Valle Hermoso"
+    ]
+  },
+  "24414": {
+    "municipio": "Champotón",
+    "colonias": [
+      "Aquiles Serdán (Chuiná)",
+      "Dzacabuchén",
+      "General Ortiz Ávila",
+      "José María Morelos y Pavón",
+      "José María Morelos y Pavón (El Pocito)",
+      "Lázaro Cárdenas",
+      "Monte Bravo",
+      "Nueva Esperanza Uno (San Miguel Tobías)",
+      "Pixoyal",
+      "Revolución"
+    ]
+  },
+  "24415": {
+    "municipio": "Champotón",
+    "colonias": [
+      "Carrillo Puerto"
+    ]
+  },
+  "24416": {
+    "municipio": "Champotón",
+    "colonias": [
+      "Xbacab"
+    ]
+  },
+  "24418": {
+    "municipio": "Champotón",
+    "colonias": [
+      "Cinco de Febrero",
+      "Miguel Colorado"
+    ]
+  },
+  "24419": {
+    "municipio": "Champotón",
+    "colonias": [
+      "Profesor Graciano Sánchez"
+    ]
+  },
+  "24420": {
+    "municipio": "Champotón",
+    "colonias": [
+      "Arellano",
+      "Santa Cruz de Rovira"
+    ]
+  },
+  "24421": {
+    "municipio": "Champotón",
+    "colonias": [
+      "Cañaveral",
+      "San Juan Carpizo",
+      "San Miguel",
+      "Villa de Guadalupe"
+    ]
+  },
+  "24424": {
+    "municipio": "Champotón",
+    "colonias": [
+      "Coronel Ortiz Ávila",
+      "López Portillo 2 (Nilun)",
+      "Nayarit Castellot",
+      "Valle de Quetzalcóatl"
+    ]
+  },
+  "24433": {
+    "municipio": "Champotón",
+    "colonias": [
+      "Nuevo Michoacán"
+    ]
+  },
+  "24440": {
+    "municipio": "Champotón",
+    "colonias": [
+      "Hool",
+      "Santo Domingo Kesté"
+    ]
+  },
+  "24441": {
+    "municipio": "Champotón",
+    "colonias": [
+      "Buenaventura",
+      "Carlos Salinas de Gortari"
+    ]
+  },
+  "24443": {
+    "municipio": "Champotón",
+    "colonias": [
+      "Ah Kim Pech",
+      "Chac Chaito",
+      "Chilam Balam",
+      "Ignacio López Rayón",
+      "Kukulkán",
+      "La Providencia",
+      "Miguel Allende",
+      "Moch Cohuó",
+      "Nuevo Paraíso [Módulo]",
+      "Yohaltún"
+    ]
+  },
+  "24445": {
+    "municipio": "Champotón",
+    "colonias": [
+      "Dzitbalché Castellot"
+    ]
+  },
+  "24450": {
+    "municipio": "Champotón",
+    "colonias": [
+      "Sihochac"
+    ]
+  },
+  "24451": {
+    "municipio": "Champotón",
+    "colonias": [
+      "El Porvenir",
+      "La Joya",
+      "La Noria"
+    ]
+  },
+  "24459": {
+    "municipio": "Champotón",
+    "colonias": [
+      "Ciudad del Sol"
+    ]
+  },
+  "24460": {
+    "municipio": "Seybaplaya",
+    "colonias": [
+      "16 de Septiembre",
+      "Carmelita",
+      "Costa Blanca",
+      "Cristo Rey",
+      "El Sombrerón",
+      "Frutales",
+      "Fátima",
+      "Guadalupe",
+      "Hornos",
+      "La Jimba",
+      "San Isidro",
+      "San Rafael",
+      "Santa Clara",
+      "Santa Cruz",
+      "Seybaplaya Centro",
+      "Siho Playa (Hotel)",
+      "Tizimín"
+    ]
+  },
+  "24462": {
+    "municipio": "Seybaplaya",
+    "colonias": [
+      "Haltunchén",
+      "Nuevo Amanecer",
+      "Villa Madero"
+    ]
+  },
+  "24464": {
+    "municipio": "Seybaplaya",
+    "colonias": [
+      "Xkeulil"
+    ]
+  },
+  "24500": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Becan",
+      "Chiapaneca",
+      "Espíritu Santo",
+      "Huayita",
+      "Kila",
+      "La Guadalupana",
+      "Las Brisas",
+      "Lerma",
+      "Lerma Centro",
+      "Marañon",
+      "Pesquera",
+      "Playa Bonita",
+      "San Antonio",
+      "San Bartolo",
+      "Satélite",
+      "Secretaria de Marina",
+      "Tepeyac",
+      "Tres Cruces"
+    ]
+  },
+  "24505": {
+    "municipio": "Campeche",
+    "colonias": [
+      "San Lorenzo"
+    ]
+  },
+  "24510": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Lázaro Cárdenas"
+    ]
+  },
+  "24517": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Castamay"
+    ]
+  },
+  "24520": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Campestre Los Almendros",
+      "China",
+      "Hobomo",
+      "Mucuychakan",
+      "Uayamón"
+    ]
+  },
+  "24522": {
+    "municipio": "Campeche",
+    "colonias": [
+      "San Agustin Ola"
+    ]
+  },
+  "24523": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Chulbac"
+    ]
+  },
+  "24532": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Pocyaxum"
+    ]
+  },
+  "24536": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Sierra Verde de Cayal",
+      "Uzahzil-Edzná (Nohyaxché)"
+    ]
+  },
+  "24537": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Nohakal"
+    ]
+  },
+  "24540": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Cayal",
+      "Pueblo Nuevo",
+      "San Antonio Cayal"
+    ]
+  },
+  "24550": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Chencollí (Citro-Kampeche)",
+      "Miguel Alemán (X- Campeu)",
+      "San Antonio Bobolá",
+      "Tikinmul"
+    ]
+  },
+  "24552": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Nilchi"
+    ]
+  },
+  "24553": {
+    "municipio": "Campeche",
+    "colonias": [
+      "San Camilo (Chencollí)"
+    ]
+  },
+  "24557": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Crucero OXA"
+    ]
+  },
+  "24560": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Hampolol",
+      "Imi",
+      "Río Verde",
+      "San Francisco Koben"
+    ]
+  },
+  "24561": {
+    "municipio": "Campeche",
+    "colonias": [
+      "CERESO San Francisco Kobén"
+    ]
+  },
+  "24562": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Bethania"
+    ]
+  },
+  "24564": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Chemblas"
+    ]
+  },
+  "24570": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Alfredo V. Bonfil",
+      "Bolonchén Cahuich",
+      "Kikab",
+      "Lubná",
+      "Melchor Ocampo",
+      "Nueva Esperanza",
+      "Nuevo Pénjamo",
+      "San Isidro",
+      "Tixmucuy"
+    ]
+  },
+  "24572": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Pich",
+      "San Luciano"
+    ]
+  },
+  "24573": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Carlos Cano Cruz (Los Tlaxcaltecas)",
+      "Los Laureles",
+      "San Miguel Allende"
+    ]
+  },
+  "24574": {
+    "municipio": "Campeche",
+    "colonias": [
+      "La Libertad",
+      "Quetzal Edzná"
+    ]
+  },
+  "24575": {
+    "municipio": "Campeche",
+    "colonias": [
+      "Adolfo Ruiz Cortinez"
+    ]
+  },
+  "24600": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Campo de Aviación",
+      "Dolores Lanz",
+      "El Tamarindo",
+      "Hopelchen Centro",
+      "Magisterial",
+      "Norte",
+      "San Isidro",
+      "San Luis",
+      "San Martín",
+      "San Román",
+      "Santa Cruz"
+    ]
+  },
+  "24604": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Crucero San Luis",
+      "El Poste",
+      "Ich-Ek",
+      "San Francisco Suc-Tuc",
+      "San Juan Bautista Sahcabchén",
+      "Santa Fe"
+    ]
+  },
+  "24605": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Xcupil"
+    ]
+  },
+  "24606": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Becanchén"
+    ]
+  },
+  "24607": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Komchén"
+    ]
+  },
+  "24609": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Pakchén"
+    ]
+  },
+  "24610": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Chencoh"
+    ]
+  },
+  "24611": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Dzibalchén"
+    ]
+  },
+  "24612": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Cancabchén",
+      "Francisco J. Mújica (Los Ucán)",
+      "San Isidro"
+    ]
+  },
+  "24613": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Chunchintok"
+    ]
+  },
+  "24615": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Ukum",
+      "Xmejía"
+    ]
+  },
+  "24620": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Bolonchen de Rejón",
+      "Katab",
+      "San Bernardo Huechil",
+      "Xcalot Akal",
+      "Xcanahaltún Huechil Unidos"
+    ]
+  },
+  "24622": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Chuncedro",
+      "Chunyaxnic",
+      "San Antonio Yaxché",
+      "Xculoc"
+    ]
+  },
+  "24623": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Rancho Sosa",
+      "Yaxché Akal"
+    ]
+  },
+  "24624": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Campo Menonita"
+    ]
+  },
+  "24640": {
+    "municipio": "Calakmul",
+    "colonias": [
+      "10 de Mayo",
+      "Aviación",
+      "Bellavista",
+      "Bugambilias",
+      "Fundadores",
+      "Jardines",
+      "Xpujil"
+    ]
+  },
+  "24643": {
+    "municipio": "Calakmul",
+    "colonias": [
+      "Becan",
+      "Chicana",
+      "El Chichonal",
+      "Heriberto Jara Corona",
+      "Plan de San Luis",
+      "Valentín Gómez Farias"
+    ]
+  },
+  "24644": {
+    "municipio": "Calakmul",
+    "colonias": [
+      "Bel-ha",
+      "Dos Lagunas",
+      "El Refugio",
+      "Nueva Vida",
+      "Nuevo Becal",
+      "Ricardo Flores Magón",
+      "Tepeyac",
+      "Unión 20 de Junio",
+      "Zoh-laguna (alvaro Obregón)"
+    ]
+  },
+  "24645": {
+    "municipio": "Calakmul",
+    "colonias": [
+      "20 de Noviembre",
+      "21 de Mayo (Lechugal)",
+      "Caña Brava",
+      "Cristóbal Colon",
+      "El Carmen II",
+      "El Manantial",
+      "El Porvenir",
+      "Eugenio Echeverría Castellot (El Carrizal)",
+      "Felipe Ángeles",
+      "Gral. Manuel Castilla Brito Km. 17",
+      "Gustavo Díaz Ordaz (San Antonio Soda)",
+      "Hermenegildo Galeana",
+      "La Lucha",
+      "La Victoria",
+      "La Virgencita de La Candelaria",
+      "Los Ángeles",
+      "Lucha",
+      "Narciso Mendoza",
+      "Niños Héroes",
+      "Nuevo Campanario",
+      "Nuevo Progreso 3",
+      "San José",
+      "Tomas Aznar Barbachano",
+      "Unidad y Trabajo",
+      "ing. Ricardo Payro Jene (polo Norte)"
+    ]
+  },
+  "24646": {
+    "municipio": "Calakmul",
+    "colonias": [
+      "16 de Septiembre",
+      "Bella Unión de Veracruz",
+      "Blasillo",
+      "Carlos A Madrazo",
+      "Cerro de las Flores (Sta. Rosa)",
+      "El Tesoro",
+      "Josefa Ortíz de Domínguez (Icaiché)",
+      "Los Alacranes",
+      "Los Tambores de Emiliano Zapata",
+      "Lázaro Cárdenas 2 (ojo de Agua)",
+      "Manuel Cresencio Rejón",
+      "Nuevo San José",
+      "Nuevo Veracruz",
+      "Pioneros del Río Xnohá",
+      "Plan de Ayala (5 de Mayo)",
+      "Quiche las Pailas"
+    ]
+  },
+  "24647": {
+    "municipio": "Calakmul",
+    "colonias": [
+      "11 de Mayo",
+      "Arroyo Negro",
+      "Dos Lagunas",
+      "Dos Naciones",
+      "José Ma. Morelos y Pavón",
+      "Justo Sierra Méndez",
+      "Ley de Fomento Agropecuario (La Misteriosa)",
+      "San Miguel",
+      "Santo Domingo"
+    ]
+  },
+  "24648": {
+    "municipio": "Calakmul",
+    "colonias": [
+      "Centauro del Norte",
+      "La Guadalupe"
+    ]
+  },
+  "24653": {
+    "municipio": "Calakmul",
+    "colonias": [
+      "Balanku",
+      "Nuevo Conhuas"
+    ]
+  },
+  "24654": {
+    "municipio": "Calakmul",
+    "colonias": [
+      "Emiliano Zapata",
+      "Felipe Ángeles II",
+      "Ingeniero Eugenio Echeverría Castellot",
+      "Puebla de Morelia"
+    ]
+  },
+  "24656": {
+    "municipio": "Calakmul",
+    "colonias": [
+      "Central Chiclera Villahermosa"
+    ]
+  },
+  "24658": {
+    "municipio": "Calakmul",
+    "colonias": [
+      "Concepción",
+      "Constitución",
+      "Pablo Garcia",
+      "Santa Lucia",
+      "Xbonil"
+    ]
+  },
+  "24660": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Vicente Guerrero"
+    ]
+  },
+  "24663": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Ramón Corona"
+    ]
+  },
+  "24667": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Nuevo Chan Yaxché",
+      "X-Canhá"
+    ]
+  },
+  "24668": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Chan-Chen",
+      "Chun-Ek",
+      "Pachuitz"
+    ]
+  },
+  "24670": {
+    "municipio": "Hopelchén",
+    "colonias": [
+      "Xmabén"
+    ]
+  },
+  "24700": {
+    "municipio": "Tenabo",
+    "colonias": [
+      "Tenabo Centro"
+    ]
+  },
+  "24703": {
+    "municipio": "Tenabo",
+    "colonias": [
+      "Jacinto Canek"
+    ]
+  },
+  "24704": {
+    "municipio": "Tenabo",
+    "colonias": [
+      "San Pedro"
+    ]
+  },
+  "24705": {
+    "municipio": "Tenabo",
+    "colonias": [
+      "Procesadora"
+    ]
+  },
+  "24706": {
+    "municipio": "Tenabo",
+    "colonias": [
+      "Ana María Farias",
+      "Esperanza",
+      "Lazareto"
+    ]
+  },
+  "24707": {
+    "municipio": "Tenabo",
+    "colonias": [
+      "Guadalupe"
+    ]
+  },
+  "24720": {
+    "municipio": "Tenabo",
+    "colonias": [
+      "Kankí"
+    ]
+  },
+  "24723": {
+    "municipio": "Tenabo",
+    "colonias": [
+      "Chilib"
+    ]
+  },
+  "24730": {
+    "municipio": "Tenabo",
+    "colonias": [
+      "Tinún"
+    ]
+  },
+  "24732": {
+    "municipio": "Tenabo",
+    "colonias": [
+      "Emiliano Zapata",
+      "San Pedro Corralché",
+      "Santa Rita Corralché"
+    ]
+  },
+  "24733": {
+    "municipio": "Tenabo",
+    "colonias": [
+      "Nachehá"
+    ]
+  },
+  "24734": {
+    "municipio": "Tenabo",
+    "colonias": [
+      "Xkuncheil"
+    ]
+  },
+  "24740": {
+    "municipio": "Tenabo",
+    "colonias": [
+      "Santa Rosa"
+    ]
+  },
+  "24746": {
+    "municipio": "Tenabo",
+    "colonias": [
+      "Orizaba"
+    ]
+  },
+  "24800": {
+    "municipio": "Hecelchakán",
+    "colonias": [
+      "Abraham Azar",
+      "Centro Hecelchakán",
+      "La Conquista",
+      "Las Gardenias",
+      "San Antonio",
+      "San Francisco",
+      "San Juan"
+    ]
+  },
+  "24810": {
+    "municipio": "Hecelchakán",
+    "colonias": [
+      "Benito Juárez",
+      "Centro Pomuch",
+      "Colonia Nueva",
+      "La Soledad",
+      "San Diego",
+      "San Jerónimo",
+      "San Pedro",
+      "Santa Cristina",
+      "Villa Lucrecia"
+    ]
+  },
+  "24813": {
+    "municipio": "Hecelchakán",
+    "colonias": [
+      "Zodzil"
+    ]
+  },
+  "24820": {
+    "municipio": "Hecelchakán",
+    "colonias": [
+      "Cumpich"
+    ]
+  },
+  "24826": {
+    "municipio": "Hecelchakán",
+    "colonias": [
+      "Dzotchén"
+    ]
+  },
+  "24828": {
+    "municipio": "Hecelchakán",
+    "colonias": [
+      "Chicmuc",
+      "Nohalal"
+    ]
+  },
+  "24830": {
+    "municipio": "Hecelchakán",
+    "colonias": [
+      "Blanca Flor Hacienda",
+      "Pocboc"
+    ]
+  },
+  "24831": {
+    "municipio": "Hecelchakán",
+    "colonias": [
+      "Chunkanán"
+    ]
+  },
+  "24836": {
+    "municipio": "Hecelchakán",
+    "colonias": [
+      "Blanca Flor"
+    ]
+  },
+  "24837": {
+    "municipio": "Hecelchakán",
+    "colonias": [
+      "San Felipe Tikín",
+      "Santa Cruz"
+    ]
+  },
+  "24839": {
+    "municipio": "Hecelchakán",
+    "colonias": [
+      "Dzitnup"
+    ]
+  },
+  "24860": {
+    "municipio": "Hecelchakán",
+    "colonias": [
+      "Campo Menonita Yalnón"
+    ]
+  },
+  "24863": {
+    "municipio": "Hecelchakán",
+    "colonias": [
+      "Campo Menonita Chaví Número Uno",
+      "Monte Bello"
+    ]
+  },
+  "24900": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "Calkini Centro"
+    ]
+  },
+  "24902": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "FOVISSSTE",
+      "Fátima",
+      "San Isidro",
+      "San Juan"
+    ]
+  },
+  "24903": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "Guadalupe",
+      "La Concepción",
+      "San Luisito",
+      "San Martín",
+      "San Miguel Kukab"
+    ]
+  },
+  "24904": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "Kilakan",
+      "Las Flores",
+      "San Luis Obispo"
+    ]
+  },
+  "24905": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "Tepakan"
+    ]
+  },
+  "24910": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "El Gato Negro",
+      "Nunkini",
+      "San Román"
+    ]
+  },
+  "24914": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "Tankuche"
+    ]
+  },
+  "24915": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "Pucnachen",
+      "Santa María"
+    ]
+  },
+  "24916": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "Santa Cruz"
+    ]
+  },
+  "24917": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "San Nicolás"
+    ]
+  },
+  "24919": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "Isla Arena"
+    ]
+  },
+  "24920": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "Dzitbalche",
+      "San Feliciano",
+      "Solidaridad"
+    ]
+  },
+  "24921": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "Santa Cruz Pueblo"
+    ]
+  },
+  "24922": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "San Antonio Sahcabchen"
+    ]
+  },
+  "24923": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "San Agustin Chunhuas",
+      "Xcacoch"
+    ]
+  },
+  "24925": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "Bacabchen"
+    ]
+  },
+  "24929": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "Concepción"
+    ]
+  },
+  "24930": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "Becal"
+    ]
+  },
+  "24933": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "Fátima",
+      "Los Tres Reyes"
+    ]
+  },
+  "24934": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "Carlos Rivas"
+    ]
+  },
+  "24935": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "El Pocito",
+      "Limón",
+      "Pablo Garcia",
+      "Santa Cruz"
+    ]
+  },
+  "24936": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "Estación",
+      "San Diego"
+    ]
+  },
+  "24940": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "San Roque Xnolán"
+    ]
+  },
+  "24942": {
+    "municipio": "Calkiní",
+    "colonias": [
+      "Chacnichén (El Pozo)"
+    ]
+  }
+}

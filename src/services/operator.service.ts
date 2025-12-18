@@ -25,17 +25,21 @@ const COLLECTION = 'operadores';
 export async function obtenerOperadores(filtros?: FiltrosOperador): Promise<Operador[]> {
   try {
     const snapshot = await getDocs(collection(db, COLLECTION));
-    let operadores = snapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data(),
-      licencia: {
-        ...doc.data().licencia,
-        vigencia: doc.data().licencia?.vigencia?.toDate(),
-      },
-      fechaIngreso: doc.data().fechaIngreso?.toDate(),
-      createdAt: doc.data().createdAt?.toDate(),
-      updatedAt: doc.data().updatedAt?.toDate(),
-    })) as Operador[];
+    let operadores = snapshot.docs.map(doc => {
+      const data = doc.data();
+      return {
+        id: doc.id,
+        ...data,
+        licencia: {
+          ...data.licencia,
+          vigencia: data.licencia?.vigencia?.toDate(),
+        },
+        seguroSocial: data.seguroSocial || undefined,
+        fechaIngreso: data.fechaIngreso?.toDate(),
+        createdAt: data.createdAt?.toDate(),
+        updatedAt: data.updatedAt?.toDate(),
+      };
+    }) as Operador[];
 
     // Ordenar en memoria por nombre
     operadores.sort((a, b) => (a.nombre || '').localeCompare(b.nombre || ''));
@@ -90,6 +94,7 @@ export async function obtenerOperador(id: string): Promise<Operador | null> {
         ...data.licencia,
         vigencia: data.licencia?.vigencia?.toDate(),
       },
+      seguroSocial: data.seguroSocial || undefined,
       fechaIngreso: data.fechaIngreso?.toDate(),
       createdAt: data.createdAt?.toDate(),
       updatedAt: data.updatedAt?.toDate(),
@@ -117,6 +122,10 @@ export async function crearOperador(input: OperadorFormInput): Promise<Operador>
           ? Timestamp.fromDate(input.licencia.vigencia)
           : Timestamp.fromDate(new Date(input.licencia.vigencia)),
       },
+      seguroSocial: input.seguroSocial ? {
+        folio: input.seguroSocial.folio,
+        costoMensual: input.seguroSocial.costoMensual,
+      } : null,
       sueldoDiario: input.sueldoDiario,
       tractosAutorizados: input.tractosAutorizados || [],
       fechaIngreso: input.fechaIngreso instanceof Date
@@ -166,6 +175,12 @@ export async function actualizarOperador(
     if (input.sueldoDiario !== undefined) updateData.sueldoDiario = input.sueldoDiario;
     if (input.tractosAutorizados !== undefined) updateData.tractosAutorizados = input.tractosAutorizados;
     if (input.notas !== undefined) updateData.notas = input.notas;
+    if (input.seguroSocial !== undefined) {
+      updateData.seguroSocial = input.seguroSocial ? {
+        folio: input.seguroSocial.folio,
+        costoMensual: input.seguroSocial.costoMensual,
+      } : null;
+    }
 
     if (input.licencia) {
       updateData.licencia = {

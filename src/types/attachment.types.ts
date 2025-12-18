@@ -3,6 +3,8 @@
  * Lowboys, plataformas roll-off, camas bajas, etc.
  */
 
+import type { DocumentoExpediente } from './truck.types';
+
 export type TipoAditamento = 'lowboy' | 'plataforma-rolloff' | 'cama-baja' | 'otro';
 
 export interface Aditamento {
@@ -20,10 +22,22 @@ export interface Aditamento {
   largo?: number; // Metros
   ancho?: number; // Metros
 
+  // Seguro
+  seguro?: {
+    poliza: string;           // Número de póliza
+    aseguradora?: string;     // Nombre de la aseguradora
+    costoAnual: number;       // Costo anual en MXN
+    vigenciaInicio?: Date;    // Fecha de inicio de vigencia
+    vigenciaFin?: Date;       // Fecha de fin de vigencia
+  };
+
   // Estado
   activo: boolean;
   foto?: string; // URL de imagen
   notas?: string;
+
+  // Expediente de documentos
+  documentos?: DocumentoExpediente[];
 
   // Metadata
   createdAt: Date;
@@ -41,6 +55,14 @@ export interface AditamentoFormInput {
   capacidadCarga?: number;
   largo?: number;
   ancho?: number;
+  // Seguro
+  seguro?: {
+    poliza: string;
+    aseguradora?: string;
+    costoAnual: number;
+    vigenciaInicio?: Date | string;
+    vigenciaFin?: Date | string;
+  };
   foto?: string;
   notas?: string;
 }

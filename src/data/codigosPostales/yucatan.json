@@ -1,0 +1,4046 @@
+{
+  "97000": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Jardines de San Sebastian",
+      "La Quinta",
+      "Los Cocos",
+      "Mérida Centro",
+      "Privada Del Maestro",
+      "Privada Garcia Gineres C - 29"
+    ]
+  },
+  "97003": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Los Reyes"
+    ]
+  },
+  "97050": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Alcalá Martín",
+      "Yucatán"
+    ]
+  },
+  "97059": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Señorial"
+    ]
+  },
+  "97060": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Carrillo Ancona"
+    ]
+  },
+  "97068": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Itzaes"
+    ]
+  },
+  "97069": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Inalámbrica"
+    ]
+  },
+  "97070": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Dolores Patron",
+      "El Pedregal",
+      "Garcia Gineres"
+    ]
+  },
+  "97080": {
+    "municipio": "Mérida",
+    "colonias": [
+      "La Huerta"
+    ]
+  },
+  "97088": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Santa Cecilia"
+    ]
+  },
+  "97089": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Cupules"
+    ]
+  },
+  "97098": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Lourdes"
+    ]
+  },
+  "97099": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Waspa"
+    ]
+  },
+  "97100": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Itzimna",
+      "Itzimna 2",
+      "Rinconada Itzmina"
+    ]
+  },
+  "97107": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Manola"
+    ]
+  },
+  "97108": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Las Arboledas"
+    ]
+  },
+  "97109": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Ferrocarrileros",
+      "Jesús Carranza"
+    ]
+  },
+  "97110": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Revolución (Cordemex)"
+    ]
+  },
+  "97113": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Montebello",
+      "Montebello II",
+      "San Antonio",
+      "Xaman-Tan"
+    ]
+  },
+  "97114": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Monte Alban",
+      "Privada Monterreal Plus",
+      "Residencial Sol Campestre"
+    ]
+  },
+  "97115": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Ampliación Revolución",
+      "Gonzalo Guerrero",
+      "Montes de Ame",
+      "Residencial Montejo Norte",
+      "Residencial San Angelo",
+      "Sodzil Norte"
+    ]
+  },
+  "97116": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Privada San Antonio Cucul",
+      "San Antonio Cucul"
+    ]
+  },
+  "97117": {
+    "municipio": "Mérida",
+    "colonias": [
+      "San Ramon Norte",
+      "San Ramon Norte I",
+      "San Ramon Sur",
+      "Villareal",
+      "Xaman-Kab"
+    ]
+  },
+  "97118": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Ampliación Plan de Ayala (Villas del Sol)",
+      "Plan de Ayala",
+      "Villas Del Sol"
+    ]
+  },
+  "97119": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Benito Juárez Nte",
+      "Gonzalo Guerrero",
+      "Villas La Hacienda",
+      "Villas del Rey"
+    ]
+  },
+  "97120": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Ampliación del Norte (1a. Ampliación)",
+      "Campestre",
+      "Del Norte",
+      "Tecnológico"
+    ]
+  },
+  "97125": {
+    "municipio": "Mérida",
+    "colonias": [
+      "México",
+      "Privada Nuevo México"
+    ]
+  },
+  "97127": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Buenavista",
+      "Montejo"
+    ]
+  },
+  "97128": {
+    "municipio": "Mérida",
+    "colonias": [
+      "México Norte",
+      "Privada Mediterráneo",
+      "Residencial Colonia México"
+    ]
+  },
+  "97129": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Emiliano Zapata Nte"
+    ]
+  },
+  "97130": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Altabrisa",
+      "Diaz Ordaz",
+      "Missan II",
+      "Montecarlo",
+      "Residencial Altabrisa",
+      "Residencial Palmerales de Altabrisa",
+      "San Carlos",
+      "San Remo",
+      "Santa Rita Cholul",
+      "Torremolinos",
+      "Vista Alegre",
+      "Vista Alegre Norte"
+    ]
+  },
+  "97133": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Montecristo",
+      "Monterreal",
+      "Montevideo",
+      "Residencial Camara de Comercio Norte"
+    ]
+  },
+  "97134": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Jose Maria Iturralde",
+      "Maya",
+      "Paraíso Maya"
+    ]
+  },
+  "97135": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Jardines de Mérida"
+    ]
+  },
+  "97136": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Felipe Carrillo Puerto Nte"
+    ]
+  },
+  "97137": {
+    "municipio": "Mérida",
+    "colonias": [
+      "México Oriente"
+    ]
+  },
+  "97138": {
+    "municipio": "Mérida",
+    "colonias": [
+      "El Arco",
+      "Jardines Del Norte",
+      "Jardines de Vista Alegre",
+      "Jardines de Vista Alegre II",
+      "Jardines del Noreste",
+      "La Florida",
+      "Los Pinos",
+      "Los Álamos",
+      "Pinos Norte II",
+      "Residencial Bancarios",
+      "Residencial Del Arco",
+      "San Pedro Cholul",
+      "Santa Maria",
+      "Vista Alegre Lotificacion"
+    ]
+  },
+  "97139": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Jardines del Norte de Prado Norte",
+      "Prado Norte",
+      "San Antonio Cinta"
+    ]
+  },
+  "97140": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Lopez Mateos",
+      "San Luis",
+      "San Miguel"
+    ]
+  },
+  "97142": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Antonia Jimenez Trava",
+      "Antonia Jimenez Trava II",
+      "San Vicente Oriente (La Isla)",
+      "Unidad Habitacional CTM"
+    ]
+  },
+  "97143": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Boulevares de Oriente",
+      "Brisas Del Bosque",
+      "Itzimna 108",
+      "Leandro Valle",
+      "Luis Donaldo Colosio",
+      "Polígono 108",
+      "Vicente Guerrero"
+    ]
+  },
+  "97144": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Ampliación las Brisas",
+      "Emiliano Zapata Ote",
+      "Las Brisas",
+      "Las Brisas Del Norte"
+    ]
+  },
+  "97145": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Las Palmas",
+      "Los Álamos Alemán",
+      "Noria II",
+      "Pet-kanche",
+      "San Juan Grande"
+    ]
+  },
+  "97146": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Las Flores",
+      "Nueva Alemán"
+    ]
+  },
+  "97147": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Nuevo Yucatán",
+      "San Nicolás"
+    ]
+  },
+  "97148": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Miguel Alemán"
+    ]
+  },
+  "97149": {
+    "municipio": "Mérida",
+    "colonias": [
+      "San Esteban"
+    ]
+  },
+  "97150": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Industrial",
+      "Trava Quintero"
+    ]
+  },
+  "97155": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Fenix",
+      "Lourdes Industrial",
+      "Villa Fontana"
+    ]
+  },
+  "97156": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Los Reyes"
+    ]
+  },
+  "97157": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Lázaro Cárdenas Ote",
+      "Nueva Mayapan"
+    ]
+  },
+  "97158": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Chuminopolis"
+    ]
+  },
+  "97159": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Lotificacion las Brisas",
+      "Manuel Avila Camacho",
+      "Mayapan",
+      "Máximo Ancona",
+      "Nueva Mayapan",
+      "Nueva Pacabtun"
+    ]
+  },
+  "97160": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Del Parque",
+      "Manuel Avila Camacho",
+      "Pacabtun",
+      "Privada Del Autotransporte CTM"
+    ]
+  },
+  "97165": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Melchor Ocampo",
+      "Melchor Ocampo II"
+    ]
+  },
+  "97166": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Fidel Velázquez",
+      "Fidel Velázquez 2a Etapa",
+      "Salvador Alvarado Oriente"
+    ]
+  },
+  "97167": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Bosques de Oriente",
+      "Emilio Portes Gil",
+      "Privada Emilio Portes Gil"
+    ]
+  },
+  "97168": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Cerillera",
+      "Cortes Sarmiento",
+      "Del Carmen",
+      "Jardines de Miraflores",
+      "Madrid"
+    ]
+  },
+  "97169": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Esperanza",
+      "Wallis"
+    ]
+  },
+  "97170": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Chichen-itza",
+      "Nueva Chichen-itza"
+    ]
+  },
+  "97173": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Misne III",
+      "Real San José",
+      "San Jose Vergel",
+      "Vergel I",
+      "Vergel II",
+      "Vergel III",
+      "Vergel IV"
+    ]
+  },
+  "97174": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Morelos Oriente",
+      "Villas La Macarena"
+    ]
+  },
+  "97175": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Amalia Solorzano"
+    ]
+  },
+  "97176": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Aquaparque",
+      "El Vergel",
+      "Misné II",
+      "San Antonio Kaua",
+      "San Pablo Oriente",
+      "Unidad Habitacional Ricardo Flores Magón",
+      "Vergel 65"
+    ]
+  },
+  "97177": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Azcorra"
+    ]
+  },
+  "97178": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Benito Juárez Ote"
+    ]
+  },
+  "97179": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Miraflores",
+      "Privada Miraflores"
+    ]
+  },
+  "97180": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Vicente Solis"
+    ]
+  },
+  "97189": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Canto",
+      "San Jose"
+    ]
+  },
+  "97190": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Morelos",
+      "Morelos Issste Fovissste"
+    ]
+  },
+  "97195": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Miraflores II",
+      "Nueva Kukulkan",
+      "San Antonio Kaua",
+      "San Antonio Kaua I",
+      "San Antonio Kaua II"
+    ]
+  },
+  "97196": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Ampliación Salvador Alvarado Sur",
+      "Militar",
+      "Salvador Alvarado Sur",
+      "Salvador Alvarado Sur II"
+    ]
+  },
+  "97198": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Ampliación Granjas",
+      "Kukulcan",
+      "Reparto Granjas"
+    ]
+  },
+  "97199": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Maria Luisa"
+    ]
+  },
+  "97203": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Ampliación Francisco de Montejo",
+      "Arboledas Chuburna",
+      "Arcos del Sol",
+      "Arekas",
+      "Aurea Residencial",
+      "Brisas de Chuburna",
+      "Camara de La Construcción",
+      "Cocoteros",
+      "Cordeleros de Chuburna",
+      "Del Bosque",
+      "El Conquistador",
+      "El Prado",
+      "Francisco de Montejo",
+      "Francisco de Montejo II",
+      "Francisco de Montejo III",
+      "Francisco de Montejo IV",
+      "Francisco de Montejo V",
+      "La Castellana",
+      "Las Haciendas III",
+      "Magnolias",
+      "Platino",
+      "Privada Chuburna Plus",
+      "Privada Chuburna de Hidalgo (II)",
+      "Privada Corozal",
+      "Privada Palma Caribeña",
+      "Puesta del Sol",
+      "Rincón Colonial",
+      "San José Chuburna",
+      "San Pablo",
+      "San Pedro Uxmal",
+      "Terranova",
+      "Tulias de Chuburna",
+      "Villas Del Prado",
+      "Villas Palma Real",
+      "Vista Alegre de Chuburna"
+    ]
+  },
+  "97204": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Residencial Galerias",
+      "Residencial Piedrasul",
+      "Revolución",
+      "Vía Montejo",
+      "Xcumpich"
+    ]
+  },
+  "97205": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Boulevares de Chuburna",
+      "Bugambilias",
+      "Chuburna Inn",
+      "Chuburna de Hidalgo",
+      "Chuburna de Hidalgo (La Floresta)",
+      "El Campanario",
+      "El Cortijo I",
+      "El Cortijo II",
+      "Juan B Sosa",
+      "Las Hadas",
+      "Loma Bonita",
+      "Loma Bonita Xcumpich",
+      "Pinzon",
+      "Privada Arboledas",
+      "Privada Campestre Chuburna",
+      "Privada Chuburna de Hidalgo I",
+      "Privada Pedregal II",
+      "Privada las Flores",
+      "Residencial Hacienda Real",
+      "San Luis Chuburna",
+      "San Ángel",
+      "Tabachines"
+    ]
+  },
+  "97206": {
+    "municipio": "Mérida",
+    "colonias": [
+      "El Rosario",
+      "Las Dalias",
+      "Las Dalias II y III",
+      "Lotificacion San Vicente Chuburna",
+      "Mérida (Elefante Grande)",
+      "Paraíso",
+      "Privada Cipreses",
+      "Privada San Ángel Chuburna",
+      "Residencial La Noria",
+      "Residencial Turquesa",
+      "San Francisco Chuburna",
+      "San Francisco Chuburna II",
+      "San Jose I",
+      "San Jose II",
+      "San Vicente Chuburna",
+      "Villas Chuburna IV",
+      "Yaxche"
+    ]
+  },
+  "97207": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Callejones de Chuburna",
+      "Villas de Chuburna"
+    ]
+  },
+  "97208": {
+    "municipio": "Mérida",
+    "colonias": [
+      "El Cedral",
+      "Felipe Carrillo Puerto",
+      "Las Quintas (Chuburna)",
+      "Malaga",
+      "Privada Chuburna de Hidalgo",
+      "Residencial Atlantis",
+      "Rinconada de Chuburna"
+    ]
+  },
+  "97209": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Jardines de Chuburna",
+      "Privada San Jorge (Chuburna)"
+    ]
+  },
+  "97210": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Joaquín Ceballos Mimenza",
+      "Pedregales de Tanlum",
+      "Tanlum"
+    ]
+  },
+  "97215": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Colonial Buenavista",
+      "Colonial Chuburna",
+      "Águilas Chuburna"
+    ]
+  },
+  "97217": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Fovissste",
+      "Francisco El Porvenir",
+      "Pensiones Norte",
+      "Residencial Pensiones I y II",
+      "Residencial Pensiones III",
+      "Residencial Pensiones III (1)",
+      "Residencial Pensiones III (II)",
+      "Residencial Pensiones IV",
+      "Residencial Pensiones V",
+      "Residencial Pensiones VI"
+    ]
+  },
+  "97218": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Conjunto los Naranjos",
+      "Lotificacion San Damián",
+      "Privada San Damián",
+      "Residencial Roma",
+      "Roma",
+      "San Damián",
+      "San Isidro"
+    ]
+  },
+  "97219": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Amapola",
+      "Ampliación Lindavista (Elefante Chico)",
+      "Francisco Villa",
+      "Jardines de Lindavista",
+      "Jardines de Pensiones",
+      "Limones",
+      "Lindavista",
+      "Lindavista II",
+      "Lotificacion San Damiancito I",
+      "Lotificacion San Damiancito II",
+      "Paseos de Chenku",
+      "Paseos de Pensiones",
+      "Pedregal de Lindavista",
+      "Pensiones",
+      "Privada Pensiones",
+      "Quinta Versalles",
+      "Residencial Pensiones VII",
+      "Residencial del Norte",
+      "San Damiancito",
+      "Unidad Habitacional Mérida Issste"
+    ]
+  },
+  "97220": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Atlántida",
+      "La Vaca Feliz",
+      "Miguel Hidalgo",
+      "Nueva Hidalgo",
+      "Zona Dorada"
+    ]
+  },
+  "97225": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Paseo de las Fuentes",
+      "Privada San Pedro"
+    ]
+  },
+  "97226": {
+    "municipio": "Mérida",
+    "colonias": [
+      "El Porvenir"
+    ]
+  },
+  "97227": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Jacinto Canek",
+      "Las Vigas"
+    ]
+  },
+  "97229": {
+    "municipio": "Mérida",
+    "colonias": [
+      "15 de Mayo",
+      "Ampliación Roma (Luis Echeverría)",
+      "Hacienda Inn",
+      "Hacienda San Antonio",
+      "Luis Echeverría Alvarez",
+      "Villa Zona Dorada",
+      "Xcom",
+      "Zona Dorada II"
+    ]
+  },
+  "97230": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Armando Avila Gurrutia",
+      "Bojorquez"
+    ]
+  },
+  "97237": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Central de Abasto"
+    ]
+  },
+  "97238": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Brisas del Poniente (Yucalpeten)",
+      "Jardines de Yucalpeten",
+      "Nora Quintana",
+      "Residencial Casa Blanca",
+      "Villas de Yucalpeten",
+      "Yucalpeten"
+    ]
+  },
+  "97239": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Yucalpeten Secc Florida"
+    ]
+  },
+  "97240": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Francisco I Madero"
+    ]
+  },
+  "97245": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Lopez Portillo",
+      "Xoclan Canto",
+      "Xoclan Santos"
+    ]
+  },
+  "97246": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Ampliación Juan Pablo II",
+      "Anexo Juan Pablo II",
+      "Angeles II",
+      "Bosques de Mulsay",
+      "Bosques del Poniente",
+      "Granja Fruticola Susula",
+      "Hacienda Mulsay",
+      "Jardines de Nueva Mulsay",
+      "Juan Pablo II",
+      "Juan Pablo II Cardenales",
+      "Juan Pablo II Secc. Mérida 2000",
+      "La Reja",
+      "Los Ángeles",
+      "Mulsay",
+      "Mulsay Solidaridad",
+      "Mulsay de La Magdalena",
+      "México Poniente",
+      "Paseos de Opichen",
+      "Villas de Tixcacal",
+      "Xoclan",
+      "Xoclan Carmelitas",
+      "Xoclan Xbech"
+    ]
+  },
+  "97247": {
+    "municipio": "Mérida",
+    "colonias": [
+      "San Lorenzo"
+    ]
+  },
+  "97249": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Ampliación Tixcacal Opichen",
+      "Cinturón Verde",
+      "Diamante Paseos de Opichen",
+      "Girasoles de Opichen",
+      "Hacienda Opichen",
+      "Jardines de Nueva Mulsay II",
+      "Jardines de Nueva Mulsay III",
+      "Mulsay",
+      "Nueva Mulsay",
+      "Nueva Mulsay I",
+      "Nueva Reforma Agraria",
+      "Núcleo Mulsay",
+      "Pedregales de Nueva Mulsay Etapa",
+      "Plantel México",
+      "Residencial Valparaiso",
+      "Tixcacal Opichen",
+      "Villa Magna",
+      "Villa Magna II",
+      "Xoclan Susula"
+    ]
+  },
+  "97250": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Nueva Sambula",
+      "Sambula"
+    ]
+  },
+  "97255": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Bicentenario",
+      "El Roble",
+      "El Roble II",
+      "Manuel Crescencio Rejon",
+      "Roble Agrícola III"
+    ]
+  },
+  "97256": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Graciano Ricalde",
+      "Industrial Bridec",
+      "Libertad II",
+      "Libertad III",
+      "Lol-Be",
+      "Pino Suárez",
+      "Renacimiento I",
+      "Residencial Nicte",
+      "Villas Mérida",
+      "Álvaro Torres"
+    ]
+  },
+  "97258": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Salvador Alvarado"
+    ]
+  },
+  "97259": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Itzaez"
+    ]
+  },
+  "97260": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Circuito Colonias",
+      "Nueva Obrera",
+      "Obrera",
+      "Villa Moderna",
+      "Villa de la Obrera II",
+      "Villas del Mayab"
+    ]
+  },
+  "97267": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Manzana 115"
+    ]
+  },
+  "97268": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Delio Moreno Canton",
+      "Quinta Valencia"
+    ]
+  },
+  "97269": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Las Palmeras II",
+      "Meliton Salazar",
+      "Santa Maria de Guadalupe"
+    ]
+  },
+  "97270": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Dolores Otero"
+    ]
+  },
+  "97277": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Mercedes Barrera"
+    ]
+  },
+  "97278": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Bosques del Pedregal",
+      "Castilla Camara"
+    ]
+  },
+  "97279": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Quinta Santa Rosa",
+      "Santa Rosa"
+    ]
+  },
+  "97280": {
+    "municipio": "Mérida",
+    "colonias": [
+      "5 Colonias",
+      "Santa Rita"
+    ]
+  },
+  "97284": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Lindavista",
+      "Lomas Del Sur"
+    ]
+  },
+  "97285": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Ampliación Plan de Ayala",
+      "Bellavista",
+      "Jardines del Sur",
+      "Las Nubes",
+      "Lotificacion Serapio Rendón 1",
+      "Palmas del Sur",
+      "Plan de Ayala Sur",
+      "Plan de Ayala Sur III",
+      "San Carlos del Sur",
+      "San José Tzal",
+      "Serapio Rendón",
+      "Serapio Rendón II",
+      "Serapio Rendón III",
+      "Villa Bonita",
+      "Villa Magna del Sur",
+      "Villas Del Sur",
+      "Álamos del Sur"
+    ]
+  },
+  "97286": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Las Brisas Del Sur"
+    ]
+  },
+  "97287": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Del Sur"
+    ]
+  },
+  "97288": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Ciudad Industrial"
+    ]
+  },
+  "97289": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Ampliación La Hacienda",
+      "La Hacienda",
+      "San Nicolás Del Sur"
+    ]
+  },
+  "97290": {
+    "municipio": "Mérida",
+    "colonias": [
+      "La Guadalupana",
+      "Nueva San Jose Tecoh",
+      "San Antonio Xluch",
+      "San Antonio Xluch II"
+    ]
+  },
+  "97295": {
+    "municipio": "Mérida",
+    "colonias": [
+      "El Roble Agrícola",
+      "Gran Roble",
+      "Mérida (Lic. Manuel Crescencio Rejón)",
+      "San Marcos",
+      "Santa Cruz"
+    ]
+  },
+  "97296": {
+    "municipio": "Mérida",
+    "colonias": [
+      "San Marcos Nocoh"
+    ]
+  },
+  "97297": {
+    "municipio": "Mérida",
+    "colonias": [
+      "El Rosal",
+      "Emiliano Zapata Sur",
+      "Metropolitana",
+      "San Antonio Xluch III",
+      "San Luis Sur",
+      "Villas Quetzal"
+    ]
+  },
+  "97298": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Brisas de San José",
+      "Privada Zuzil - Ha",
+      "San Jose Tecoh Sur",
+      "Zacilha",
+      "Zazil - Ha II"
+    ]
+  },
+  "97299": {
+    "municipio": "Mérida",
+    "colonias": [
+      "San Jose Tecoh"
+    ]
+  },
+  "97302": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Chablekal",
+      "Club de Golf La Ceiba",
+      "Dzidzilché",
+      "Dzityá",
+      "Komchén",
+      "Las Américas",
+      "Las Fincas",
+      "Los Tamarindos",
+      "Núcleo Sodzil",
+      "Palmequén",
+      "Parque Industrial Yucatán",
+      "Piedra Antigua",
+      "Punta Lago",
+      "Real Montejo",
+      "Real de Dzityá",
+      "Residencial Club Norte Mérida",
+      "Residencial La Alborada",
+      "Residencial Xcanatún",
+      "Residencial del Mayab",
+      "Royal del Parque",
+      "Sac-Nicté",
+      "San Antonio Hool",
+      "San Antonio Residencial",
+      "Sierra Papacal",
+      "Temozón Norte",
+      "Xcanatún",
+      "Xotik"
+    ]
+  },
+  "97303": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Cheumán",
+      "Cosgaya",
+      "Kikteil",
+      "Noc Ac"
+    ]
+  },
+  "97304": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Tamanché",
+      "Xcunyá"
+    ]
+  },
+  "97305": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Algarrobos Desarrollo Residencial",
+      "Altavista",
+      "Alura",
+      "Bogdan",
+      "Cabo Norte",
+      "Cholul",
+      "Cocoyoles",
+      "Dzibilchaltún",
+      "Gran San Pedro Cholul",
+      "Granjas Cholul",
+      "Jalapa",
+      "Las Margaritas de Cholul",
+      "Parque Central",
+      "Parque Natura",
+      "Residencial Anturio",
+      "Residencial Campestre Viladiu",
+      "San Gabriel Tulipanes",
+      "San Luis Cholul",
+      "Santa Gertrudis Copo",
+      "Sian Kaan",
+      "Tixcuytún",
+      "Villas Cholul",
+      "Villas del Bosque Cholul"
+    ]
+  },
+  "97306": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Chichi Suárez",
+      "Los Héroes",
+      "Residencial Floresta",
+      "Santa María Chí",
+      "Sitpach"
+    ]
+  },
+  "97307": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Jardines de Rejoyada",
+      "Komchén (Santuario)",
+      "La Rejoyada"
+    ]
+  },
+  "97308": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Misnébalam",
+      "Santa María Yaxché",
+      "Universidad del Mayab",
+      "Yucatán Country Club"
+    ]
+  },
+  "97309": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Yaxché Casares"
+    ]
+  },
+  "97310": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Oncán"
+    ]
+  },
+  "97312": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Chalmuch",
+      "Los Faisanes de Tixcacal",
+      "Providencia",
+      "Solana Residencial",
+      "Tixcacal"
+    ]
+  },
+  "97314": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Arboleda",
+      "Balcones II",
+      "Boulevares",
+      "Caucel",
+      "Centenario Cámara de Comercio Caucel",
+      "Cerradas de la Herradura",
+      "Ciudad Caucel",
+      "Ciudad Caucel II",
+      "Gran Herradura",
+      "Gran Santa Fe",
+      "Hacienda Caucel",
+      "Hogares Caucel",
+      "Jardines de Caucel",
+      "La Ceiba",
+      "La Ciudadela",
+      "La Herradura II",
+      "La Herradura III",
+      "La Perla Ciudad Caucel",
+      "Las Torres",
+      "Las Torres I",
+      "Las Torres II",
+      "Los Almendros",
+      "Los Balcones",
+      "Pedregales de Ciudad Caucel",
+      "Sol Caucel",
+      "Sol Caucel III",
+      "Susulá",
+      "Villa Jardín",
+      "Villas de Caucel",
+      "Viva Caucel"
+    ]
+  },
+  "97315": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Dzununcan",
+      "Dzununcán",
+      "Hunxectamán",
+      "Jardines de Tahdzibichén",
+      "La Guadalupana",
+      "Molas",
+      "Nuevo San José Tecoh",
+      "Nuevo San José Tecoh III",
+      "Petac",
+      "San Antonio Tzacalá",
+      "San José Tzal",
+      "San Pedro Chimay",
+      "Santa Cruz Palomeque",
+      "Tahdzibichén",
+      "Texán Cámara",
+      "Xmatkuil"
+    ]
+  },
+  "97316": {
+    "municipio": "Mérida",
+    "colonias": [
+      "Dzoyaxché",
+      "San Ignacio Tesip",
+      "Yaxnic"
+    ]
+  },
+  "97320": {
+    "municipio": "Progreso",
+    "colonias": [
+      "23 de Noviembre",
+      "Ciénega 2000",
+      "Costa Azul",
+      "Feliciano Canul Reyes",
+      "Fovissste",
+      "Fovissste Brisas",
+      "Francisco I. Madero",
+      "Hector Victoria",
+      "Ismael Garcia",
+      "Juan Montalvo",
+      "La Fuente",
+      "Las Fuentes II",
+      "Las Palmas",
+      "Nueva Yucalpeten",
+      "Progreso de Castro Centro",
+      "Revolución",
+      "Vicente Guerrero"
+    ]
+  },
+  "97324": {
+    "municipio": "Progreso",
+    "colonias": [
+      "Campestre Flamboyanes"
+    ]
+  },
+  "97330": {
+    "municipio": "Progreso",
+    "colonias": [
+      "Chicxulub Puerto"
+    ]
+  },
+  "97334": {
+    "municipio": "Progreso",
+    "colonias": [
+      "San Ignacio"
+    ]
+  },
+  "97336": {
+    "municipio": "Progreso",
+    "colonias": [
+      "Chelem",
+      "Chuburna Puerto",
+      "Yucalpeten"
+    ]
+  },
+  "97337": {
+    "municipio": "Progreso",
+    "colonias": [
+      "Muelle y Puerto de Altura"
+    ]
+  },
+  "97340": {
+    "municipio": "Chicxulub Pueblo",
+    "colonias": [
+      "Chicxulub"
+    ]
+  },
+  "97342": {
+    "municipio": "Chicxulub Pueblo",
+    "colonias": [
+      "Quintas Baspul"
+    ]
+  },
+  "97343": {
+    "municipio": "Ixil",
+    "colonias": [
+      "Concepción",
+      "Ixil",
+      "San Rafael"
+    ]
+  },
+  "97345": {
+    "municipio": "Conkal",
+    "colonias": [
+      "Bosques de Conkal",
+      "Conkal",
+      "Jardines de Conkal",
+      "Los Laureles",
+      "Palma Real",
+      "Paseo del Ángel",
+      "Pedregales de Conkal",
+      "Real de Conkal",
+      "Santa Cruz",
+      "Verde Limón",
+      "Villas de Conkal"
+    ]
+  },
+  "97346": {
+    "municipio": "Conkal",
+    "colonias": [
+      "Santa María Rosas",
+      "Vega del Mayab",
+      "X-Cuyum"
+    ]
+  },
+  "97347": {
+    "municipio": "Conkal",
+    "colonias": [
+      "Kantoyna",
+      "Praderas del Mayab"
+    ]
+  },
+  "97348": {
+    "municipio": "Yaxkukul",
+    "colonias": [
+      "Yaxkukul"
+    ]
+  },
+  "97350": {
+    "municipio": "Hunucmá",
+    "colonias": [
+      "Centro Hunucmá",
+      "Papagayos"
+    ]
+  },
+  "97353": {
+    "municipio": "Hunucmá",
+    "colonias": [
+      "Hunkanab",
+      "San Antonio Chel",
+      "Texán de Palomeque"
+    ]
+  },
+  "97356": {
+    "municipio": "Hunucmá",
+    "colonias": [
+      "Sisal"
+    ]
+  },
+  "97357": {
+    "municipio": "Ucú",
+    "colonias": [
+      "San Juan",
+      "Ucú",
+      "Yaxche de Peón"
+    ]
+  },
+  "97360": {
+    "municipio": "Kinchil",
+    "colonias": [
+      "Kinchil"
+    ]
+  },
+  "97362": {
+    "municipio": "Kinchil",
+    "colonias": [
+      "Tamchén"
+    ]
+  },
+  "97364": {
+    "municipio": "Tetiz",
+    "colonias": [
+      "Tetiz"
+    ]
+  },
+  "97365": {
+    "municipio": "Tetiz",
+    "colonias": [
+      "Nohuayun"
+    ]
+  },
+  "97367": {
+    "municipio": "Celestún",
+    "colonias": [
+      "Celestún",
+      "Chac Canché",
+      "Santa Cruz Xixim"
+    ]
+  },
+  "97370": {
+    "municipio": "Kanasín",
+    "colonias": [
+      "Amalia Solorzano II",
+      "Ampliación Xelpac",
+      "Andrés Quintana Roo",
+      "Arboleda Kanasín",
+      "Arecas",
+      "CROC",
+      "Cecilio Chi",
+      "Cielo Alto",
+      "Colibrí",
+      "Condesa",
+      "Coyoles",
+      "Cuauhtémoc",
+      "Despertare",
+      "El Encanto Kanasín",
+      "Flor de Mayo",
+      "Fontana I",
+      "Francisco Villa Oriente",
+      "Girasoles",
+      "Hector Victoria",
+      "Jardines de Kanasín",
+      "Jardines de Mulchechen",
+      "Jardines de San Pedro Noh Pat",
+      "Kanasín Centro",
+      "La Ceiba",
+      "La Joya",
+      "La Piedra",
+      "Las Flores",
+      "Las Haciendas",
+      "Las Palmas Yucatán",
+      "Las Palmeras",
+      "Las Perlas",
+      "Leona Vicario",
+      "Los Encinos",
+      "Los Pinos de Mulchechen",
+      "Los Robles",
+      "Los Robles III",
+      "Los Tulipanes",
+      "Mulchechén",
+      "Mulchechén II",
+      "Pablo Moreno",
+      "Palmas San Pedro",
+      "Pedregales de Kanasín",
+      "Pedregales de Kanasín II",
+      "Pedregales del Oriente",
+      "Privada del Sol",
+      "Puerta Esmeralda",
+      "Puerta del Sol",
+      "Reparto las Granjas",
+      "Residencial",
+      "Rinconada Kanasín",
+      "San Antonio Kaua III",
+      "San Camilo",
+      "San Haroldo San José Tzal",
+      "San Ignacio",
+      "San José Kanasín",
+      "San Pedro Noh Pat",
+      "Santa Ana",
+      "Santa Cecilia",
+      "VIVAH",
+      "Valle Azul",
+      "Valle Oriente",
+      "Valle Oriente de San Pedro Noh Pat",
+      "Villa Bonita",
+      "Villa Mercedes",
+      "Villas Turquesa",
+      "Villas del Oriente",
+      "Xelpac",
+      "Álamos de Oriente"
+    ]
+  },
+  "97373": {
+    "municipio": "Kanasín",
+    "colonias": [
+      "Santa Isabel"
+    ]
+  },
+  "97374": {
+    "municipio": "Kanasín",
+    "colonias": [
+      "San Aroldo",
+      "San Pedro (Deshuesadero)",
+      "Teya"
+    ]
+  },
+  "97376": {
+    "municipio": "Kanasín",
+    "colonias": [
+      "San Antonio Tehuitz"
+    ]
+  },
+  "97377": {
+    "municipio": "Timucuy",
+    "colonias": [
+      "Tekik de Regil",
+      "Timucuy"
+    ]
+  },
+  "97378": {
+    "municipio": "Timucuy",
+    "colonias": [
+      "Subincancab"
+    ]
+  },
+  "97380": {
+    "municipio": "Acanceh",
+    "colonias": [
+      "Acanceh",
+      "Canicab",
+      "El Zapotal",
+      "Santiago",
+      "Ticopó"
+    ]
+  },
+  "97382": {
+    "municipio": "Acanceh",
+    "colonias": [
+      "Tepich Carrillo"
+    ]
+  },
+  "97383": {
+    "municipio": "Acanceh",
+    "colonias": [
+      "Cibceh",
+      "Petectunich",
+      "Sacchich"
+    ]
+  },
+  "97386": {
+    "municipio": "Tixpéhual",
+    "colonias": [
+      "Tixpéhual"
+    ]
+  },
+  "97387": {
+    "municipio": "Tixpéhual",
+    "colonias": [
+      "Chocho",
+      "Kilinche"
+    ]
+  },
+  "97388": {
+    "municipio": "Tixpéhual",
+    "colonias": [
+      "Cuca",
+      "Sahe"
+    ]
+  },
+  "97389": {
+    "municipio": "Tixpéhual",
+    "colonias": [
+      "Techoh"
+    ]
+  },
+  "97390": {
+    "municipio": "Umán",
+    "colonias": [
+      "Acim I",
+      "Acim II",
+      "Ampliación Ciudad Industrial",
+      "Bosques de San Francisco",
+      "Bosques de Umán",
+      "Brisas de Umán",
+      "Camino Real",
+      "Centro Umán",
+      "Cepeda Peraza",
+      "Dzibikal",
+      "El Oasis",
+      "La Candelaria",
+      "La Mejorada",
+      "Las Perlas de Umán",
+      "Los Arcos I",
+      "Los Arcos II",
+      "Los Ceibos",
+      "Lázaro Cárdenas",
+      "Miguel Hidalgo y Costilla",
+      "Residencial San Lázaro",
+      "San Carlos",
+      "San Lorenzo",
+      "Santa Elena"
+    ]
+  },
+  "97392": {
+    "municipio": "Umán",
+    "colonias": [
+      "El Roble Agrícola IV",
+      "Itzincab",
+      "Piedra de Agua"
+    ]
+  },
+  "97393": {
+    "municipio": "Umán",
+    "colonias": [
+      "Dzibikak",
+      "Oxcum"
+    ]
+  },
+  "97394": {
+    "municipio": "Umán",
+    "colonias": [
+      "Gran Santa Cruz",
+      "Petecbiltun",
+      "Taníl",
+      "Tebec",
+      "Ticimul",
+      "Xcucul Sur",
+      "Xtepen"
+    ]
+  },
+  "97395": {
+    "municipio": "Umán",
+    "colonias": [
+      "Hotzuc"
+    ]
+  },
+  "97396": {
+    "municipio": "Umán",
+    "colonias": [
+      "San Antonio Mulix",
+      "Yaxcopoil"
+    ]
+  },
+  "97397": {
+    "municipio": "Umán",
+    "colonias": [
+      "Bolon",
+      "Oxholon",
+      "Poxila",
+      "San Antonio Chun"
+    ]
+  },
+  "97400": {
+    "municipio": "Telchac Pueblo",
+    "colonias": [
+      "Centro Telchac Pueblo"
+    ]
+  },
+  "97404": {
+    "municipio": "Dzemul",
+    "colonias": [
+      "Dzemul",
+      "INFONAVIT"
+    ]
+  },
+  "97405": {
+    "municipio": "Dzemul",
+    "colonias": [
+      "Xcambó",
+      "Xtampú"
+    ]
+  },
+  "97406": {
+    "municipio": "Dzemul",
+    "colonias": [
+      "San Diego",
+      "San Eduardo"
+    ]
+  },
+  "97407": {
+    "municipio": "Telchac Puerto",
+    "colonias": [
+      "Telchac Puerto"
+    ]
+  },
+  "97410": {
+    "municipio": "Cansahcab",
+    "colonias": [
+      "Cansahcab"
+    ]
+  },
+  "97414": {
+    "municipio": "Cansahcab",
+    "colonias": [
+      "Santa María"
+    ]
+  },
+  "97415": {
+    "municipio": "Cansahcab",
+    "colonias": [
+      "Kankabchen de Molina",
+      "San Antonio Xiat"
+    ]
+  },
+  "97417": {
+    "municipio": "Cansahcab",
+    "colonias": [
+      "San Antonio"
+    ]
+  },
+  "97420": {
+    "municipio": "Sinanché",
+    "colonias": [
+      "Miguel Alemán",
+      "Sinanché"
+    ]
+  },
+  "97424": {
+    "municipio": "Sinanché",
+    "colonias": [
+      "San Crisanto"
+    ]
+  },
+  "97425": {
+    "municipio": "Yobaín",
+    "colonias": [
+      "Yobaín"
+    ]
+  },
+  "97426": {
+    "municipio": "Yobaín",
+    "colonias": [
+      "Chabihau"
+    ]
+  },
+  "97430": {
+    "municipio": "Motul",
+    "colonias": [
+      "Motul de Carrillo Puerto Centro",
+      "Sambula"
+    ]
+  },
+  "97432": {
+    "municipio": "Motul",
+    "colonias": [
+      "Felipe Carrillo Puerto",
+      "Infonavit",
+      "Las Huertas",
+      "Londres",
+      "Mario H Cuevas",
+      "Perla de La Costa",
+      "Puerta del Sol",
+      "Vivah"
+    ]
+  },
+  "97433": {
+    "municipio": "Motul",
+    "colonias": [
+      "San Carlos",
+      "San Juan",
+      "Santa Cruz Pachón",
+      "Santiago Castillo"
+    ]
+  },
+  "97434": {
+    "municipio": "Motul",
+    "colonias": [
+      "Edesio Carrillo",
+      "El Roble",
+      "La Herradura",
+      "Rogelio Chale",
+      "San Roque"
+    ]
+  },
+  "97436": {
+    "municipio": "Motul",
+    "colonias": [
+      "Sacapuc",
+      "Timul"
+    ]
+  },
+  "97437": {
+    "municipio": "Motul",
+    "colonias": [
+      "Kini"
+    ]
+  },
+  "97440": {
+    "municipio": "Motul",
+    "colonias": [
+      "Kancabchen",
+      "Komchén Martínez",
+      "San Pedro Chacabal",
+      "Santa Teresa",
+      "Uci"
+    ]
+  },
+  "97443": {
+    "municipio": "Motul",
+    "colonias": [
+      "Kancabal",
+      "Tanya"
+    ]
+  },
+  "97444": {
+    "municipio": "Motul",
+    "colonias": [
+      "Dzununcan",
+      "Kambul",
+      "Kancabchén Uci",
+      "Kaxatah",
+      "Kopte",
+      "Mesatunich",
+      "San Pedro Camara"
+    ]
+  },
+  "97445": {
+    "municipio": "Motul",
+    "colonias": [
+      "San Antonio Dzinah"
+    ]
+  },
+  "97446": {
+    "municipio": "Motul",
+    "colonias": [
+      "Sakolá",
+      "San José Hili"
+    ]
+  },
+  "97450": {
+    "municipio": "Baca",
+    "colonias": [
+      "Baca"
+    ]
+  },
+  "97452": {
+    "municipio": "Baca",
+    "colonias": [
+      "Kankabchen",
+      "Tixkuncheil"
+    ]
+  },
+  "97453": {
+    "municipio": "Baca",
+    "colonias": [
+      "San Isidro Kuxub",
+      "San Nicolás"
+    ]
+  },
+  "97454": {
+    "municipio": "Mocochá",
+    "colonias": [
+      "Mococha"
+    ]
+  },
+  "97455": {
+    "municipio": "Mocochá",
+    "colonias": [
+      "Too"
+    ]
+  },
+  "97456": {
+    "municipio": "Mocochá",
+    "colonias": [
+      "Tekat"
+    ]
+  },
+  "97457": {
+    "municipio": "Muxupip",
+    "colonias": [
+      "Muxupip"
+    ]
+  },
+  "97458": {
+    "municipio": "Muxupip",
+    "colonias": [
+      "San José Grande",
+      "San Juan Koop"
+    ]
+  },
+  "97460": {
+    "municipio": "Cacalchén",
+    "colonias": [
+      "Cacalchen",
+      "Santa Teresa"
+    ]
+  },
+  "97466": {
+    "municipio": "Bokobá",
+    "colonias": [
+      "Bokobá"
+    ]
+  },
+  "97470": {
+    "municipio": "Tixkokob",
+    "colonias": [
+      "Tixkokob"
+    ]
+  },
+  "97473": {
+    "municipio": "Tixkokob",
+    "colonias": [
+      "Kankabchen",
+      "San José"
+    ]
+  },
+  "97474": {
+    "municipio": "Tixkokob",
+    "colonias": [
+      "Ekmul",
+      "Euan",
+      "Ruinas de Ake"
+    ]
+  },
+  "97475": {
+    "municipio": "Tixkokob",
+    "colonias": [
+      "Hubila"
+    ]
+  },
+  "97476": {
+    "municipio": "Tixkokob",
+    "colonias": [
+      "San Antonio Millet"
+    ]
+  },
+  "97477": {
+    "municipio": "Tixkokob",
+    "colonias": [
+      "Nolo"
+    ]
+  },
+  "97480": {
+    "municipio": "Hoctún",
+    "colonias": [
+      "Hoctun"
+    ]
+  },
+  "97483": {
+    "municipio": "Hoctún",
+    "colonias": [
+      "Dziuche"
+    ]
+  },
+  "97486": {
+    "municipio": "Hoctún",
+    "colonias": [
+      "San José Oriente"
+    ]
+  },
+  "97490": {
+    "municipio": "Tahmek",
+    "colonias": [
+      "Tahmek"
+    ]
+  },
+  "97500": {
+    "municipio": "Dzidzantún",
+    "colonias": [
+      "Dzidzantún",
+      "Emiliano Zapata",
+      "San Diego Chumul",
+      "San Juan",
+      "Vicente Guerrero"
+    ]
+  },
+  "97504": {
+    "municipio": "Dzidzantún",
+    "colonias": [
+      "Mina de Oro",
+      "Santa Clara"
+    ]
+  },
+  "97506": {
+    "municipio": "Dzidzantún",
+    "colonias": [
+      "San Francisco Manzanilla"
+    ]
+  },
+  "97510": {
+    "municipio": "Temax",
+    "colonias": [
+      "Temax"
+    ]
+  },
+  "97513": {
+    "municipio": "Temax",
+    "colonias": [
+      "San Antonio Camara"
+    ]
+  },
+  "97515": {
+    "municipio": "Temax",
+    "colonias": [
+      "Chenche de Las Torres",
+      "Chucmichén"
+    ]
+  },
+  "97516": {
+    "municipio": "Temax",
+    "colonias": [
+      "Santa Ursula"
+    ]
+  },
+  "97520": {
+    "municipio": "Tekantó",
+    "colonias": [
+      "Tekantó"
+    ]
+  },
+  "97522": {
+    "municipio": "Tekantó",
+    "colonias": [
+      "Sanlatah",
+      "Tixkocho"
+    ]
+  },
+  "97523": {
+    "municipio": "Tekantó",
+    "colonias": [
+      "San Francisco Dzan"
+    ]
+  },
+  "97524": {
+    "municipio": "Teya",
+    "colonias": [
+      "Teya"
+    ]
+  },
+  "97527": {
+    "municipio": "Suma",
+    "colonias": [
+      "San Nicolás",
+      "Suma"
+    ]
+  },
+  "97530": {
+    "municipio": "Tepakán",
+    "colonias": [
+      "Tepakán"
+    ]
+  },
+  "97532": {
+    "municipio": "Tepakán",
+    "colonias": [
+      "Kantirix"
+    ]
+  },
+  "97535": {
+    "municipio": "Tekal de Venegas",
+    "colonias": [
+      "Tekal de Venegas"
+    ]
+  },
+  "97536": {
+    "municipio": "Tekal de Venegas",
+    "colonias": [
+      "El Ancla",
+      "San Felipe",
+      "Tohoku"
+    ]
+  },
+  "97540": {
+    "municipio": "Izamal",
+    "colonias": [
+      "Izamal",
+      "Quinta Real",
+      "Real del Sol",
+      "San Juan Izamal"
+    ]
+  },
+  "97542": {
+    "municipio": "Izamal",
+    "colonias": [
+      "Benito Juárez",
+      "San Genaro"
+    ]
+  },
+  "97545": {
+    "municipio": "Izamal",
+    "colonias": [
+      "Sitilpech"
+    ]
+  },
+  "97550": {
+    "municipio": "Izamal",
+    "colonias": [
+      "Citilcum",
+      "Kimbila"
+    ]
+  },
+  "97553": {
+    "municipio": "Izamal",
+    "colonias": [
+      "San José Kanán"
+    ]
+  },
+  "97555": {
+    "municipio": "Izamal",
+    "colonias": [
+      "Cuauhtémoc"
+    ]
+  },
+  "97556": {
+    "municipio": "Izamal",
+    "colonias": [
+      "Popolá",
+      "Xanabá",
+      "Yaxché"
+    ]
+  },
+  "97557": {
+    "municipio": "Izamal",
+    "colonias": [
+      "San Antonio",
+      "San José"
+    ]
+  },
+  "97560": {
+    "municipio": "Hocabá",
+    "colonias": [
+      "Hocabá"
+    ]
+  },
+  "97563": {
+    "municipio": "Hocabá",
+    "colonias": [
+      "El Nance"
+    ]
+  },
+  "97564": {
+    "municipio": "Hocabá",
+    "colonias": [
+      "Sahcaba"
+    ]
+  },
+  "97566": {
+    "municipio": "Xocchel",
+    "colonias": [
+      "Xocchel"
+    ]
+  },
+  "97570": {
+    "municipio": "Seyé",
+    "colonias": [
+      "Seyé",
+      "Vicente Guerrero"
+    ]
+  },
+  "97573": {
+    "municipio": "Seyé",
+    "colonias": [
+      "Holactún"
+    ]
+  },
+  "97574": {
+    "municipio": "Seyé",
+    "colonias": [
+      "Xucu"
+    ]
+  },
+  "97575": {
+    "municipio": "Seyé",
+    "colonias": [
+      "Nohcham",
+      "San Bernardino"
+    ]
+  },
+  "97577": {
+    "municipio": "Cuzamá",
+    "colonias": [
+      "Cuzama",
+      "Eknacan",
+      "Nohchacan"
+    ]
+  },
+  "97578": {
+    "municipio": "Cuzamá",
+    "colonias": [
+      "Chunkanan",
+      "Yaxkukul"
+    ]
+  },
+  "97579": {
+    "municipio": "Cuzamá",
+    "colonias": [
+      "San Francisco Sisal"
+    ]
+  },
+  "97580": {
+    "municipio": "Homún",
+    "colonias": [
+      "Homun",
+      "Viva"
+    ]
+  },
+  "97583": {
+    "municipio": "Homún",
+    "colonias": [
+      "Polabán"
+    ]
+  },
+  "97585": {
+    "municipio": "Homún",
+    "colonias": [
+      "Yalahau"
+    ]
+  },
+  "97586": {
+    "municipio": "Homún",
+    "colonias": [
+      "San Isidro Ochil"
+    ]
+  },
+  "97587": {
+    "municipio": "Sanahcat",
+    "colonias": [
+      "Sanahcat"
+    ]
+  },
+  "97590": {
+    "municipio": "Huhí",
+    "colonias": [
+      "Huhí"
+    ]
+  },
+  "97596": {
+    "municipio": "Huhí",
+    "colonias": [
+      "Tixcacal Quintero"
+    ]
+  },
+  "97600": {
+    "municipio": "Dzilam González",
+    "colonias": [
+      "Dzilam González"
+    ]
+  },
+  "97604": {
+    "municipio": "Dzilam González",
+    "colonias": [
+      "Dzonot Sabila"
+    ]
+  },
+  "97606": {
+    "municipio": "Dzilam de Bravo",
+    "colonias": [
+      "Dzilam de Bravo"
+    ]
+  },
+  "97608": {
+    "municipio": "Dzilam de Bravo",
+    "colonias": [
+      "Chun-Xaan"
+    ]
+  },
+  "97609": {
+    "municipio": "Dzilam de Bravo",
+    "colonias": [
+      "Kennedy"
+    ]
+  },
+  "97610": {
+    "municipio": "Panabá",
+    "colonias": [
+      "Panaba"
+    ]
+  },
+  "97614": {
+    "municipio": "Panabá",
+    "colonias": [
+      "Loche",
+      "San Francisco",
+      "San Juan del Río"
+    ]
+  },
+  "97615": {
+    "municipio": "Panabá",
+    "colonias": [
+      "Cenote Yalsihón Buena Fe",
+      "Noczal",
+      "San Antonio",
+      "Vista Alegre"
+    ]
+  },
+  "97616": {
+    "municipio": "San Felipe",
+    "colonias": [
+      "San Felipe"
+    ]
+  },
+  "97620": {
+    "municipio": "Buctzotz",
+    "colonias": [
+      "Buctzotz"
+    ]
+  },
+  "97623": {
+    "municipio": "Buctzotz",
+    "colonias": [
+      "Chanmotul",
+      "X-bec"
+    ]
+  },
+  "97624": {
+    "municipio": "Buctzotz",
+    "colonias": [
+      "La Gran Lucha",
+      "Nohyaxche"
+    ]
+  },
+  "97625": {
+    "municipio": "Buctzotz",
+    "colonias": [
+      "B. Esperanza",
+      "Grano de Oro",
+      "Nup-Dzonot",
+      "San Francisco",
+      "U. Juárez"
+    ]
+  },
+  "97626": {
+    "municipio": "Buctzotz",
+    "colonias": [
+      "San Juan",
+      "San Pedro"
+    ]
+  },
+  "97627": {
+    "municipio": "Buctzotz",
+    "colonias": [
+      "Santo Domingo"
+    ]
+  },
+  "97630": {
+    "municipio": "Sucilá",
+    "colonias": [
+      "Sucilá"
+    ]
+  },
+  "97634": {
+    "municipio": "Sucilá",
+    "colonias": [
+      "Chan Panaba"
+    ]
+  },
+  "97636": {
+    "municipio": "Sucilá",
+    "colonias": [
+      "A.G. San Martín"
+    ]
+  },
+  "97640": {
+    "municipio": "Cenotillo",
+    "colonias": [
+      "Cenotillo"
+    ]
+  },
+  "97645": {
+    "municipio": "Cenotillo",
+    "colonias": [
+      "Tixbacab",
+      "Tucina",
+      "X-Lobos"
+    ]
+  },
+  "97646": {
+    "municipio": "Dzoncauich",
+    "colonias": [
+      "Dzoncauich"
+    ]
+  },
+  "97647": {
+    "municipio": "Dzoncauich",
+    "colonias": [
+      "Chacmay"
+    ]
+  },
+  "97650": {
+    "municipio": "Tunkás",
+    "colonias": [
+      "Tunkás"
+    ]
+  },
+  "97653": {
+    "municipio": "Tunkás",
+    "colonias": [
+      "Chabak",
+      "San José Pibtuch"
+    ]
+  },
+  "97654": {
+    "municipio": "Tunkás",
+    "colonias": [
+      "Chakan Ebula",
+      "Kancabchén",
+      "Mactun",
+      "Nicte Ha",
+      "Noc Ac",
+      "Onichen",
+      "San Antonio Chuc",
+      "San Román",
+      "Santa Rosa",
+      "Yaxha"
+    ]
+  },
+  "97655": {
+    "municipio": "Quintana Roo",
+    "colonias": [
+      "Quintana Roo"
+    ]
+  },
+  "97660": {
+    "municipio": "Dzitás",
+    "colonias": [
+      "Dzitás"
+    ]
+  },
+  "97666": {
+    "municipio": "Dzitás",
+    "colonias": [
+      "Xocempich",
+      "Yaxche"
+    ]
+  },
+  "97670": {
+    "municipio": "Kantunil",
+    "colonias": [
+      "Kantunil"
+    ]
+  },
+  "97675": {
+    "municipio": "Kantunil",
+    "colonias": [
+      "Holcá"
+    ]
+  },
+  "97676": {
+    "municipio": "Sudzal",
+    "colonias": [
+      "Sudzal"
+    ]
+  },
+  "97677": {
+    "municipio": "Sudzal",
+    "colonias": [
+      "Brasil",
+      "San Antonio Chalante",
+      "San Juan",
+      "San Martín",
+      "Tzalam"
+    ]
+  },
+  "97678": {
+    "municipio": "Sudzal",
+    "colonias": [
+      "Chumbec",
+      "Kamcabchen"
+    ]
+  },
+  "97680": {
+    "municipio": "Tekit",
+    "colonias": [
+      "Tekit"
+    ]
+  },
+  "97684": {
+    "municipio": "Tekit",
+    "colonias": [
+      "Susula"
+    ]
+  },
+  "97686": {
+    "municipio": "Tekit",
+    "colonias": [
+      "Yaxic"
+    ]
+  },
+  "97690": {
+    "municipio": "Sotuta",
+    "colonias": [
+      "Sotuta"
+    ]
+  },
+  "97694": {
+    "municipio": "Sotuta",
+    "colonias": [
+      "Tibolon"
+    ]
+  },
+  "97695": {
+    "municipio": "Sotuta",
+    "colonias": [
+      "Tabi"
+    ]
+  },
+  "97697": {
+    "municipio": "Sotuta",
+    "colonias": [
+      "Zavala"
+    ]
+  },
+  "97700": {
+    "municipio": "Tizimín",
+    "colonias": [
+      "Santa Cruz",
+      "Tizimin Centro"
+    ]
+  },
+  "97702": {
+    "municipio": "Tizimín",
+    "colonias": [
+      "8 Calles",
+      "Aviación",
+      "Benito Juárez",
+      "Campestre San Francisco",
+      "Comichén",
+      "Fovissste",
+      "Jacinto Canek",
+      "Justo Sierra",
+      "Las Palmas",
+      "Los Reyes",
+      "Residencial Tizimín",
+      "San Martín",
+      "Santa Maria",
+      "Villas Campestre",
+      "Viva",
+      "Zoológico"
+    ]
+  },
+  "97703": {
+    "municipio": "Tizimín",
+    "colonias": [
+      "Adolfo Lopez Mateos",
+      "Huayita",
+      "Los Reyes",
+      "Lázaro Cárdenas",
+      "San Carlos",
+      "San Jose Nabalam",
+      "Santo Domingo"
+    ]
+  },
+  "97704": {
+    "municipio": "Tizimín",
+    "colonias": [
+      "Adolfo López Mateos",
+      "Residencial Del Parque",
+      "Santa Maria de Lima"
+    ]
+  },
+  "97705": {
+    "municipio": "Tizimín",
+    "colonias": [
+      "Chan San Antonio",
+      "Kikil",
+      "Sucopó",
+      "X-Pambihá",
+      "Yokdzonot Meneses"
+    ]
+  },
+  "97706": {
+    "municipio": "Tizimín",
+    "colonias": [
+      "Bondzonot Número Dos",
+      "Buena Esperanza",
+      "Chenkekén",
+      "Chunsubul",
+      "Dzadz Palma",
+      "Dzonot Box",
+      "Dzonot Tigre",
+      "Libre Unión",
+      "San Antonio",
+      "San Román",
+      "Santa Clara Dzibalkú",
+      "X-Cail",
+      "X-Lal",
+      "X-Panhatoro",
+      "Xkalax de Dzibalkú"
+    ]
+  },
+  "97707": {
+    "municipio": "Tizimín",
+    "colonias": [
+      "Benito Juárez",
+      "Dolores",
+      "Dzonot Carretero",
+      "El Cuyo",
+      "Emiliano Zapata",
+      "Moctezuma",
+      "San Francisco",
+      "San Juan",
+      "Yohactún de Hidalgo"
+    ]
+  },
+  "97710": {
+    "municipio": "Tizimín",
+    "colonias": [
+      "Colonia Yucatán",
+      "Dzonot Aké",
+      "El Ramonal",
+      "Felipe Carrillo Puerto Dos",
+      "Kabichén",
+      "La Sierra",
+      "Lázaro Cárdenas",
+      "Orizaba",
+      "San Enrique",
+      "San Isidro Chuncopó",
+      "San Luis Tzuctuk",
+      "San Pedro Juárez",
+      "Teapa",
+      "Yaxchekú"
+    ]
+  },
+  "97712": {
+    "municipio": "Tizimín",
+    "colonias": [
+      "Santa Rosa Concepción"
+    ]
+  },
+  "97713": {
+    "municipio": "Tizimín",
+    "colonias": [
+      "Benito Juárez",
+      "Cenote Azul",
+      "La Libertad",
+      "Paraíso",
+      "Rancho Grande",
+      "Samaria",
+      "San Miguel",
+      "Santa Ana",
+      "Santa Isabel",
+      "Santa Pilar",
+      "Santa Rosa y Anexas"
+    ]
+  },
+  "97714": {
+    "municipio": "Tizimín",
+    "colonias": [
+      "San Pedro Sacboc",
+      "Santa María"
+    ]
+  },
+  "97715": {
+    "municipio": "Tizimín",
+    "colonias": [
+      "El Limonar",
+      "Francisco Villa",
+      "Luis Rosado Vega",
+      "Manuel Cepeda Peraza",
+      "Nuevo León",
+      "Nuevo Tezoco",
+      "San Arturo",
+      "San Hipólito",
+      "San Isidro",
+      "San Juan",
+      "San Pedro Bacab",
+      "Santa Clara",
+      "Santa Elena",
+      "Tres Marias"
+    ]
+  },
+  "97716": {
+    "municipio": "Tizimín",
+    "colonias": [
+      "Adolfo López Mateos",
+      "Chan Tres Reyes",
+      "El Edén (Yaxic)",
+      "Felipe Carrillo Puerto Número Uno",
+      "La Esperanza",
+      "Papoinah",
+      "Quintana",
+      "San Isidro Kilómetro Catorce (San Isidro)",
+      "San José Montecristo",
+      "San Manuel",
+      "Santa Rosa"
+    ]
+  },
+  "97717": {
+    "municipio": "Tizimín",
+    "colonias": [
+      "Chan Cenote",
+      "Dzonot Mezo",
+      "San Isidro Kancabdzonot",
+      "San Lorenzo",
+      "San Lorenzo Chiquilá",
+      "Tixcancal",
+      "Trascorral"
+    ]
+  },
+  "97720": {
+    "municipio": "Río Lagartos",
+    "colonias": [
+      "Río Lagartos"
+    ]
+  },
+  "97723": {
+    "municipio": "Río Lagartos",
+    "colonias": [
+      "Las Coloradas"
+    ]
+  },
+  "97726": {
+    "municipio": "Río Lagartos",
+    "colonias": [
+      "Quinientos"
+    ]
+  },
+  "97730": {
+    "municipio": "Espita",
+    "colonias": [
+      "Espita",
+      "Santa Cruz Regario"
+    ]
+  },
+  "97733": {
+    "municipio": "Espita",
+    "colonias": [
+      "Nacuche"
+    ]
+  },
+  "97734": {
+    "municipio": "Espita",
+    "colonias": [
+      "Kunche",
+      "San Antonio Xuilub",
+      "San Pedro Chenchelo"
+    ]
+  },
+  "97739": {
+    "municipio": "Espita",
+    "colonias": [
+      "Holcá"
+    ]
+  },
+  "97740": {
+    "municipio": "Temozón",
+    "colonias": [
+      "Temozón"
+    ]
+  },
+  "97743": {
+    "municipio": "Temozón",
+    "colonias": [
+      "Actuncah",
+      "Ekbalam",
+      "Kante",
+      "Santa Rita",
+      "Xeb",
+      "Xuch"
+    ]
+  },
+  "97744": {
+    "municipio": "Temozón",
+    "colonias": [
+      "Dzalbay",
+      "Hunukú",
+      "Nahbalam",
+      "Xcanchechen",
+      "Xtut",
+      "Yokdzonot Presentado"
+    ]
+  },
+  "97745": {
+    "municipio": "Calotmul",
+    "colonias": [
+      "Calotmul"
+    ]
+  },
+  "97746": {
+    "municipio": "Calotmul",
+    "colonias": [
+      "Tahcabo"
+    ]
+  },
+  "97747": {
+    "municipio": "Calotmul",
+    "colonias": [
+      "Pocoboch"
+    ]
+  },
+  "97748": {
+    "municipio": "Calotmul",
+    "colonias": [
+      "Yokdzonot"
+    ]
+  },
+  "97750": {
+    "municipio": "Tinum",
+    "colonias": [
+      "Tinum"
+    ]
+  },
+  "97751": {
+    "municipio": "Tinum",
+    "colonias": [
+      "Piste"
+    ]
+  },
+  "97753": {
+    "municipio": "Tinum",
+    "colonias": [
+      "Poom"
+    ]
+  },
+  "97754": {
+    "municipio": "Tinum",
+    "colonias": [
+      "Balantun"
+    ]
+  },
+  "97755": {
+    "municipio": "Tinum",
+    "colonias": [
+      "San Francisco",
+      "San Francisco Grande",
+      "Tohopku"
+    ]
+  },
+  "97756": {
+    "municipio": "Tinum",
+    "colonias": [
+      "San Felipe",
+      "X-Calakoop"
+    ]
+  },
+  "97757": {
+    "municipio": "Tinum",
+    "colonias": [
+      "Chichen-itza"
+    ]
+  },
+  "97758": {
+    "municipio": "Chankom",
+    "colonias": [
+      "Chankom",
+      "Muchucuxcáh",
+      "Nicte-Ha",
+      "Pambá",
+      "San Isidro",
+      "San Juan",
+      "Ticimul",
+      "Tzukmuc",
+      "X-Bohom",
+      "X-Cocail",
+      "Xanlá",
+      "Xcatun",
+      "Xcopteil",
+      "Xtohil",
+      "Yokdzonot"
+    ]
+  },
+  "97759": {
+    "municipio": "Chankom",
+    "colonias": [
+      "San Juan Xkalakdzonot",
+      "Xcalakdzonot"
+    ]
+  },
+  "97760": {
+    "municipio": "Chichimilá",
+    "colonias": [
+      "Celtun",
+      "Chan X-Cail",
+      "Chichimilá",
+      "San José",
+      "San Pedro",
+      "Tixcancal Dzonot",
+      "X-Chay"
+    ]
+  },
+  "97761": {
+    "municipio": "Chichimilá",
+    "colonias": [
+      "Dzitox"
+    ]
+  },
+  "97762": {
+    "municipio": "Tixcacalcupul",
+    "colonias": [
+      "Tixcacalcupul"
+    ]
+  },
+  "97763": {
+    "municipio": "Tixcacalcupul",
+    "colonias": [
+      "Carolina",
+      "Ekpedz",
+      "Mahas",
+      "Monte Verde",
+      "Poop",
+      "San José",
+      "Xtobil"
+    ]
+  },
+  "97764": {
+    "municipio": "Kaua",
+    "colonias": [
+      "Kaua",
+      "Xtzeal"
+    ]
+  },
+  "97765": {
+    "municipio": "Kaua",
+    "colonias": [
+      "San Esteban"
+    ]
+  },
+  "97766": {
+    "municipio": "Cuncunul",
+    "colonias": [
+      "Cuncunul",
+      "San Diego",
+      "San Francisco"
+    ]
+  },
+  "97767": {
+    "municipio": "Cuncunul",
+    "colonias": [
+      "Chebalam"
+    ]
+  },
+  "97768": {
+    "municipio": "Tekom",
+    "colonias": [
+      "Dzidzilché",
+      "San Antonio",
+      "Tekom"
+    ]
+  },
+  "97769": {
+    "municipio": "Tekom",
+    "colonias": [
+      "Chibilub",
+      "Chindzonot",
+      "Pocbichen",
+      "X-Cocmil",
+      "Xuxcab"
+    ]
+  },
+  "97770": {
+    "municipio": "Chemax",
+    "colonias": [
+      "Benito Juárez García",
+      "Chemax"
+    ]
+  },
+  "97773": {
+    "municipio": "Chemax",
+    "colonias": [
+      "Chechmil",
+      "Kuxeb",
+      "Uspibil",
+      "X-Catzín (Catzín)",
+      "Xalaú",
+      "Xmaab",
+      "Xuneb"
+    ]
+  },
+  "97774": {
+    "municipio": "Chemax",
+    "colonias": [
+      "Cholul",
+      "Mucel",
+      "San Andrés",
+      "San Juan Chen",
+      "San Pedro Chemax",
+      "San Roman",
+      "Santa Cruz",
+      "Santa Elena",
+      "X-can",
+      "Xtejas"
+    ]
+  },
+  "97775": {
+    "municipio": "Chemax",
+    "colonias": [
+      "Buenavista",
+      "Cocoyol",
+      "Santa Rita"
+    ]
+  },
+  "97776": {
+    "municipio": "Chemax",
+    "colonias": [
+      "Champolin",
+      "Pabalam",
+      "Sisbichén"
+    ]
+  },
+  "97777": {
+    "municipio": "Chemax",
+    "colonias": [
+      "Chachadzonot",
+      "Chuluntan",
+      "Lol-Bé",
+      "Yaxche"
+    ]
+  },
+  "97780": {
+    "municipio": "Valladolid",
+    "colonias": [
+      "Valladolid Centro"
+    ]
+  },
+  "97782": {
+    "municipio": "Valladolid",
+    "colonias": [
+      "Candelaria",
+      "Fernando Novelo",
+      "Flor Campestre",
+      "Jardines Del Oriente",
+      "Las Palmas",
+      "Lol-beh",
+      "Los Cipreses",
+      "Militar",
+      "Orquídeas",
+      "Residencial Campestre",
+      "San Isidro",
+      "Santa Ana",
+      "Santa Cruz",
+      "Santa Lucia"
+    ]
+  },
+  "97783": {
+    "municipio": "Valladolid",
+    "colonias": [
+      "Leonardo Rodríguez Alcaine",
+      "Militar",
+      "Oaxaqueña",
+      "Sacyabil",
+      "San Antonio",
+      "San Francisco",
+      "San Juan",
+      "San Vicente",
+      "Santana"
+    ]
+  },
+  "97784": {
+    "municipio": "Valladolid",
+    "colonias": [
+      "Bacalar",
+      "Capules",
+      "Colonos",
+      "Cruz Verde",
+      "Emiliano Zapata",
+      "Flamboyanes",
+      "Puesta Del Sol",
+      "Residencial del Bosque",
+      "San Carlos",
+      "Sisal",
+      "Xcorazon"
+    ]
+  },
+  "97785": {
+    "municipio": "Valladolid",
+    "colonias": [
+      "Batun",
+      "Kampepén",
+      "Kanxoc",
+      "Xocen"
+    ]
+  },
+  "97786": {
+    "municipio": "Valladolid",
+    "colonias": [
+      "Sidra Kin",
+      "Timas"
+    ]
+  },
+  "97787": {
+    "municipio": "Valladolid",
+    "colonias": [
+      "Chamul",
+      "Nohsuytun",
+      "Santa Cruz",
+      "Xuilib",
+      "Yaxche"
+    ]
+  },
+  "97790": {
+    "municipio": "Valladolid",
+    "colonias": [
+      "La Guadalupana",
+      "Pixoy",
+      "Popola"
+    ]
+  },
+  "97793": {
+    "municipio": "Valladolid",
+    "colonias": [
+      "Chan Yokdzonot",
+      "Tahmuy",
+      "Tepakan",
+      "Tesoco",
+      "Ticúch",
+      "Yunchen",
+      "Zodzilchén"
+    ]
+  },
+  "97794": {
+    "municipio": "Valladolid",
+    "colonias": [
+      "Chiople",
+      "San Andres Bac",
+      "Yalcoba"
+    ]
+  },
+  "97795": {
+    "municipio": "Valladolid",
+    "colonias": [
+      "Dzitnup",
+      "Ebtun",
+      "Tixhualactún",
+      "X-Kekén",
+      "Yalcon"
+    ]
+  },
+  "97796": {
+    "municipio": "Uayma",
+    "colonias": [
+      "Uayma"
+    ]
+  },
+  "97798": {
+    "municipio": "Uayma",
+    "colonias": [
+      "Santa María"
+    ]
+  },
+  "97799": {
+    "municipio": "Uayma",
+    "colonias": [
+      "San Lorenzo"
+    ]
+  },
+  "97800": {
+    "municipio": "Maxcanú",
+    "colonias": [
+      "Guadalupe",
+      "La Sirena",
+      "Maxcanu"
+    ]
+  },
+  "97803": {
+    "municipio": "Maxcanú",
+    "colonias": [
+      "Chan Chocholá (Santa Eduviges Chan Chocholá)",
+      "Granada (Chican Granada)",
+      "Kanachén",
+      "Santa Cruz"
+    ]
+  },
+  "97804": {
+    "municipio": "Maxcanú",
+    "colonias": [
+      "Coahuila (Santa Teresa Coahuila)",
+      "Kochol",
+      "Lázaro Cárdenas",
+      "Paraíso",
+      "San Fernando",
+      "Santa Rosa",
+      "Santo Domingo",
+      "X-Cacal",
+      "Yaxcaba"
+    ]
+  },
+  "97805": {
+    "municipio": "Maxcanú",
+    "colonias": [
+      "Chunchucmil",
+      "San Simón Sinkehuel"
+    ]
+  },
+  "97806": {
+    "municipio": "Maxcanú",
+    "colonias": [
+      "San Rafael"
+    ]
+  },
+  "97807": {
+    "municipio": "Maxcanú",
+    "colonias": [
+      "Chencoh"
+    ]
+  },
+  "97810": {
+    "municipio": "Samahil",
+    "colonias": [
+      "Kuchel",
+      "Samahil"
+    ]
+  },
+  "97812": {
+    "municipio": "Samahil",
+    "colonias": [
+      "San Antonio Tedzidz"
+    ]
+  },
+  "97813": {
+    "municipio": "Opichén",
+    "colonias": [
+      "Opichen"
+    ]
+  },
+  "97814": {
+    "municipio": "Opichén",
+    "colonias": [
+      "Calcehtoc"
+    ]
+  },
+  "97816": {
+    "municipio": "Chocholá",
+    "colonias": [
+      "Chochola",
+      "San Antonio Chable"
+    ]
+  },
+  "97818": {
+    "municipio": "Kopomá",
+    "colonias": [
+      "Kopomá",
+      "San Bernardo"
+    ]
+  },
+  "97820": {
+    "municipio": "Tecoh",
+    "colonias": [
+      "Tecoh"
+    ]
+  },
+  "97822": {
+    "municipio": "Tecoh",
+    "colonias": [
+      "Itzincab",
+      "Lepan",
+      "Oxtapacab",
+      "Sotuta de Peón"
+    ]
+  },
+  "97823": {
+    "municipio": "Tecoh",
+    "colonias": [
+      "Chinkilá",
+      "Pixyah",
+      "Sabacché"
+    ]
+  },
+  "97824": {
+    "municipio": "Tecoh",
+    "colonias": [
+      "Mahzucil",
+      "Mayapan",
+      "Telchaquillo",
+      "Xcanchakan"
+    ]
+  },
+  "97825": {
+    "municipio": "Abalá",
+    "colonias": [
+      "Abalá",
+      "Mukuiche",
+      "Uayalceh"
+    ]
+  },
+  "97826": {
+    "municipio": "Abalá",
+    "colonias": [
+      "Cacao",
+      "Peba",
+      "Sinhuchen"
+    ]
+  },
+  "97827": {
+    "municipio": "Abalá",
+    "colonias": [
+      "Temozon Sur"
+    ]
+  },
+  "97830": {
+    "municipio": "Halachó",
+    "colonias": [
+      "Halacho",
+      "San José"
+    ]
+  },
+  "97835": {
+    "municipio": "Halachó",
+    "colonias": [
+      "Cepeda",
+      "Concepción",
+      "Cucholoch",
+      "Guadalupe",
+      "Siho"
+    ]
+  },
+  "97836": {
+    "municipio": "Halachó",
+    "colonias": [
+      "Dzbzibachi",
+      "Kankabchen",
+      "San Mateo"
+    ]
+  },
+  "97837": {
+    "municipio": "Halachó",
+    "colonias": [
+      "Santa Maria Acu",
+      "Santa Sofia"
+    ]
+  },
+  "97840": {
+    "municipio": "Muna",
+    "colonias": [
+      "Benito Juárez",
+      "Muna de Leopoldo Arana Cabrera",
+      "San Bernardo",
+      "San Mateo",
+      "San Sebastián",
+      "Tepakán",
+      "Víctor Cervera Pacheco"
+    ]
+  },
+  "97843": {
+    "municipio": "Muna",
+    "colonias": [
+      "Choyob",
+      "Yaxha"
+    ]
+  },
+  "97844": {
+    "municipio": "Muna",
+    "colonias": [
+      "San Jose Tipceh",
+      "U.F. Lázaro Cárdenas"
+    ]
+  },
+  "97845": {
+    "municipio": "Sacalum",
+    "colonias": [
+      "Sacalum"
+    ]
+  },
+  "97847": {
+    "municipio": "Sacalum",
+    "colonias": [
+      "San Antonio Sodzil"
+    ]
+  },
+  "97848": {
+    "municipio": "Sacalum",
+    "colonias": [
+      "Yunku"
+    ]
+  },
+  "97850": {
+    "municipio": "Maní",
+    "colonias": [
+      "Mani"
+    ]
+  },
+  "97851": {
+    "municipio": "Maní",
+    "colonias": [
+      "Tipikal"
+    ]
+  },
+  "97854": {
+    "municipio": "Dzan",
+    "colonias": [
+      "Dzan"
+    ]
+  },
+  "97857": {
+    "municipio": "Chapab",
+    "colonias": [
+      "Chapab"
+    ]
+  },
+  "97858": {
+    "municipio": "Chapab",
+    "colonias": [
+      "Citincabchen",
+      "Hunabchen",
+      "San Cristóbal"
+    ]
+  },
+  "97860": {
+    "municipio": "Ticul",
+    "colonias": [
+      "Ticul Centro"
+    ]
+  },
+  "97862": {
+    "municipio": "Ticul",
+    "colonias": [
+      "Campestre",
+      "De los Electricistas",
+      "Deportivo Campestre",
+      "Guadalupe",
+      "Mejorada",
+      "Obrera"
+    ]
+  },
+  "97863": {
+    "municipio": "Ticul",
+    "colonias": [
+      "San Juan"
+    ]
+  },
+  "97864": {
+    "municipio": "Ticul",
+    "colonias": [
+      "Las Tinajas",
+      "San Benito",
+      "San Enrique",
+      "San Joaquín",
+      "San Román",
+      "Santa Maria",
+      "Santiago"
+    ]
+  },
+  "97870": {
+    "municipio": "Ticul",
+    "colonias": [
+      "Pustunich"
+    ]
+  },
+  "97873": {
+    "municipio": "Ticul",
+    "colonias": [
+      "Yotholin"
+    ]
+  },
+  "97880": {
+    "municipio": "Oxkutzcab",
+    "colonias": [
+      "Oxkutzcab",
+      "Tutul Xiú"
+    ]
+  },
+  "97882": {
+    "municipio": "Oxkutzcab",
+    "colonias": [
+      "San José Kunché"
+    ]
+  },
+  "97883": {
+    "municipio": "Oxkutzcab",
+    "colonias": [
+      "Emiliano Zapata",
+      "Lol-Tún",
+      "Xohuayan",
+      "Yaaxhom"
+    ]
+  },
+  "97884": {
+    "municipio": "Oxkutzcab",
+    "colonias": [
+      "Nohcacab",
+      "Sacamucuy",
+      "Xobenhaltun",
+      "Xul"
+    ]
+  },
+  "97885": {
+    "municipio": "Oxkutzcab",
+    "colonias": [
+      "Sayil"
+    ]
+  },
+  "97886": {
+    "municipio": "Oxkutzcab",
+    "colonias": [
+      "Kihuic",
+      "Yaxhacchen"
+    ]
+  },
+  "97887": {
+    "municipio": "Oxkutzcab",
+    "colonias": [
+      "Labna",
+      "Tabi",
+      "Xlapak"
+    ]
+  },
+  "97890": {
+    "municipio": "Santa Elena",
+    "colonias": [
+      "Santa Elena"
+    ]
+  },
+  "97893": {
+    "municipio": "Santa Elena",
+    "colonias": [
+      "San Agustín"
+    ]
+  },
+  "97894": {
+    "municipio": "Santa Elena",
+    "colonias": [
+      "Kabah"
+    ]
+  },
+  "97895": {
+    "municipio": "Santa Elena",
+    "colonias": [
+      "San Simón"
+    ]
+  },
+  "97899": {
+    "municipio": "Santa Elena",
+    "colonias": [
+      "Hotel Hacienda Uxmal",
+      "Villas Arqueológicas [Hotel]"
+    ]
+  },
+  "97900": {
+    "municipio": "Mama",
+    "colonias": [
+      "Mama"
+    ]
+  },
+  "97904": {
+    "municipio": "Chumayel",
+    "colonias": [
+      "Chumayel"
+    ]
+  },
+  "97908": {
+    "municipio": "Mayapán",
+    "colonias": [
+      "Mayapan"
+    ]
+  },
+  "97910": {
+    "municipio": "Teabo",
+    "colonias": [
+      "Teabo"
+    ]
+  },
+  "97915": {
+    "municipio": "Cantamayec",
+    "colonias": [
+      "Cantamayec"
+    ]
+  },
+  "97917": {
+    "municipio": "Cantamayec",
+    "colonias": [
+      "Nenela"
+    ]
+  },
+  "97918": {
+    "municipio": "Cantamayec",
+    "colonias": [
+      "Cholul"
+    ]
+  },
+  "97920": {
+    "municipio": "Yaxcabá",
+    "colonias": [
+      "Yaxcaba"
+    ]
+  },
+  "97922": {
+    "municipio": "Yaxcabá",
+    "colonias": [
+      "Mexil",
+      "Yokdzonot"
+    ]
+  },
+  "97923": {
+    "municipio": "Yaxcabá",
+    "colonias": [
+      "Cenote Xtohil",
+      "Libre Unión"
+    ]
+  },
+  "97924": {
+    "municipio": "Yaxcabá",
+    "colonias": [
+      "Cenote Aban",
+      "Chimay",
+      "Popola",
+      "San Marcos",
+      "Yaxunah",
+      "Z.A. Yaxuna"
+    ]
+  },
+  "97925": {
+    "municipio": "Yaxcabá",
+    "colonias": [
+      "Huechen Balam",
+      "Kancabdzonot",
+      "Sahcabá",
+      "San Pedro",
+      "Santa Maria",
+      "Tiholop",
+      "Yokdzonot-Hú"
+    ]
+  },
+  "97926": {
+    "municipio": "Yaxcabá",
+    "colonias": [
+      "Cacalchen",
+      "Canakom"
+    ]
+  },
+  "97927": {
+    "municipio": "Yaxcabá",
+    "colonias": [
+      "Tahdzibichen",
+      "Tixcacaltuyub"
+    ]
+  },
+  "97929": {
+    "municipio": "Yaxcabá",
+    "colonias": [
+      "Cipché",
+      "Tinuncah"
+    ]
+  },
+  "97930": {
+    "municipio": "Peto",
+    "colonias": [
+      "3 Cruces",
+      "Benito Juárez",
+      "Ciprés",
+      "Felipe Carrillo Puerto",
+      "Francisco I Madero",
+      "Francisco Sarabia",
+      "Jacinto Kanek",
+      "Miraflores",
+      "Morelos y Fátima",
+      "Peto Centro",
+      "Trinidad"
+    ]
+  },
+  "97932": {
+    "municipio": "Peto",
+    "colonias": [
+      "Xoy"
+    ]
+  },
+  "97933": {
+    "municipio": "Peto",
+    "colonias": [
+      "Progresito",
+      "San Gregorio",
+      "San Pedro",
+      "Temozon",
+      "Tixhualactun"
+    ]
+  },
+  "97934": {
+    "municipio": "Peto",
+    "colonias": [
+      "Guadalupe",
+      "San Bernabe",
+      "San Diego",
+      "San Nicolás Yoactún",
+      "Xcabanchen"
+    ]
+  },
+  "97935": {
+    "municipio": "Peto",
+    "colonias": [
+      "Chan Calotmul",
+      "Dzonotchel",
+      "Papacal",
+      "San Francisco",
+      "San Mateo",
+      "Santa Cruz",
+      "Santa Elena"
+    ]
+  },
+  "97936": {
+    "municipio": "Peto",
+    "colonias": [
+      "Abal",
+      "Kambul",
+      "La Esperanza",
+      "Petulillo",
+      "Polinkin",
+      "San Dionisio",
+      "San Sebastián"
+    ]
+  },
+  "97937": {
+    "municipio": "Peto",
+    "colonias": [
+      "Candelaria (San Pedro)",
+      "Justicia Social",
+      "Macmay",
+      "San Miguel",
+      "San Salvador",
+      "Santa Rosa",
+      "Santa Ursula",
+      "Tobxila",
+      "Trapiche",
+      "Uitzina",
+      "Xpechil",
+      "Yaxcopil"
+    ]
+  },
+  "97940": {
+    "municipio": "Chikindzonot",
+    "colonias": [
+      "Chikindzonot"
+    ]
+  },
+  "97943": {
+    "municipio": "Chikindzonot",
+    "colonias": [
+      "Chan Santa María",
+      "Chanchimila",
+      "X-Poxil",
+      "Xcampana"
+    ]
+  },
+  "97944": {
+    "municipio": "Chikindzonot",
+    "colonias": [
+      "Ichmul"
+    ]
+  },
+  "97945": {
+    "municipio": "Tahdziú",
+    "colonias": [
+      "Tahdziu"
+    ]
+  },
+  "97947": {
+    "municipio": "Tahdziú",
+    "colonias": [
+      "Timul"
+    ]
+  },
+  "97948": {
+    "municipio": "Tahdziú",
+    "colonias": [
+      "Mocté",
+      "San Ignacio"
+    ]
+  },
+  "97950": {
+    "municipio": "Tixmehuac",
+    "colonias": [
+      "Tixmehuac"
+    ]
+  },
+  "97953": {
+    "municipio": "Tixmehuac",
+    "colonias": [
+      "Chican",
+      "Chuchub",
+      "Dzutoh",
+      "Kimbila",
+      "Sabacche",
+      "Sisbic"
+    ]
+  },
+  "97954": {
+    "municipio": "Tixmehuac",
+    "colonias": [
+      "Sacchacan"
+    ]
+  },
+  "97955": {
+    "municipio": "Chacsinkín",
+    "colonias": [
+      "Chacsinkin"
+    ]
+  },
+  "97956": {
+    "municipio": "Chacsinkín",
+    "colonias": [
+      "Xno-Huayab"
+    ]
+  },
+  "97957": {
+    "municipio": "Chacsinkín",
+    "colonias": [
+      "Xbox"
+    ]
+  },
+  "97960": {
+    "municipio": "Tzucacab",
+    "colonias": [
+      "México Primero",
+      "Tzucacab Centro"
+    ]
+  },
+  "97963": {
+    "municipio": "Tzucacab",
+    "colonias": [
+      "Dzi",
+      "Ekbalam",
+      "Kakalnah",
+      "Solidaridad"
+    ]
+  },
+  "97964": {
+    "municipio": "Tzucacab",
+    "colonias": [
+      "Bichcopo",
+      "Hobonil",
+      "Noh-bec",
+      "Polhuaczil",
+      "Sacbecan"
+    ]
+  },
+  "97965": {
+    "municipio": "Tzucacab",
+    "colonias": [
+      "Blanca Flor",
+      "Corral",
+      "El Escondido",
+      "Tigre Grande"
+    ]
+  },
+  "97966": {
+    "municipio": "Tzucacab",
+    "colonias": [
+      "La Esperanza",
+      "San Isidro",
+      "San Salvador Piste Akal"
+    ]
+  },
+  "97967": {
+    "municipio": "Tzucacab",
+    "colonias": [
+      "Caxaytuk",
+      "Emiliano Zapata",
+      "Lázaro Cárdenas",
+      "Thul"
+    ]
+  },
+  "97969": {
+    "municipio": "Tzucacab",
+    "colonias": [
+      "Catmís"
+    ]
+  },
+  "97970": {
+    "municipio": "Tekax",
+    "colonias": [
+      "Benito Juárez",
+      "Chobenche",
+      "Chunchucun",
+      "Ermita",
+      "Fovissste (Módulo Social)",
+      "Francisco I Madero",
+      "Los Cedros",
+      "Lázaro Cárdenas",
+      "Padre Eterno",
+      "Paraíso Tekax",
+      "San Francisco",
+      "San Ignacio",
+      "Tekax de Álvaro Obregón",
+      "Unidad Antigua",
+      "Villa Flores",
+      "Villas Santa María",
+      "Yocchenkax"
+    ]
+  },
+  "97973": {
+    "municipio": "Tekax",
+    "colonias": [
+      "Kinil",
+      "Penkuyut",
+      "Tixcuytun",
+      "Xaya"
+    ]
+  },
+  "97974": {
+    "municipio": "Tekax",
+    "colonias": [
+      "Ticum"
+    ]
+  },
+  "97975": {
+    "municipio": "Tekax",
+    "colonias": [
+      "Kantemo",
+      "San Marcos"
+    ]
+  },
+  "97977": {
+    "municipio": "Tekax",
+    "colonias": [
+      "Canek",
+      "Chacmultun",
+      "Kancab"
+    ]
+  },
+  "97979": {
+    "municipio": "Tekax",
+    "colonias": [
+      "Alfonso Caso",
+      "Manuel Cepeda Peraza"
+    ]
+  },
+  "97980": {
+    "municipio": "Tekax",
+    "colonias": [
+      "Benito Juárez",
+      "San Agustín (Salvador Alvarado)",
+      "San Martín Hili",
+      "San Pedro Zula"
+    ]
+  },
+  "97983": {
+    "municipio": "Tekax",
+    "colonias": [
+      "Chan Dzinup",
+      "Huntochac",
+      "Mac-Yan (San Isidro Mac-Yan)",
+      "Nueva Santa Cruz (Santa Cruz Cutzá)",
+      "Nuevo Popolá",
+      "Pocoboh",
+      "San Isidro Yaxche",
+      "San Salvador"
+    ]
+  },
+  "97984": {
+    "municipio": "Tekax",
+    "colonias": [
+      "Becanchen",
+      "Sacpukenhá",
+      "San Diego Buenavista",
+      "San Gaspar"
+    ]
+  },
+  "97985": {
+    "municipio": "Tekax",
+    "colonias": [
+      "Nohalal"
+    ]
+  },
+  "97986": {
+    "municipio": "Tekax",
+    "colonias": [
+      "Ayim"
+    ]
+  },
+  "97987": {
+    "municipio": "Tekax",
+    "colonias": [
+      "Mesatunich",
+      "San Felipe Segundo",
+      "San Juan Tekax",
+      "San Pedro Xtokil",
+      "San Rufino"
+    ]
+  },
+  "97989": {
+    "municipio": "Tekax",
+    "colonias": [
+      "Sudzal Chico"
+    ]
+  },
+  "97990": {
+    "municipio": "Akil",
+    "colonias": [
+      "Akil Centro"
+    ]
+  }
+}

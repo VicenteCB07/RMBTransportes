@@ -11,6 +11,11 @@ export interface LicenciaOperador {
   vigencia: Date;
 }
 
+export interface SeguroSocial {
+  folio: string;           // Número de seguro social (NSS)
+  costoMensual: number;    // Costo mensual en MXN
+}
+
 export interface Operador {
   id: string;
   nombre: string;
@@ -20,6 +25,9 @@ export interface Operador {
 
   // Licencia
   licencia: LicenciaOperador;
+
+  // Seguro Social (IMSS)
+  seguroSocial?: SeguroSocial;
 
   // Económico
   sueldoDiario: number;
@@ -48,6 +56,10 @@ export interface OperadorFormInput {
     numero: string;
     tipo: TipoLicencia;
     vigencia: Date | string;
+  };
+  seguroSocial?: {
+    folio: string;
+    costoMensual: number;
   };
   sueldoDiario: number;
   tractosAutorizados: string[];

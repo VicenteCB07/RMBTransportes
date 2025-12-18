@@ -40,11 +40,18 @@ interface MenuItem {
   label: string
 }
 
-interface MenuGroup {
+interface MenuSubGroup {
   id: string
   label: string
   icon: LucideIcon
   items: MenuItem[]
+}
+
+interface MenuGroup {
+  id: string
+  label: string
+  icon: LucideIcon
+  items: (MenuItem | MenuSubGroup)[]
 }
 
 type MenuEntry = MenuItem | MenuGroup
@@ -54,33 +61,25 @@ const isMenuGroup = (entry: MenuEntry): entry is MenuGroup => {
   return 'items' in entry
 }
 
+// Verificar si es un subgrupo
+const isMenuSubGroup = (entry: MenuItem | MenuSubGroup): entry is MenuSubGroup => {
+  return 'items' in entry
+}
+
 // Estructura del menú con grupos colapsables
 const menuStructure: MenuEntry[] = [
-  // Flujo operativo principal (sin agrupar)
+  // Dashboard
   { path: '/panel', icon: LayoutDashboard, label: 'Dashboard' },
-  { path: '/viajes', icon: ClipboardList, label: 'Viajes' },
-  { path: '/planificador', icon: Calendar, label: 'Planificador' },
-  { path: '/rutas', icon: MapPin, label: 'Rutas' },
 
-  // Grupo: Flota
+  // Grupo: Viajes
   {
-    id: 'flota',
-    label: 'Flota',
-    icon: Truck,
+    id: 'viajes',
+    label: 'Viajes',
+    icon: ClipboardList,
     items: [
-      { path: '/tractocamiones', icon: Truck, label: 'Tractocamiones' },
-      { path: '/aditamentos', icon: Container, label: 'Aditamentos' },
-    ],
-  },
-
-  // Grupo: Personal
-  {
-    id: 'personal',
-    label: 'Personal',
-    icon: Users,
-    items: [
-      { path: '/operadores', icon: HardHat, label: 'Operadores' },
-      { path: '/maniobristas', icon: Users, label: 'Maniobristas' },
+      { path: '/viajes', icon: ClipboardList, label: 'Orden de Servicio' },
+      { path: '/planificador', icon: Calendar, label: 'Planificador' },
+      { path: '/rutas', icon: MapPin, label: 'Rutas' },
     ],
   },
 
@@ -90,9 +89,29 @@ const menuStructure: MenuEntry[] = [
     label: 'Catálogos',
     icon: Database,
     items: [
+      // Subgrupo: Flota
+      {
+        id: 'flota',
+        label: 'Flota',
+        icon: Truck,
+        items: [
+          { path: '/tractocamiones', icon: Truck, label: 'Tractocamiones' },
+          { path: '/aditamentos', icon: Container, label: 'Aditamentos' },
+        ],
+      },
+      // Subgrupo: Personal
+      {
+        id: 'personal',
+        label: 'Personal',
+        icon: Users,
+        items: [
+          { path: '/operadores', icon: HardHat, label: 'Operadores' },
+          { path: '/maniobristas', icon: Users, label: 'Maniobristas' },
+        ],
+      },
       { path: '/clientes', icon: Building2, label: 'Clientes' },
-      { path: '/inventario', icon: Package, label: 'Inventario EPP' },
-      { path: '/estaciones', icon: Fuel, label: 'Estaciones' },
+      { path: '/inventario', icon: Package, label: 'Inventario' },
+      { path: '/estaciones', icon: Fuel, label: 'Estaciones de Servicio' },
     ],
   },
 
@@ -102,6 +121,7 @@ const menuStructure: MenuEntry[] = [
     label: 'Operaciones',
     icon: Fuel,
     items: [
+      { path: '/mantenimiento', icon: Wrench, label: 'Mantenimiento' },
       { path: '/combustible', icon: Fuel, label: 'Combustible' },
       { path: '/casetas', icon: CreditCard, label: 'Casetas' },
       { path: '/telemetria', icon: Radio, label: 'Telemetría' },
@@ -115,7 +135,6 @@ const menuStructure: MenuEntry[] = [
     icon: Settings,
     items: [
       { path: '/finanzas', icon: DollarSign, label: 'Finanzas' },
-      { path: '/mantenimiento', icon: Wrench, label: 'Mantenimiento' },
       { path: '/legal', icon: Scale, label: 'Legal' },
       { path: '/usuarios', icon: Users, label: 'Usuarios' },
       { path: '/importador', icon: Upload, label: 'Importar Datos' },
@@ -132,16 +151,37 @@ export default function Sidebar() {
 
   const isAdmin = userData?.rol === 'admin'
 
-  // Auto-expandir el grupo que contiene la ruta actual
+  // Auto-expandir el grupo/subgrupo que contiene la ruta actual
   useEffect(() => {
+    const groupsToExpand: string[] = []
+
     menuStructure.forEach((entry) => {
       if (isMenuGroup(entry)) {
-        const hasActiveItem = entry.items.some((item) => location.pathname === item.path)
+        let hasActiveItem = false
+
+        entry.items.forEach((item) => {
+          if (isMenuSubGroup(item)) {
+            const subHasActive = item.items.some((subItem) => location.pathname === subItem.path)
+            if (subHasActive) {
+              hasActiveItem = true
+              if (!expandedGroups.includes(item.id)) {
+                groupsToExpand.push(item.id)
+              }
+            }
+          } else if (location.pathname === item.path) {
+            hasActiveItem = true
+          }
+        })
+
         if (hasActiveItem && !expandedGroups.includes(entry.id)) {
-          setExpandedGroups((prev) => [...prev, entry.id])
+          groupsToExpand.push(entry.id)
         }
       }
     })
+
+    if (groupsToExpand.length > 0) {
+      setExpandedGroups((prev) => [...prev, ...groupsToExpand])
+    }
   }, [location.pathname])
 
   const toggleGroup = (groupId: string) => {
@@ -172,30 +212,69 @@ export default function Sidebar() {
   }
 
   // Renderizar un item de menú individual
-  const renderMenuItem = (item: MenuItem, isSubItem = false) => (
-    <NavLink
-      key={item.path}
-      to={item.path}
-      onClick={() => setIsOpen(false)}
-      className={({ isActive }) =>
-        `flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors ${
-          isSubItem ? 'pl-10 text-sm' : ''
-        } ${
-          isActive
-            ? 'bg-[#BB0034] text-white'
-            : 'text-gray-300 hover:bg-[#3D3D3D]'
-        }`
-      }
-    >
-      <item.icon size={isSubItem ? 16 : 20} />
-      <span>{item.label}</span>
-    </NavLink>
-  )
+  const renderMenuItem = (item: MenuItem, level: number = 0) => {
+    const paddingLeft = level === 0 ? 'pl-4' : level === 1 ? 'pl-10' : 'pl-14'
+
+    return (
+      <NavLink
+        key={item.path}
+        to={item.path}
+        onClick={() => setIsOpen(false)}
+        className={({ isActive }) =>
+          `flex items-center gap-3 ${paddingLeft} pr-4 py-2.5 rounded-lg transition-colors ${
+            level > 0 ? 'text-sm' : ''
+          } ${
+            isActive
+              ? 'bg-[#BB0034] text-white'
+              : 'text-gray-300 hover:bg-[#3D3D3D]'
+          }`
+        }
+      >
+        <item.icon size={level > 0 ? 16 : 20} />
+        <span>{item.label}</span>
+      </NavLink>
+    )
+  }
+
+  // Renderizar un subgrupo
+  const renderSubGroup = (subGroup: MenuSubGroup) => {
+    const isExpanded = expandedGroups.includes(subGroup.id)
+    const hasActiveItem = subGroup.items.some((item) => location.pathname === item.path)
+
+    return (
+      <div key={subGroup.id}>
+        <button
+          onClick={() => toggleGroup(subGroup.id)}
+          className={`flex items-center justify-between w-full pl-10 pr-4 py-2 rounded-lg transition-colors text-sm ${
+            hasActiveItem
+              ? 'bg-[#3D3D3D] text-white'
+              : 'text-gray-400 hover:bg-[#3D3D3D] hover:text-gray-300'
+          }`}
+        >
+          <div className="flex items-center gap-2">
+            <subGroup.icon size={16} />
+            <span>{subGroup.label}</span>
+          </div>
+          {isExpanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
+        </button>
+        {isExpanded && (
+          <div className="mt-1 space-y-1">
+            {subGroup.items.map((item) => renderMenuItem(item, 2))}
+          </div>
+        )}
+      </div>
+    )
+  }
 
   // Renderizar un grupo de menú colapsable
   const renderMenuGroup = (group: MenuGroup) => {
     const isExpanded = expandedGroups.includes(group.id)
-    const hasActiveItem = group.items.some((item) => location.pathname === item.path)
+    const hasActiveItem = group.items.some((item) => {
+      if (isMenuSubGroup(item)) {
+        return item.items.some((subItem) => location.pathname === subItem.path)
+      }
+      return location.pathname === item.path
+    })
 
     return (
       <div key={group.id}>
@@ -215,7 +294,11 @@ export default function Sidebar() {
         </button>
         {isExpanded && (
           <div className="mt-1 space-y-1">
-            {group.items.map((item) => renderMenuItem(item, true))}
+            {group.items.map((item) =>
+              isMenuSubGroup(item)
+                ? renderSubGroup(item)
+                : renderMenuItem(item, 1)
+            )}
           </div>
         )}
       </div>

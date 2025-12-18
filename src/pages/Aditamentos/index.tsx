@@ -11,6 +11,12 @@ import {
   ToggleRight,
   Ruler,
   Weight,
+  Shield,
+  Upload,
+  FolderOpen,
+  Download,
+  File,
+  Loader2,
 } from 'lucide-react';
 import {
   obtenerAditamentos,
@@ -19,9 +25,14 @@ import {
   desactivarAditamento,
   reactivarAditamento,
   eliminarAditamento,
+  subirDocumentoAditamento,
+  eliminarDocumentoAditamento,
 } from '../../services/attachment.service';
 import type { Aditamento, AditamentoFormInput, TipoAditamento } from '../../types/attachment.types';
 import { TIPOS_ADITAMENTO } from '../../types/attachment.types';
+import type { DocumentoExpediente, TipoDocumento } from '../../types/truck.types';
+import { TIPOS_DOCUMENTO } from '../../types/truck.types';
+import { formatFileSize } from '../../services/storage.service';
 
 export default function AditamentosPage() {
   const [aditamentos, setAditamentos] = useState<Aditamento[]>([]);
@@ -35,6 +46,13 @@ export default function AditamentosPage() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
 
+  // Estado para modal de documentos
+  const [showDocsModal, setShowDocsModal] = useState(false);
+  const [selectedAditamento, setSelectedAditamento] = useState<Aditamento | null>(null);
+  const [uploadingDoc, setUploadingDoc] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [docCategoria, setDocCategoria] = useState<TipoDocumento>('otro');
+
   const [formData, setFormData] = useState<AditamentoFormInput>({
     numeroEconomico: '',
     tipo: 'lowboy',
@@ -46,6 +64,7 @@ export default function AditamentosPage() {
     capacidadCarga: undefined,
     largo: undefined,
     ancho: undefined,
+    seguro: undefined,
     foto: '',
     notas: '',
   });
@@ -119,6 +138,7 @@ export default function AditamentosPage() {
       capacidadCarga: item.capacidadCarga,
       largo: item.largo,
       ancho: item.ancho,
+      seguro: item.seguro,
       foto: item.foto || '',
       notas: item.notas || '',
     });
@@ -164,6 +184,63 @@ export default function AditamentosPage() {
       cargarDatos();
     } catch (err) {
       console.error('Error:', err);
+    }
+  }
+
+  // Funciones para documentos
+  function handleVerDocumentos(item: Aditamento) {
+    setSelectedAditamento(item);
+    setShowDocsModal(true);
+  }
+
+  async function handleSubirDocumento(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file || !selectedAditamento) return;
+
+    setUploadingDoc(true);
+    setUploadProgress(0);
+
+    try {
+      await subirDocumentoAditamento(
+        selectedAditamento.id,
+        file,
+        docCategoria,
+        undefined,
+        (progress) => setUploadProgress(progress.progress)
+      );
+
+      // Recargar datos y actualizar el aditamento seleccionado
+      const datosActualizados = await obtenerAditamentos();
+      setTodosAditamentos(datosActualizados);
+      aplicarFiltros(datosActualizados);
+      const aditamentoActualizado = datosActualizados.find(a => a.id === selectedAditamento.id);
+      if (aditamentoActualizado) setSelectedAditamento(aditamentoActualizado);
+    } catch (err) {
+      console.error('Error al subir documento:', err);
+      alert('Error al subir documento');
+    } finally {
+      setUploadingDoc(false);
+      setUploadProgress(0);
+      e.target.value = '';
+    }
+  }
+
+  async function handleEliminarDocumento(doc: DocumentoExpediente) {
+    if (!selectedAditamento) return;
+    if (!window.confirm(`¿Eliminar "${doc.nombre}"?`)) return;
+
+    try {
+      await eliminarDocumentoAditamento(selectedAditamento.id, doc);
+
+      // Recargar datos
+      const datosActualizados = await obtenerAditamentos();
+      setTodosAditamentos(datosActualizados);
+      aplicarFiltros(datosActualizados);
+      const aditamentoActualizado = datosActualizados.find(a => a.id === selectedAditamento.id);
+      if (aditamentoActualizado) setSelectedAditamento(aditamentoActualizado);
+    } catch (err) {
+      console.error('Error al eliminar documento:', err);
+      alert('Error al eliminar documento');
     }
   }
 
@@ -250,6 +327,8 @@ export default function AditamentosPage() {
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Tipo</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Dimensiones</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Capacidad</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Seguro</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Expediente</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Placas</th>
                   <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">Acciones</th>
                 </tr>
@@ -296,6 +375,33 @@ export default function AditamentosPage() {
                             {item.capacidadCarga} ton
                           </div>
                         ) : <span className="text-gray-400 text-sm">-</span>}
+                      </td>
+                      <td className="px-6 py-4">
+                        {item.seguro ? (
+                          <div className="space-y-1 text-xs">
+                            <div className="flex items-center gap-1">
+                              <Shield size={12} className="text-green-600" />
+                              <span className="font-medium">{item.seguro.poliza}</span>
+                            </div>
+                            <p className="text-gray-500">${(item.seguro.costoAnual || 0).toLocaleString()}/año</p>
+                            {item.seguro.vigenciaFin && (
+                              <p className={`text-xs ${new Date(item.seguro.vigenciaFin) < new Date() ? 'text-red-500 font-medium' : 'text-gray-400'}`}>
+                                Vence: {new Date(item.seguro.vigenciaFin).toLocaleDateString('es-MX')}
+                              </p>
+                            )}
+                          </div>
+                        ) : (
+                          <span className="text-xs text-gray-400">Sin seguro</span>
+                        )}
+                      </td>
+                      <td className="px-6 py-4">
+                        <button
+                          onClick={() => handleVerDocumentos(item)}
+                          className="inline-flex items-center gap-1 px-2 py-1 text-xs bg-purple-100 text-purple-700 rounded hover:bg-purple-200 transition-colors"
+                        >
+                          <FolderOpen size={12} />
+                          {item.documentos?.length || 0} docs
+                        </button>
                       </td>
                       <td className="px-6 py-4">
                         {item.placas ? <span className="font-mono text-sm">{item.placas}</span> : <span className="text-gray-400 text-sm">-</span>}
@@ -367,6 +473,116 @@ export default function AditamentosPage() {
                     <input type="number" step="0.1" value={formData.ancho || ''} onChange={(e) => setFormData({ ...formData, ancho: parseFloat(e.target.value) || undefined })} className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] outline-none" />
                   </div>
                 </div>
+
+                {/* Seguro */}
+                <div className="space-y-3 border-t pt-4">
+                  <h3 className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                    <Shield size={16} /> Póliza de Seguro
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">No. Póliza</label>
+                      <input
+                        type="text"
+                        value={formData.seguro?.poliza || ''}
+                        onChange={(e) => setFormData({
+                          ...formData,
+                          seguro: {
+                            poliza: e.target.value,
+                            aseguradora: formData.seguro?.aseguradora || '',
+                            costoAnual: formData.seguro?.costoAnual || 0,
+                            vigenciaInicio: formData.seguro?.vigenciaInicio,
+                            vigenciaFin: formData.seguro?.vigenciaFin,
+                          }
+                        })}
+                        className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] outline-none"
+                        placeholder="POL-2025-12345"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Aseguradora</label>
+                      <input
+                        type="text"
+                        value={formData.seguro?.aseguradora || ''}
+                        onChange={(e) => setFormData({
+                          ...formData,
+                          seguro: {
+                            poliza: formData.seguro?.poliza || '',
+                            aseguradora: e.target.value,
+                            costoAnual: formData.seguro?.costoAnual || 0,
+                            vigenciaInicio: formData.seguro?.vigenciaInicio,
+                            vigenciaFin: formData.seguro?.vigenciaFin,
+                          }
+                        })}
+                        className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] outline-none"
+                        placeholder="GNP, Qualitas, HDI"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Costo Anual (MXN)</label>
+                      <input
+                        type="number"
+                        step="0.01"
+                        value={formData.seguro?.costoAnual || ''}
+                        onChange={(e) => setFormData({
+                          ...formData,
+                          seguro: {
+                            poliza: formData.seguro?.poliza || '',
+                            aseguradora: formData.seguro?.aseguradora || '',
+                            costoAnual: parseFloat(e.target.value) || 0,
+                            vigenciaInicio: formData.seguro?.vigenciaInicio,
+                            vigenciaFin: formData.seguro?.vigenciaFin,
+                          }
+                        })}
+                        className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] outline-none"
+                        placeholder="15000"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Vigencia Inicio</label>
+                      <input
+                        type="date"
+                        value={formData.seguro?.vigenciaInicio instanceof Date
+                          ? formData.seguro.vigenciaInicio.toISOString().split('T')[0]
+                          : formData.seguro?.vigenciaInicio || ''}
+                        onChange={(e) => setFormData({
+                          ...formData,
+                          seguro: {
+                            poliza: formData.seguro?.poliza || '',
+                            aseguradora: formData.seguro?.aseguradora || '',
+                            costoAnual: formData.seguro?.costoAnual || 0,
+                            vigenciaInicio: e.target.value ? new Date(e.target.value + 'T12:00:00') : undefined,
+                            vigenciaFin: formData.seguro?.vigenciaFin,
+                          }
+                        })}
+                        className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Vigencia Fin</label>
+                      <input
+                        type="date"
+                        value={formData.seguro?.vigenciaFin instanceof Date
+                          ? formData.seguro.vigenciaFin.toISOString().split('T')[0]
+                          : formData.seguro?.vigenciaFin || ''}
+                        onChange={(e) => setFormData({
+                          ...formData,
+                          seguro: {
+                            poliza: formData.seguro?.poliza || '',
+                            aseguradora: formData.seguro?.aseguradora || '',
+                            costoAnual: formData.seguro?.costoAnual || 0,
+                            vigenciaInicio: formData.seguro?.vigenciaInicio,
+                            vigenciaFin: e.target.value ? new Date(e.target.value + 'T12:00:00') : undefined,
+                          }
+                        })}
+                        className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] outline-none"
+                      />
+                    </div>
+                  </div>
+                </div>
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Notas</label>
                   <textarea value={formData.notas} onChange={(e) => setFormData({ ...formData, notas: e.target.value })} rows={2} className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] outline-none resize-none" />
@@ -378,6 +594,138 @@ export default function AditamentosPage() {
                   </button>
                 </div>
               </form>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modal de Documentos */}
+      {showDocsModal && selectedAditamento && (
+        <div className="fixed inset-0 z-50 overflow-y-auto">
+          <div className="flex items-center justify-center min-h-screen px-4">
+            <div className="fixed inset-0 bg-black/50" onClick={() => setShowDocsModal(false)} />
+            <div className="relative bg-white rounded-2xl shadow-xl w-full max-w-2xl p-6">
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 className="text-xl font-semibold">Expediente de Documentos</h2>
+                  <p className="text-sm text-gray-500">{selectedAditamento.numeroEconomico} - {selectedAditamento.tipo}</p>
+                </div>
+                <button onClick={() => setShowDocsModal(false)} className="p-2 hover:bg-gray-100 rounded-lg">
+                  <X size={20} />
+                </button>
+              </div>
+
+              {/* Subir documento */}
+              <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                <h3 className="text-sm font-medium text-gray-700 mb-3">Subir nuevo documento</h3>
+                <div className="flex items-end gap-3">
+                  <div className="flex-1">
+                    <label className="block text-xs text-gray-500 mb-1">Categoría</label>
+                    <select
+                      value={docCategoria}
+                      onChange={(e) => setDocCategoria(e.target.value as TipoDocumento)}
+                      className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-[#BB0034] outline-none"
+                    >
+                      {TIPOS_DOCUMENTO.map(t => (
+                        <option key={t.value} value={t.value}>{t.label}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="flex-1">
+                    <label className="relative inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 cursor-pointer transition-colors">
+                      {uploadingDoc ? (
+                        <>
+                          <Loader2 size={16} className="animate-spin" />
+                          Subiendo {uploadProgress}%
+                        </>
+                      ) : (
+                        <>
+                          <Upload size={16} />
+                          Seleccionar archivo
+                        </>
+                      )}
+                      <input
+                        type="file"
+                        className="sr-only"
+                        onChange={handleSubirDocumento}
+                        disabled={uploadingDoc}
+                        accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx"
+                      />
+                    </label>
+                  </div>
+                </div>
+                {uploadingDoc && (
+                  <div className="mt-3">
+                    <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-purple-600 transition-all duration-300"
+                        style={{ width: `${uploadProgress}%` }}
+                      />
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Lista de documentos */}
+              <div className="space-y-2 max-h-96 overflow-y-auto">
+                {selectedAditamento.documentos && selectedAditamento.documentos.length > 0 ? (
+                  selectedAditamento.documentos.map((doc) => {
+                    const tipoDoc = TIPOS_DOCUMENTO.find(t => t.value === doc.categoria);
+                    return (
+                      <div key={doc.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100">
+                        <div className="flex items-center gap-3">
+                          <div className="p-2 bg-white rounded-lg shadow-sm">
+                            <File size={20} className="text-gray-500" />
+                          </div>
+                          <div>
+                            <p className="font-medium text-sm">{doc.nombre}</p>
+                            <div className="flex items-center gap-2 text-xs text-gray-500">
+                              <span className="px-2 py-0.5 bg-purple-100 text-purple-700 rounded">
+                                {tipoDoc?.label || doc.categoria}
+                              </span>
+                              <span>{formatFileSize(doc.tamaño)}</span>
+                              <span>{new Date(doc.fechaSubida).toLocaleDateString('es-MX')}</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <a
+                            href={doc.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 hover:bg-white rounded-lg text-blue-600"
+                            title="Descargar"
+                          >
+                            <Download size={18} />
+                          </a>
+                          <button
+                            onClick={() => handleEliminarDocumento(doc)}
+                            className="p-2 hover:bg-white rounded-lg text-red-500"
+                            title="Eliminar"
+                          >
+                            <Trash2 size={18} />
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  })
+                ) : (
+                  <div className="text-center py-8 text-gray-500">
+                    <FolderOpen size={32} className="mx-auto mb-2 opacity-50" />
+                    <p>No hay documentos en el expediente</p>
+                    <p className="text-sm">Sube el primer documento</p>
+                  </div>
+                )}
+              </div>
+
+              <div className="flex justify-end mt-6 pt-4 border-t">
+                <button
+                  onClick={() => setShowDocsModal(false)}
+                  className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200"
+                >
+                  Cerrar
+                </button>
+              </div>
             </div>
           </div>
         </div>

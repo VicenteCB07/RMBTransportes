@@ -1,0 +1,8361 @@
+{
+  "87000": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Ciudad Victoria Centro",
+      "Los Fresnos"
+    ]
+  },
+  "87010": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Enrique Cárdenas González",
+      "José López Portillo",
+      "Tránsito"
+    ]
+  },
+  "87014": {
+    "municipio": "Victoria",
+    "colonias": [
+      "77 Batallón de Infantería",
+      "Alianza de Colonos",
+      "El Mirador",
+      "Emilio Caballero",
+      "General Lucio Blanco",
+      "Luis Donaldo Colosio",
+      "Villa María",
+      "Zeferino Fajardo Luna"
+    ]
+  },
+  "87015": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Estrella",
+      "Las Enfermeras",
+      "Privada San Ignacio"
+    ]
+  },
+  "87016": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Cañón de la Peregrina",
+      "Sierra Vista",
+      "Vamos Tamaulipas"
+    ]
+  },
+  "87018": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Agua Fría I",
+      "Agua Fría II",
+      "Colinas de San Roberto",
+      "Colinas del Valle",
+      "Framboyanes",
+      "Industrial",
+      "La Libertad II",
+      "Las Montañas",
+      "Lomas de Calamaco",
+      "Praderas de Victoria",
+      "Valle Esmeralda"
+    ]
+  },
+  "87019": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Burócratas Municipales II",
+      "La Libertad",
+      "La Presita",
+      "Monte Alto",
+      "Rincón del Valle",
+      "Rincón del Valle Elite",
+      "Villas del Pedregal"
+    ]
+  },
+  "87020": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Adolfo López Mateos",
+      "Norberto Treviño Zapata",
+      "Valle Escondido",
+      "Valle de Aguayo"
+    ]
+  },
+  "87023": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Haciendas del Colibrí",
+      "Lilia Zozaya",
+      "Los Olivos",
+      "Lázaro Cárdenas",
+      "Puerta de Hierro",
+      "Residencial Campestre Janambres",
+      "Residencial Santa María",
+      "San Gabriel"
+    ]
+  },
+  "87024": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Azteca",
+      "Bosque Real",
+      "Bosques del Sur",
+      "Burócratas Municipales",
+      "Colinas del Bosque",
+      "Doctores",
+      "Granjas Campestre",
+      "ITACE",
+      "Ignacio Zaragoza",
+      "Las Alamedas",
+      "Los Encinos Campestre",
+      "Mariano Matamoros",
+      "Nueva Aurora",
+      "Pedregal Campestre",
+      "Poza Madre",
+      "Privada San Miguel",
+      "Privanzas II",
+      "Residencial los Milagros",
+      "Revolución Verde",
+      "San Alberto",
+      "Santa Fe",
+      "Santa María",
+      "Teocaltiche",
+      "UPYSSET",
+      "Valle Oriente",
+      "Villa Oriente",
+      "Vista Azul"
+    ]
+  },
+  "87025": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Adolfo López Mateos (Ampliación)",
+      "Ampliación Campestre",
+      "Bosques Campestre",
+      "Bugambilias",
+      "Del Sol",
+      "Del Valle",
+      "Haciendas del Sol",
+      "Ingeniero Agrónomo Carlos Anzures",
+      "Jardines de San José",
+      "La Florida",
+      "Las Alazanas",
+      "Las Huertas",
+      "Magistrados",
+      "Montes Altos",
+      "Privada Bilbao",
+      "Privada Cabañas",
+      "Real de Teocaltiche",
+      "Residencial Cabañas de Victoria",
+      "Residencial la Misión",
+      "Siglo XXI",
+      "Villas del Bosque",
+      "Vista Verde"
+    ]
+  },
+  "87026": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Magisterial",
+      "Privada Canteras"
+    ]
+  },
+  "87027": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Ampliación Villarreal",
+      "Arboledas",
+      "Las Américas",
+      "Monte Alto",
+      "Petroleros",
+      "Privadas de la Salle",
+      "San Ángel",
+      "Villa Jardín",
+      "Villarreal"
+    ]
+  },
+  "87028": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Benito Juárez",
+      "Camino Real",
+      "Club Campestre",
+      "INFONAVIT Jardín",
+      "Los Cristales",
+      "Los Lagos",
+      "Los Laureles",
+      "Los Sauces",
+      "Misión San Agustín",
+      "Residencial los Naranjos",
+      "Royal Country",
+      "Santa Bárbara",
+      "Santa Laura",
+      "Verona Residencial",
+      "Villa Campestre"
+    ]
+  },
+  "87029": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Las Villas",
+      "Privanzas I",
+      "Residencial Campestre"
+    ]
+  },
+  "87030": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Ampliación Miguel Alemán",
+      "Banrural",
+      "Colinas del Mirador",
+      "Conjunto Habitacional Panorama",
+      "Cumbres",
+      "FSTSE",
+      "Héroe de Nacozari",
+      "INFONAVIT Miguel Alemán",
+      "Imperial",
+      "Jardín Norte",
+      "Junta Local de Caminos",
+      "La Cima",
+      "La Sierra",
+      "Los Ébanos",
+      "Lázaro Cárdenas",
+      "Mi Ranchito",
+      "Miguel Alemán",
+      "Mira Sierra",
+      "Nuevo Santander",
+      "Privada Jardines del Sauce",
+      "Privadas del Nogalar",
+      "Sierra Ventana",
+      "Villa Alpina"
+    ]
+  },
+  "87033": {
+    "municipio": "Victoria",
+    "colonias": [
+      "La Escondida"
+    ]
+  },
+  "87037": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Balcón Panorámico Residencial",
+      "Colinas del Parque",
+      "Fuego Nuevo",
+      "Lomas Panorámico",
+      "Lomas de Santander",
+      "Residencial los Alpes",
+      "Sierra Madre",
+      "Tecnológico"
+    ]
+  },
+  "87039": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Nuevo Santander"
+    ]
+  },
+  "87040": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Asunción Gómez",
+      "Del Periodista",
+      "INFONAVIT Aldama",
+      "Los Arcos",
+      "San José",
+      "Viviendas Populares"
+    ]
+  },
+  "87043": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Pietrasanta"
+    ]
+  },
+  "87048": {
+    "municipio": "Victoria",
+    "colonias": [
+      "FOVISSSTE",
+      "INFONAVIT Jesús Elías Piña",
+      "Pedro José Méndez"
+    ]
+  },
+  "87049": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Conjunto Habitacional Paseo de las Américas",
+      "Conjunto Habitacional los Mezquites",
+      "Hacienda del Bosque",
+      "INFONAVIT Fidel Velázquez Sánchez",
+      "Las Adelitas",
+      "Las Misiones",
+      "Las Torres",
+      "Los Almendros",
+      "Los Ángeles",
+      "Lázaro Cárdenas",
+      "Militar",
+      "México",
+      "Naciones Unidas",
+      "Oralia Guerra de Villarreal",
+      "Residencial las Torres",
+      "Residencial los Almendros",
+      "SUTSPET",
+      "San Luisito",
+      "Santa Martha",
+      "Santo Tomás"
+    ]
+  },
+  "87050": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Morelos",
+      "Quinta Laura",
+      "Residencial las Palmas",
+      "San Francisco",
+      "Sierra Gorda"
+    ]
+  },
+  "87058": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Conjunto Habitacional Residencial Selectas",
+      "Del Norte",
+      "Jacarandas"
+    ]
+  },
+  "87059": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Hogares Modernos"
+    ]
+  },
+  "87060": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Bethel",
+      "Constitución del 17 de Octubre",
+      "Estudiantil",
+      "Luis Echeverría Álvarez",
+      "Rosalinda Guerrero",
+      "Sector la Huerta",
+      "Tamatán",
+      "Tomás Yarrington"
+    ]
+  },
+  "87070": {
+    "municipio": "Victoria",
+    "colonias": [
+      "7 de Noviembre",
+      "Américo Villarreal Guerra",
+      "Camino Real a Tula",
+      "Cofrades",
+      "Conjunto Habitacional Villas de Guadalupe",
+      "Del Maestro",
+      "Jardines de Tamatán",
+      "La Gloria",
+      "Luis Quintero Guzmán",
+      "Puerta Cofrades",
+      "Puerta de Tamatán",
+      "Puerta de la Luna",
+      "Puerta del Sol",
+      "Rincón de Tamatán",
+      "San Marcos",
+      "Zozaya"
+    ]
+  },
+  "87071": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Enrique Lara"
+    ]
+  },
+  "87076": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Alberto Carrera Torres",
+      "La Esperanza",
+      "Simón Torres"
+    ]
+  },
+  "87078": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Altavista",
+      "América de Juárez",
+      "Camino Vecinal la Garra",
+      "Cuauhtémoc",
+      "Del Maestro Eta",
+      "El Tamatán",
+      "Las Flores",
+      "Luis Echeverría Álvarez",
+      "Rincón de la Sierra",
+      "Vergel de la Sierra",
+      "Vista Hermosa",
+      "Álvaro Obregón"
+    ]
+  },
+  "87080": {
+    "municipio": "Victoria",
+    "colonias": [
+      "16 de Septiembre",
+      "Ayuntamiento I Etapa",
+      "Buenavista",
+      "Emiliano Zapata",
+      "Emilio Portes Gil",
+      "Independencia",
+      "José de Escandón"
+    ]
+  },
+  "87083": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Parque Bicentenario"
+    ]
+  },
+  "87084": {
+    "municipio": "Victoria",
+    "colonias": [
+      "La Rioja",
+      "Los Mirlos Residencial",
+      "Los Álamos",
+      "Paseo de los Cisnes",
+      "Residencial Santa Regina",
+      "Residencial el Cardenal",
+      "Residencial los Canarios"
+    ]
+  },
+  "87085": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Ayuntamiento II Etapa",
+      "Pepenadores"
+    ]
+  },
+  "87086": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Ampliación Playas",
+      "Azteca",
+      "Liberal",
+      "Matías Hinojosa Silva",
+      "Pajaritos",
+      "Valle Dorado",
+      "Vicente Guerrero"
+    ]
+  },
+  "87087": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Nuevas Playas",
+      "Sagitario",
+      "Satélite"
+    ]
+  },
+  "87089": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Alborada",
+      "Ampliación Nuevo Amanecer",
+      "Barrio de Pajaritos",
+      "CANACO",
+      "Guadalupe Victoria",
+      "Hacienda del Nogal",
+      "Insurgentes",
+      "La Corregidora",
+      "La Paz",
+      "Magdaleno Aguilar",
+      "Manuel Cavazos Lerma",
+      "Niños Héroes",
+      "Nueva Era",
+      "Nuevo Amanecer",
+      "Reforma",
+      "Solidaridad Voluntad y Trabajo",
+      "Unidad Sindical",
+      "Valle del Magisterio",
+      "Villas Vida Plena"
+    ]
+  },
+  "87090": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Benito Juárez",
+      "Miguel Hidalgo",
+      "Obrera",
+      "Tamaulipas",
+      "Victoria"
+    ]
+  },
+  "87093": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Benito Juárez II y III"
+    ]
+  },
+  "87099": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Comercial 2000"
+    ]
+  },
+  "87100": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Guadalupe Mainero"
+    ]
+  },
+  "87110": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Burócratas Estatales"
+    ]
+  },
+  "87120": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Balcones del Valle",
+      "El Palmar",
+      "Fraternidad",
+      "Hacienda del Santuario",
+      "Pedro Sosa"
+    ]
+  },
+  "87130": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Auténticas Playas",
+      "Chapultepec",
+      "Francisco Villa",
+      "Horacio Terán",
+      "Integración Familiar",
+      "Las Fuentes",
+      "Las Palomas",
+      "Loma Bonita",
+      "Loma Linda",
+      "Loma Real",
+      "Los Prados",
+      "Mediterráneo",
+      "Paseo de los Olivos",
+      "Paseo de los Olmos",
+      "Viento Huasteco",
+      "Vista Hermosa"
+    ]
+  },
+  "87133": {
+    "municipio": "Victoria",
+    "colonias": [
+      "2 de Abril",
+      "Camino Nuevo",
+      "El Mezquite",
+      "Promotora de Educación Superior de Tamaulipas"
+    ]
+  },
+  "87134": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Altavista",
+      "Diana Laura",
+      "Familias Fuertes",
+      "Las Huertas del Río",
+      "Linda Vista",
+      "Luisa Montemayor",
+      "Moderna",
+      "Nueva Esperanza",
+      "Obregón",
+      "Primavera",
+      "Residencial Arbolada",
+      "Residencial los Prados",
+      "Riveras del Río",
+      "Servidor Público",
+      "Todos por Tamaulipas",
+      "Unidos Avanzamos"
+    ]
+  },
+  "87135": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Bambú",
+      "Gloria Oriente",
+      "Lomas Verdes",
+      "Lomas del Rincón",
+      "Rincón de las Montañas",
+      "Villas del Carmen"
+    ]
+  },
+  "87136": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Huertas San Javier",
+      "Noria de los Ángeles",
+      "Pedro José Méndez II"
+    ]
+  },
+  "87137": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Loma Dorada",
+      "Marte R Gómez",
+      "Parque Industrial Nuevo Santander"
+    ]
+  },
+  "87138": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Parque Científico y Tecnológico de Tamaulipas"
+    ]
+  },
+  "87140": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Evelin",
+      "Las Palmas",
+      "Los Pinos",
+      "Simon Bolívar"
+    ]
+  },
+  "87149": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Centro Universitario"
+    ]
+  },
+  "87150": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Altas Cumbres",
+      "Francisco I Madero",
+      "San Marcos Dos",
+      "Veteranos de la Revolución"
+    ]
+  },
+  "87160": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Bertha del Avellano",
+      "Casas Blancas",
+      "Gutiérrez de Lara",
+      "Unidad Modelo"
+    ]
+  },
+  "87163": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Barrio del Bosque"
+    ]
+  },
+  "87170": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Amalia G de Castillo Ledon",
+      "Manuel A Ravize"
+    ]
+  },
+  "87173": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Poder Popular"
+    ]
+  },
+  "87180": {
+    "municipio": "Victoria",
+    "colonias": [
+      "12 de Septiembre",
+      "Constituyentes",
+      "Esfuerzo Popular",
+      "Ignacio Allende",
+      "Jardines del Sur",
+      "Las Brisas",
+      "Loma Alta",
+      "Nuevo Tamaulipas",
+      "Pedro Sosa (Ampliación)",
+      "SAHOP",
+      "Unión Democracia"
+    ]
+  },
+  "87183": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Misión del Palmar",
+      "Residencial la Quinta",
+      "Rinconada las Haciendas"
+    ]
+  },
+  "87200": {
+    "municipio": "Llera",
+    "colonias": [
+      "Enrique Cárdenas González",
+      "José Agustín Castro",
+      "Llera de Canales",
+      "Luis Quintero",
+      "Miradores (Guayalejo)",
+      "Morelos",
+      "Obrera"
+    ]
+  },
+  "87202": {
+    "municipio": "Llera",
+    "colonias": [
+      "Lavín"
+    ]
+  },
+  "87203": {
+    "municipio": "Llera",
+    "colonias": [
+      "José María Morelos (El Viejo)"
+    ]
+  },
+  "87204": {
+    "municipio": "Llera",
+    "colonias": [
+      "Felipe Carrillo Puerto"
+    ]
+  },
+  "87205": {
+    "municipio": "Llera",
+    "colonias": [
+      "El Peñón",
+      "Porvenir del Campesino (La Purísima)",
+      "San Rafael"
+    ]
+  },
+  "87206": {
+    "municipio": "Llera",
+    "colonias": [
+      "Felipe Ángeles (El Carrizo)",
+      "San Juan del Sur",
+      "San Miguel del Olivo [Congregación]",
+      "Santa Isabel"
+    ]
+  },
+  "87207": {
+    "municipio": "Llera",
+    "colonias": [
+      "Hermenegildo Galeana",
+      "Las Huertas",
+      "San Ramón"
+    ]
+  },
+  "87208": {
+    "municipio": "Llera",
+    "colonias": [
+      "Conrado Castillo",
+      "El Aquichal (El Pinto)",
+      "La Libertad",
+      "Santa Fe"
+    ]
+  },
+  "87209": {
+    "municipio": "Llera",
+    "colonias": [
+      "El Guayabo",
+      "El Nuevo Encino (El Encino)",
+      "Rancho Nuevo del Sur",
+      "San Isidro"
+    ]
+  },
+  "87210": {
+    "municipio": "Llera",
+    "colonias": [
+      "General Pedro José Méndez",
+      "Ignacio Zaragoza",
+      "Las Compuertas"
+    ]
+  },
+  "87211": {
+    "municipio": "Llera",
+    "colonias": [
+      "Emiliano Zapata"
+    ]
+  },
+  "87212": {
+    "municipio": "Llera",
+    "colonias": [
+      "Casa del Campesino (La Clementina)"
+    ]
+  },
+  "87213": {
+    "municipio": "Llera",
+    "colonias": [
+      "La Independencia",
+      "Nuevo San Luis (San Luisito)"
+    ]
+  },
+  "87214": {
+    "municipio": "Llera",
+    "colonias": [
+      "José Silva Sánchez"
+    ]
+  },
+  "87215": {
+    "municipio": "Llera",
+    "colonias": [
+      "Capitán Emilio Carranza (Forlón)"
+    ]
+  },
+  "87216": {
+    "municipio": "Llera",
+    "colonias": [
+      "Voz Campesina (Providencia)"
+    ]
+  },
+  "87220": {
+    "municipio": "Llera",
+    "colonias": [
+      "Mariano Escobedo"
+    ]
+  },
+  "87223": {
+    "municipio": "Llera",
+    "colonias": [
+      "Voz Campesina (Ampliación las Minas)"
+    ]
+  },
+  "87224": {
+    "municipio": "Llera",
+    "colonias": [
+      "Adolfo Ruiz Cortines",
+      "Francisco Villa",
+      "Guanajuato"
+    ]
+  },
+  "87227": {
+    "municipio": "Llera",
+    "colonias": [
+      "El Cabrito",
+      "Santa Inés"
+    ]
+  },
+  "87228": {
+    "municipio": "Llera",
+    "colonias": [
+      "Francisco Castellanos"
+    ]
+  },
+  "87229": {
+    "municipio": "Llera",
+    "colonias": [
+      "Adolfo López Mateos"
+    ]
+  },
+  "87230": {
+    "municipio": "Güémez",
+    "colonias": [
+      "Güémez"
+    ]
+  },
+  "87232": {
+    "municipio": "Güémez",
+    "colonias": [
+      "Ricardo Flores Magón"
+    ]
+  },
+  "87233": {
+    "municipio": "Güémez",
+    "colonias": [
+      "Constitución del Diecisiete",
+      "La Mesa"
+    ]
+  },
+  "87235": {
+    "municipio": "Güémez",
+    "colonias": [
+      "La Esperanza",
+      "San Cayetano",
+      "San José de las Flores"
+    ]
+  },
+  "87236": {
+    "municipio": "Güémez",
+    "colonias": [
+      "Ciudad Victoria (General Pedro J Méndez)"
+    ]
+  },
+  "87237": {
+    "municipio": "Güémez",
+    "colonias": [
+      "La San Juana",
+      "Subida Alta"
+    ]
+  },
+  "87238": {
+    "municipio": "Güémez",
+    "colonias": [
+      "Acatlán (Plutarco Elías Calles)",
+      "Luz del Campesino (Corona)",
+      "Miraflores"
+    ]
+  },
+  "87239": {
+    "municipio": "Güémez",
+    "colonias": [
+      "La Diana",
+      "La Parrita"
+    ]
+  },
+  "87240": {
+    "municipio": "Güémez",
+    "colonias": [
+      "El Carmen",
+      "Graciano Sánchez",
+      "Guadalupe Victoria"
+    ]
+  },
+  "87244": {
+    "municipio": "Güémez",
+    "colonias": [
+      "Santa Rosa"
+    ]
+  },
+  "87245": {
+    "municipio": "Güémez",
+    "colonias": [
+      "El Alamito",
+      "El Olmo",
+      "El Roble"
+    ]
+  },
+  "87247": {
+    "municipio": "Güémez",
+    "colonias": [
+      "El Arco",
+      "Santa Gertrudis"
+    ]
+  },
+  "87248": {
+    "municipio": "Güémez",
+    "colonias": [
+      "El Porvenir",
+      "La Presita",
+      "Las Crucitas",
+      "Servando Canales"
+    ]
+  },
+  "87249": {
+    "municipio": "Güémez",
+    "colonias": [
+      "El Cerrito Nuevo",
+      "Plan de Ayala"
+    ]
+  },
+  "87250": {
+    "municipio": "Casas",
+    "colonias": [
+      "Casas",
+      "Jacinto Canek"
+    ]
+  },
+  "87253": {
+    "municipio": "Casas",
+    "colonias": [
+      "González",
+      "Nuevo San Francisco",
+      "San Francisco"
+    ]
+  },
+  "87254": {
+    "municipio": "Casas",
+    "colonias": [
+      "Eduardo Benavides (El Almagre)"
+    ]
+  },
+  "87255": {
+    "municipio": "Casas",
+    "colonias": [
+      "La Maestra",
+      "Piedras Negras",
+      "San Antonio el Grande"
+    ]
+  },
+  "87256": {
+    "municipio": "Casas",
+    "colonias": [
+      "Campo Número Dos",
+      "Campo Número Tres",
+      "Campo Número Uno (Campo Alto)",
+      "Lajilla del Sur (La Lajilla)"
+    ]
+  },
+  "87257": {
+    "municipio": "Casas",
+    "colonias": [
+      "El Nogalito",
+      "La Guadalupana (Las Adjuntas)",
+      "Los Ángeles",
+      "Los Ángeles (Felipe Ángeles)",
+      "Praxedis Balboa"
+    ]
+  },
+  "87258": {
+    "municipio": "Casas",
+    "colonias": [
+      "San Francisco (Estación San Francisco)"
+    ]
+  },
+  "87259": {
+    "municipio": "Casas",
+    "colonias": [
+      "Adolfo López Mateos",
+      "Cinco de Febrero",
+      "El Amparo",
+      "Lázaro Cárdenas"
+    ]
+  },
+  "87260": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Alto de Estación Caballeros",
+      "Congregación Caballeros",
+      "La Libertad",
+      "La Misión"
+    ]
+  },
+  "87261": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Estación Carbonero"
+    ]
+  },
+  "87262": {
+    "municipio": "Victoria",
+    "colonias": [
+      "El Rucio (María Eugenia Benavides)",
+      "Juan Rincón",
+      "La Peñita",
+      "Las Anacuas (Las Coloradas)",
+      "Otilio Montaño"
+    ]
+  },
+  "87263": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Fuerte de Portes Gil",
+      "La Boca (La Boca de San Pedro)",
+      "Nogales"
+    ]
+  },
+  "87265": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Mariposas y Mahuiras",
+      "Rancho Nuevo"
+    ]
+  },
+  "87266": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Alianza de Caballeros"
+    ]
+  },
+  "87267": {
+    "municipio": "Victoria",
+    "colonias": [
+      "El Refugio"
+    ]
+  },
+  "87270": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Loma Alta (Ejido)",
+      "Lomas de Guadalupe"
+    ]
+  },
+  "87273": {
+    "municipio": "Victoria",
+    "colonias": [
+      "El Olmo (Rancho Nuevo del Castillo)",
+      "Manuel Ávila Camacho",
+      "San Juan y el Ranchito",
+      "Santa Clara",
+      "Santa Rosa"
+    ]
+  },
+  "87274": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Santa Ana",
+      "Santa Librada"
+    ]
+  },
+  "87277": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Dieciocho de Marzo",
+      "El Olivo",
+      "Veintiuno de Mayo"
+    ]
+  },
+  "87278": {
+    "municipio": "Victoria",
+    "colonias": [
+      "La Presa"
+    ]
+  },
+  "87279": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Aquiles Serdán",
+      "Laborcitas",
+      "Tierra Nueva"
+    ]
+  },
+  "87284": {
+    "municipio": "Victoria",
+    "colonias": [
+      "Joya Verde"
+    ]
+  },
+  "87300": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Heroica Matamoros Centro"
+    ]
+  },
+  "87310": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Baltazar Díaz Bazán",
+      "Cananea",
+      "Constitución del 17",
+      "Esperanza",
+      "Juanillo",
+      "Reforma",
+      "Sección 11",
+      "Uniones"
+    ]
+  },
+  "87313": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Brisas del Valle",
+      "Carrera Torres",
+      "Ejido los Arados",
+      "El Caracol",
+      "Fidel Velázquez",
+      "Jacarandas",
+      "Libertad y Progreso",
+      "Parque Industrial Los Palmares",
+      "Paseo de las Brisas",
+      "Paseo del Nogalar",
+      "Rinconada de las Brisas",
+      "San Pedro",
+      "Siglo XXI",
+      "Vamos Tamaulipas"
+    ]
+  },
+  "87314": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Cedritos",
+      "Ignacio Zaragoza",
+      "Las Mitras",
+      "Los Girasoles",
+      "República Norte",
+      "República Sur",
+      "San Javier",
+      "Santa Lucía"
+    ]
+  },
+  "87315": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Francisco Zarco",
+      "La Paz",
+      "Las Lomas",
+      "Los Vergeles",
+      "Nuevo Amanecer",
+      "Oasis",
+      "Residencial Portal de las Garzas",
+      "Santa Cruz",
+      "Villa Hermosa",
+      "Villa del Parque"
+    ]
+  },
+  "87316": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "El Chorizo",
+      "Parque Industrial FINSA del Norte",
+      "Zona Industrial"
+    ]
+  },
+  "87317": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Las Fuentes"
+    ]
+  },
+  "87318": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Las Riveras"
+    ]
+  },
+  "87319": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Quinta Moros"
+    ]
+  },
+  "87320": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "1° de Mayo",
+      "Control 3 Norte",
+      "Del Valle",
+      "Estero San Pablo"
+    ]
+  },
+  "87324": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "3 Ríos",
+      "Ampliación Ejido las Rusias"
+    ]
+  },
+  "87326": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Lázaro Cárdenas"
+    ]
+  },
+  "87330": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Jardín",
+      "Moderna"
+    ]
+  },
+  "87340": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Control 3 Sur",
+      "Emilio Portes Gil",
+      "INFONAVIT los Ébanos",
+      "Jesús Urquiza",
+      "Obrera",
+      "San José",
+      "San Rafael",
+      "Santa Elena",
+      "Villa Universidad"
+    ]
+  },
+  "87343": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Del Golfo",
+      "Ejido Cabras Pintas",
+      "Gremio Unido de Choferes",
+      "Hacienda las Bugambilias",
+      "Hacienda las Misiones",
+      "Integración Familiar",
+      "Jesús Vega Sánchez",
+      "La Huerta",
+      "La Laguneta",
+      "Martha Rita Prince Aguilera",
+      "Molino del Rey",
+      "Privada San Miguel"
+    ]
+  },
+  "87344": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Acuario 2001",
+      "Esfuerzo Compartido",
+      "Hacienda del Puente",
+      "Jardines de San Roberto",
+      "La Plaza",
+      "Paseo del Magisterio",
+      "Puerto Rico",
+      "Rincón Colonial",
+      "Santa Anita",
+      "Villa Española",
+      "Villa de las Flores"
+    ]
+  },
+  "87345": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Casa Blanca",
+      "Centro Comercial Plaza Sendero",
+      "Ejido la Unión",
+      "España",
+      "Guadalupe Mainero",
+      "Los Encinos",
+      "Quinta Real",
+      "San Ángel Poniente",
+      "Valle Real",
+      "Valle de Casa Blanca",
+      "Valle de los Reyes"
+    ]
+  },
+  "87346": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Águilas",
+      "Águilas 2001"
+    ]
+  },
+  "87347": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Jardines de San Felipe",
+      "Las Misiones II",
+      "Los Palmares",
+      "Los Pueblitos",
+      "Nuevo Milenio",
+      "Unidos Avanzamos"
+    ]
+  },
+  "87348": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "José López Portillo"
+    ]
+  },
+  "87349": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Francisco Villa Norte"
+    ]
+  },
+  "87350": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Buenavista",
+      "Hidalgo",
+      "Industrial",
+      "Lucero",
+      "San Francisco"
+    ]
+  },
+  "87360": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Delicias",
+      "Electricistas",
+      "Las Puertas",
+      "Lázaro Cárdenas",
+      "Modelo",
+      "Privanzas del Río",
+      "Río",
+      "Unidad Hogar"
+    ]
+  },
+  "87369": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Bagdad"
+    ]
+  },
+  "87370": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Aurora",
+      "Bancaria",
+      "Euzkadi",
+      "Roberto F García",
+      "Santa Cruz",
+      "Vista Hermosa"
+    ]
+  },
+  "87380": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Chapultepec",
+      "INFONAVIT Paseo Residencial",
+      "Los Sauces",
+      "Mariano Matamoros",
+      "Moderno",
+      "Paseo Residencial",
+      "Rincón Colonial",
+      "Santa Ana",
+      "Valle Alto"
+    ]
+  },
+  "87382": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Residencial la Hacienda",
+      "Valle Dorado",
+      "Valle del Magisterio"
+    ]
+  },
+  "87383": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Bagdad Sur",
+      "Tamaulipas",
+      "Villa Azteca"
+    ]
+  },
+  "87385": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Chulavista",
+      "Los Álamos",
+      "Pedro Moreno"
+    ]
+  },
+  "87389": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "La Encantada",
+      "Valle Encantado"
+    ]
+  },
+  "87390": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Centro Comercial Plaza Fiesta",
+      "INFONAVIT Buenavista",
+      "La Villa",
+      "Las Granjas",
+      "Las Norias",
+      "Sección 16",
+      "Victoria",
+      "Victoria Sección Fiesta",
+      "Villa Madrid",
+      "Voluntad y Trabajo"
+    ]
+  },
+  "87393": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "La Venadita",
+      "Luz del Valle",
+      "San Charbel"
+    ]
+  },
+  "87394": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Ampliación Reforma Sur",
+      "Del Niño",
+      "Ebenezer",
+      "Ejido Buena Vista",
+      "El Alto",
+      "El Cambio",
+      "El Nacimiento",
+      "El Roble",
+      "Esperanza y Reforma",
+      "Eva Samano",
+      "Francisco Castellanos",
+      "José Casanova",
+      "Juan C Bonilla",
+      "La Estrella",
+      "La Luz",
+      "Las Bermudas",
+      "Libertad",
+      "Los Olivos",
+      "Los Ángeles",
+      "Luis Donaldo Colosio",
+      "Ocampo",
+      "Periodistas Segunda Sección",
+      "Privada las Flores",
+      "Ricardo Ramos",
+      "Santa Martha",
+      "Servando Canales",
+      "Sindicato de Trabajadores alServicio del Municipio",
+      "Valle de Anáhuac"
+    ]
+  },
+  "87395": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Adolfo López Mateos",
+      "Aeropuerto",
+      "Ampliación Expofiesta Norte",
+      "Buenos Aires",
+      "Cabras Pintas",
+      "Cuatro Caminos",
+      "Ernesto Elizondo",
+      "Francisco Covarrubias",
+      "Francisco I Madero",
+      "Francisco Villa Sur",
+      "Jardines del Sur",
+      "La India",
+      "Las Flores",
+      "Leyes de Colonos",
+      "Lomas del Real",
+      "Los Rosales",
+      "Los Ébanos",
+      "Luz del Paraíso",
+      "Matamoros (Servando Canales)",
+      "Praderas de la Rioja",
+      "Rancho Alegre",
+      "Rodríguez",
+      "San Cristóbal",
+      "Villa Coapa"
+    ]
+  },
+  "87396": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Amado Nervo",
+      "Expofiesta Norte",
+      "Expofiesta Sur",
+      "Insurgentes",
+      "Las Torres",
+      "Los Laureles",
+      "Villa Esmeralda"
+    ]
+  },
+  "87397": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Lucio Blanco"
+    ]
+  },
+  "87398": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Azteca",
+      "Bienestar",
+      "Emiliano Zapata",
+      "Estancias Residencial",
+      "Expofiesta Oriente",
+      "Loma Bonita",
+      "San Miguel",
+      "Villa las Torres"
+    ]
+  },
+  "87399": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "CBTIS",
+      "Central Mercado de Abastos",
+      "Ejido 20 de Noviembre",
+      "Magisterial",
+      "Melchor Ocampo"
+    ]
+  },
+  "87400": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Del Carmen",
+      "FOVISSSTE Fraccionamiento",
+      "Valle Escondido",
+      "Villa las Palmas",
+      "Villas del Río"
+    ]
+  },
+  "87410": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Alianza",
+      "Villa del Mar"
+    ]
+  },
+  "87413": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Arecas",
+      "La Rosita",
+      "Los Presidentes",
+      "Privanzas"
+    ]
+  },
+  "87415": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Residencial del Valle"
+    ]
+  },
+  "87420": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Las Palmas",
+      "Vivienda Popular"
+    ]
+  },
+  "87430": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Casa Colorada",
+      "Nuevo Renacimiento",
+      "Praxedis Balboa"
+    ]
+  },
+  "87438": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Bertha Avellano"
+    ]
+  },
+  "87440": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Alfonso Treviño",
+      "Arboledas del Río",
+      "Campestre del Río I",
+      "Campestre del Río II",
+      "Francisco Izaguirre",
+      "La Herradura",
+      "Los Doctores",
+      "Los Fresnos",
+      "México Agrario",
+      "Progreso",
+      "Ricardo A Basso"
+    ]
+  },
+  "87444": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Brisas",
+      "Ejido Lucio Blanco",
+      "La Barranquita",
+      "Las Brisas",
+      "Villas del Lago"
+    ]
+  },
+  "87445": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Privada Residencial Magnolias",
+      "Revolución Verde"
+    ]
+  },
+  "87446": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "San Juan"
+    ]
+  },
+  "87447": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Guillermo Guajardo"
+    ]
+  },
+  "87448": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Arboledas",
+      "Los Pinos"
+    ]
+  },
+  "87449": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Puertas Verdes"
+    ]
+  },
+  "87450": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "20 de Noviembre",
+      "Enrique Cárdenas",
+      "Las Bugambilias",
+      "Treviño Zapata"
+    ]
+  },
+  "87453": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "21 de Mayo",
+      "Ampliación Abelardo de la Torre",
+      "Comunicadores",
+      "El Saucito",
+      "Manuel Cavazos Lerma",
+      "Melitón Suárez",
+      "Nogalar Oriente",
+      "Nogalar Poniente",
+      "San Miguel"
+    ]
+  },
+  "87454": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Agrícola Oriental",
+      "Alborada",
+      "Ampliación los Agaves",
+      "Colonia Unidad",
+      "Condesa",
+      "El Recuerdo",
+      "Granjas de la Reforma",
+      "Jardines de Oriente",
+      "Jardines del Recuerdo",
+      "José Tejeda",
+      "La Alegría",
+      "Lomas del Sur",
+      "Los Reyes",
+      "Minería",
+      "Movimiento 18 de Octubre",
+      "Praderas del Sur",
+      "San Luis",
+      "Santa María",
+      "Sindicato Carpinteros",
+      "Sindicato de Albañiles",
+      "Villa del Jardín",
+      "Zafiro"
+    ]
+  },
+  "87455": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Abelardo de la Torre",
+      "Electricistas Sur",
+      "Jardines de San Juan",
+      "Jardines del Rey",
+      "La Joya",
+      "Lomas de San Juan",
+      "Nueva Jerusalem",
+      "Platería",
+      "San Manuel",
+      "Villa de Cortés"
+    ]
+  },
+  "87456": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Ampliación Santa Cecilia",
+      "Cecilia Ocelli",
+      "División del Norte",
+      "Pirámide",
+      "Salinas de Gortari",
+      "San Fernando",
+      "San Isidro",
+      "Santa Cecilia",
+      "Solidaridad",
+      "Vicente Guerrero"
+    ]
+  },
+  "87457": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Guadalupe Victoria",
+      "Niños Héroes",
+      "Periodistas",
+      "Pueblo Viejo",
+      "Tampico",
+      "Universitaria",
+      "Villa Hermosa"
+    ]
+  },
+  "87458": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Hacienda los Portales",
+      "INFONAVIT Satélite",
+      "INFONAVIT los Ángeles",
+      "Jardines de Satélite",
+      "Roberto Guerra",
+      "Satélite"
+    ]
+  },
+  "87459": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "José María Morelos"
+    ]
+  },
+  "87460": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Popular"
+    ]
+  },
+  "87469": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Benito Juárez"
+    ]
+  },
+  "87470": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Hacienda Praderas",
+      "Hacienda del Prado",
+      "JAD",
+      "Lauro Villar",
+      "Libre Comercio",
+      "Los Nogales",
+      "Miguel Hidalgo",
+      "Parque Industrial CYLSA",
+      "Playa Sol",
+      "Praderas",
+      "Rodolfo Sánchez Taboada",
+      "Valle del Campestre"
+    ]
+  },
+  "87475": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Futaam",
+      "La Amistad",
+      "Las Palmitas",
+      "Paraíso"
+    ]
+  },
+  "87476": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Las Cumbres"
+    ]
+  },
+  "87477": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "14 de Febrero",
+      "27 de Febrero",
+      "5 de Marzo",
+      "Correcaminos",
+      "Del Bosque",
+      "Derechos Humanos",
+      "El Porvenir",
+      "Fuerza y Unidad",
+      "Independencia",
+      "Nuevo Paraíso",
+      "Tierra y Libertad",
+      "Valle Verde"
+    ]
+  },
+  "87490": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Las Culturas",
+      "Tecnológico"
+    ]
+  },
+  "87493": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Ampliación Ejido Longoreño",
+      "Canadá",
+      "Hacienda la Cima III",
+      "Parque Industrial FINSA Oriente",
+      "San Jerónimo Residencial"
+    ]
+  },
+  "87494": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Ciudad Industrial",
+      "Profesor Rafael Ramírez"
+    ]
+  },
+  "87495": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Castillos Reales",
+      "Cañaveral",
+      "Hogares de Matamoros",
+      "Las Palomas",
+      "Loma Alta",
+      "Renacimiento",
+      "San Ángel Oriente",
+      "Santa Fe",
+      "Valle del Mezquital"
+    ]
+  },
+  "87496": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Fuentes Industriales I",
+      "Fuentes Industriales II",
+      "Fuentes de Bagdad",
+      "Fuentes del Valle",
+      "Fundadores",
+      "Hacienda la Cima",
+      "Licenciado Marcelino Miranda",
+      "Los Cedros",
+      "Residencial las Gaviotas"
+    ]
+  },
+  "87497": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Campestre del Real",
+      "Las Américas",
+      "México",
+      "Palmas del Mar",
+      "Palo Verde",
+      "Valle de la Palangana",
+      "Vista del Sol",
+      "Xochimilco"
+    ]
+  },
+  "87498": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Campestre del Lago"
+    ]
+  },
+  "87499": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Ciudad Industrial"
+    ]
+  },
+  "87500": {
+    "municipio": "Valle Hermoso",
+    "colonias": [
+      "Valle Hermoso Centro"
+    ]
+  },
+  "87503": {
+    "municipio": "Valle Hermoso",
+    "colonias": [
+      "El Pedregal",
+      "INFONAVIT Pedregal",
+      "José García Cárdenas",
+      "Las Brisas",
+      "Las Mitras",
+      "Las Palmas",
+      "López Mateos",
+      "Moderna",
+      "México",
+      "Norteñita",
+      "Obrera",
+      "Popular",
+      "SARH",
+      "San José",
+      "Zapata"
+    ]
+  },
+  "87504": {
+    "municipio": "Valle Hermoso",
+    "colonias": [
+      "Agricultores",
+      "Arboledas del Valle",
+      "Aurora",
+      "Bernal Mares",
+      "Burócrata",
+      "Dalias",
+      "FOVISSSTE Eduardo Chávez",
+      "Guadalupe",
+      "Hidalgo",
+      "INFONAVIT Diego Navarro",
+      "INFONAVIT Magueyes",
+      "Jardín",
+      "Jarita",
+      "Juan José Támez Fuentes",
+      "Juárez",
+      "Los Fresnos",
+      "Los Pinos",
+      "Lucio Monroy",
+      "Lázaro Cárdenas",
+      "Madero",
+      "Magisterio",
+      "Magueyes",
+      "Olímpica",
+      "Poblado Magueyes",
+      "San Francisco",
+      "San Luis",
+      "Sección 22",
+      "Soberón",
+      "Torres"
+    ]
+  },
+  "87505": {
+    "municipio": "Valle Hermoso",
+    "colonias": [
+      "Ambrosio Ruíz",
+      "Bellavista",
+      "Buenavista",
+      "Club de Leones",
+      "Del Maestro",
+      "El Roble",
+      "Esperanza del Sur",
+      "Hacienda del Valle",
+      "INFONAVIT las Yescas",
+      "Las Américas",
+      "Las Arboledas",
+      "Las Flores",
+      "Lindavista",
+      "Los Fresnos",
+      "Moctezuma",
+      "Palo Alto",
+      "Popular Brisas del Valle",
+      "Progreso",
+      "Santa Rosa",
+      "Valle Hermoso"
+    ]
+  },
+  "87506": {
+    "municipio": "Valle Hermoso",
+    "colonias": [
+      "Flores Magón",
+      "José Silva Sánchez",
+      "La Luz",
+      "San Lorenzo",
+      "San Ángel"
+    ]
+  },
+  "87507": {
+    "municipio": "Valle Hermoso",
+    "colonias": [
+      "Alianza",
+      "Allende",
+      "Arco Iris",
+      "Del Valle",
+      "Díaz Ordaz",
+      "Eduardo Chávez",
+      "Escobedo",
+      "Independencia Norte",
+      "Independencia Sur",
+      "Jesús Castillo Marroquín",
+      "Los Conejos",
+      "Modelo",
+      "Niños Héroes",
+      "Primavera",
+      "Tamaulipas",
+      "Unión",
+      "Vicente Guerrero",
+      "Villa Satélite",
+      "Villas de América",
+      "Vista Hermosa"
+    ]
+  },
+  "87510": {
+    "municipio": "Valle Hermoso",
+    "colonias": [
+      "Anáhuac",
+      "Las Palmas"
+    ]
+  },
+  "87511": {
+    "municipio": "Valle Hermoso",
+    "colonias": [
+      "Agrícola Anáhuac (Carr Est 53 entre Sur60ySur70)",
+      "Empalme"
+    ]
+  },
+  "87512": {
+    "municipio": "Valle Hermoso",
+    "colonias": [
+      "Ignacio Manuel Altamirano",
+      "José Delgado"
+    ]
+  },
+  "87513": {
+    "municipio": "Valle Hermoso",
+    "colonias": [
+      "Ensenada",
+      "Liberación del Campesino"
+    ]
+  },
+  "87514": {
+    "municipio": "Valle Hermoso",
+    "colonias": [
+      "La Florida"
+    ]
+  },
+  "87520": {
+    "municipio": "Valle Hermoso",
+    "colonias": [
+      "Aquiles Serdán",
+      "El Realito"
+    ]
+  },
+  "87524": {
+    "municipio": "Valle Hermoso",
+    "colonias": [
+      "Nueva Victoria (Brecha 123 entre Sur 91 y Sur 94)"
+    ]
+  },
+  "87525": {
+    "municipio": "Valle Hermoso",
+    "colonias": [
+      "Doce de Octubre"
+    ]
+  },
+  "87530": {
+    "municipio": "Valle Hermoso",
+    "colonias": [
+      "18 de Marzo (Brecha 120 entre Sur 96 y Sur 100)",
+      "Álvaro Obregón (Carr Est 53 de Sur93 a Sur96)"
+    ]
+  },
+  "87535": {
+    "municipio": "Valle Hermoso",
+    "colonias": [
+      "El Porvenir"
+    ]
+  },
+  "87540": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "El Longoreño",
+      "El Refugio"
+    ]
+  },
+  "87544": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "El Tecolote"
+    ]
+  },
+  "87550": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Presidente Cárdenas (Villa Cárdenas)",
+      "Prisciliano Delgado",
+      "Vista Hermosa"
+    ]
+  },
+  "87551": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "La Barranca",
+      "La Palangana",
+      "Rancho Viejo",
+      "Soliseño"
+    ]
+  },
+  "87552": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "El Control",
+      "Obrera",
+      "Ramírez"
+    ]
+  },
+  "87553": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "El Alto",
+      "José María Morelos",
+      "La Laguna",
+      "La Vanguardia",
+      "Revolución",
+      "Revolución (El Alto)"
+    ]
+  },
+  "87554": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Buenos Aires",
+      "El Capote",
+      "El Realito",
+      "La Brigada",
+      "La Puerta",
+      "La Rosita",
+      "San Luisito",
+      "Villanueva"
+    ]
+  },
+  "87555": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "La Sierrita"
+    ]
+  },
+  "87557": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "El Ebanito",
+      "El Perote",
+      "El Sabinito",
+      "El Sabino",
+      "El Sabino (Napoleón Benavides)",
+      "El Tahuachal",
+      "Estación Sandoval",
+      "Sandoval (Familia Pizaña)",
+      "Santa Adelaida",
+      "Santa Irene",
+      "Villaverde",
+      "Ángeles de Dios [Casa Hogar]"
+    ]
+  },
+  "87558": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "La Reforma",
+      "Los Olmos",
+      "Los Timones",
+      "Palo Blanco",
+      "Progreso Agrario (Santa Librada)",
+      "San Andrés"
+    ]
+  },
+  "87559": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Río Rico"
+    ]
+  },
+  "87560": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Ampliación la Tijerita",
+      "CEFERESO Número 3",
+      "El Galaneño",
+      "Ignacio Zaragoza",
+      "La Gloria",
+      "La Jarita Norte",
+      "La Jarita Sur",
+      "La Luz",
+      "La Tijerita",
+      "La Tijerita (Potrero Nuevo)",
+      "La Venada",
+      "Los Ranchitos (Porfirio Méndez)",
+      "Mogote de Santiago",
+      "Veintiuno de Marzo (Las Cuatrocientas)"
+    ]
+  },
+  "87563": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Laguna Honda",
+      "Pacheco"
+    ]
+  },
+  "87564": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "El Álamo",
+      "La Tijerita"
+    ]
+  },
+  "87565": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Las Blancas"
+    ]
+  },
+  "87569": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Guadalupe",
+      "La Ventana",
+      "Parque Industrial las Ventanas"
+    ]
+  },
+  "87570": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "El Ranchito",
+      "El Ranchito y Refugio (El Refugio)"
+    ]
+  },
+  "87577": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "El Huizachal",
+      "La Bartolina",
+      "Primer Campo Pesquero",
+      "Segundo Campo Pesquero y el Chichonal"
+    ]
+  },
+  "87580": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "Cinco de Mayo",
+      "El Moquetito",
+      "Francisco I. Madero",
+      "Quijano"
+    ]
+  },
+  "87585": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "La Libertad Número Dos",
+      "Venustiano Carranza"
+    ]
+  },
+  "87587": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "El Mezquital",
+      "Isla Puntilla Norte",
+      "Isla del Amor (Puntilla Sur)",
+      "Isla la Fantasía",
+      "Isla la Mano de León",
+      "Isla las Malvinas",
+      "La Capilla",
+      "Las Higuerillas",
+      "Puerto de Matamoros"
+    ]
+  },
+  "87588": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "23 de Noviembre"
+    ]
+  },
+  "87589": {
+    "municipio": "Matamoros",
+    "colonias": [
+      "San Lorenzo"
+    ]
+  },
+  "87600": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "San Fernando Centro"
+    ]
+  },
+  "87602": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "Bellavista Norte",
+      "Caminera",
+      "Emiliano Zapata",
+      "Independencia",
+      "Jardín",
+      "La Valentina",
+      "Las Torres",
+      "Magisterial",
+      "Villa del Mar"
+    ]
+  },
+  "87604": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "Américo Villarreal",
+      "Bellavista Sur",
+      "Francisco Galván Loperena",
+      "Manuel Cavazos Lerma",
+      "Nuevo Amanecer",
+      "Obrera",
+      "Tamaulipas"
+    ]
+  },
+  "87605": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "5 de Mayo",
+      "INFONAVIT",
+      "La Rivereña",
+      "Loma Alta",
+      "Luis Donaldo Colosio"
+    ]
+  },
+  "87606": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "Lomas de San Fernando",
+      "Los Cisnes",
+      "Paso Real"
+    ]
+  },
+  "87607": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "Gabriel de la Garza",
+      "Ladrillera",
+      "Las Fuentes",
+      "Las Malvinas",
+      "México"
+    ]
+  },
+  "87610": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "Guadalupe Victoria (El Norteño)",
+      "La Loma",
+      "Palos Blancos",
+      "San Germán",
+      "Santa Teresa"
+    ]
+  },
+  "87612": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "Las Escobas",
+      "Paso Hondo"
+    ]
+  },
+  "87613": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "Juan Antonio",
+      "Miguel Hidalgo II (Las Rosas)"
+    ]
+  },
+  "87614": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "Benito Juárez",
+      "Emiliano Zapata (Ampliación San Germán)",
+      "La Carreta Dos",
+      "La Lomita",
+      "Veinte de Noviembre"
+    ]
+  },
+  "87616": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "San Francisco"
+    ]
+  },
+  "87617": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "La Carreta Uno"
+    ]
+  },
+  "87618": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "General Francisco González Villarreal (San Juan)",
+      "Plan del Alazán",
+      "San Lorenzo"
+    ]
+  },
+  "87619": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "Alfredo V. Bonfil (Luis Echeverría)",
+      "Ampliación los Vergeles",
+      "Los Vergeles"
+    ]
+  },
+  "87620": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "General Francisco Villa",
+      "San José",
+      "Águila Azteca"
+    ]
+  },
+  "87622": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "Cuatro Milpas"
+    ]
+  },
+  "87624": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "División del Norte (Laguna Seca)",
+      "Horacio Terán",
+      "Laguna de San Juan",
+      "Nuevo Tlaxcala Xicoténcatl"
+    ]
+  },
+  "87625": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "Adolfo Ruiz Cortines"
+    ]
+  },
+  "87626": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "Miguel Hidalgo Uno"
+    ]
+  },
+  "87627": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "General Francisco J. Mújica (La Poza)",
+      "Seis de Enero (Miguel Hidalgo Segundo)"
+    ]
+  },
+  "87628": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "La Joya"
+    ]
+  },
+  "87629": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "El Barrancón del Tío Blas (El Barrancón)",
+      "Palo Solo",
+      "Pastores (Escuadrón 201)"
+    ]
+  },
+  "87630": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "Carboneras (La Carbonera)"
+    ]
+  },
+  "87636": {
+    "municipio": "San Fernando",
+    "colonias": [
+      "Carvajal",
+      "Punta de Alambre (Puente de Alambre)",
+      "Punta de Piedra"
+    ]
+  },
+  "87640": {
+    "municipio": "Cruillas",
+    "colonias": [
+      "Cruillas"
+    ]
+  },
+  "87650": {
+    "municipio": "Cruillas",
+    "colonias": [
+      "Tres Palos"
+    ]
+  },
+  "87655": {
+    "municipio": "Cruillas",
+    "colonias": [
+      "El Barranco"
+    ]
+  },
+  "87660": {
+    "municipio": "San Nicolás",
+    "colonias": [
+      "San Nicolás"
+    ]
+  },
+  "87662": {
+    "municipio": "San Nicolás",
+    "colonias": [
+      "Lauro Villar"
+    ]
+  },
+  "87664": {
+    "municipio": "San Nicolás",
+    "colonias": [
+      "Flechadores"
+    ]
+  },
+  "87666": {
+    "municipio": "San Nicolás",
+    "colonias": [
+      "El Palmar"
+    ]
+  },
+  "87668": {
+    "municipio": "San Nicolás",
+    "colonias": [
+      "Las Vírgenes (Las Norias)",
+      "Las Vírgenes (Moctezuma)"
+    ]
+  },
+  "87670": {
+    "municipio": "Soto la Marina",
+    "colonias": [
+      "20 de Noviembre",
+      "3 de Septiembre",
+      "Barrio Blanco",
+      "Del Río Solidaridad",
+      "Juventud Revolucionaria",
+      "Magisterial",
+      "Melchor Ocampo",
+      "Militar",
+      "Nueva Rosita",
+      "Soto la Marina Centro",
+      "Vista Hermosa"
+    ]
+  },
+  "87673": {
+    "municipio": "Soto la Marina",
+    "colonias": [
+      "San José de las Rusias"
+    ]
+  },
+  "87675": {
+    "municipio": "Soto la Marina",
+    "colonias": [
+      "Las Tunas"
+    ]
+  },
+  "87676": {
+    "municipio": "Soto la Marina",
+    "colonias": [
+      "La Peñita"
+    ]
+  },
+  "87677": {
+    "municipio": "Soto la Marina",
+    "colonias": [
+      "Tres de Abril (Noche Buena)"
+    ]
+  },
+  "87678": {
+    "municipio": "Soto la Marina",
+    "colonias": [
+      "Benito Juárez",
+      "La Pesca",
+      "Miguel de la Madrid (El Canal)"
+    ]
+  },
+  "87679": {
+    "municipio": "Soto la Marina",
+    "colonias": [
+      "Tampiquito (Soto la Marina)"
+    ]
+  },
+  "87680": {
+    "municipio": "Soto la Marina",
+    "colonias": [
+      "Los Ébanos",
+      "Verde Chico"
+    ]
+  },
+  "87685": {
+    "municipio": "Soto la Marina",
+    "colonias": [
+      "Magueyes"
+    ]
+  },
+  "87690": {
+    "municipio": "Soto la Marina",
+    "colonias": [
+      "La Peña",
+      "Las Pilas"
+    ]
+  },
+  "87693": {
+    "municipio": "Soto la Marina",
+    "colonias": [
+      "El Sabinito"
+    ]
+  },
+  "87694": {
+    "municipio": "Soto la Marina",
+    "colonias": [
+      "La Zamorina"
+    ]
+  },
+  "87695": {
+    "municipio": "Soto la Marina",
+    "colonias": [
+      "La Encarnación",
+      "Nombre de Dios",
+      "San Felipe"
+    ]
+  },
+  "87696": {
+    "municipio": "Soto la Marina",
+    "colonias": [
+      "El Esmeril",
+      "Santa Isabel"
+    ]
+  },
+  "87697": {
+    "municipio": "Soto la Marina",
+    "colonias": [
+      "Alberto Carrera Torres",
+      "Lavaderos"
+    ]
+  },
+  "87700": {
+    "municipio": "Jiménez",
+    "colonias": [
+      "Integración Familiar",
+      "Santander Jiménez Centro"
+    ]
+  },
+  "87709": {
+    "municipio": "Jiménez",
+    "colonias": [
+      "El Encinal",
+      "El Peñón"
+    ]
+  },
+  "87710": {
+    "municipio": "Jiménez",
+    "colonias": [
+      "La Esperanza (La Polvareda)"
+    ]
+  },
+  "87713": {
+    "municipio": "Jiménez",
+    "colonias": [
+      "Tres de Abril (El Tulillo)"
+    ]
+  },
+  "87720": {
+    "municipio": "Jiménez",
+    "colonias": [
+      "Allende",
+      "Los Laureles"
+    ]
+  },
+  "87730": {
+    "municipio": "San Carlos",
+    "colonias": [
+      "San Carlos"
+    ]
+  },
+  "87733": {
+    "municipio": "San Carlos",
+    "colonias": [
+      "Benito Juárez (La Coma)"
+    ]
+  },
+  "87735": {
+    "municipio": "San Carlos",
+    "colonias": [
+      "El Gavilán"
+    ]
+  },
+  "87737": {
+    "municipio": "San Carlos",
+    "colonias": [
+      "Boca de Álamos"
+    ]
+  },
+  "87738": {
+    "municipio": "San Carlos",
+    "colonias": [
+      "Marmolejo"
+    ]
+  },
+  "87739": {
+    "municipio": "San Carlos",
+    "colonias": [
+      "La Unión Morales"
+    ]
+  },
+  "87740": {
+    "municipio": "San Carlos",
+    "colonias": [
+      "La Gavia",
+      "San Andrés"
+    ]
+  },
+  "87743": {
+    "municipio": "San Carlos",
+    "colonias": [
+      "Corralejo",
+      "Magueyes",
+      "Víctor Manuel Bueno"
+    ]
+  },
+  "87744": {
+    "municipio": "San Carlos",
+    "colonias": [
+      "Nuevo Praxedis Balboa"
+    ]
+  },
+  "87746": {
+    "municipio": "San Carlos",
+    "colonias": [
+      "Nuevo San Antonio"
+    ]
+  },
+  "87747": {
+    "municipio": "San Carlos",
+    "colonias": [
+      "El Barranco Azul",
+      "La Nueva Unión",
+      "Los Angelitos (Ángeles)"
+    ]
+  },
+  "87748": {
+    "municipio": "San Carlos",
+    "colonias": [
+      "El Saucillo"
+    ]
+  },
+  "87750": {
+    "municipio": "San Carlos",
+    "colonias": [
+      "Los Quiotes"
+    ]
+  },
+  "87755": {
+    "municipio": "San Carlos",
+    "colonias": [
+      "Profesor Graciano Sánchez",
+      "Puerto Rico"
+    ]
+  },
+  "87760": {
+    "municipio": "Abasolo",
+    "colonias": [
+      "Abasolo Centro",
+      "Américo Villarreal",
+      "Integración Familiar",
+      "La Amistad",
+      "Manuel Cavazos Lerma",
+      "Modelo",
+      "Tacubaya",
+      "Tomás Yarrington"
+    ]
+  },
+  "87766": {
+    "municipio": "Abasolo",
+    "colonias": [
+      "Nuevo Dolores"
+    ]
+  },
+  "87767": {
+    "municipio": "Abasolo",
+    "colonias": [
+      "Adolfo López Mateos (Las Cabras)",
+      "Nuevo Morelos (Adolfo López Mateos)"
+    ]
+  },
+  "87768": {
+    "municipio": "Abasolo",
+    "colonias": [
+      "Nicolás Bravo (Palo Alto)",
+      "Parras de la Fuente"
+    ]
+  },
+  "87769": {
+    "municipio": "Abasolo",
+    "colonias": [
+      "Guía del Porvenir"
+    ]
+  },
+  "87770": {
+    "municipio": "Abasolo",
+    "colonias": [
+      "Guadalupe Victoria"
+    ]
+  },
+  "87780": {
+    "municipio": "Padilla",
+    "colonias": [
+      "Nueva Villa de Padilla",
+      "Presa Vicente Guerrero (La Compuerta)"
+    ]
+  },
+  "87785": {
+    "municipio": "Padilla",
+    "colonias": [
+      "Cinco de Mayo"
+    ]
+  },
+  "87790": {
+    "municipio": "Padilla",
+    "colonias": [
+      "Campoamor",
+      "Corpus Christi",
+      "Plan de Ayala",
+      "Santa Juana"
+    ]
+  },
+  "87793": {
+    "municipio": "Padilla",
+    "colonias": [
+      "Nuevo San Juan"
+    ]
+  },
+  "87794": {
+    "municipio": "Padilla",
+    "colonias": [
+      "Conrado Castillo"
+    ]
+  },
+  "87795": {
+    "municipio": "Padilla",
+    "colonias": [
+      "Vicente Guerrero (El Tablero)"
+    ]
+  },
+  "87797": {
+    "municipio": "Padilla",
+    "colonias": [
+      "La Concepción",
+      "Marte R. Gómez",
+      "Quince de Febrero"
+    ]
+  },
+  "87798": {
+    "municipio": "Padilla",
+    "colonias": [
+      "José Silva Sánchez",
+      "La Soledad",
+      "Los Brasiles",
+      "Mártires de Chinameca (Mártir de Chinameca)",
+      "San Patricio"
+    ]
+  },
+  "87799": {
+    "municipio": "Padilla",
+    "colonias": [
+      "Barretal",
+      "Úrsulo Galván"
+    ]
+  },
+  "87800": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "Benito Juárez (Monfort)",
+      "Hidalgo"
+    ]
+  },
+  "87801": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "Los Ángeles",
+      "Purificación (Peñuelas)"
+    ]
+  },
+  "87803": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "El Cerrito"
+    ]
+  },
+  "87804": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "El Pensamiento Libre"
+    ]
+  },
+  "87805": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "El Tomaseño (Ejido)",
+      "La Rosalba (Ejido)"
+    ]
+  },
+  "87806": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "Barbosa",
+      "Cinco de Mayo",
+      "San Juana"
+    ]
+  },
+  "87808": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "General Julián Cerda",
+      "Primero de Mayo",
+      "Santa Cleotilde"
+    ]
+  },
+  "87810": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "Carrizos (La Hacienda)"
+    ]
+  },
+  "87813": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "Estación Carrizos",
+      "Puerto del Aire (Isaías González Vázquez)"
+    ]
+  },
+  "87816": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "Las Tinajas"
+    ]
+  },
+  "87819": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "San Nicolás"
+    ]
+  },
+  "87820": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "El Chorro (El Chorrito)"
+    ]
+  },
+  "87822": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "Ex-Hacienda de la Mesa",
+      "San Isidro"
+    ]
+  },
+  "87823": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "Guadalupe Victoria",
+      "Independencia"
+    ]
+  },
+  "87824": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "La Noria"
+    ]
+  },
+  "87825": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "La Crucita (La Piragua)",
+      "La Trinidad"
+    ]
+  },
+  "87826": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "San Antonio",
+      "San Matías"
+    ]
+  },
+  "87827": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "Buenos Aires",
+      "Las Margaritas",
+      "Marroquín"
+    ]
+  },
+  "87829": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "Morquecho"
+    ]
+  },
+  "87830": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "Santa Cruz"
+    ]
+  },
+  "87831": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "El Progreso",
+      "Oyama"
+    ]
+  },
+  "87832": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "José María Morelos y Pavón (Mapaches)",
+      "La Colombina",
+      "Palo Alto"
+    ]
+  },
+  "87834": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "San Francisco"
+    ]
+  },
+  "87835": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "La Garita",
+      "Santa Fe"
+    ]
+  },
+  "87840": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "Cruz y Carmen",
+      "Cruz y Cruz",
+      "Estación la Cruz"
+    ]
+  },
+  "87841": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "Guillermo Zúñiga"
+    ]
+  },
+  "87843": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "El Sauz"
+    ]
+  },
+  "87844": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "Ignacio Allende (Estación Adelaida)"
+    ]
+  },
+  "87847": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "Emiliano Zapata",
+      "Vicente Guerrero"
+    ]
+  },
+  "87848": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "Benito Juárez"
+    ]
+  },
+  "87849": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "Estación Santa Engracia Centro"
+    ]
+  },
+  "87853": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "Guayabas"
+    ]
+  },
+  "87854": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "Conrado Castillo"
+    ]
+  },
+  "87858": {
+    "municipio": "Hidalgo",
+    "colonias": [
+      "La Aurora"
+    ]
+  },
+  "87860": {
+    "municipio": "Mainero",
+    "colonias": [
+      "Américo Villarreal Guerra",
+      "Villa Mainero"
+    ]
+  },
+  "87865": {
+    "municipio": "Mainero",
+    "colonias": [
+      "Emilio Vázquez Gómez (Agua Fría)",
+      "José Delgado",
+      "Venustiano Carranza (La Oveja)"
+    ]
+  },
+  "87870": {
+    "municipio": "Mainero",
+    "colonias": [
+      "José Guadalupe Mainero",
+      "Magueyes"
+    ]
+  },
+  "87873": {
+    "municipio": "Mainero",
+    "colonias": [
+      "Las Puentes",
+      "San Luis Hidalgo"
+    ]
+  },
+  "87875": {
+    "municipio": "Mainero",
+    "colonias": [
+      "Emiliano Zapata"
+    ]
+  },
+  "87880": {
+    "municipio": "Villagrán",
+    "colonias": [
+      "Américo Villarreal Guerra",
+      "Cuauhtémoc",
+      "Eugenio Hernández Flores",
+      "Villagrán"
+    ]
+  },
+  "87883": {
+    "municipio": "Villagrán",
+    "colonias": [
+      "El Breve",
+      "Jesús González Ortega"
+    ]
+  },
+  "87884": {
+    "municipio": "Villagrán",
+    "colonias": [
+      "La Purísima Floreña"
+    ]
+  },
+  "87885": {
+    "municipio": "Villagrán",
+    "colonias": [
+      "Candelario Reyes (San Miguel)",
+      "Miguel Hidalgo"
+    ]
+  },
+  "87886": {
+    "municipio": "Villagrán",
+    "colonias": [
+      "Brígido Maldonado",
+      "General Jesús Carranza (Sabinitos)"
+    ]
+  },
+  "87887": {
+    "municipio": "Villagrán",
+    "colonias": [
+      "El Limón",
+      "Redención del Campesino",
+      "Álvaro Obregón"
+    ]
+  },
+  "87889": {
+    "municipio": "Villagrán",
+    "colonias": [
+      "Benito Juárez (Encinos)",
+      "Guadalupe Victoria",
+      "Ranchería Juárez (Juárez)"
+    ]
+  },
+  "87890": {
+    "municipio": "Villagrán",
+    "colonias": [
+      "Garza Valdez"
+    ]
+  },
+  "87892": {
+    "municipio": "Villagrán",
+    "colonias": [
+      "Los Charcos",
+      "Marte R. Gómez (Patol)"
+    ]
+  },
+  "87893": {
+    "municipio": "Villagrán",
+    "colonias": [
+      "Juan Rincón (El Sabinal)"
+    ]
+  },
+  "87895": {
+    "municipio": "Villagrán",
+    "colonias": [
+      "San Lázaro"
+    ]
+  },
+  "87896": {
+    "municipio": "Villagrán",
+    "colonias": [
+      "Guadalupe de San Lázaro (Guadalupe)"
+    ]
+  },
+  "87898": {
+    "municipio": "Villagrán",
+    "colonias": [
+      "General Lucio Blanco"
+    ]
+  },
+  "87900": {
+    "municipio": "Tula",
+    "colonias": [
+      "Altavista",
+      "Cantaranas",
+      "Cerro del Aire",
+      "Ciudad Tula Centro",
+      "El Cardenal",
+      "El Divisadero",
+      "El Jicote",
+      "El Mirador",
+      "Independencia",
+      "La Campana",
+      "La Mora",
+      "La Peñita",
+      "La Pila",
+      "Las Piedras",
+      "Las Trojes",
+      "Pirules"
+    ]
+  },
+  "87902": {
+    "municipio": "Tula",
+    "colonias": [
+      "El Boludo",
+      "Mamaleón (Mamá León)",
+      "Santa Ana de Nahola"
+    ]
+  },
+  "87903": {
+    "municipio": "Tula",
+    "colonias": [
+      "Emilio Vázquez Gómez"
+    ]
+  },
+  "87904": {
+    "municipio": "Tula",
+    "colonias": [
+      "Alfonso Terrones Benítez (Presa Ramireña)",
+      "Celso Huerta",
+      "Congregación los Charcos",
+      "San Juan",
+      "Tanque Blanco",
+      "Veinte de Noviembre (El Refugio)"
+    ]
+  },
+  "87905": {
+    "municipio": "Tula",
+    "colonias": [
+      "Lázaro Cárdenas (Cerro Gordo)"
+    ]
+  },
+  "87906": {
+    "municipio": "Tula",
+    "colonias": [
+      "Cinco de Mayo (Cebollitas)"
+    ]
+  },
+  "87907": {
+    "municipio": "Tula",
+    "colonias": [
+      "Cieneguilla",
+      "Francisco I. Madero"
+    ]
+  },
+  "87910": {
+    "municipio": "Tula",
+    "colonias": [
+      "La Tapona"
+    ]
+  },
+  "87911": {
+    "municipio": "Tula",
+    "colonias": [
+      "Salitrillo",
+      "San Rafael"
+    ]
+  },
+  "87912": {
+    "municipio": "Tula",
+    "colonias": [
+      "Ricardo García (La Presita)"
+    ]
+  },
+  "87913": {
+    "municipio": "Tula",
+    "colonias": [
+      "Cerro Mocho",
+      "Francisco Villa (El Xichu)",
+      "Álvaro Obregón (La Noria)"
+    ]
+  },
+  "87914": {
+    "municipio": "Tula",
+    "colonias": [
+      "El Refugio (La Unión)",
+      "Pedro Ruiz Molina"
+    ]
+  },
+  "87915": {
+    "municipio": "Tula",
+    "colonias": [
+      "La Presa de Ramos",
+      "Nicolás Medrano (El Abra)"
+    ]
+  },
+  "87918": {
+    "municipio": "Tula",
+    "colonias": [
+      "José María Morelos (Morelos)"
+    ]
+  },
+  "87920": {
+    "municipio": "Tula",
+    "colonias": [
+      "San José de las Flores"
+    ]
+  },
+  "87922": {
+    "municipio": "Tula",
+    "colonias": [
+      "Juan Sarabia (La Higuera)"
+    ]
+  },
+  "87923": {
+    "municipio": "Tula",
+    "colonias": [
+      "Adolfo López Mateos",
+      "Emiliano Zapata (La Viga)",
+      "Emperadores Aztecas",
+      "Magdaleno Cedillo (El Coronel)"
+    ]
+  },
+  "87924": {
+    "municipio": "Tula",
+    "colonias": [
+      "Miguel Hidalgo (Colorado)"
+    ]
+  },
+  "87925": {
+    "municipio": "Tula",
+    "colonias": [
+      "Colonia Agrícola y Ganadera (Las Cruces)",
+      "Gallos Grandes",
+      "Lucio Vázquez (El Charquito)"
+    ]
+  },
+  "87926": {
+    "municipio": "Tula",
+    "colonias": [
+      "Alberto Carrera Torres (La Rana)",
+      "Gazmones"
+    ]
+  },
+  "87928": {
+    "municipio": "Tula",
+    "colonias": [
+      "La Laguna"
+    ]
+  },
+  "87930": {
+    "municipio": "Jaumave",
+    "colonias": [
+      "Independencia",
+      "Janambres",
+      "Jaumave Centro",
+      "Luis Donaldo Colosio",
+      "Nuevo Amanecer",
+      "Praxedis Balboa"
+    ]
+  },
+  "87932": {
+    "municipio": "Jaumave",
+    "colonias": [
+      "El Ingenio (Los Adobes)",
+      "El Sotol",
+      "Gustavo Cáceres",
+      "Magdaleno Aguilar (Santiaguillo)",
+      "Matías García (La Hacienda)",
+      "San Juanito"
+    ]
+  },
+  "87933": {
+    "municipio": "Jaumave",
+    "colonias": [
+      "Conrado Castillo (La Maroma)",
+      "José María Morelos (El Nopal)",
+      "La Independencia (Las Moritas)",
+      "San Juan de Oriente"
+    ]
+  },
+  "87935": {
+    "municipio": "Jaumave",
+    "colonias": [
+      "Ávila y Urbina (La Meca)"
+    ]
+  },
+  "87936": {
+    "municipio": "Jaumave",
+    "colonias": [
+      "El Sauz",
+      "Francisco Medrano (Las Pilas)",
+      "San Antonio"
+    ]
+  },
+  "87937": {
+    "municipio": "Jaumave",
+    "colonias": [
+      "La Unión",
+      "Plan de Ayala (Las Calabazas)"
+    ]
+  },
+  "87938": {
+    "municipio": "Jaumave",
+    "colonias": [
+      "El Higuerón",
+      "La Reforma"
+    ]
+  },
+  "87939": {
+    "municipio": "Jaumave",
+    "colonias": [
+      "El Carrizo"
+    ]
+  },
+  "87940": {
+    "municipio": "Jaumave",
+    "colonias": [
+      "Padrón y Juárez (La Puente)"
+    ]
+  },
+  "87943": {
+    "municipio": "Jaumave",
+    "colonias": [
+      "Veinte de Abril (Joya de Salas)"
+    ]
+  },
+  "87945": {
+    "municipio": "Jaumave",
+    "colonias": [
+      "San Lorencito (San Lorenzo)"
+    ]
+  },
+  "87946": {
+    "municipio": "Jaumave",
+    "colonias": [
+      "Monterredondo"
+    ]
+  },
+  "87947": {
+    "municipio": "Jaumave",
+    "colonias": [
+      "Cinco de Mayo",
+      "San Vicente"
+    ]
+  },
+  "87949": {
+    "municipio": "Jaumave",
+    "colonias": [
+      "Las Moras",
+      "Rancho Nuevo (Cañitas)",
+      "San Francisco de Zorrilla",
+      "San José de Salamanca"
+    ]
+  },
+  "87950": {
+    "municipio": "Miquihuana",
+    "colonias": [
+      "La Peña",
+      "Miquihuana"
+    ]
+  },
+  "87954": {
+    "municipio": "Miquihuana",
+    "colonias": [
+      "San José del Llano"
+    ]
+  },
+  "87957": {
+    "municipio": "Miquihuana",
+    "colonias": [
+      "El Aserradero"
+    ]
+  },
+  "87958": {
+    "municipio": "Miquihuana",
+    "colonias": [
+      "Altamira"
+    ]
+  },
+  "87960": {
+    "municipio": "Bustamante",
+    "colonias": [
+      "Bustamante"
+    ]
+  },
+  "87961": {
+    "municipio": "Bustamante",
+    "colonias": [
+      "El Aguacate",
+      "Felipe Ángeles (El Gavilán)"
+    ]
+  },
+  "87962": {
+    "municipio": "Bustamante",
+    "colonias": [
+      "El Caracol (Los Caracoles)",
+      "Las Antonias",
+      "Plutarco Elías Calles (Joya del Maguey)"
+    ]
+  },
+  "87963": {
+    "municipio": "Bustamante",
+    "colonias": [
+      "El Llano y Anexas (El Llano)"
+    ]
+  },
+  "87964": {
+    "municipio": "Bustamante",
+    "colonias": [
+      "La Higuera",
+      "San Antonio de Padua"
+    ]
+  },
+  "87965": {
+    "municipio": "Bustamante",
+    "colonias": [
+      "Las Albercas",
+      "Las Flores"
+    ]
+  },
+  "87967": {
+    "municipio": "Bustamante",
+    "colonias": [
+      "Gabino Vázquez (Santa Efigenia)",
+      "La Joya de Herrera"
+    ]
+  },
+  "87968": {
+    "municipio": "Bustamante",
+    "colonias": [
+      "La Verdolaga",
+      "Magdaleno Aguilar (San Vicente)"
+    ]
+  },
+  "87969": {
+    "municipio": "Bustamante",
+    "colonias": [
+      "Calabacillas"
+    ]
+  },
+  "87970": {
+    "municipio": "Palmillas",
+    "colonias": [
+      "Palmillas"
+    ]
+  },
+  "87972": {
+    "municipio": "Palmillas",
+    "colonias": [
+      "San Vicente"
+    ]
+  },
+  "87973": {
+    "municipio": "Palmillas",
+    "colonias": [
+      "El Llano de Azuas"
+    ]
+  },
+  "87974": {
+    "municipio": "Palmillas",
+    "colonias": [
+      "La Compuerta"
+    ]
+  },
+  "87975": {
+    "municipio": "Palmillas",
+    "colonias": [
+      "Los Arrieros"
+    ]
+  },
+  "87980": {
+    "municipio": "Ocampo",
+    "colonias": [
+      "6 de Octubre",
+      "Ocampo",
+      "Ricardo Flores Magón"
+    ]
+  },
+  "87982": {
+    "municipio": "Ocampo",
+    "colonias": [
+      "El Pensil"
+    ]
+  },
+  "87983": {
+    "municipio": "Ocampo",
+    "colonias": [
+      "Eligio Treviño (El Bejuco)",
+      "Protasio F. Guerra (Corrales)",
+      "Práxedis G. Guerrero (La Laja)"
+    ]
+  },
+  "87984": {
+    "municipio": "Ocampo",
+    "colonias": [
+      "Francisco Medrano (La Morita)",
+      "Las Flores",
+      "Pueblo Viejo"
+    ]
+  },
+  "87985": {
+    "municipio": "Ocampo",
+    "colonias": [
+      "El Tigre",
+      "Las Canoas"
+    ]
+  },
+  "87986": {
+    "municipio": "Ocampo",
+    "colonias": [
+      "San Antonio Buena Vista",
+      "Santa María de Guadalupe (La Colonia)",
+      "Veinte de Noviembre (Las Pozas)"
+    ]
+  },
+  "87988": {
+    "municipio": "Ocampo",
+    "colonias": [
+      "La Escondida y el Atravesaño (La Escondida)",
+      "San Lorenzo (Las Bayas)"
+    ]
+  },
+  "87990": {
+    "municipio": "Ocampo",
+    "colonias": [
+      "Adolfo López Mateos (Chamal Nuevo)",
+      "El Chamalito"
+    ]
+  },
+  "87993": {
+    "municipio": "Ocampo",
+    "colonias": [
+      "Paso Real de Morelos (La Puente)"
+    ]
+  },
+  "87994": {
+    "municipio": "Ocampo",
+    "colonias": [
+      "La Muralla"
+    ]
+  },
+  "87995": {
+    "municipio": "Ocampo",
+    "colonias": [
+      "Chamal Viejo"
+    ]
+  },
+  "87996": {
+    "municipio": "Ocampo",
+    "colonias": [
+      "Lorenzo Vargas",
+      "Rancho Nuevo"
+    ]
+  },
+  "87997": {
+    "municipio": "Ocampo",
+    "colonias": [
+      "Coahuila"
+    ]
+  },
+  "88000": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Nuevo Laredo Centro"
+    ]
+  },
+  "88009": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Nuevo Laredo (Quetzalcóatl)"
+    ]
+  },
+  "88020": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Independencia"
+    ]
+  },
+  "88030": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Victoria"
+    ]
+  },
+  "88040": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Ferrocarril",
+      "Ojo Caliente"
+    ]
+  },
+  "88060": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Zaragoza"
+    ]
+  },
+  "88070": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Viveros"
+    ]
+  },
+  "88100": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Altavista",
+      "CNOP"
+    ]
+  },
+  "88105": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "FOVISSSTE Las Alazanas",
+      "Solidaridad"
+    ]
+  },
+  "88110": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Del Maestro"
+    ]
+  },
+  "88120": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Buenavista",
+      "Maclovio Herrera"
+    ]
+  },
+  "88123": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "El Progreso (Nuevo Progreso)",
+      "Endulzadora PEMEX",
+      "Guerreros del Sol",
+      "Las Cumbres",
+      "Los Arcos",
+      "Pavorreales",
+      "Villas de San Francisco",
+      "Villas del Progreso"
+    ]
+  },
+  "88124": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Alianza para la Producción",
+      "Licenciado Daniel Hernández Isais"
+    ]
+  },
+  "88125": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "La Joya",
+      "Sistema Merlín"
+    ]
+  },
+  "88126": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Central de Carga",
+      "Santiago M Beldén",
+      "Vicente Mendoza"
+    ]
+  },
+  "88127": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Colorines"
+    ]
+  },
+  "88130": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Buenos Aires"
+    ]
+  },
+  "88134": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "20 de Noviembre",
+      "Licenciado Luis Donaldo Colosio"
+    ]
+  },
+  "88135": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Américo Villarreal Guerra",
+      "Unidad Nacional",
+      "Villas de la Fe"
+    ]
+  },
+  "88136": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Nueva Era"
+    ]
+  },
+  "88140": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Cuartel Militar Macario Zamora",
+      "Jardín Juvencia",
+      "Peña Benavides"
+    ]
+  },
+  "88144": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Emiliano Zapata",
+      "Las Alazanas",
+      "Los Garza",
+      "San Andrés"
+    ]
+  },
+  "88145": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Lomas del Rey",
+      "Los Virreyes",
+      "Nueva España",
+      "Tamaulipas"
+    ]
+  },
+  "88146": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Claudette",
+      "El Caracol"
+    ]
+  },
+  "88147": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Ayuntamiento 77",
+      "Las Lomas"
+    ]
+  },
+  "88150": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "El Remolino",
+      "Roma",
+      "Tinajitas"
+    ]
+  },
+  "88160": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Hidalgo"
+    ]
+  },
+  "88170": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Hipódromo",
+      "Los Cántaros",
+      "Parque Industrial Longoria"
+    ]
+  },
+  "88175": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "América"
+    ]
+  },
+  "88176": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Ampliación Tercer Milenio",
+      "Ejido el Bayito",
+      "El Francés y Buenos Aires",
+      "María Luisa",
+      "Recinto Fiscal",
+      "Tercer Milenio",
+      "Unión del Recuerdo"
+    ]
+  },
+  "88177": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Arturo Cortés Villada",
+      "Constitucional",
+      "Daniel Covarrubias",
+      "Los Olivos",
+      "Los Sánchez",
+      "Naciones Unidas",
+      "Nueva Victoria",
+      "Othón Chávez",
+      "Praderas del Mezquital",
+      "Reservas Territoriales",
+      "Toboganes",
+      "Voluntad y Trabajo"
+    ]
+  },
+  "88179": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Anexo Reforma Urbana",
+      "Bellavista",
+      "Bertha de Avellano",
+      "La Sandía",
+      "Las Arboledas",
+      "Lomas del Río",
+      "Los Artistas",
+      "Reforma Urbana"
+    ]
+  },
+  "88180": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Rosita"
+    ]
+  },
+  "88184": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Las Torres"
+    ]
+  },
+  "88185": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Parque Industrial 2 Laredos"
+    ]
+  },
+  "88186": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Parque Industrial Río Grande"
+    ]
+  },
+  "88187": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "La Fe"
+    ]
+  },
+  "88190": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Mirador"
+    ]
+  },
+  "88194": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Anáhuac Sur",
+      "Unión"
+    ]
+  },
+  "88195": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "La Esperanza",
+      "Loma Bonita",
+      "Zona de Tolerancia"
+    ]
+  },
+  "88200": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "San Rafael"
+    ]
+  },
+  "88209": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Juárez"
+    ]
+  },
+  "88210": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Hacienda J Longoria",
+      "Lomas del Poniente",
+      "Matamoros"
+    ]
+  },
+  "88220": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Palacios"
+    ]
+  },
+  "88230": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Junta Federal de Mejoras Materiales",
+      "San José",
+      "Sistema de Agua y Saneamiento"
+    ]
+  },
+  "88240": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Guerrero",
+      "Mier y Terán",
+      "Postal",
+      "Riberas del Bravo"
+    ]
+  },
+  "88250": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Jesús García",
+      "Morelos"
+    ]
+  },
+  "88260": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Anáhuac",
+      "González",
+      "Jardín"
+    ]
+  },
+  "88270": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Las Flores",
+      "Los Álamos",
+      "Madero",
+      "SUTERM II"
+    ]
+  },
+  "88274": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Balcones del Boulevard",
+      "Casa Linda",
+      "FOVISSSTE Benito Juárez",
+      "INFONAVIT Benito Juárez",
+      "Parque Industrial Río Bravo",
+      "Río Bravo",
+      "Santa Anita",
+      "Vista Hermosa"
+    ]
+  },
+  "88275": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Centro Comercial Reforma",
+      "INFONAVIT Fundadores",
+      "Las Alamedas",
+      "Parque Industrial FINSA",
+      "Privanzas Sector Alameda"
+    ]
+  },
+  "88276": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Bonanza",
+      "Eden Country Villas",
+      "El Cortijo",
+      "El Edén",
+      "Gran Boulevard",
+      "Valle Real"
+    ]
+  },
+  "88277": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Concordia",
+      "Jardines de la Hacienda",
+      "Las Viñas",
+      "Parque Módulo Industrial Américas",
+      "Residencial Longoria",
+      "San Patricio"
+    ]
+  },
+  "88278": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Campestre",
+      "Club Campestre Ribera del Bravo"
+    ]
+  },
+  "88280": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Burócratas",
+      "Central 2000",
+      "Club de Leones",
+      "El Río",
+      "Ferrocarrilera",
+      "México"
+    ]
+  },
+  "88283": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "150 Aniversario",
+      "1° de Mayo",
+      "Francisco Villa 2",
+      "Vamos Tamaulipas",
+      "Villas de San Miguel"
+    ]
+  },
+  "88284": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Francisco Villa",
+      "Manuel Cavazos Lerma",
+      "Nuevo Milenio"
+    ]
+  },
+  "88285": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Blanca Navidad",
+      "El Campanario",
+      "Insurgentes",
+      "Lomas del Rosario",
+      "Los Ángeles",
+      "Parque Industrial Oradel",
+      "Valles de Anáhuac",
+      "Villas del Oradel"
+    ]
+  },
+  "88287": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Electricistas",
+      "SUTERM I"
+    ]
+  },
+  "88289": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Don Ramón Salcido",
+      "Militar"
+    ]
+  },
+  "88290": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Alfonso Gutiérrez",
+      "Balcones del Valle",
+      "Del Valle",
+      "El Nogal",
+      "Hacienda de la Concordia",
+      "La Paz",
+      "Lagos",
+      "Los Aztecas",
+      "Los Cerezos",
+      "Los Ciruelos",
+      "Los Encinos",
+      "Los Fresnos",
+      "Los Presidentes",
+      "Santa Elena",
+      "Santa Martha",
+      "Tulipanes",
+      "Villa del Lago",
+      "Villas de la Concordia",
+      "Villas del Sol",
+      "Viviendas Unidas"
+    ]
+  },
+  "88293": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "América 1",
+      "América 14",
+      "Carlos Benjamín Galván Maytorera",
+      "El Caporal",
+      "El Pedregal Residencial",
+      "Gilberto Montemayor Quintanilla",
+      "Granjas Guzmán",
+      "Manuel Martínez Méndez",
+      "María del Pilar Martínez Muñoz",
+      "Saneva",
+      "Valles del Paraíso"
+    ]
+  },
+  "88294": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Alijadores",
+      "Campesina",
+      "Granjas Treviño",
+      "Santa Cecilia"
+    ]
+  },
+  "88295": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "El Capulín",
+      "Enrique Cárdenas González",
+      "Granjas Económicas 1",
+      "Granjas Económicas 2",
+      "Granjas Regina",
+      "Haciendas de San Agustín",
+      "ITAVU",
+      "Las Piedritas",
+      "Palmares",
+      "Valle Dorado",
+      "Valle Elizondo",
+      "Vamos Tamaulipas"
+    ]
+  },
+  "88296": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "América 2,3,5 y 6",
+      "Bosques del Sur",
+      "CERESO",
+      "Colinas del Sur",
+      "Lomas del Popo",
+      "Los Agaves",
+      "Misión de San Mauricio"
+    ]
+  },
+  "88298": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "Agrónomos",
+      "Candelario Perales",
+      "La Concordia"
+    ]
+  },
+  "88299": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "América 4",
+      "Colinas de San Javier"
+    ]
+  },
+  "88300": {
+    "municipio": "Miguel Alemán",
+    "colonias": [
+      "Ciudad Miguel Alemán Centro"
+    ]
+  },
+  "88302": {
+    "municipio": "Miguel Alemán",
+    "colonias": [
+      "Del Norte",
+      "Gómez",
+      "INFONAVIT Arboleda",
+      "Jardín",
+      "Mezquital del Norte",
+      "Niños Héroes",
+      "Nuevo Santander",
+      "Plan de Guadalupe",
+      "Solidaridad"
+    ]
+  },
+  "88303": {
+    "municipio": "Miguel Alemán",
+    "colonias": [
+      "Barrera",
+      "Cristóbal Colón",
+      "Independencia",
+      "Nuevo Amanecer",
+      "Río Bravo",
+      "Unidad Revolucionaria"
+    ]
+  },
+  "88304": {
+    "municipio": "Miguel Alemán",
+    "colonias": [
+      "El Mirador",
+      "Guadalupe",
+      "Los Presidentes",
+      "Montebello"
+    ]
+  },
+  "88305": {
+    "municipio": "Miguel Alemán",
+    "colonias": [
+      "Adolfo López Mateos",
+      "Arguello",
+      "Buenos Aires",
+      "Lindavista",
+      "Tamaulipas"
+    ]
+  },
+  "88306": {
+    "municipio": "Miguel Alemán",
+    "colonias": [
+      "Educación",
+      "Electricistas",
+      "Hercilia",
+      "INFONAVIT Industrial",
+      "INFONAVIT Rinconada",
+      "INFONAVIT Santa Luisa",
+      "Mezquital del Río"
+    ]
+  },
+  "88307": {
+    "municipio": "Miguel Alemán",
+    "colonias": [
+      "Benito Juárez",
+      "ITAVU",
+      "Jardines de San Germán",
+      "Lucha Social",
+      "Rodríguez",
+      "Sabinitos",
+      "Villa del Mar"
+    ]
+  },
+  "88310": {
+    "municipio": "Miguel Alemán",
+    "colonias": [
+      "Los Guerra",
+      "Unidos Avanzamos"
+    ]
+  },
+  "88321": {
+    "municipio": "Miguel Alemán",
+    "colonias": [
+      "Guardados de Arriba",
+      "Los Ángeles"
+    ]
+  },
+  "88330": {
+    "municipio": "Miguel Alemán",
+    "colonias": [
+      "Los Guajillos"
+    ]
+  },
+  "88335": {
+    "municipio": "Miguel Alemán",
+    "colonias": [
+      "Los Treviño"
+    ]
+  },
+  "88336": {
+    "municipio": "Miguel Alemán",
+    "colonias": [
+      "La Ceja"
+    ]
+  },
+  "88338": {
+    "municipio": "Miguel Alemán",
+    "colonias": [
+      "Los López"
+    ]
+  },
+  "88340": {
+    "municipio": "Miguel Alemán",
+    "colonias": [
+      "Arcabuz"
+    ]
+  },
+  "88346": {
+    "municipio": "Miguel Alemán",
+    "colonias": [
+      "San Antonio Reyna"
+    ]
+  },
+  "88349": {
+    "municipio": "Miguel Alemán",
+    "colonias": [
+      "El Ranchito (Cerro Azul)"
+    ]
+  },
+  "88350": {
+    "municipio": "Nuevo Laredo",
+    "colonias": [
+      "La Cruz",
+      "Miguel Alemán (El Carrizo)"
+    ]
+  },
+  "88370": {
+    "municipio": "Guerrero",
+    "colonias": [
+      "Nueva Ciudad Guerrero Centro"
+    ]
+  },
+  "88372": {
+    "municipio": "Guerrero",
+    "colonias": [
+      "Hidalgo",
+      "Ruiz Cortínez"
+    ]
+  },
+  "88373": {
+    "municipio": "Guerrero",
+    "colonias": [
+      "FOVISSSTE Falcón",
+      "Pescadores"
+    ]
+  },
+  "88374": {
+    "municipio": "Guerrero",
+    "colonias": [
+      "Comisión",
+      "Electricistas"
+    ]
+  },
+  "88390": {
+    "municipio": "Mier",
+    "colonias": [
+      "El Parián",
+      "El Rodeo",
+      "La Chalupa",
+      "La Paleta",
+      "Las Torres",
+      "Mier Centro",
+      "Villas del Cántaro"
+    ]
+  },
+  "88400": {
+    "municipio": "Gustavo Díaz Ordaz",
+    "colonias": [
+      "Ciudad Gustavo Díaz Ordaz Centro"
+    ]
+  },
+  "88402": {
+    "municipio": "Gustavo Díaz Ordaz",
+    "colonias": [
+      "Cucharas",
+      "El Cansado",
+      "El Maestro",
+      "El Terrón",
+      "INFONAVIT San Miguel Nuevo"
+    ]
+  },
+  "88403": {
+    "municipio": "Gustavo Díaz Ordaz",
+    "colonias": [
+      "El Bordo",
+      "Nuevo Repueblo"
+    ]
+  },
+  "88404": {
+    "municipio": "Gustavo Díaz Ordaz",
+    "colonias": [
+      "Prado Sur"
+    ]
+  },
+  "88405": {
+    "municipio": "Gustavo Díaz Ordaz",
+    "colonias": [
+      "El Agrónomo",
+      "Emancipadores",
+      "Industrial",
+      "Las Fuentes"
+    ]
+  },
+  "88406": {
+    "municipio": "Gustavo Díaz Ordaz",
+    "colonias": [
+      "Fundadores"
+    ]
+  },
+  "88407": {
+    "municipio": "Gustavo Díaz Ordaz",
+    "colonias": [
+      "El Tepito",
+      "Nueva Esperanza",
+      "SARH",
+      "San Vicente del Potrero"
+    ]
+  },
+  "88408": {
+    "municipio": "Gustavo Díaz Ordaz",
+    "colonias": [
+      "El Tinaco",
+      "Emilio Portes Gil"
+    ]
+  },
+  "88410": {
+    "municipio": "Gustavo Díaz Ordaz",
+    "colonias": [
+      "Los Villarreales",
+      "Valadeces"
+    ]
+  },
+  "88412": {
+    "municipio": "Gustavo Díaz Ordaz",
+    "colonias": [
+      "Tepehuaje"
+    ]
+  },
+  "88415": {
+    "municipio": "Gustavo Díaz Ordaz",
+    "colonias": [
+      "Cinco de Febrero"
+    ]
+  },
+  "88420": {
+    "municipio": "Gustavo Díaz Ordaz",
+    "colonias": [
+      "Lucio Blanco"
+    ]
+  },
+  "88425": {
+    "municipio": "Gustavo Díaz Ordaz",
+    "colonias": [
+      "San José"
+    ]
+  },
+  "88430": {
+    "municipio": "Gustavo Díaz Ordaz",
+    "colonias": [
+      "Ideal del Campesino"
+    ]
+  },
+  "88434": {
+    "municipio": "Gustavo Díaz Ordaz",
+    "colonias": [
+      "Buenavista"
+    ]
+  },
+  "88439": {
+    "municipio": "Gustavo Díaz Ordaz",
+    "colonias": [
+      "Marte R. Gómez",
+      "Venecia"
+    ]
+  },
+  "88440": {
+    "municipio": "Camargo",
+    "colonias": [
+      "Camargo (Estradeño Dos)",
+      "Ciudad Camargo Centro",
+      "El Gonzaleño",
+      "López y Nuevo Cadillo"
+    ]
+  },
+  "88442": {
+    "municipio": "Camargo",
+    "colonias": [
+      "Cuauhtémoc",
+      "Lemus"
+    ]
+  },
+  "88443": {
+    "municipio": "Camargo",
+    "colonias": [
+      "Adolfo López Mateos",
+      "Industrial Camargo"
+    ]
+  },
+  "88444": {
+    "municipio": "Camargo",
+    "colonias": [
+      "Behula",
+      "El Sauz"
+    ]
+  },
+  "88446": {
+    "municipio": "Camargo",
+    "colonias": [
+      "La Misión"
+    ]
+  },
+  "88447": {
+    "municipio": "Camargo",
+    "colonias": [
+      "El Gonzalito"
+    ]
+  },
+  "88448": {
+    "municipio": "Camargo",
+    "colonias": [
+      "Obrera"
+    ]
+  },
+  "88449": {
+    "municipio": "Camargo",
+    "colonias": [
+      "Nuevo Cadillo"
+    ]
+  },
+  "88450": {
+    "municipio": "Camargo",
+    "colonias": [
+      "Rancherías"
+    ]
+  },
+  "88455": {
+    "municipio": "Camargo",
+    "colonias": [
+      "Guardados de Abajo"
+    ]
+  },
+  "88456": {
+    "municipio": "Camargo",
+    "colonias": [
+      "Los Fresnos"
+    ]
+  },
+  "88459": {
+    "municipio": "Camargo",
+    "colonias": [
+      "INFONAVIT Nuevo Camargo"
+    ]
+  },
+  "88460": {
+    "municipio": "Camargo",
+    "colonias": [
+      "Comales Centro"
+    ]
+  },
+  "88468": {
+    "municipio": "Camargo",
+    "colonias": [
+      "Estación Camargo",
+      "Nuevo Camargo (Villanueva)"
+    ]
+  },
+  "88469": {
+    "municipio": "Camargo",
+    "colonias": [
+      "Congregación Ochoa"
+    ]
+  },
+  "88470": {
+    "municipio": "Camargo",
+    "colonias": [
+      "El Azúcar",
+      "San Francisco"
+    ]
+  },
+  "88473": {
+    "municipio": "Camargo",
+    "colonias": [
+      "Los Ángeles"
+    ]
+  },
+  "88479": {
+    "municipio": "Camargo",
+    "colonias": [
+      "Puertecitos"
+    ]
+  },
+  "88480": {
+    "municipio": "Camargo",
+    "colonias": [
+      "Santa Rosalía"
+    ]
+  },
+  "88490": {
+    "municipio": "Camargo",
+    "colonias": [
+      "Santa Gertrudis"
+    ]
+  },
+  "88500": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Reynosa Centro"
+    ]
+  },
+  "88509": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Reynosa (General Lucio Blanco)"
+    ]
+  },
+  "88510": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Chapultepec (Chaparral)"
+    ]
+  },
+  "88520": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "10 de Mayo",
+      "Los Longorias",
+      "Ramos",
+      "Álvaro Obregón"
+    ]
+  },
+  "88522": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Carmen Serdán"
+    ]
+  },
+  "88540": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Aquiles Serdán"
+    ]
+  },
+  "88550": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Medardo González"
+    ]
+  },
+  "88560": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Del Prado",
+      "Prado Sur"
+    ]
+  },
+  "88570": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "El Maestro (Centro)",
+      "Fernández Gómez",
+      "Ferrocarril Zona Centro"
+    ]
+  },
+  "88580": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Del Río",
+      "El Bravo"
+    ]
+  },
+  "88589": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Unidad y Progreso"
+    ]
+  },
+  "88595": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Nuevo Tamaulipas",
+      "Praderas de Oriente"
+    ]
+  },
+  "88596": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Manuel Tarrega"
+    ]
+  },
+  "88597": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "La Curva",
+      "Villas del Prado"
+    ]
+  },
+  "88598": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Ferrocarril Oriente"
+    ]
+  },
+  "88599": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Industrial"
+    ]
+  },
+  "88600": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Bella Vista",
+      "Constitución",
+      "Ferrocarril Poniente",
+      "Manuel Cavazos Lerma",
+      "Módulo 2000 Rancho Grande"
+    ]
+  },
+  "88610": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Ejido la Rosita",
+      "Jesús Vega Sánchez",
+      "Los Caracoles",
+      "Rancho Grande"
+    ]
+  },
+  "88614": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Actrices Mexicanas",
+      "Bosques de las Haciendas",
+      "Las Haciendas",
+      "Los Cavazos",
+      "Montecristo",
+      "Parque Industrial Maquilpark",
+      "Villas de las Haciendas"
+    ]
+  },
+  "88615": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Arboledas Ribereña",
+      "Riberas de Rancho Grande",
+      "Riberas del Bosque"
+    ]
+  },
+  "88620": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Ayuntamiento",
+      "Country",
+      "Del Valle",
+      "Los Virreyes",
+      "Ribereña",
+      "Vicente Guerrero"
+    ]
+  },
+  "88630": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Altamira",
+      "Anzaldúas",
+      "Beatty",
+      "Flovigar",
+      "Rodríguez"
+    ]
+  },
+  "88631": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Rodríguez Ampliación"
+    ]
+  },
+  "88632": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Ladrillera Mexicana",
+      "Privada las Américas"
+    ]
+  },
+  "88640": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "El Círculo",
+      "Los Naranjos",
+      "Montecasino",
+      "Refinería",
+      "Reséndez Fierro"
+    ]
+  },
+  "88649": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "INFONAVIT Anzalduas"
+    ]
+  },
+  "88650": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "El Olmo",
+      "Hidalgo",
+      "Las Torres",
+      "Morelos",
+      "Santa Cecilia",
+      "Santa Cruz"
+    ]
+  },
+  "88651": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Mocambo"
+    ]
+  },
+  "88653": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Josefa Ortíz de Domínguez",
+      "Los Sauces"
+    ]
+  },
+  "88654": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Adolfo López Mateos"
+    ]
+  },
+  "88655": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Campestre ITAVU",
+      "Hacienda las Fuentes",
+      "Las Arboledas",
+      "Las Camelias",
+      "Leyes de Reforma",
+      "Los Álamos",
+      "Privada las Ceibas",
+      "Privadas de la Hacienda",
+      "Reserva Territorial Campestre"
+    ]
+  },
+  "88656": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "El Olmito"
+    ]
+  },
+  "88660": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Longoria",
+      "Prolongación Longoria"
+    ]
+  },
+  "88670": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Cuauhtémoc",
+      "Jardín",
+      "La Rosita",
+      "Las Lomas",
+      "Loma Alta",
+      "Simón Rodríguez"
+    ]
+  },
+  "88680": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "INFONAVIT Paraíso",
+      "José de Escandón (Petrolera)",
+      "Juan Escutia",
+      "Las Delicias",
+      "Obrera",
+      "Paraíso",
+      "Privada los Montejos",
+      "Sierra de la Garza"
+    ]
+  },
+  "88684": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Ernesto Zedillo"
+    ]
+  },
+  "88687": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Revolución Verde"
+    ]
+  },
+  "88689": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Ayala"
+    ]
+  },
+  "88690": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Electricistas",
+      "Longoria San Ricardo",
+      "Los Doctores",
+      "Los Leones"
+    ]
+  },
+  "88700": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "5 de Diciembre",
+      "Del Parque",
+      "La Cañada",
+      "Las Palmas",
+      "Loma Linda",
+      "Módulo 2000 Reynosa",
+      "Narciso Mendoza",
+      "Rodhe"
+    ]
+  },
+  "88703": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "INFONAVIT Arboledas",
+      "Las Fuentes Colonial",
+      "Las Fuentes Sección Lomas"
+    ]
+  },
+  "88706": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Enrique Cárdenas González"
+    ]
+  },
+  "88707": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Bugambilias",
+      "Del Bosque Norte",
+      "Del Bosque Sur",
+      "Magisterial",
+      "Rincón del Parque I y II",
+      "San Roberto"
+    ]
+  },
+  "88708": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Laredo"
+    ]
+  },
+  "88709": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Del Sol",
+      "San Jerónimo",
+      "Valle Dorado"
+    ]
+  },
+  "88710": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Antara",
+      "Framboyanes",
+      "La Cima",
+      "Las Quintas",
+      "Moderno",
+      "Palma Real",
+      "Parque Industrial Villa Florida",
+      "Polanco",
+      "Privada las Palmas",
+      "Residencial Miraloma",
+      "Rincón del Valle",
+      "San Antonio",
+      "Santa María",
+      "Valle Alto",
+      "Valle del Mezquite",
+      "Villa los Nogales",
+      "Villas de San Lázaro",
+      "Vista Hermosa"
+    ]
+  },
+  "88713": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Campestre Bugambilias",
+      "Nuevo México",
+      "San José de los Garza"
+    ]
+  },
+  "88715": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Calpulli o Unidad y Esfuerzo",
+      "Colinas de Loma Real",
+      "Condado del Norte",
+      "Loma Bonita",
+      "Loma Real",
+      "Los Fresnos Residencial",
+      "Los Laureles",
+      "Los Pinos de Loma Real",
+      "Paseo Residencial",
+      "Sendas Residencial",
+      "Ventura",
+      "Villa Florida",
+      "Villa Florida Jardines",
+      "Villas del Roble",
+      "Vista Alta Residencial"
+    ]
+  },
+  "88720": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Altavista",
+      "Leal Puente",
+      "Los Cavazos",
+      "Valle Verde"
+    ]
+  },
+  "88727": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Antonio J Bermúdez"
+    ]
+  },
+  "88729": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Birrueta"
+    ]
+  },
+  "88730": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Colinas del Pedregal",
+      "Granjas Económicas del Norte",
+      "Lomas del Real de Jarachinas",
+      "Lomas del Real de Jarachinas Norte",
+      "Real del Cántaro",
+      "Rosa Linda Guerrero",
+      "Valle del Pedregal",
+      "Valle del Vergel"
+    ]
+  },
+  "88733": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Miravalle",
+      "San Valentín"
+    ]
+  },
+  "88734": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Puerta Sur"
+    ]
+  },
+  "88735": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Campestre",
+      "El Halcón",
+      "Esfuerzo Nacional",
+      "Hacienda las Bugambilias",
+      "Integración Familiar Desarrollo Integral ITAVU",
+      "Las Palmas II",
+      "Privadas Campestre",
+      "San Marcos",
+      "Santa Fe"
+    ]
+  },
+  "88736": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Hacienda del Sol",
+      "Jarachina del Sur",
+      "Lomas de Sinaí",
+      "Lomas del Real de Jarachinas Sur",
+      "Parque Industrial del Norte",
+      "Puerta Grande",
+      "Puerta del Sol",
+      "Solidaridad",
+      "Tecnológico de Reynosa",
+      "Villa Dorada"
+    ]
+  },
+  "88737": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Laderas de Monterreal"
+    ]
+  },
+  "88740": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Aztlán",
+      "FOVISSSTE Módulo Habitacional",
+      "García Rojas",
+      "Las Cumbres",
+      "Las Fuentes",
+      "Villa las Fuentes"
+    ]
+  },
+  "88743": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "INFONAVIT las Lomas"
+    ]
+  },
+  "88745": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Las Cumbres Prolongación"
+    ]
+  },
+  "88746": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Fuentes del Valle",
+      "San Ángel Residencial"
+    ]
+  },
+  "88747": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Cactus II",
+      "Casa Bella",
+      "Lomas de Valle Alto",
+      "Los Muros",
+      "Portal San Miguel",
+      "Privadas del Norte",
+      "Río Grande",
+      "SNTE",
+      "Valle del Bravo"
+    ]
+  },
+  "88748": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Residencial San José",
+      "Villas de San José"
+    ]
+  },
+  "88749": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Jardines Coloniales"
+    ]
+  },
+  "88750": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Emiliano Zapata",
+      "Presa la Laguna"
+    ]
+  },
+  "88754": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Paseo del Prado",
+      "Renacimiento II",
+      "San Pedro",
+      "Villa Marín"
+    ]
+  },
+  "88755": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Roma Burocrática"
+    ]
+  },
+  "88756": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Burocrática",
+      "Jacinto López I",
+      "La Amistad",
+      "Parque Mol Industrial",
+      "Renacimiento"
+    ]
+  },
+  "88757": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Adolfo Ruiz Cortines",
+      "Jacinto Lopez II",
+      "López Portillo",
+      "Unidos Podemos",
+      "Universitaria"
+    ]
+  },
+  "88758": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Nuevo México Sectores I II III IV V",
+      "Nuevo Santander",
+      "Presa la Laguna (Ampliación)",
+      "Santa Fe"
+    ]
+  },
+  "88759": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Fundadores",
+      "Las Mitras",
+      "Revolución Obrera",
+      "Ricardo Flores Magón"
+    ]
+  },
+  "88760": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Azteca",
+      "Ejido la Escondida",
+      "El Anhelo",
+      "El Porvenir",
+      "La Laguna",
+      "Lázaro Cárdenas"
+    ]
+  },
+  "88763": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Lomas de Villar"
+    ]
+  },
+  "88764": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Villa del Sol"
+    ]
+  },
+  "88769": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Lázaro Cárdenas Oriente"
+    ]
+  },
+  "88770": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Del Maestro",
+      "La Escondida"
+    ]
+  },
+  "88776": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Villas Diamante",
+      "Villas de Imaq",
+      "Voluntad y Trabajo"
+    ]
+  },
+  "88777": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Esperanza",
+      "La Joya",
+      "Lucio Blanco"
+    ]
+  },
+  "88778": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Américo Villarreal Guerra",
+      "Guadalupe Victoria"
+    ]
+  },
+  "88779": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Arcoiris"
+    ]
+  },
+  "88780": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Almaguer",
+      "Brisas de Almaguer",
+      "El Mezquite",
+      "Francisco Villa",
+      "Lampasitos",
+      "Loma Blanca",
+      "Los Robles",
+      "Nuevo Reynosa",
+      "Parque Industrial Center",
+      "Reynosa",
+      "Unidad Obrera Sección II",
+      "Villas del Palmar",
+      "Villas del Parque"
+    ]
+  },
+  "88783": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Campestre (Lago Orizatlán)",
+      "El Guerreño",
+      "Parque Industrial El Puente (Manimex)",
+      "Puente Nuevo"
+    ]
+  },
+  "88784": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "15 de Enero",
+      "Margarita Maza de Juárez"
+    ]
+  },
+  "88785": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Campo Militar General Pedro Hinojosa"
+    ]
+  },
+  "88786": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "16 de Septiembre",
+      "1° de Mayo",
+      "20 de Noviembre",
+      "Nuevo Amanecer",
+      "Unidad Obrera"
+    ]
+  },
+  "88787": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Aeropuerto",
+      "El Campanario",
+      "Francisco Sarabia",
+      "Industrial Maquiladora",
+      "Parque Industrial Colonial",
+      "Parque Industrial Sur",
+      "ProLogis Park",
+      "Residencial del Valle",
+      "Riberas del Aeropuerto",
+      "Villa Real"
+    ]
+  },
+  "88788": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Bienestar",
+      "Parque Industrial Reynosa (Sección Norte)",
+      "Zona de Agentes Aduanales Adscritos"
+    ]
+  },
+  "88789": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Fidel Velázquez"
+    ]
+  },
+  "88790": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Alianza Social",
+      "Arecas",
+      "Benito Juárez",
+      "El Banco",
+      "Generación 2000",
+      "Ingeniero Humberto Valdéz Richaud",
+      "Marte R Gómez",
+      "Modelo",
+      "Puerto Escondido",
+      "Tamaulipas II y III",
+      "Tamaulipas IV (Nuevo Milenio)"
+    ]
+  },
+  "88793": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Gómez Lira",
+      "Lomas de la Torre",
+      "Lomas del Pedregal",
+      "Luis Donaldo Colosio",
+      "Tamaulipas I"
+    ]
+  },
+  "88794": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Ayuntamiento 2000",
+      "Las Milpas",
+      "Ramón Pérez García"
+    ]
+  },
+  "88795": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Independencia",
+      "Las Palmas",
+      "Praderas Elite",
+      "Riveras del Carmen",
+      "Satélite",
+      "Vamos Tamaulipas",
+      "Villa Esmeralda",
+      "Villas de la Joya"
+    ]
+  },
+  "88796": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Arboledas de Juárez",
+      "Beatriz Anaya",
+      "El Oasis",
+      "Las Anacuas",
+      "Mano con Mano",
+      "México",
+      "Naranjitos",
+      "Parque Industrial American Industries Kimco",
+      "Rincón de las Flores"
+    ]
+  },
+  "88797": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Capitán Carlos Cantú"
+    ]
+  },
+  "88798": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Marte R Gómez"
+    ]
+  },
+  "88799": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Balcones de Alcalá",
+      "Las Pirámides",
+      "Los Almendros",
+      "Los Almendros II",
+      "Los Arcos",
+      "Los Encinos",
+      "Los Olivos",
+      "Misión Santa Fe",
+      "Parque Industrial Alcalá",
+      "Paseo de las Flores",
+      "Pedro J Méndez",
+      "Privada las Américas",
+      "Terranova",
+      "Valle Soleado"
+    ]
+  },
+  "88800": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "El Triunfo"
+    ]
+  },
+  "88803": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Los Ángeles"
+    ]
+  },
+  "88808": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Santo Domingo",
+      "Seis de Enero"
+    ]
+  },
+  "88809": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "La Reforma"
+    ]
+  },
+  "88810": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Aracely Martínez",
+      "Francisco I. Madero",
+      "Jardín",
+      "Mágica",
+      "Nuevo Progreso",
+      "Obrera",
+      "Olvido González"
+    ]
+  },
+  "88811": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "La Soledad",
+      "Las Flores"
+    ]
+  },
+  "88813": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Ebanito Nuevo",
+      "Estación Canales"
+    ]
+  },
+  "88815": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Buenavista (Charco Azul)",
+      "La Posta"
+    ]
+  },
+  "88817": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Veracruz y Progreso"
+    ]
+  },
+  "88818": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "El Rosario",
+      "San Francisco"
+    ]
+  },
+  "88819": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "San Antonio"
+    ]
+  },
+  "88820": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Nueva Independencia (La Culeca)",
+      "Santa Apolonia"
+    ]
+  },
+  "88821": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Conquista Campesina",
+      "La Patria"
+    ]
+  },
+  "88823": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Emilio Portes Gil",
+      "General Guadalupe Mainero"
+    ]
+  },
+  "88824": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Vicente Guerrero"
+    ]
+  },
+  "88825": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Atizapán de Zaragoza"
+    ]
+  },
+  "88826": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Raúl Muñiz"
+    ]
+  },
+  "88827": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Cristóbal Colón"
+    ]
+  },
+  "88828": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "General Pedro Ochoa"
+    ]
+  },
+  "88830": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "La Argüelleña",
+      "Mario Souza"
+    ]
+  },
+  "88836": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Progreso del Campesino"
+    ]
+  },
+  "88837": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Manuel Parreño"
+    ]
+  },
+  "88839": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "La Zacatecana"
+    ]
+  },
+  "88840": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Cándido Aguilar"
+    ]
+  },
+  "88841": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Centenario de la Constitución",
+      "Emiliano Zapata"
+    ]
+  },
+  "88849": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Dos de Enero"
+    ]
+  },
+  "88850": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Diez de Noviembre",
+      "El Guerreño (Brecha 100y102 con km 23y26 Norte)",
+      "El Porvenir (El Bajío)",
+      "Los Altos (El Alto)",
+      "Reynosa Díaz",
+      "Rodolfo Martín Rocha (Martín Rocha)",
+      "Santa Ana"
+    ]
+  },
+  "88854": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Licenciado Galo Álvarez"
+    ]
+  },
+  "88855": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "La Retama"
+    ]
+  },
+  "88856": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Palo Blanco"
+    ]
+  },
+  "88857": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Anzaldúas (Estación Anzaldúas)"
+    ]
+  },
+  "88859": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Argüelles",
+      "Reynosa Díaz"
+    ]
+  },
+  "88866": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Parque Eólico DELARO"
+    ]
+  },
+  "88875": {
+    "municipio": "Reynosa",
+    "colonias": [
+      "Alfredo V. Bonfil (Periquitos)",
+      "Francisco I. Madero"
+    ]
+  },
+  "88880": {
+    "municipio": "Méndez",
+    "colonias": [
+      "La Purísima",
+      "Méndez"
+    ]
+  },
+  "88882": {
+    "municipio": "Méndez",
+    "colonias": [
+      "El Lobo (La Escondida)",
+      "Guadalupe",
+      "Jesús María Uno (Jesús María de Solís)",
+      "Santa Rita"
+    ]
+  },
+  "88885": {
+    "municipio": "Méndez",
+    "colonias": [
+      "Luis Echeverría Álvarez",
+      "Pedro José Méndez",
+      "San Lorenzo de Cárdenas González"
+    ]
+  },
+  "88886": {
+    "municipio": "Méndez",
+    "colonias": [
+      "Américo Villarreal Guerra",
+      "Espiaderos Dos (Chapeño Dos)"
+    ]
+  },
+  "88887": {
+    "municipio": "Méndez",
+    "colonias": [
+      "Comas Altas",
+      "Emilio Portes Gil (San Felipe)"
+    ]
+  },
+  "88890": {
+    "municipio": "Burgos",
+    "colonias": [
+      "Burgos"
+    ]
+  },
+  "88894": {
+    "municipio": "Burgos",
+    "colonias": [
+      "Lázaro Cárdenas (Rancho Nuevo)"
+    ]
+  },
+  "88895": {
+    "municipio": "Burgos",
+    "colonias": [
+      "El Pedregal"
+    ]
+  },
+  "88896": {
+    "municipio": "Burgos",
+    "colonias": [
+      "El Mulato"
+    ]
+  },
+  "88897": {
+    "municipio": "Burgos",
+    "colonias": [
+      "Labores de la Paz (Los de Arriba)",
+      "Las Margaritas"
+    ]
+  },
+  "88898": {
+    "municipio": "Burgos",
+    "colonias": [
+      "Cándido Aguilar"
+    ]
+  },
+  "88900": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Ciudad Río Bravo Centro"
+    ]
+  },
+  "88910": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Morelos",
+      "Río Bravo 2",
+      "San Diego"
+    ]
+  },
+  "88920": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Celanese",
+      "Esperanza",
+      "Estanislao García",
+      "Francisco I Madero",
+      "Fundadores",
+      "Graciano Sánchez",
+      "Hijos de Ejidatarios",
+      "Independencia",
+      "La Sauteña",
+      "Lázaro Cárdenas",
+      "Misiones del Puente Anzaldúas",
+      "Niños Héroes",
+      "Nuevo León",
+      "Paraíso",
+      "Paraíso Norte",
+      "Unidos Avanzamos"
+    ]
+  },
+  "88923": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Hacienda las Brisas I, II, III",
+      "Las Margaritas",
+      "Praderas del Sol"
+    ]
+  },
+  "88925": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Brisas del Campo",
+      "INFONAVIT del Valle",
+      "Las Américas",
+      "Nuevo Amanecer",
+      "Paseo del Valle",
+      "Popular Villahermosa",
+      "Riveras del Bravo",
+      "Río Bravense",
+      "Solidaridad"
+    ]
+  },
+  "88930": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Agapito Barrera",
+      "Benito Juárez",
+      "Estero",
+      "Ferrocarril 1, 2, 3",
+      "Ferrocarril Centro",
+      "Manuel Ramírez",
+      "Miguel Hidalgo",
+      "Monterreal",
+      "Roberto Guerra",
+      "Valle de Leones"
+    ]
+  },
+  "88933": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Azteca",
+      "Campestre",
+      "Ferrocarril 4",
+      "Guerrero",
+      "Las Lomas",
+      "Satélite"
+    ]
+  },
+  "88934": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Del Bosque",
+      "Vamos Tamaulipas"
+    ]
+  },
+  "88935": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Del Carmen",
+      "Manuel Cavazos Lerma",
+      "Victoria Cardenista"
+    ]
+  },
+  "88936": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Carlos Salinas",
+      "Cumbres",
+      "Integración Familiar"
+    ]
+  },
+  "88940": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "1° de Mayo",
+      "CONALEP",
+      "Noé Garza Martínez"
+    ]
+  },
+  "88943": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "El Maestro",
+      "Emilio Martínez Manaotou",
+      "Hijos de Ejidatarios Primero de Mayo",
+      "San Gregorio",
+      "Villas del Rosario"
+    ]
+  },
+  "88944": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Loma Linda",
+      "San Francisco",
+      "Villa de Guadalupe"
+    ]
+  },
+  "88945": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Arnulfo Martínez",
+      "Constitución",
+      "Juan Baez Guerra",
+      "Octavio Silva"
+    ]
+  },
+  "88946": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Los Ángeles"
+    ]
+  },
+  "88950": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "78 80",
+      "Cuauhtémoc",
+      "Río Bravo 1"
+    ]
+  },
+  "88959": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Río Bravo 3"
+    ]
+  },
+  "88960": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Zona Industrial"
+    ]
+  },
+  "88970": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Bugambilias",
+      "FOVISSSTE",
+      "INFONAVIT San Diego",
+      "México"
+    ]
+  },
+  "88980": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Condesa",
+      "Del Río",
+      "Del Valle",
+      "FOVISSSTE las Torres",
+      "Los Pinos",
+      "Luis Echeverría",
+      "Popular",
+      "Santa Inés",
+      "Socorro",
+      "Tamaulipas",
+      "Valle del Magisterio"
+    ]
+  },
+  "88990": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Emilio Portes Gil",
+      "INFONAVIT Fidel Velázquez",
+      "INFONAVIT la Paz",
+      "Termoeléctrica"
+    ]
+  },
+  "88993": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Bugambilias",
+      "INFONAVIT Conquistadores",
+      "INFONAVIT la Sauteña",
+      "INFONAVIT las Flores",
+      "Invasión 2000",
+      "La Paz",
+      "Los Portales",
+      "México Asentamientos Humanos",
+      "San Nicolás"
+    ]
+  },
+  "88994": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Campestre del Río",
+      "Santander",
+      "Álamo"
+    ]
+  },
+  "88995": {
+    "municipio": "Río Bravo",
+    "colonias": [
+      "Leonardo Rodríguez Alcaine"
+    ]
+  },
+  "89000": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Tampico Centro"
+    ]
+  },
+  "89050": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Obrera"
+    ]
+  },
+  "89060": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Tamaulipas",
+      "Telegrafistas"
+    ]
+  },
+  "89070": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Guadalupe Mainero"
+    ]
+  },
+  "89080": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Guadalupe Victoria",
+      "Xicoténcatl"
+    ]
+  },
+  "89090": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Azucenas",
+      "Isleta Pérez",
+      "Parajes de Guadalupe"
+    ]
+  },
+  "89100": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Loma Real",
+      "Lomas de Rosales",
+      "Lomas de la Aurora"
+    ]
+  },
+  "89106": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Lomas del Naranjal"
+    ]
+  },
+  "89107": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Lindavista",
+      "Loma Bonita"
+    ]
+  },
+  "89108": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Gustavo Díaz Ordaz",
+      "Hospital Regional"
+    ]
+  },
+  "89109": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Los Arcángeles",
+      "Universidad Sur"
+    ]
+  },
+  "89110": {
+    "municipio": "Tampico",
+    "colonias": [
+      "15 Batallón de Infantería",
+      "FOVISSSTE Vista Hermosa",
+      "Las Villas",
+      "Petrolera"
+    ]
+  },
+  "89118": {
+    "municipio": "Tampico",
+    "colonias": [
+      "La Florida",
+      "Militar"
+    ]
+  },
+  "89119": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Vista Hermosa"
+    ]
+  },
+  "89120": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Armora Nicolás",
+      "Guadalupe",
+      "Minerva"
+    ]
+  },
+  "89130": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Allende",
+      "Arboledas",
+      "Hidalgo",
+      "Primavera"
+    ]
+  },
+  "89136": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Arcim"
+    ]
+  },
+  "89137": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Ignacio Romero",
+      "Tampico"
+    ]
+  },
+  "89138": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Colinas de Universidad",
+      "Los Pinos",
+      "San Felipe",
+      "Universidad",
+      "Zapotal"
+    ]
+  },
+  "89140": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Lauro Aguirre",
+      "Reforma",
+      "Smith"
+    ]
+  },
+  "89150": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Juárez",
+      "Otomi",
+      "Primavera",
+      "Vergel"
+    ]
+  },
+  "89159": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Bellavista"
+    ]
+  },
+  "89160": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Frente Democrático",
+      "Santo Niño",
+      "Tolteca"
+    ]
+  },
+  "89169": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Laguna del Carpintero"
+    ]
+  },
+  "89170": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Aurora",
+      "Martock",
+      "Rodríguez",
+      "Trueba"
+    ]
+  },
+  "89176": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Rosario"
+    ]
+  },
+  "89177": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Moctezuma"
+    ]
+  },
+  "89180": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Anáhuac",
+      "Barandillas"
+    ]
+  },
+  "89190": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Americana",
+      "Azteca",
+      "Del Pueblo"
+    ]
+  },
+  "89199": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Volantín"
+    ]
+  },
+  "89210": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Monte Alegre",
+      "Sierra Morena"
+    ]
+  },
+  "89215": {
+    "municipio": "Tampico",
+    "colonias": [
+      "San Pedro Fernando"
+    ]
+  },
+  "89217": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Club Campestre Tampico"
+    ]
+  },
+  "89218": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Country Club"
+    ]
+  },
+  "89219": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Chairel Sección 33",
+      "Laguna de la Herradura"
+    ]
+  },
+  "89220": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Flores"
+    ]
+  },
+  "89229": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Fray Andrés de Olmos"
+    ]
+  },
+  "89230": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Águila"
+    ]
+  },
+  "89239": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Chairel"
+    ]
+  },
+  "89240": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Altavista",
+      "Sauce"
+    ]
+  },
+  "89250": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Alijadores",
+      "Ex-Lomas del Country Club",
+      "Pescadores",
+      "Sembradores de la Amistad"
+    ]
+  },
+  "89258": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Peralta"
+    ]
+  },
+  "89260": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Campbell",
+      "Jardín",
+      "Nacional"
+    ]
+  },
+  "89268": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Ramos"
+    ]
+  },
+  "89270": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Aragón",
+      "Matamoros",
+      "Melchor Ocampo"
+    ]
+  },
+  "89280": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Cascajal"
+    ]
+  },
+  "89290": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Marina Nacional",
+      "Morelos"
+    ]
+  },
+  "89298": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Mano con Mano",
+      "Vicente Guerrero"
+    ]
+  },
+  "89309": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Enrique Cárdenas González"
+    ]
+  },
+  "89310": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Laguna de la Puerta"
+    ]
+  },
+  "89314": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Revolución Verde",
+      "Unidad del Valle"
+    ]
+  },
+  "89316": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Emilio Portes Gil",
+      "Esfuerzo Obrero",
+      "Sagitario I y II"
+    ]
+  },
+  "89317": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Natividad Garza Leal",
+      "Solidaridad Voluntad y Trabajo"
+    ]
+  },
+  "89318": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Del Bosque",
+      "Francisco Javier Mina",
+      "Nuevo Progreso"
+    ]
+  },
+  "89319": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Bugambilias",
+      "Villa Hermosa"
+    ]
+  },
+  "89320": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Americano",
+      "Chairel Tancol",
+      "Puesta del Sol",
+      "Tancol"
+    ]
+  },
+  "89325": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Circuito Andrea",
+      "Loma Bonita"
+    ]
+  },
+  "89326": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Arcángeles",
+      "Colinas de Tancol",
+      "La Paz"
+    ]
+  },
+  "89327": {
+    "municipio": "Tampico",
+    "colonias": [
+      "2 de Junio",
+      "Jardines del Valle",
+      "Nuevo Paraíso",
+      "Residencial Bancario"
+    ]
+  },
+  "89328": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Pedro José Méndez",
+      "Petroquímicas"
+    ]
+  },
+  "89329": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Colombia",
+      "Las Américas",
+      "Latinoamericano"
+    ]
+  },
+  "89330": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Flamboyanes",
+      "Los Almendros"
+    ]
+  },
+  "89336": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Universidad Poniente"
+    ]
+  },
+  "89337": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Choferes",
+      "Nuevo Aeropuerto"
+    ]
+  },
+  "89338": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Estadio",
+      "José López Portillo",
+      "Las Chacas",
+      "Monza",
+      "Villa Verde"
+    ]
+  },
+  "89339": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Tampico (General Francisco Javier Mina)"
+    ]
+  },
+  "89340": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Ciudad Militar",
+      "Villas Chairel"
+    ]
+  },
+  "89344": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Arenal",
+      "Presas del Arenal"
+    ]
+  },
+  "89345": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Arboleda"
+    ]
+  },
+  "89346": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Tancol 33"
+    ]
+  },
+  "89347": {
+    "municipio": "Tampico",
+    "colonias": [
+      "San Antonio"
+    ]
+  },
+  "89348": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Alejandra",
+      "Conjunto Habitacional Esmeralda",
+      "Conjunto Habitacional Tercer Milenium",
+      "Los Encinos",
+      "México",
+      "Pegaso",
+      "Privado Querétaro",
+      "Privado Sonora"
+    ]
+  },
+  "89349": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Coyolitos",
+      "El Naranjal",
+      "El Naranjal Prolongación Sur",
+      "Fernanda",
+      "Insurgentes",
+      "Los Claustros",
+      "Puertas Coloradas"
+    ]
+  },
+  "89350": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Roma"
+    ]
+  },
+  "89355": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Magdaleno Aguilar"
+    ]
+  },
+  "89356": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Carmen Romano de López Portillo",
+      "Chapultepec",
+      "Génesis"
+    ]
+  },
+  "89357": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Los Portales",
+      "Mirador",
+      "San Francisco"
+    ]
+  },
+  "89358": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Gladiolas",
+      "Independencia",
+      "Jardines de Champayán 1",
+      "Las Torres",
+      "Luis Donaldo Colosio",
+      "Miradores de la Presa",
+      "Tierra Alta",
+      "Valle Escondido"
+    ]
+  },
+  "89359": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Niños Héroes"
+    ]
+  },
+  "89360": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Lomas del Chairel"
+    ]
+  },
+  "89364": {
+    "municipio": "Tampico",
+    "colonias": [
+      "El Charro",
+      "El Ojital",
+      "Hacienda del Rul",
+      "Jesús Elías Piña IV, V y VI",
+      "Loma Alta"
+    ]
+  },
+  "89365": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Jesús Elías Piña I, II y III"
+    ]
+  },
+  "89366": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Diamante",
+      "Luis Echeverría Álvarez"
+    ]
+  },
+  "89367": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Ampliación Luis Echeverría",
+      "Colinas San Gerardo",
+      "Cumbres de Vista Bella",
+      "Laderas de Vista Bella",
+      "Nuevo Amanecer",
+      "Unidad Modelo",
+      "Villas Laguna",
+      "Vista Bella"
+    ]
+  },
+  "89368": {
+    "municipio": "Tampico",
+    "colonias": [
+      "FOVISSSTE Chairel",
+      "Gema",
+      "Gonzalo García Ramírez",
+      "INFONAVIT Lomas Arenal",
+      "Las Violetas",
+      "San Pedro"
+    ]
+  },
+  "89369": {
+    "municipio": "Tampico",
+    "colonias": [
+      "Colinas del Sol",
+      "Villa San Pedro"
+    ]
+  },
+  "89400": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Ciudad Madero Centro"
+    ]
+  },
+  "89410": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Unidad Nacional"
+    ]
+  },
+  "89415": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Villa Verde"
+    ]
+  },
+  "89416": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Asunción Ávalos",
+      "Jacarandas"
+    ]
+  },
+  "89417": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Estadio"
+    ]
+  },
+  "89420": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Las Américas",
+      "Monteverde"
+    ]
+  },
+  "89430": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Felipe Carrillo Puerto",
+      "Lázaro Cárdenas"
+    ]
+  },
+  "89440": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Jardín 20 de Noviembre",
+      "Los Mangos"
+    ]
+  },
+  "89450": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "1° de Mayo"
+    ]
+  },
+  "89460": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Loma del Gallo",
+      "Ricardo Flores Magón"
+    ]
+  },
+  "89464": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Quetzalcóatl"
+    ]
+  },
+  "89470": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Esfuerzo Nacional",
+      "Frente Democrático"
+    ]
+  },
+  "89480": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Francisco I Madero",
+      "Las Conchitas"
+    ]
+  },
+  "89490": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Obrera",
+      "Árbol Grande"
+    ]
+  },
+  "89496": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Las Arboledas"
+    ]
+  },
+  "89497": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Árbol Grande Ex-Refinería"
+    ]
+  },
+  "89500": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Candelario Garza"
+    ]
+  },
+  "89505": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "17 de Enero",
+      "Candelario Garza Ampliación",
+      "Fundadores"
+    ]
+  },
+  "89506": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Insurgentes",
+      "Integración Familiar",
+      "Joyas de Miramapolis",
+      "Las Dunas",
+      "Lienzo Charro",
+      "Miramapolis",
+      "Puerto Alegre",
+      "Rincón Colonial",
+      "SAHOP",
+      "Tercer Milenio",
+      "Villas del Mar"
+    ]
+  },
+  "89510": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Ampliación Unidad Nacional",
+      "Heriberto Kehoe",
+      "Ignacio Zaragoza",
+      "Lago Azul",
+      "Las Flores",
+      "Palmas I",
+      "Palmas II"
+    ]
+  },
+  "89512": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "16 de Septiembre",
+      "La Joya"
+    ]
+  },
+  "89513": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Los Pinos",
+      "Lucio Blanco Ampliación los Pinos"
+    ]
+  },
+  "89514": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Jesús Luna Luna",
+      "Residencial del Parque",
+      "Residencial la Antigua",
+      "Satélite"
+    ]
+  },
+  "89515": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "18 de Marzo",
+      "Carlos Jiménez Macías",
+      "Castores",
+      "El Palmar",
+      "Los Cedros",
+      "Los Framboyanes",
+      "Los Sauces",
+      "Manuel R Díaz",
+      "Naval Militar las Chacas",
+      "Villas del Mar"
+    ]
+  },
+  "89517": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Emiliano Zapata"
+    ]
+  },
+  "89518": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Revolución Verde"
+    ]
+  },
+  "89519": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "15 de Mayo",
+      "Adriana González Hernández",
+      "Los Fresnos",
+      "Simón Rivera"
+    ]
+  },
+  "89520": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Adolfo López Mateos",
+      "Fidel Velázquez",
+      "Francisco Villa",
+      "Héroe de Nacozari"
+    ]
+  },
+  "89530": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Del Bosque"
+    ]
+  },
+  "89540": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Emilio Carranza",
+      "Hermenegildo Galeana",
+      "ISSSFAM",
+      "La Barra",
+      "Miramar"
+    ]
+  },
+  "89550": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Benito Juárez Norte",
+      "Del Maestro",
+      "Del Valle",
+      "Emiliano Zapata Sur",
+      "Girasoles"
+    ]
+  },
+  "89553": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Camichines"
+    ]
+  },
+  "89554": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Nueva Cecilia"
+    ]
+  },
+  "89555": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "FOVISSSTE Lucio Blanco",
+      "Las Brisas",
+      "Los Robles",
+      "Polvorín",
+      "Santa Úrsula"
+    ]
+  },
+  "89556": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Delfino Reséndiz",
+      "Victoria"
+    ]
+  },
+  "89560": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Hipódromo",
+      "López Portillo"
+    ]
+  },
+  "89566": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "El Llano"
+    ]
+  },
+  "89567": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "La Loma"
+    ]
+  },
+  "89570": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Hidalgo Oriente",
+      "Hidalgo Poniente"
+    ]
+  },
+  "89580": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Benito Juárez",
+      "Vicente Guerrero"
+    ]
+  },
+  "89590": {
+    "municipio": "Ciudad Madero",
+    "colonias": [
+      "Ferrocarrilera",
+      "Talleres",
+      "Tinaco"
+    ]
+  },
+  "89600": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Altamira Centro"
+    ]
+  },
+  "89602": {
+    "municipio": "Altamira",
+    "colonias": [
+      "20 de Noviembre",
+      "Adolfo López Mateos",
+      "Alameda",
+      "Alejandro Briones",
+      "Altamira",
+      "Altamira Sector IV",
+      "Campo Tamaulipas",
+      "César López de Lara",
+      "Diana Laura Riojas de Colosio",
+      "Educación",
+      "El Nogal",
+      "El Pedregal",
+      "El Repecho",
+      "Electricistas",
+      "Emilio Portes Gil",
+      "Encinos",
+      "Enrique Cárdenas González",
+      "Felipe Carrillo Puerto",
+      "Fidel Velázquez",
+      "Guadalupe Victoria",
+      "Independencia",
+      "La Florida",
+      "La Joya",
+      "La Unión",
+      "Las Blancas",
+      "Las Fuentes",
+      "Las Margaritas",
+      "León F Gual",
+      "Los Laureles",
+      "Los Mangos",
+      "Los Obeliscos",
+      "Los Pinos",
+      "Los Placeres del Campo",
+      "Los Presidentes",
+      "Luis Donaldo Colosio",
+      "Lázaro Cárdenas",
+      "Martín A Martínez",
+      "María Antonieta Márquez",
+      "Nuevo México",
+      "Petrolera",
+      "Primavera Norte",
+      "Revolución Obrera",
+      "Roger Gómez",
+      "Santa Amalia",
+      "Santo Domingo",
+      "Sección 3 Petróleros",
+      "Tampiquito",
+      "Unidos Avanzamos",
+      "Valle Verde",
+      "Valles de España",
+      "Villas del Sol",
+      "Villerías",
+      "Álamo"
+    ]
+  },
+  "89603": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Arboledas",
+      "Arecas",
+      "Arrecifes",
+      "Colinas de Altamira",
+      "Corredor Industrial",
+      "De los Ríos",
+      "El Edén",
+      "Emiliano Zapata",
+      "Francisco I Madero",
+      "Francisco Medrano",
+      "Francisco Villa",
+      "Fundadores",
+      "Hacienda las Palmas",
+      "Industrial Guerrero",
+      "Jardines de Arboledas",
+      "José de Escandón",
+      "La Pedrera",
+      "La Potosina",
+      "Laguna de la Puerta",
+      "Las Adelitas",
+      "Las Alamedas",
+      "Las Haciendas",
+      "Las Palmas",
+      "Los Olivos",
+      "Los Prados",
+      "Magdaleno Aguilar",
+      "Municipios Libres",
+      "Municipios Libres las Negras",
+      "Paraíso",
+      "Parque de la Pequeña y Mediana Industria",
+      "Paseo Real",
+      "Puerto Industrial de Altamira",
+      "Real Altamira",
+      "Ricardo Flores Magón",
+      "San Jacinto",
+      "Santa Mónica",
+      "Satélite Chapala",
+      "Unidad Satélite",
+      "Valle Esmeralda Residencial",
+      "Venustiano Carranza",
+      "Villa las Rosas",
+      "Villas de Altamira",
+      "Villas del Sol",
+      "Villas las Flores"
+    ]
+  },
+  "89604": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Albañiles",
+      "Ampliación el Contadero",
+      "Américo Villarreal",
+      "Bahía",
+      "Benito Juárez",
+      "Cancún",
+      "Dunas Doradas",
+      "El Contadero",
+      "El Mundo",
+      "El Triunfo",
+      "Gema",
+      "Guadalupe Cervantes",
+      "Habitacional",
+      "Jazmín",
+      "José María Morelos",
+      "Justo Sierra",
+      "La Esperanza",
+      "Los Fresnos",
+      "Miramar",
+      "Nuevo Madero",
+      "Nuevo Tampico",
+      "Nuevo Tampico Sector 2",
+      "Plomeros",
+      "Primavera",
+      "Residencia Velamar",
+      "San Antonio",
+      "San Arnoldo",
+      "San Ángel",
+      "Santa Elena",
+      "Santo Tomas",
+      "Serapio Venegas",
+      "Tamaulipas",
+      "Valle Dorado"
+    ]
+  },
+  "89605": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Acapulquito",
+      "Agua de Castilla (La Bajada)",
+      "Central de Abastos",
+      "Colinas de la Laguna",
+      "Españita",
+      "Floresta",
+      "Ganadera",
+      "Huatulco",
+      "Huatulquito",
+      "Loma Bonita",
+      "Paseos de Floresta",
+      "Punta Laguna",
+      "Residencial Lagunas de Miralta",
+      "Residencial Real Campestre",
+      "Residencial el Náutico",
+      "Sotavento Altamira",
+      "Tampico Altamira",
+      "Vega de Esteros",
+      "Villas Náutico"
+    ]
+  },
+  "89606": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Alejandro Briones",
+      "Colinas de Champayán",
+      "Eugenio Hernández Flores",
+      "Juan Genaro de la Portilla",
+      "La Azteca",
+      "La Morita",
+      "Las Brisas",
+      "Las Flores",
+      "Loma Alta",
+      "Lomas Campestre",
+      "Lomas de Altamira",
+      "Lomas de Miralta",
+      "Lomas de Monte Alto",
+      "Lomas de Rosales",
+      "Lomas de Valle Verde",
+      "Los Arados",
+      "Los Encinos",
+      "Los Encinos Residencial",
+      "Monte Alto",
+      "Monte Alto Sipobladur",
+      "Nuevo Lomas del Real",
+      "Valle de las Flores"
+    ]
+  },
+  "89607": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Alameda",
+      "Altamira",
+      "Altamira II",
+      "El Campanario",
+      "Enrique Cárdenas Centro",
+      "FOVISSSTE",
+      "INFONAVIT Fidel Velázquez",
+      "Ixtapa",
+      "Jardines de Altamira",
+      "Jardines de Champayán",
+      "La Florida",
+      "Laguna Florida",
+      "Las Grullas",
+      "Las Marismas",
+      "Los Almendros",
+      "Los Naranjos",
+      "Los Sábalos",
+      "Pescadores",
+      "Pescadores 2",
+      "Privada Santiago",
+      "Puerto Escondido",
+      "Revolución Verde",
+      "Santa Ana",
+      "Santa Anita",
+      "Tercer Milenium",
+      "Villas de Champayán",
+      "Villas de Champayán 2"
+    ]
+  },
+  "89610": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Cuauhtémoc",
+      "Esperanza",
+      "Jardín",
+      "Magisterial"
+    ]
+  },
+  "89613": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Santa Gertrudis"
+    ]
+  },
+  "89614": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Graneros del Sur (Cuatrocientos Pueblos)",
+      "Mariano Matamoros",
+      "San Antonio",
+      "Santa Juana"
+    ]
+  },
+  "89615": {
+    "municipio": "Altamira",
+    "colonias": [
+      "José María Luis Mora (Las Margaritas)"
+    ]
+  },
+  "89620": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Esteros"
+    ]
+  },
+  "89625": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Providencia y Naranjos"
+    ]
+  },
+  "89630": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Lomas del Real"
+    ]
+  },
+  "89632": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Aquiles Serdán (El Barranco)"
+    ]
+  },
+  "89633": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Ampliación el Arenal"
+    ]
+  },
+  "89635": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Agua de Castilla"
+    ]
+  },
+  "89636": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Benito Juárez",
+      "Miguel Hidalgo",
+      "Nuevo CERESO Regional de Altamira"
+    ]
+  },
+  "89640": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Cervantes"
+    ]
+  },
+  "89641": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Maclovio Herrera (Miradores)"
+    ]
+  },
+  "89642": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Río Tamiahua",
+      "Santa Inés (Kilómetro 40)"
+    ]
+  },
+  "89643": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Mata del Abra"
+    ]
+  },
+  "89644": {
+    "municipio": "Altamira",
+    "colonias": [
+      "El Fuerte"
+    ]
+  },
+  "89645": {
+    "municipio": "Altamira",
+    "colonias": [
+      "Tres de Mayo (Mata Negra)"
+    ]
+  },
+  "89650": {
+    "municipio": "Altamira",
+    "colonias": [
+      "La Colonia (Estación Colonias)"
+    ]
+  },
+  "89670": {
+    "municipio": "Aldama",
+    "colonias": [
+      "Aldama",
+      "Arboledas",
+      "Brownsville",
+      "Constitución",
+      "Del Bosque",
+      "El Lucero",
+      "Francisco I. Madero",
+      "La Azufrosa (El Higuerón)",
+      "Los Pinos",
+      "Luis Caballero",
+      "Matamoros",
+      "Nuevo Tamaulipas",
+      "Revolución Verde",
+      "Río Verde",
+      "Santa Martha"
+    ]
+  },
+  "89672": {
+    "municipio": "Aldama",
+    "colonias": [
+      "Las Flores",
+      "Morón"
+    ]
+  },
+  "89673": {
+    "municipio": "Aldama",
+    "colonias": [
+      "El Carrizal (Carrera Torres)",
+      "El Carrizal Segundo",
+      "Higinio Tanguma"
+    ]
+  },
+  "89674": {
+    "municipio": "Aldama",
+    "colonias": [
+      "Rancho de Piedra",
+      "Revolución"
+    ]
+  },
+  "89675": {
+    "municipio": "Aldama",
+    "colonias": [
+      "El Real Viejo",
+      "Santa María"
+    ]
+  },
+  "89676": {
+    "municipio": "Aldama",
+    "colonias": [
+      "Barra del Tordo",
+      "El Pichijumo",
+      "Francisco Villa (Pancho Villa)"
+    ]
+  },
+  "89677": {
+    "municipio": "Aldama",
+    "colonias": [
+      "El Olivo",
+      "La Cabecera",
+      "Las Yucas"
+    ]
+  },
+  "89678": {
+    "municipio": "Aldama",
+    "colonias": [
+      "Buenavista",
+      "Nuevo Progreso (La Gaviota)"
+    ]
+  },
+  "89679": {
+    "municipio": "Aldama",
+    "colonias": [
+      "El Vidal",
+      "Las Alazanas"
+    ]
+  },
+  "89700": {
+    "municipio": "González",
+    "colonias": [
+      "Santa Fe"
+    ]
+  },
+  "89703": {
+    "municipio": "González",
+    "colonias": [
+      "Rosillo"
+    ]
+  },
+  "89704": {
+    "municipio": "González",
+    "colonias": [
+      "El Progreso"
+    ]
+  },
+  "89705": {
+    "municipio": "González",
+    "colonias": [
+      "Guadalupe Victoria"
+    ]
+  },
+  "89706": {
+    "municipio": "González",
+    "colonias": [
+      "González [Ejido]",
+      "Nueva Esperanza"
+    ]
+  },
+  "89707": {
+    "municipio": "González",
+    "colonias": [
+      "Atizapán de Zaragoza"
+    ]
+  },
+  "89710": {
+    "municipio": "González",
+    "colonias": [
+      "González Centro"
+    ]
+  },
+  "89712": {
+    "municipio": "González",
+    "colonias": [
+      "Jardín",
+      "Nuevo Amanecer",
+      "Praxedis Balboa"
+    ]
+  },
+  "89713": {
+    "municipio": "González",
+    "colonias": [
+      "Dos Amigos",
+      "Sector Oriente"
+    ]
+  },
+  "89715": {
+    "municipio": "González",
+    "colonias": [
+      "El Huerto",
+      "Industrial",
+      "Integración Familiar"
+    ]
+  },
+  "89716": {
+    "municipio": "González",
+    "colonias": [
+      "César López de Lara"
+    ]
+  },
+  "89720": {
+    "municipio": "González",
+    "colonias": [
+      "Magiscatzin"
+    ]
+  },
+  "89723": {
+    "municipio": "González",
+    "colonias": [
+      "Aureliano Caballero"
+    ]
+  },
+  "89724": {
+    "municipio": "González",
+    "colonias": [
+      "Francisco I. Madero Dos"
+    ]
+  },
+  "89725": {
+    "municipio": "González",
+    "colonias": [
+      "San Pedro",
+      "Venustiano Carranza Uno"
+    ]
+  },
+  "89726": {
+    "municipio": "González",
+    "colonias": [
+      "Felipe Carrillo Puerto"
+    ]
+  },
+  "89727": {
+    "municipio": "González",
+    "colonias": [
+      "Venustiano Carranza Dos"
+    ]
+  },
+  "89729": {
+    "municipio": "González",
+    "colonias": [
+      "El Centauro",
+      "Fortín Agrario (Estación Calles)"
+    ]
+  },
+  "89730": {
+    "municipio": "González",
+    "colonias": [
+      "Estación Manuel (Úrsulo Galván) Centro"
+    ]
+  },
+  "89731": {
+    "municipio": "González",
+    "colonias": [
+      "Aviación",
+      "Laguna",
+      "Tamaulipas"
+    ]
+  },
+  "89732": {
+    "municipio": "González",
+    "colonias": [
+      "Centro Comercial",
+      "Jardín",
+      "Libertad",
+      "Piloto"
+    ]
+  },
+  "89734": {
+    "municipio": "González",
+    "colonias": [
+      "Buenos Aires",
+      "Primavera",
+      "Progreso",
+      "San Luisito",
+      "Unidad Deportiva"
+    ]
+  },
+  "89735": {
+    "municipio": "González",
+    "colonias": [
+      "La Reforma"
+    ]
+  },
+  "89736": {
+    "municipio": "González",
+    "colonias": [
+      "Emiliano Zapata"
+    ]
+  },
+  "89740": {
+    "municipio": "González",
+    "colonias": [
+      "Campo Verde",
+      "Graciano Sánchez"
+    ]
+  },
+  "89744": {
+    "municipio": "González",
+    "colonias": [
+      "Adolfo Ruiz Cortines",
+      "Campo Nuevo"
+    ]
+  },
+  "89746": {
+    "municipio": "González",
+    "colonias": [
+      "López Rayón",
+      "San Antonio Rayón"
+    ]
+  },
+  "89750": {
+    "municipio": "Xicoténcatl",
+    "colonias": [
+      "Doctor Norberto Treviño Zapata",
+      "El Azúcar",
+      "Melchor Ocampo"
+    ]
+  },
+  "89751": {
+    "municipio": "Xicoténcatl",
+    "colonias": [
+      "Mártires de Río Blanco (La Reforma)"
+    ]
+  },
+  "89752": {
+    "municipio": "Xicoténcatl",
+    "colonias": [
+      "Alianza Agraria"
+    ]
+  },
+  "89753": {
+    "municipio": "Xicoténcatl",
+    "colonias": [
+      "Lucio Blanco",
+      "Miguel Alemán",
+      "Triunfo del Porvenir",
+      "Águilas de la Victoria"
+    ]
+  },
+  "89755": {
+    "municipio": "Xicoténcatl",
+    "colonias": [
+      "Xicoténcatl Centro"
+    ]
+  },
+  "89756": {
+    "municipio": "Xicoténcatl",
+    "colonias": [
+      "Lindavista",
+      "Vicente Villasana"
+    ]
+  },
+  "89757": {
+    "municipio": "Xicoténcatl",
+    "colonias": [
+      "El Tres",
+      "Héctor Sáenz Muñoz",
+      "José María Martínez",
+      "Margarita C de S",
+      "Oriente",
+      "Progreso"
+    ]
+  },
+  "89758": {
+    "municipio": "Xicoténcatl",
+    "colonias": [
+      "Cohol",
+      "Ferrocarril",
+      "Industrial",
+      "Presidencial",
+      "Primero de Mayo"
+    ]
+  },
+  "89759": {
+    "municipio": "Xicoténcatl",
+    "colonias": [
+      "Beatriz Anaya",
+      "Doctor Antonio Amaral González",
+      "El Azúcar",
+      "Emiliano Zapata",
+      "Flores Magón",
+      "Floresta",
+      "Independencia",
+      "José de Escandón",
+      "Las Granjas",
+      "Manuel Cavazos Lerma",
+      "Rosendo G Castro",
+      "Sector Poniente",
+      "Verástegui"
+    ]
+  },
+  "89760": {
+    "municipio": "Xicoténcatl",
+    "colonias": [
+      "San Manuel"
+    ]
+  },
+  "89762": {
+    "municipio": "Xicoténcatl",
+    "colonias": [
+      "Felipe Ángeles",
+      "Francisco Villa",
+      "Moctezuma"
+    ]
+  },
+  "89763": {
+    "municipio": "Xicoténcatl",
+    "colonias": [
+      "Ejido Brownsville",
+      "Narciso Mendoza Número Dos"
+    ]
+  },
+  "89764": {
+    "municipio": "Xicoténcatl",
+    "colonias": [
+      "Francisco Castellanos",
+      "Segunda Unidad Xicoténcatl (El Aquiche)"
+    ]
+  },
+  "89767": {
+    "municipio": "Xicoténcatl",
+    "colonias": [
+      "Praxedis Balboa (La Poza)",
+      "Vicente Guerrero"
+    ]
+  },
+  "89768": {
+    "municipio": "Xicoténcatl",
+    "colonias": [
+      "El Cedral"
+    ]
+  },
+  "89774": {
+    "municipio": "Xicoténcatl",
+    "colonias": [
+      "Benito Juárez",
+      "El Conejo (El Conejito)",
+      "La Presa",
+      "Manuel Castaños Valiente (El Setenta)"
+    ]
+  },
+  "89778": {
+    "municipio": "Xicoténcatl",
+    "colonias": [
+      "El Azteca",
+      "Héctor M Sáenz"
+    ]
+  },
+  "89780": {
+    "municipio": "Gómez Farías",
+    "colonias": [
+      "Gómez Farías"
+    ]
+  },
+  "89783": {
+    "municipio": "Gómez Farías",
+    "colonias": [
+      "El Nacimiento",
+      "Plan de Guadalupe"
+    ]
+  },
+  "89784": {
+    "municipio": "Gómez Farías",
+    "colonias": [
+      "Ojo de Agua (La Morita)"
+    ]
+  },
+  "89785": {
+    "municipio": "Gómez Farías",
+    "colonias": [
+      "Emilio Portes Gil (La Gloria)"
+    ]
+  },
+  "89789": {
+    "municipio": "Gómez Farías",
+    "colonias": [
+      "El Azteca"
+    ]
+  },
+  "89790": {
+    "municipio": "Gómez Farías",
+    "colonias": [
+      "5 de Mayo",
+      "Loma Alta (Loma Alta de Gómez Farías)"
+    ]
+  },
+  "89791": {
+    "municipio": "Gómez Farías",
+    "colonias": [
+      "Benito Juárez (La Ribera)",
+      "Guadalupe Victoria",
+      "La Misión"
+    ]
+  },
+  "89792": {
+    "municipio": "Gómez Farías",
+    "colonias": [
+      "Alfredo V. Bonfil (El Papalote)",
+      "Américo Villarreal",
+      "El Riachuelo"
+    ]
+  },
+  "89795": {
+    "municipio": "Gómez Farías",
+    "colonias": [
+      "Héroes de Chapultepec"
+    ]
+  },
+  "89796": {
+    "municipio": "Gómez Farías",
+    "colonias": [
+      "Lázaro Cárdenas Dos"
+    ]
+  },
+  "89797": {
+    "municipio": "Gómez Farías",
+    "colonias": [
+      "Agustín Melgar",
+      "El Esfuerzo Número Uno",
+      "Narciso Mendoza (La Ardilla)",
+      "Poblado Seiscientos Uno"
+    ]
+  },
+  "89800": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Ciudad Mante Centro"
+    ]
+  },
+  "89810": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Enrique Cárdenas González",
+      "Morelos"
+    ]
+  },
+  "89815": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Aurora",
+      "Del Músico"
+    ]
+  },
+  "89816": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Unidad Nacional"
+    ]
+  },
+  "89817": {
+    "municipio": "El Mante",
+    "colonias": [
+      "FOVISSSTE 1",
+      "FOVISSSTE 2",
+      "INFONAVIT Arbustos",
+      "Los Pinos"
+    ]
+  },
+  "89818": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Cerro del Bernal",
+      "Faja de Oro",
+      "INFONAVIT el Bernal",
+      "Santa Mónica"
+    ]
+  },
+  "89819": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Vicente Guerrero"
+    ]
+  },
+  "89820": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Fomento Nacional",
+      "Miguel Alemán",
+      "Vivah"
+    ]
+  },
+  "89827": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Andalucía",
+      "El Martillo",
+      "Los Ángeles"
+    ]
+  },
+  "89829": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Canoas"
+    ]
+  },
+  "89830": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Anáhuac 1",
+      "Moderna"
+    ]
+  },
+  "89837": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Ignacio de la Llave"
+    ]
+  },
+  "89838": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Revolución Verde"
+    ]
+  },
+  "89839": {
+    "municipio": "El Mante",
+    "colonias": [
+      "INFONAVIT Jesús Yurem",
+      "Valle del Mante"
+    ]
+  },
+  "89840": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Azucarera",
+      "Benito Juárez",
+      "Del Bosque",
+      "Jardín",
+      "Las Flores",
+      "Río Mante"
+    ]
+  },
+  "89843": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Progreso Social",
+      "San Agustín",
+      "Victoria"
+    ]
+  },
+  "89846": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Chapultepec",
+      "Zeferino Terán"
+    ]
+  },
+  "89847": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Las Villas",
+      "Nacional Colectiva"
+    ]
+  },
+  "89848": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Tulipanes",
+      "Valle de Chapultepec"
+    ]
+  },
+  "89849": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Aeropuerto",
+      "Burócrata",
+      "Cuauhtémoc",
+      "INFONAVIT Linares",
+      "Libertad",
+      "Mariano Matamoros",
+      "Nuevo Amanecer",
+      "Paseo de las Palmas",
+      "Popular",
+      "Vamos Tamaulipas"
+    ]
+  },
+  "89850": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Anáhuac 2",
+      "Núñez",
+      "Quintanilla"
+    ]
+  },
+  "89853": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Santa Fe"
+    ]
+  },
+  "89858": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Niños Héroes",
+      "Tamaulipas"
+    ]
+  },
+  "89860": {
+    "municipio": "El Mante",
+    "colonias": [
+      "INFONAVIT Nicolás Bravo",
+      "Las Brisas",
+      "Nicolás Bravo"
+    ]
+  },
+  "89865": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Carlos M del Pino",
+      "Esfuerzo Obrero"
+    ]
+  },
+  "89866": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Municipio Libre"
+    ]
+  },
+  "89867": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Yucatán"
+    ]
+  },
+  "89868": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Unión Burocrática"
+    ]
+  },
+  "89869": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Las Américas",
+      "Mante"
+    ]
+  },
+  "89870": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Luis Donaldo Colosio",
+      "Nicolás Moreno",
+      "Obrera"
+    ]
+  },
+  "89880": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Altavista",
+      "Gerardo Ferrara",
+      "Ladrillera",
+      "Plutarco Elías Calles"
+    ]
+  },
+  "89884": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Campesina",
+      "Carolina Yucatán Dos"
+    ]
+  },
+  "89885": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Country Club",
+      "El Huastequillo",
+      "Obrera 2"
+    ]
+  },
+  "89886": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Paraíso",
+      "Unidad y Progreso"
+    ]
+  },
+  "89887": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Campesina Dos",
+      "Sección Agronómica"
+    ]
+  },
+  "89888": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Independencia",
+      "Tomás Yarrington Ruvalcaba"
+    ]
+  },
+  "89889": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Miller"
+    ]
+  },
+  "89890": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Aquiles Serdán",
+      "Santa Clara"
+    ]
+  },
+  "89893": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Jalisco"
+    ]
+  },
+  "89895": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Del Valle",
+      "Moctezuma",
+      "Parque Industrial PROMANTE (Aloe Vera)"
+    ]
+  },
+  "89896": {
+    "municipio": "El Mante",
+    "colonias": [
+      "San Francisco"
+    ]
+  },
+  "89897": {
+    "municipio": "El Mante",
+    "colonias": [
+      "José López Portillo",
+      "Miravalle"
+    ]
+  },
+  "89898": {
+    "municipio": "El Mante",
+    "colonias": [
+      "20 de Septiembre",
+      "Plan de Ayutla"
+    ]
+  },
+  "89899": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Ayuntamiento",
+      "Campestre",
+      "Jesús García Corona",
+      "Las Palmas",
+      "Quintero"
+    ]
+  },
+  "89910": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Benito Juárez",
+      "Cinco de Mayo",
+      "El Limón",
+      "La Vega (La Pepa)",
+      "San Miguel de la Mora",
+      "Tanchipa",
+      "Veinte de Noviembre"
+    ]
+  },
+  "89912": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Francisco Villa",
+      "Siete de Noviembre"
+    ]
+  },
+  "89913": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Las Magdalenas",
+      "Las Palmas"
+    ]
+  },
+  "89914": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Guayalejo Número 2",
+      "Plan de Iguala",
+      "Puerto Rico",
+      "San Rafael de los Castro"
+    ]
+  },
+  "89917": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Ladrillera de la Chaca",
+      "Manuel Ávila Camacho"
+    ]
+  },
+  "89918": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Bellavista",
+      "Ignacio Allende",
+      "Mártires de la Reforma",
+      "Primero de Mayo (Ampliación Veinte de Noviembre)"
+    ]
+  },
+  "89920": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Francisco I. Madero",
+      "La Mora"
+    ]
+  },
+  "89922": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Miguel Hidalgo"
+    ]
+  },
+  "89923": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Dieciocho de Marzo",
+      "La Esperanza"
+    ]
+  },
+  "89925": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Dieciocho de Febrero",
+      "Dieciséis de Septiembre (El Nueve)",
+      "Faja de Oro",
+      "Álvaro Obregón (La Trinidad)",
+      "Úrsulo Galván"
+    ]
+  },
+  "89928": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Plan de Ayala"
+    ]
+  },
+  "89929": {
+    "municipio": "El Mante",
+    "colonias": [
+      "El Naranjo",
+      "Emiliano Zapata",
+      "José María Morelos"
+    ]
+  },
+  "89930": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Quintero"
+    ]
+  },
+  "89938": {
+    "municipio": "El Mante",
+    "colonias": [
+      "El Abra"
+    ]
+  },
+  "89939": {
+    "municipio": "El Mante",
+    "colonias": [
+      "El Abra (Ojo de Agua)"
+    ]
+  },
+  "89940": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Celaya",
+      "El Refugio",
+      "Felipe Ángeles",
+      "La Nueva Unión",
+      "Las Ánimas",
+      "Triunfo Número Dos"
+    ]
+  },
+  "89942": {
+    "municipio": "El Mante",
+    "colonias": [
+      "El Triunfo Número Uno",
+      "General Jesús González Ortega",
+      "Los Dorados",
+      "Lázaro Cárdenas Dos"
+    ]
+  },
+  "89943": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Magdaleno Aguilar",
+      "Tantoán"
+    ]
+  },
+  "89945": {
+    "municipio": "El Mante",
+    "colonias": [
+      "División del Norte",
+      "El Olímpico",
+      "La Reforma",
+      "Santa Clara Número Dos"
+    ]
+  },
+  "89950": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Los Aztecas",
+      "Tantoyuquita"
+    ]
+  },
+  "89953": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Camotero Número Dos",
+      "Tierra y Libertad"
+    ]
+  },
+  "89955": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Nueva Apolonia"
+    ]
+  },
+  "89956": {
+    "municipio": "El Mante",
+    "colonias": [
+      "Nuevo Tantoán"
+    ]
+  },
+  "89960": {
+    "municipio": "Antiguo Morelos",
+    "colonias": [
+      "Antiguo Morelos",
+      "Morelos (La Loma)",
+      "San Francisco",
+      "Unidad Deportiva"
+    ]
+  },
+  "89963": {
+    "municipio": "Antiguo Morelos",
+    "colonias": [
+      "El Salvador",
+      "Las Flores",
+      "San José"
+    ]
+  },
+  "89965": {
+    "municipio": "Antiguo Morelos",
+    "colonias": [
+      "Praxedis Guerrero (El Pachón)"
+    ]
+  },
+  "89966": {
+    "municipio": "Antiguo Morelos",
+    "colonias": [
+      "Pueblo Viejo"
+    ]
+  },
+  "89967": {
+    "municipio": "Antiguo Morelos",
+    "colonias": [
+      "México Libre"
+    ]
+  },
+  "89968": {
+    "municipio": "Antiguo Morelos",
+    "colonias": [
+      "El Sauz",
+      "Plan de San Luis"
+    ]
+  },
+  "89969": {
+    "municipio": "Antiguo Morelos",
+    "colonias": [
+      "Fortines y Emiliano Zapata (Fortines)"
+    ]
+  },
+  "89970": {
+    "municipio": "Nuevo Morelos",
+    "colonias": [
+      "Del Sol",
+      "Nuevo Morelos",
+      "Santa Cruz del Toro",
+      "Vivamos Mejor"
+    ]
+  }
+}

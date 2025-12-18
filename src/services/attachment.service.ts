@@ -18,6 +18,9 @@ import type {
   AditamentoFormInput,
   FiltrosAditamento,
 } from '../types/attachment.types';
+import type { DocumentoExpediente, TipoDocumento } from '../types/truck.types';
+import { arrayUnion } from 'firebase/firestore';
+import { uploadVehicleDocument, deleteStorageFile, type UploadProgress } from './storage.service';
 
 const COLLECTION = 'aditamentos';
 
@@ -25,12 +28,24 @@ const COLLECTION = 'aditamentos';
 export async function obtenerAditamentos(filtros?: FiltrosAditamento): Promise<Aditamento[]> {
   try {
     const snapshot = await getDocs(collection(db, COLLECTION));
-    let aditamentos = snapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data(),
-      createdAt: doc.data().createdAt?.toDate(),
-      updatedAt: doc.data().updatedAt?.toDate(),
-    })) as Aditamento[];
+    let aditamentos = snapshot.docs.map(docSnap => {
+      const data = docSnap.data();
+      return {
+        id: docSnap.id,
+        ...data,
+        seguro: data.seguro ? {
+          ...data.seguro,
+          vigenciaInicio: data.seguro.vigenciaInicio?.toDate(),
+          vigenciaFin: data.seguro.vigenciaFin?.toDate(),
+        } : undefined,
+        documentos: data.documentos?.map((d: { fechaSubida?: { toDate?: () => Date } }) => ({
+          ...d,
+          fechaSubida: d.fechaSubida?.toDate?.() || new Date(),
+        })) || [],
+        createdAt: data.createdAt?.toDate(),
+        updatedAt: data.updatedAt?.toDate(),
+      };
+    }) as Aditamento[];
 
     // Ordenar en memoria por número económico
     aditamentos.sort((a, b) => (a.numeroEconomico || '').localeCompare(b.numeroEconomico || ''));
@@ -76,6 +91,15 @@ export async function obtenerAditamento(id: string): Promise<Aditamento | null> 
     return {
       id: docSnap.id,
       ...data,
+      seguro: data.seguro ? {
+        ...data.seguro,
+        vigenciaInicio: data.seguro.vigenciaInicio?.toDate(),
+        vigenciaFin: data.seguro.vigenciaFin?.toDate(),
+      } : undefined,
+      documentos: data.documentos?.map((d: { fechaSubida?: { toDate?: () => Date } }) => ({
+        ...d,
+        fechaSubida: d.fechaSubida?.toDate?.() || new Date(),
+      })) || [],
       createdAt: data.createdAt?.toDate(),
       updatedAt: data.updatedAt?.toDate(),
     } as Aditamento;
@@ -101,6 +125,22 @@ export async function crearAditamento(input: AditamentoFormInput): Promise<Adita
       capacidadCarga: input.capacidadCarga || null,
       largo: input.largo || null,
       ancho: input.ancho || null,
+      // Seguro
+      seguro: input.seguro ? {
+        poliza: input.seguro.poliza,
+        aseguradora: input.seguro.aseguradora || null,
+        costoAnual: input.seguro.costoAnual,
+        vigenciaInicio: input.seguro.vigenciaInicio
+          ? (input.seguro.vigenciaInicio instanceof Date
+            ? Timestamp.fromDate(input.seguro.vigenciaInicio)
+            : Timestamp.fromDate(new Date(input.seguro.vigenciaInicio)))
+          : null,
+        vigenciaFin: input.seguro.vigenciaFin
+          ? (input.seguro.vigenciaFin instanceof Date
+            ? Timestamp.fromDate(input.seguro.vigenciaFin)
+            : Timestamp.fromDate(new Date(input.seguro.vigenciaFin)))
+          : null,
+      } : null,
       activo: true,
       foto: input.foto || null,
       notas: input.notas || null,
@@ -113,6 +153,13 @@ export async function crearAditamento(input: AditamentoFormInput): Promise<Adita
     return {
       id: docRef.id,
       ...nuevoAditamento,
+      seguro: nuevoAditamento.seguro ? {
+        poliza: nuevoAditamento.seguro.poliza,
+        aseguradora: nuevoAditamento.seguro.aseguradora || undefined,
+        costoAnual: nuevoAditamento.seguro.costoAnual,
+        vigenciaInicio: nuevoAditamento.seguro.vigenciaInicio?.toDate(),
+        vigenciaFin: nuevoAditamento.seguro.vigenciaFin?.toDate(),
+      } : undefined,
       createdAt: ahora.toDate(),
       updatedAt: ahora.toDate(),
     } as Aditamento;
@@ -144,6 +191,23 @@ export async function actualizarAditamento(
     if (input.capacidadCarga !== undefined) updateData.capacidadCarga = input.capacidadCarga;
     if (input.largo !== undefined) updateData.largo = input.largo;
     if (input.ancho !== undefined) updateData.ancho = input.ancho;
+    if (input.seguro !== undefined) {
+      updateData.seguro = input.seguro ? {
+        poliza: input.seguro.poliza,
+        aseguradora: input.seguro.aseguradora || null,
+        costoAnual: input.seguro.costoAnual,
+        vigenciaInicio: input.seguro.vigenciaInicio
+          ? (input.seguro.vigenciaInicio instanceof Date
+            ? Timestamp.fromDate(input.seguro.vigenciaInicio)
+            : Timestamp.fromDate(new Date(input.seguro.vigenciaInicio)))
+          : null,
+        vigenciaFin: input.seguro.vigenciaFin
+          ? (input.seguro.vigenciaFin instanceof Date
+            ? Timestamp.fromDate(input.seguro.vigenciaFin)
+            : Timestamp.fromDate(new Date(input.seguro.vigenciaFin)))
+          : null,
+      } : null;
+    }
     if (input.foto !== undefined) updateData.foto = input.foto;
     if (input.notas !== undefined) updateData.notas = input.notas;
 
@@ -193,17 +257,122 @@ export async function eliminarAditamento(id: string): Promise<void> {
   }
 }
 
-// Obtener aditamentos para select
-export async function obtenerAditamentosSelect(): Promise<{ id: string; label: string; tipo: string }[]> {
+// Tipo para el select de aditamentos con capacidades
+export interface AditamentoSelectItem {
+  id: string;
+  label: string;
+  tipo: string;
+  // Capacidades de carga
+  capacidadCarga?: number;  // Toneladas
+  largo?: number;           // metros
+  ancho?: number;           // metros
+}
+
+// Obtener aditamentos para select (con capacidades)
+export async function obtenerAditamentosSelect(): Promise<AditamentoSelectItem[]> {
   try {
     const aditamentos = await obtenerAditamentos({ activo: true });
     return aditamentos.map(a => ({
       id: a.id,
       label: `${a.numeroEconomico} - ${a.tipo}${a.marca ? ` (${a.marca})` : ''}`,
       tipo: a.tipo,
+      capacidadCarga: a.capacidadCarga,
+      largo: a.largo,
+      ancho: a.ancho,
     }));
   } catch (error) {
     console.error('Error al obtener aditamentos para select:', error);
+    return [];
+  }
+}
+
+// ==================== GESTIÓN DE DOCUMENTOS ====================
+
+// Subir documento al expediente
+export async function subirDocumentoAditamento(
+  aditamentoId: string,
+  file: File,
+  categoria: TipoDocumento,
+  notas?: string,
+  onProgress?: (progress: UploadProgress) => void
+): Promise<DocumentoExpediente> {
+  try {
+    const result = await uploadVehicleDocument(`aditamentos/${aditamentoId}`, file, onProgress);
+
+    const documento: DocumentoExpediente = {
+      id: `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+      nombre: result.name,
+      tipo: result.type,
+      url: result.url,
+      path: result.path,
+      tamaño: result.size,
+      categoria,
+      fechaSubida: new Date(),
+    };
+
+    // Crear objeto para Firestore sin campos undefined
+    const documentoFirestore: Record<string, unknown> = {
+      id: documento.id,
+      nombre: documento.nombre,
+      tipo: documento.tipo,
+      url: documento.url,
+      path: documento.path,
+      tamaño: documento.tamaño,
+      categoria: documento.categoria,
+      fechaSubida: Timestamp.fromDate(documento.fechaSubida),
+    };
+    if (notas) documentoFirestore.notas = notas;
+
+    // Guardar en Firestore usando arrayUnion
+    const docRef = doc(db, COLLECTION, aditamentoId);
+    await updateDoc(docRef, {
+      documentos: arrayUnion(documentoFirestore),
+      updatedAt: Timestamp.now(),
+    });
+
+    return documento;
+  } catch (error) {
+    console.error('Error al subir documento:', error);
+    throw error;
+  }
+}
+
+// Eliminar documento del expediente
+export async function eliminarDocumentoAditamento(
+  aditamentoId: string,
+  documento: DocumentoExpediente
+): Promise<void> {
+  try {
+    // Eliminar de Storage
+    await deleteStorageFile(documento.path);
+
+    // Eliminar de Firestore
+    const docRef = doc(db, COLLECTION, aditamentoId);
+    const aditamento = await obtenerAditamento(aditamentoId);
+
+    if (aditamento?.documentos) {
+      const documentosActualizados = aditamento.documentos.filter(d => d.id !== documento.id);
+      await updateDoc(docRef, {
+        documentos: documentosActualizados.map(d => ({
+          ...d,
+          fechaSubida: Timestamp.fromDate(d.fechaSubida),
+        })),
+        updatedAt: Timestamp.now(),
+      });
+    }
+  } catch (error) {
+    console.error('Error al eliminar documento:', error);
+    throw error;
+  }
+}
+
+// Obtener documentos de un aditamento
+export async function obtenerDocumentosAditamento(aditamentoId: string): Promise<DocumentoExpediente[]> {
+  try {
+    const aditamento = await obtenerAditamento(aditamentoId);
+    return aditamento?.documentos || [];
+  } catch (error) {
+    console.error('Error al obtener documentos:', error);
     return [];
   }
 }

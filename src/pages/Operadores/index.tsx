@@ -16,6 +16,7 @@ import {
   ToggleLeft,
   ToggleRight,
   Camera,
+  Shield,
 } from 'lucide-react';
 import {
   obtenerOperadores,
@@ -53,6 +54,7 @@ export default function OperadoresPage() {
       tipo: 'federal',
       vigencia: new Date(),
     },
+    seguroSocial: undefined,
     sueldoDiario: 0,
     tractosAutorizados: [],
     fechaIngreso: new Date(),
@@ -126,6 +128,7 @@ export default function OperadoresPage() {
         tipo: 'federal',
         vigencia: new Date(),
       },
+      seguroSocial: undefined,
       sueldoDiario: 0,
       tractosAutorizados: [],
       fechaIngreso: new Date(),
@@ -148,6 +151,7 @@ export default function OperadoresPage() {
         tipo: operador.licencia.tipo,
         vigencia: operador.licencia.vigencia,
       },
+      seguroSocial: operador.seguroSocial,
       sueldoDiario: operador.sueldoDiario,
       tractosAutorizados: operador.tractosAutorizados || [],
       fechaIngreso: operador.fechaIngreso,
@@ -657,6 +661,53 @@ export default function OperadoresPage() {
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#BB0034] focus:border-[#BB0034] outline-none"
                       />
                       <p className="text-xs text-gray-400 mt-1">Formato: día/mes/año (ej: 15/03/2028)</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Seguro Social */}
+                <div className="space-y-4 border-t pt-4">
+                  <h3 className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                    <Shield size={16} />
+                    Seguro Social (IMSS)
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">NSS (Folio)</label>
+                      <input
+                        type="text"
+                        value={formData.seguroSocial?.folio || ''}
+                        onChange={(e) => setFormData({
+                          ...formData,
+                          seguroSocial: {
+                            folio: e.target.value,
+                            costoMensual: formData.seguroSocial?.costoMensual || 0,
+                          }
+                        })}
+                        placeholder="12345678901"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#BB0034] focus:border-[#BB0034] outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Costo Mensual</label>
+                      <div className="relative">
+                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
+                        <input
+                          type="number"
+                          min="0"
+                          step="0.01"
+                          value={formData.seguroSocial?.costoMensual || ''}
+                          onChange={(e) => setFormData({
+                            ...formData,
+                            seguroSocial: {
+                              folio: formData.seguroSocial?.folio || '',
+                              costoMensual: parseFloat(e.target.value) || 0,
+                            }
+                          })}
+                          placeholder="2500"
+                          className="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#BB0034] focus:border-[#BB0034] outline-none"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -14,6 +14,13 @@ import {
   Fuel,
   MapPin,
   FileText,
+  Ruler,
+  Shield,
+  Upload,
+  FolderOpen,
+  Download,
+  File,
+  Loader2,
 } from 'lucide-react';
 import {
   obtenerTractocamiones,
@@ -22,9 +29,12 @@ import {
   desactivarTractocamion,
   reactivarTractocamion,
   eliminarTractocamion,
+  subirDocumentoTractocamion,
+  eliminarDocumentoTractocamion,
 } from '../../services/truck.service';
-import type { Tractocamion, TractocamionFormInput, TipoUnidad } from '../../types/truck.types';
-import { MARCAS_TRACTOCAMION, TIPOS_UNIDAD } from '../../types/truck.types';
+import type { Tractocamion, TractocamionFormInput, TipoUnidad, DocumentoExpediente, TipoDocumento } from '../../types/truck.types';
+import { MARCAS_TRACTOCAMION, TIPOS_UNIDAD, TIPOS_DOCUMENTO } from '../../types/truck.types';
+import { formatFileSize } from '../../services/storage.service';
 
 export default function TractocamionesPage() {
   const [tractocamiones, setTractocamiones] = useState<Tractocamion[]>([]);
@@ -38,6 +48,13 @@ export default function TractocamionesPage() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
 
+  // Estado para modal de documentos
+  const [showDocsModal, setShowDocsModal] = useState(false);
+  const [selectedTracto, setSelectedTracto] = useState<Tractocamion | null>(null);
+  const [uploadingDoc, setUploadingDoc] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [docCategoria, setDocCategoria] = useState<TipoDocumento>('otro');
+
   const [formData, setFormData] = useState<TractocamionFormInput>({
     tipoUnidad: 'tractocamion',
     numeroEconomico: '',
@@ -50,8 +67,10 @@ export default function TractocamionesPage() {
     capacidadCombustible: undefined,
     rendimientoPromedio: undefined,
     odometroActual: 0,
+    plataformaCarga: undefined,
     gpsId: '',
     tagId: '',
+    seguro: undefined,
     fechaAdquisicion: undefined,
     foto: '',
     notas: '',
@@ -108,6 +127,7 @@ export default function TractocamionesPage() {
       capacidadCombustible: undefined,
       rendimientoPromedio: undefined,
       odometroActual: 0,
+      plataformaCarga: undefined,
       gpsId: '',
       tagId: '',
       fechaAdquisicion: undefined,
@@ -132,8 +152,10 @@ export default function TractocamionesPage() {
       capacidadCombustible: item.capacidadCombustible,
       rendimientoPromedio: item.rendimientoPromedio,
       odometroActual: item.odometroActual || 0,
+      plataformaCarga: item.plataformaCarga,
       gpsId: item.gpsId || '',
       tagId: item.tagId || '',
+      seguro: item.seguro,
       fechaAdquisicion: item.fechaAdquisicion,
       foto: item.foto || '',
       notas: item.notas || '',
@@ -180,6 +202,63 @@ export default function TractocamionesPage() {
       cargarDatos();
     } catch (err) {
       console.error('Error:', err);
+    }
+  }
+
+  // Funciones para documentos
+  function handleVerDocumentos(item: Tractocamion) {
+    setSelectedTracto(item);
+    setShowDocsModal(true);
+  }
+
+  async function handleSubirDocumento(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file || !selectedTracto) return;
+
+    setUploadingDoc(true);
+    setUploadProgress(0);
+
+    try {
+      await subirDocumentoTractocamion(
+        selectedTracto.id,
+        file,
+        docCategoria,
+        undefined,
+        (progress) => setUploadProgress(progress.progress)
+      );
+
+      // Recargar datos y actualizar el tracto seleccionado
+      const datosActualizados = await obtenerTractocamiones();
+      setTodosTractocamiones(datosActualizados);
+      aplicarFiltros(datosActualizados);
+      const tractoActualizado = datosActualizados.find(t => t.id === selectedTracto.id);
+      if (tractoActualizado) setSelectedTracto(tractoActualizado);
+    } catch (err) {
+      console.error('Error al subir documento:', err);
+      alert('Error al subir documento');
+    } finally {
+      setUploadingDoc(false);
+      setUploadProgress(0);
+      e.target.value = '';
+    }
+  }
+
+  async function handleEliminarDocumento(doc: DocumentoExpediente) {
+    if (!selectedTracto) return;
+    if (!window.confirm(`¿Eliminar "${doc.nombre}"?`)) return;
+
+    try {
+      await eliminarDocumentoTractocamion(selectedTracto.id, doc);
+
+      // Recargar datos
+      const datosActualizados = await obtenerTractocamiones();
+      setTodosTractocamiones(datosActualizados);
+      aplicarFiltros(datosActualizados);
+      const tractoActualizado = datosActualizados.find(t => t.id === selectedTracto.id);
+      if (tractoActualizado) setSelectedTracto(tractoActualizado);
+    } catch (err) {
+      console.error('Error al eliminar documento:', err);
+      alert('Error al eliminar documento');
     }
   }
 
@@ -278,6 +357,8 @@ export default function TractocamionesPage() {
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Marca / Modelo</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Placas</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Odómetro</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Seguro</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Expediente</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">TAG/GPS</th>
                   <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">Acciones</th>
                 </tr>
@@ -310,6 +391,33 @@ export default function TractocamionesPage() {
                         <Gauge size={14} />
                         {(item.odometroActual || 0).toLocaleString()} km
                       </div>
+                    </td>
+                    <td className="px-6 py-4">
+                      {item.seguro ? (
+                        <div className="space-y-1 text-xs">
+                          <div className="flex items-center gap-1">
+                            <Shield size={12} className="text-green-600" />
+                            <span className="font-medium">{item.seguro.poliza}</span>
+                          </div>
+                          <p className="text-gray-500">${(item.seguro.costoAnual || 0).toLocaleString()}/año</p>
+                          {item.seguro.vigenciaFin && (
+                            <p className={`text-xs ${new Date(item.seguro.vigenciaFin) < new Date() ? 'text-red-500 font-medium' : 'text-gray-400'}`}>
+                              Vence: {new Date(item.seguro.vigenciaFin).toLocaleDateString('es-MX')}
+                            </p>
+                          )}
+                        </div>
+                      ) : (
+                        <span className="text-xs text-gray-400">Sin seguro</span>
+                      )}
+                    </td>
+                    <td className="px-6 py-4">
+                      <button
+                        onClick={() => handleVerDocumentos(item)}
+                        className="inline-flex items-center gap-1 px-2 py-1 text-xs bg-purple-100 text-purple-700 rounded hover:bg-purple-200 transition-colors"
+                      >
+                        <FolderOpen size={12} />
+                        {item.documentos?.length || 0} docs
+                      </button>
                     </td>
                     <td className="px-6 py-4">
                       <div className="space-y-1 text-xs">
@@ -422,6 +530,178 @@ export default function TractocamionesPage() {
                   </div>
                 </div>
 
+                {formData.tipoUnidad === 'rolloff-plataforma' && (
+                  <div className="space-y-4 border-t pt-4">
+                    <h3 className="text-sm font-medium text-gray-700 flex items-center gap-2"><Ruler size={16} /> Capacidad de Carga (Plataforma)</h3>
+                    <div className="grid grid-cols-3 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Largo (m)</label>
+                        <input
+                          type="number"
+                          step="0.01"
+                          value={formData.plataformaCarga?.largo || ''}
+                          onChange={(e) => setFormData({
+                            ...formData,
+                            plataformaCarga: {
+                              largo: parseFloat(e.target.value) || 0,
+                              ancho: formData.plataformaCarga?.ancho || 0,
+                              capacidadToneladas: formData.plataformaCarga?.capacidadToneladas || 0,
+                            }
+                          })}
+                          className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] outline-none"
+                          placeholder="ej. 12.5"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Ancho (m)</label>
+                        <input
+                          type="number"
+                          step="0.01"
+                          value={formData.plataformaCarga?.ancho || ''}
+                          onChange={(e) => setFormData({
+                            ...formData,
+                            plataformaCarga: {
+                              largo: formData.plataformaCarga?.largo || 0,
+                              ancho: parseFloat(e.target.value) || 0,
+                              capacidadToneladas: formData.plataformaCarga?.capacidadToneladas || 0,
+                            }
+                          })}
+                          className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] outline-none"
+                          placeholder="ej. 2.6"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Capacidad (ton)</label>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={formData.plataformaCarga?.capacidadToneladas || ''}
+                          onChange={(e) => setFormData({
+                            ...formData,
+                            plataformaCarga: {
+                              largo: formData.plataformaCarga?.largo || 0,
+                              ancho: formData.plataformaCarga?.ancho || 0,
+                              capacidadToneladas: parseFloat(e.target.value) || 0,
+                            }
+                          })}
+                          className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] outline-none"
+                          placeholder="ej. 25"
+                        />
+                      </div>
+                    </div>
+                    <p className="text-xs text-gray-500">Estas dimensiones se usan para calcular si una maquinaria cabe en la plataforma.</p>
+                  </div>
+                )}
+
+                {/* Seguro */}
+                <div className="space-y-4 border-t pt-4">
+                  <h3 className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                    <Shield size={16} /> Póliza de Seguro
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">No. Póliza</label>
+                      <input
+                        type="text"
+                        value={formData.seguro?.poliza || ''}
+                        onChange={(e) => setFormData({
+                          ...formData,
+                          seguro: {
+                            poliza: e.target.value,
+                            aseguradora: formData.seguro?.aseguradora || '',
+                            costoAnual: formData.seguro?.costoAnual || 0,
+                            vigenciaInicio: formData.seguro?.vigenciaInicio,
+                            vigenciaFin: formData.seguro?.vigenciaFin,
+                          }
+                        })}
+                        className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] outline-none"
+                        placeholder="ej. POL-2025-12345"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Aseguradora</label>
+                      <input
+                        type="text"
+                        value={formData.seguro?.aseguradora || ''}
+                        onChange={(e) => setFormData({
+                          ...formData,
+                          seguro: {
+                            poliza: formData.seguro?.poliza || '',
+                            aseguradora: e.target.value,
+                            costoAnual: formData.seguro?.costoAnual || 0,
+                            vigenciaInicio: formData.seguro?.vigenciaInicio,
+                            vigenciaFin: formData.seguro?.vigenciaFin,
+                          }
+                        })}
+                        className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] outline-none"
+                        placeholder="ej. GNP, Qualitas, HDI"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Costo Anual (MXN)</label>
+                      <input
+                        type="number"
+                        step="0.01"
+                        value={formData.seguro?.costoAnual || ''}
+                        onChange={(e) => setFormData({
+                          ...formData,
+                          seguro: {
+                            poliza: formData.seguro?.poliza || '',
+                            aseguradora: formData.seguro?.aseguradora || '',
+                            costoAnual: parseFloat(e.target.value) || 0,
+                            vigenciaInicio: formData.seguro?.vigenciaInicio,
+                            vigenciaFin: formData.seguro?.vigenciaFin,
+                          }
+                        })}
+                        className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] outline-none"
+                        placeholder="ej. 45000"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Vigencia Inicio</label>
+                      <input
+                        type="date"
+                        value={formData.seguro?.vigenciaInicio instanceof Date
+                          ? formData.seguro.vigenciaInicio.toISOString().split('T')[0]
+                          : formData.seguro?.vigenciaInicio || ''}
+                        onChange={(e) => setFormData({
+                          ...formData,
+                          seguro: {
+                            poliza: formData.seguro?.poliza || '',
+                            aseguradora: formData.seguro?.aseguradora || '',
+                            costoAnual: formData.seguro?.costoAnual || 0,
+                            vigenciaInicio: e.target.value ? new Date(e.target.value + 'T12:00:00') : undefined,
+                            vigenciaFin: formData.seguro?.vigenciaFin,
+                          }
+                        })}
+                        className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Vigencia Fin</label>
+                      <input
+                        type="date"
+                        value={formData.seguro?.vigenciaFin instanceof Date
+                          ? formData.seguro.vigenciaFin.toISOString().split('T')[0]
+                          : formData.seguro?.vigenciaFin || ''}
+                        onChange={(e) => setFormData({
+                          ...formData,
+                          seguro: {
+                            poliza: formData.seguro?.poliza || '',
+                            aseguradora: formData.seguro?.aseguradora || '',
+                            costoAnual: formData.seguro?.costoAnual || 0,
+                            vigenciaInicio: formData.seguro?.vigenciaInicio,
+                            vigenciaFin: e.target.value ? new Date(e.target.value + 'T12:00:00') : undefined,
+                          }
+                        })}
+                        className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] outline-none"
+                      />
+                    </div>
+                  </div>
+                </div>
+
                 <div className="space-y-4 border-t pt-4">
                   <label className="block text-sm font-medium text-gray-700 mb-1">Notas</label>
                   <textarea value={formData.notas} onChange={(e) => setFormData({ ...formData, notas: e.target.value })} rows={2} className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] outline-none resize-none" />
@@ -434,6 +714,127 @@ export default function TractocamionesPage() {
                   </button>
                 </div>
               </form>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modal de Documentos */}
+      {showDocsModal && selectedTracto && (
+        <div className="fixed inset-0 z-50 overflow-y-auto">
+          <div className="flex items-center justify-center min-h-screen px-4">
+            <div className="fixed inset-0 bg-black/50" onClick={() => setShowDocsModal(false)} />
+            <div className="relative bg-white rounded-2xl shadow-xl w-full max-w-2xl p-6 max-h-[90vh] overflow-y-auto">
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 className="text-xl font-semibold">Expediente de Documentos</h2>
+                  <p className="text-sm text-gray-500">{selectedTracto.numeroEconomico} - {selectedTracto.marca} {selectedTracto.modelo}</p>
+                </div>
+                <button onClick={() => setShowDocsModal(false)} className="p-2 hover:bg-gray-100 rounded-lg"><X size={20} /></button>
+              </div>
+
+              {/* Subir documento */}
+              <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                <h3 className="text-sm font-medium text-gray-700 mb-3 flex items-center gap-2">
+                  <Upload size={16} /> Subir nuevo documento
+                </h3>
+                <div className="flex gap-3">
+                  <select
+                    value={docCategoria}
+                    onChange={(e) => setDocCategoria(e.target.value as TipoDocumento)}
+                    className="px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] outline-none"
+                  >
+                    {TIPOS_DOCUMENTO.map(t => (
+                      <option key={t.value} value={t.value}>{t.label}</option>
+                    ))}
+                  </select>
+                  <label className="flex-1">
+                    <input
+                      type="file"
+                      onChange={handleSubirDocumento}
+                      disabled={uploadingDoc}
+                      accept=".pdf,.doc,.docx"
+                      className="hidden"
+                    />
+                    <div className={`flex items-center justify-center gap-2 px-4 py-2 border-2 border-dashed rounded-lg cursor-pointer transition-colors ${uploadingDoc ? 'bg-gray-100 border-gray-300' : 'border-purple-300 hover:border-purple-500 hover:bg-purple-50'}`}>
+                      {uploadingDoc ? (
+                        <>
+                          <Loader2 size={16} className="animate-spin" />
+                          <span className="text-sm">Subiendo... {Math.round(uploadProgress)}%</span>
+                        </>
+                      ) : (
+                        <>
+                          <Upload size={16} className="text-purple-600" />
+                          <span className="text-sm text-gray-600">Seleccionar archivo (PDF, DOC)</span>
+                        </>
+                      )}
+                    </div>
+                  </label>
+                </div>
+                {uploadingDoc && (
+                  <div className="mt-2 h-2 bg-gray-200 rounded-full overflow-hidden">
+                    <div className="h-full bg-purple-600 transition-all" style={{ width: `${uploadProgress}%` }} />
+                  </div>
+                )}
+              </div>
+
+              {/* Lista de documentos */}
+              <div className="space-y-2">
+                <h3 className="text-sm font-medium text-gray-700 mb-3">
+                  Documentos ({selectedTracto.documentos?.length || 0})
+                </h3>
+                {!selectedTracto.documentos?.length ? (
+                  <div className="text-center py-8 text-gray-400">
+                    <FolderOpen size={32} className="mx-auto mb-2" />
+                    <p>No hay documentos en el expediente</p>
+                  </div>
+                ) : (
+                  selectedTracto.documentos.map(doc => (
+                    <div key={doc.id} className="flex items-center gap-3 p-3 bg-white border rounded-lg hover:bg-gray-50">
+                      <div className="p-2 bg-red-100 rounded-lg">
+                        <File size={20} className="text-red-600" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="font-medium text-sm truncate">{doc.nombre}</p>
+                        <div className="flex items-center gap-2 text-xs text-gray-500">
+                          <span className="px-1.5 py-0.5 bg-gray-100 rounded">
+                            {TIPOS_DOCUMENTO.find(t => t.value === doc.categoria)?.label || doc.categoria}
+                          </span>
+                          <span>{formatFileSize(doc.tamaño)}</span>
+                          <span>{new Date(doc.fechaSubida).toLocaleDateString('es-MX')}</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <a
+                          href={doc.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 hover:bg-blue-100 rounded-lg text-blue-600"
+                          title="Descargar"
+                        >
+                          <Download size={16} />
+                        </a>
+                        <button
+                          onClick={() => handleEliminarDocumento(doc)}
+                          className="p-2 hover:bg-red-100 rounded-lg text-red-500"
+                          title="Eliminar"
+                        >
+                          <Trash2 size={16} />
+                        </button>
+                      </div>
+                    </div>
+                  ))
+                )}
+              </div>
+
+              <div className="flex justify-end mt-6 pt-4 border-t">
+                <button
+                  onClick={() => setShowDocsModal(false)}
+                  className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200"
+                >
+                  Cerrar
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -1,7 +1,9 @@
 /**
  * Servicio para consulta de Códigos Postales de México
- * Usa la API pública de SEPOMEX via copomex.com
+ * Prioriza datos locales (CDMX, EdoMex, Hidalgo) y usa APIs externas como fallback
  */
+
+import { buscarCPLocal, existeCPLocal } from '../data/codigosPostales';
 
 export interface DatosCp {
   codigoPostal: string;
@@ -10,31 +12,42 @@ export interface DatosCp {
   colonias: string[];
 }
 
-// Cache para evitar llamadas repetidas
+// Cache para evitar llamadas repetidas (solo para CPs de APIs externas)
 const cache = new Map<string, DatosCp>();
 
 /**
  * Consulta los datos de un código postal mexicano
- * Retorna estado, municipio y lista de colonias
+ * 1. Busca primero en datos locales (instantáneo) - CDMX, EdoMex, Hidalgo
+ * 2. Si no existe, consulta API externa
  */
 export async function consultarCodigoPostal(cp: string): Promise<DatosCp | null> {
   // Validar formato de CP (5 dígitos)
-  const cpLimpio = cp.replace(/\D/g, '');
+  const cpLimpio = cp.replace(/\D/g, '').padStart(5, '0');
   if (cpLimpio.length !== 5) {
     return null;
   }
 
-  // Revisar cache
+  // 1. Buscar en datos locales primero (CDMX, EdoMex, Hidalgo) - INSTANTÁNEO
+  const datosLocales = buscarCPLocal(cpLimpio);
+  if (datosLocales) {
+    return {
+      codigoPostal: cpLimpio,
+      estado: datosLocales.estado,
+      municipio: datosLocales.municipio,
+      colonias: datosLocales.colonias,
+    };
+  }
+
+  // 2. Revisar cache de APIs externas
   if (cache.has(cpLimpio)) {
     return cache.get(cpLimpio)!;
   }
 
+  // 3. Consultar API externa para otros estados
   try {
-    // Usar API pública de códigos postales mexicanos
     const response = await fetch(`https://api.copomex.com/query/info_cp/${cpLimpio}?token=pruebas`);
 
     if (!response.ok) {
-      // Intentar con API alternativa
       return await consultarApiAlternativa(cpLimpio);
     }
 
@@ -44,7 +57,6 @@ export async function consultarCodigoPostal(cp: string): Promise<DatosCp | null>
       return await consultarApiAlternativa(cpLimpio);
     }
 
-    // La API retorna un array de colonias
     const colonias: string[] = [];
     let estado = '';
     let municipio = '';
@@ -65,7 +77,7 @@ export async function consultarCodigoPostal(cp: string): Promise<DatosCp | null>
       codigoPostal: cpLimpio,
       estado,
       municipio,
-      colonias: [...new Set(colonias)].sort(), // Eliminar duplicados y ordenar
+      colonias: [...new Set(colonias)].sort(),
     };
 
     cache.set(cpLimpio, resultado);
@@ -75,6 +87,14 @@ export async function consultarCodigoPostal(cp: string): Promise<DatosCp | null>
     console.warn('Error consultando API principal, intentando alternativa:', error);
     return await consultarApiAlternativa(cpLimpio);
   }
+}
+
+/**
+ * Verifica si un CP tiene datos locales disponibles (sin llamada a API)
+ */
+export function tieneDatosLocales(cp: string): boolean {
+  const cpLimpio = cp.replace(/\D/g, '').padStart(5, '0');
+  return existeCPLocal(cpLimpio);
 }
 
 /**

@@ -8,5 +8,17 @@ export default defineConfig({
   server: {
     port: 5174,
     strictPort: true,
+    host: true,
+    hmr: {
+      overlay: true,
+      timeout: 5000,
+    },
+    watch: {
+      usePolling: false,
+      ignored: ['**/node_modules/**', '**/.git/**', '**/docs/**'],
+    },
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom', 'firebase/app', 'firebase/auth', 'firebase/firestore'],
   },
 })

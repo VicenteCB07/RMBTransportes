@@ -3,12 +3,37 @@
  * Basado en la estructura de Bitácora del Excel (645 viajes)
  */
 
+import type { MarcaEquipo, CategoriaEquipo } from './equipment.types';
+
+/**
+ * Equipo de carga (maquinaria) que se transporta en un viaje
+ */
+export interface EquipoCargaViaje {
+  id: string;                    // ID único para esta instancia
+  modelo: string;                // Modelo del catálogo (ej: "GS-2632")
+  marca: MarcaEquipo;            // Marca del equipo
+  categoria: CategoriaEquipo;    // Tipo de equipo
+  // Dimensiones y peso (copiados del catálogo)
+  dimensiones: {
+    largo: number;
+    ancho: number;
+    alto: number;
+  };
+  peso: number;
+  // Identificación específica de la unidad (opcional)
+  numeroSerie?: string;          // Número de serie del equipo
+  numeroEconomico?: string;      // Número económico del cliente
+  // Notas
+  notas?: string;
+}
+
 export interface Viaje {
   id: string;
   folio: string; // Formato: DDMMYY-TIPO-UNIDAD-# (ej: 010825-EN-T08-1)
 
   // Fechas y tiempos
   fecha: Date;
+  fechaCompromiso?: Date; // Fecha compromiso de entrega
   tiempos: TiemposViaje;
 
   // Asignaciones
@@ -17,8 +42,11 @@ export interface Viaje {
   maniobristaId?: string;
   asesorId?: string;
 
-  // Equipos (remolques/cajas)
+  // Equipos (remolques/cajas) - aditamentos como lowboys, plataformas
   equipos: string[]; // Eco (1), Eco (2), Eco (3), Eco (4)
+
+  // Equipos de carga - maquinaria que se transporta
+  equiposCarga: EquipoCargaViaje[];
 
   // Cliente y destino
   clienteId: string;
@@ -68,7 +96,8 @@ export interface Viaje {
 export interface TiemposViaje {
   inicio: Date;        // HR_Inicio
   llegada?: Date;      // HR_Llegada
-  tiempoEspera?: number;  // Tiempo espera (minutos)
+  inicioEspera?: Date; // Timestamp cuando inicia la espera (click 3)
+  tiempoEspera?: number;  // Tiempo espera (minutos) - calculado automáticamente
   partida?: Date;      // HR_Partida
   extension?: number;  // Extensión (minutos)
   tiempoMuerto?: number;  // Tiempo muerto (minutos)
@@ -165,6 +194,7 @@ export type TipoServicioViaje =
   | 'Entrega / Recoleccion';
 
 export type StatusViaje =
+  | 'sin_asignar'
   | 'programado'
   | 'en_curso'
   | 'en_destino'
@@ -174,11 +204,13 @@ export type StatusViaje =
 // Input para crear/editar viajes
 export interface ViajeFormInput {
   fecha: Date;
+  fechaCompromiso?: Date;
   tractoId: string;
   operadorId: string;
   maniobristaId?: string;
   asesorId?: string;
   equipos: string[];
+  equiposCarga: EquipoCargaViaje[];
   clienteId: string;
   destino: DestinoViaje;
   condicionesSeguridad?: CondicionesSeguridad;
@@ -191,6 +223,7 @@ export interface ViajeFormInput {
   transporte?: number;
   otros?: number;
   notas?: string;
+  status?: StatusViaje;
 }
 
 // Condiciones de seguridad por defecto (todas desactivadas)
@@ -217,6 +250,8 @@ export const CONDICIONES_SEGURIDAD_DEFAULT: CondicionesSeguridad = {
 export interface FiltrosViaje {
   fechaDesde?: Date;
   fechaHasta?: Date;
+  fechaCompromisoDesde?: Date;
+  fechaCompromisoHasta?: Date;
   tractoId?: string;
   operadorId?: string;
   clienteId?: string;

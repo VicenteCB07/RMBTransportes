@@ -25,13 +25,17 @@ const COLLECTION = 'maniobristas';
 export async function obtenerManiobristas(filtros?: FiltrosManiobrista): Promise<Maniobrista[]> {
   try {
     const snapshot = await getDocs(collection(db, COLLECTION));
-    let maniobristas = snapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data(),
-      fechaIngreso: doc.data().fechaIngreso?.toDate(),
-      createdAt: doc.data().createdAt?.toDate(),
-      updatedAt: doc.data().updatedAt?.toDate(),
-    })) as Maniobrista[];
+    let maniobristas = snapshot.docs.map(doc => {
+      const data = doc.data();
+      return {
+        id: doc.id,
+        ...data,
+        seguroSocial: data.seguroSocial || undefined,
+        fechaIngreso: data.fechaIngreso?.toDate(),
+        createdAt: data.createdAt?.toDate(),
+        updatedAt: data.updatedAt?.toDate(),
+      };
+    }) as Maniobrista[];
 
     // Ordenar en memoria por nombre
     maniobristas.sort((a, b) => (a.nombre || '').localeCompare(b.nombre || ''));
@@ -69,6 +73,7 @@ export async function obtenerManiobrista(id: string): Promise<Maniobrista | null
     return {
       id: docSnap.id,
       ...data,
+      seguroSocial: data.seguroSocial || undefined,
       fechaIngreso: data.fechaIngreso?.toDate(),
       createdAt: data.createdAt?.toDate(),
       updatedAt: data.updatedAt?.toDate(),
@@ -88,6 +93,10 @@ export async function crearManiobrista(input: ManiobristaFormInput): Promise<Man
       nombre: input.nombre,
       telefono: input.telefono,
       foto: input.foto || null,
+      seguroSocial: input.seguroSocial ? {
+        folio: input.seguroSocial.folio,
+        costoMensual: input.seguroSocial.costoMensual,
+      } : null,
       sueldoDiario: input.sueldoDiario,
       fechaIngreso: input.fechaIngreso instanceof Date
         ? Timestamp.fromDate(input.fechaIngreso)
@@ -130,6 +139,12 @@ export async function actualizarManiobrista(
     if (input.foto !== undefined) updateData.foto = input.foto;
     if (input.sueldoDiario !== undefined) updateData.sueldoDiario = input.sueldoDiario;
     if (input.notas !== undefined) updateData.notas = input.notas;
+    if (input.seguroSocial !== undefined) {
+      updateData.seguroSocial = input.seguroSocial ? {
+        folio: input.seguroSocial.folio,
+        costoMensual: input.seguroSocial.costoMensual,
+      } : null;
+    }
 
     if (input.fechaIngreso) {
       updateData.fechaIngreso = input.fechaIngreso instanceof Date

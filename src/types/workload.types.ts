@@ -4,6 +4,7 @@
  */
 
 import type { Coordenadas } from './route.types';
+import type { EquipoCargaViaje } from './trip.types';
 
 /**
  * Configuración de carga de trabajo
@@ -42,6 +43,7 @@ export interface ViajeParaCarga {
   fecha: Date;
   ventanaInicio?: string;
   ventanaFin?: string;
+  equiposCarga?: EquipoCargaViaje[];
 }
 
 /**

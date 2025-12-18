@@ -65,6 +65,15 @@ export async function obtenerViajes(filtros?: FiltrosViaje): Promise<Viaje[]> {
       viajes = viajes.filter(v => v.fecha <= filtros.fechaHasta!);
     }
 
+    // Filtros por fecha compromiso
+    if (filtros?.fechaCompromisoDesde) {
+      viajes = viajes.filter(v => v.fechaCompromiso && v.fechaCompromiso >= filtros.fechaCompromisoDesde!);
+    }
+
+    if (filtros?.fechaCompromisoHasta) {
+      viajes = viajes.filter(v => v.fechaCompromiso && v.fechaCompromiso <= filtros.fechaCompromisoHasta!);
+    }
+
     if (filtros?.busqueda) {
       const busqueda = filtros.busqueda.toLowerCase();
       viajes = viajes.filter(v =>
@@ -134,12 +143,18 @@ export async function crearViaje(
     const utilidad = ingresos.total - costos.total;
     const margenUtilidad = ingresos.total > 0 ? (utilidad / ingresos.total) * 100 : 0;
 
+    // Determinar status basado en si tiene asignación
+    const tieneAsignacion = input.tractoId && input.operadorId;
+    const statusInicial = input.status || (tieneAsignacion ? 'programado' : 'sin_asignar');
+
     const viajeData = {
       folio,
       fecha: Timestamp.fromDate(input.fecha),
+      fechaCompromiso: input.fechaCompromiso ? Timestamp.fromDate(input.fechaCompromiso) : null,
       tiempos: {
         inicio: null,
         llegada: null,
+        inicioEspera: null,
         tiempoEspera: null,
         partida: null,
         extension: null,
@@ -147,11 +162,12 @@ export async function crearViaje(
         fin: null,
         duracionTotal: null,
       },
-      tractoId: input.tractoId,
-      operadorId: input.operadorId,
+      tractoId: input.tractoId || null,
+      operadorId: input.operadorId || null,
       maniobristaId: input.maniobristaId || null,
       asesorId: input.asesorId || null,
-      equipos: input.equipos,
+      equipos: input.equipos || [],
+      equiposCarga: input.equiposCarga || [],
       clienteId: input.clienteId,
       clienteNombre: datosAdicionales.clienteNombre,
       destino: input.destino,
@@ -163,7 +179,7 @@ export async function crearViaje(
       ingresos,
       utilidad,
       margenUtilidad,
-      status: 'programado' as StatusViaje,
+      status: statusInicial as StatusViaje,
       casetasIds: [],
       totalCasetas: 0,
       telemetriaIds: [],
@@ -305,6 +321,46 @@ export async function registrarLlegada(id: string): Promise<void> {
   }
 }
 
+// Iniciar tiempo de espera (click 3 - guarda timestamp de inicio)
+export async function iniciarEspera(id: string): Promise<void> {
+  try {
+    await updateDoc(doc(db, COLLECTION, id), {
+      'tiempos.inicioEspera': Timestamp.now(),
+      updatedAt: Timestamp.now(),
+    });
+  } catch (error) {
+    console.error('Error al iniciar espera:', error);
+    throw error;
+  }
+}
+
+// Registrar partida del destino (click 4 - calcula tiempo de espera automáticamente)
+export async function registrarPartida(id: string): Promise<void> {
+  try {
+    const viaje = await obtenerViaje(id);
+    if (!viaje) throw new Error('Viaje no encontrado');
+
+    const ahora = Timestamp.now();
+    const updateData: Record<string, unknown> = {
+      'tiempos.partida': ahora,
+      updatedAt: ahora,
+    };
+
+    // Calcular tiempo de espera si hay inicioEspera
+    if (viaje.tiempos.inicioEspera) {
+      const tiempoEspera = Math.round(
+        (Date.now() - viaje.tiempos.inicioEspera.getTime()) / 60000
+      );
+      updateData['tiempos.tiempoEspera'] = tiempoEspera;
+    }
+
+    await updateDoc(doc(db, COLLECTION, id), updateData);
+  } catch (error) {
+    console.error('Error al registrar partida:', error);
+    throw error;
+  }
+}
+
 // Actualizar viaje (solo permitido para viajes en status 'programado')
 export async function actualizarViaje(
   id: string,
@@ -320,9 +376,9 @@ export async function actualizarViaje(
     const viaje = await obtenerViaje(id);
     if (!viaje) throw new Error('Viaje no encontrado');
 
-    // Solo permitir edición de viajes programados
-    if (viaje.status !== 'programado') {
-      throw new Error('Solo se pueden editar viajes en status programado');
+    // No permitir edición de viajes cancelados
+    if (viaje.status === 'cancelado') {
+      throw new Error('No se pueden editar viajes cancelados');
     }
 
     const updateData: Record<string, unknown> = {
@@ -334,6 +390,13 @@ export async function actualizarViaje(
       updateData.fecha = input.fecha instanceof Date
         ? Timestamp.fromDate(input.fecha)
         : Timestamp.fromDate(new Date(input.fecha));
+    }
+    if (input.fechaCompromiso !== undefined) {
+      updateData.fechaCompromiso = input.fechaCompromiso
+        ? (input.fechaCompromiso instanceof Date
+          ? Timestamp.fromDate(input.fechaCompromiso)
+          : Timestamp.fromDate(new Date(input.fechaCompromiso)))
+        : null;
     }
     if (input.tractoId !== undefined) updateData.tractoId = input.tractoId;
     if (input.operadorId !== undefined) updateData.operadorId = input.operadorId;
@@ -349,8 +412,10 @@ export async function actualizarViaje(
       updateData['ingresos.total'] = input.precioFlete + (viaje.ingresos?.recargos || 0);
     }
     if (input.equipos !== undefined) updateData.equipos = input.equipos;
+    if (input.equiposCarga !== undefined) updateData.equiposCarga = input.equiposCarga;
     if (input.notas !== undefined) updateData.notas = input.notas;
     if (input.condicionesSeguridad !== undefined) updateData.condicionesSeguridad = input.condicionesSeguridad;
+    if (input.status !== undefined) updateData.status = input.status;
 
     // Actualizar datos adicionales
     if (datosAdicionales?.tractoNumero !== undefined) {
@@ -546,7 +611,8 @@ async function calcularCostosViaje(params: {
   return costos;
 }
 
-// Generar folio único
+// Generar folio de Orden de Servicio
+// Formato: OS-DDMMYY-TIPO-UNIDAD-#
 function generarFolio(
   fecha: Date,
   tipoServicio: TipoServicioViaje,
@@ -567,7 +633,7 @@ function generarFolio(
     'Entrega / Recoleccion': 'ER',
   };
 
-  return `${dd}${mm}${yy}-${tipoAbrev[tipoServicio]}-${tractoNumero}-${secuencia}`;
+  return `OS-${dd}${mm}${yy}-${tipoAbrev[tipoServicio]}-${tractoNumero}-${secuencia}`;
 }
 
 // Obtener siguiente secuencia para folio
@@ -603,9 +669,11 @@ function convertirDocAViaje(docSnap: any): Viaje {
     id: docSnap.id,
     folio: data.folio,
     fecha: data.fecha?.toDate(),
+    fechaCompromiso: data.fechaCompromiso?.toDate() || null,
     tiempos: {
       inicio: data.tiempos?.inicio?.toDate() || null,
       llegada: data.tiempos?.llegada?.toDate() || null,
+      inicioEspera: data.tiempos?.inicioEspera?.toDate() || null,
       tiempoEspera: data.tiempos?.tiempoEspera,
       partida: data.tiempos?.partida?.toDate() || null,
       extension: data.tiempos?.extension,
@@ -618,6 +686,7 @@ function convertirDocAViaje(docSnap: any): Viaje {
     maniobristaId: data.maniobristaId,
     asesorId: data.asesorId,
     equipos: data.equipos || [],
+    equiposCarga: data.equiposCarga || [],
     clienteId: data.clienteId,
     clienteNombre: data.clienteNombre,
     destino: data.destino,

@@ -1,0 +1,2677 @@
+{
+  "77000": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Chetumal Centro"
+    ]
+  },
+  "77010": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Adolfo López Mateos",
+      "Bugambilias",
+      "Del Mar I y II (Infonavit)",
+      "Francisco J Mújica INFONAVIT",
+      "Isabel Tenorio",
+      "Naval"
+    ]
+  },
+  "77012": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Venustiano Carranza (Casitas)"
+    ]
+  },
+  "77013": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "David G Gutiérrez Ruiz"
+    ]
+  },
+  "77014": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Andara",
+      "Centenario",
+      "Flamingos",
+      "Infonavit Santa María",
+      "Los Arcos",
+      "Oxtankah",
+      "Pacto Obrero Campesino",
+      "Unidad Antorchista",
+      "Villas Kinichna"
+    ]
+  },
+  "77015": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Constituyentes",
+      "Industrial"
+    ]
+  },
+  "77016": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Leona Vicario",
+      "Martínez Ross"
+    ]
+  },
+  "77017": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Ley Federal de Agua",
+      "SAHOP"
+    ]
+  },
+  "77018": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "5 de Abril",
+      "Avancemos Juntos",
+      "Reforma"
+    ]
+  },
+  "77019": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Del Bosque"
+    ]
+  },
+  "77020": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Gonzalo Guerrero",
+      "Rafael E Melgar FOVISSSTE"
+    ]
+  },
+  "77023": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Infonavit Enrique Ramírez y Ramírez",
+      "Miraflores II"
+    ]
+  },
+  "77024": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Cedros",
+      "Fovissste (II Etapa)"
+    ]
+  },
+  "77025": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Forjadores de Quintana Roo",
+      "Guadalupe Victoria",
+      "Los Almendros",
+      "Milenio",
+      "Residencial Marsella",
+      "Sutage INFONAVIT"
+    ]
+  },
+  "77026": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "El Sol",
+      "Fovissste  IV Etapa",
+      "Jardines",
+      "Tumben Cuxtal"
+    ]
+  },
+  "77027": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Miraflores"
+    ]
+  },
+  "77028": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "8 de Octubre",
+      "Plutarco Elías Calles"
+    ]
+  },
+  "77029": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Bosques del Lago",
+      "Lagunitas",
+      "Los Monos"
+    ]
+  },
+  "77030": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Campestre"
+    ]
+  },
+  "77034": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Framboyanes"
+    ]
+  },
+  "77035": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Italia"
+    ]
+  },
+  "77036": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Josefa Ortiz de Domínguez"
+    ]
+  },
+  "77037": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Aserradero",
+      "Benito Juárez",
+      "Taxistas"
+    ]
+  },
+  "77038": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "20 de Noviembre"
+    ]
+  },
+  "77039": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Magisterial",
+      "Residencial Mediterráneo"
+    ]
+  },
+  "77040": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Santa Isabel"
+    ]
+  },
+  "77041": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "CERESO Chetumal"
+    ]
+  },
+  "77048": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Chetumal (Internacional de Chetumal)"
+    ]
+  },
+  "77049": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Estatuto Jurídico (FOVISSSTE 5a Etapa)"
+    ]
+  },
+  "77050": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Aeropuerto",
+      "Cascada I",
+      "Cascadas II",
+      "Fovissste (I Etapa)",
+      "Infonavit Hermanos Flores Magón",
+      "Infonavit Álvaro Obregón",
+      "Residencial la Herradura"
+    ]
+  },
+  "77053": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Lomas del Caribe"
+    ]
+  },
+  "77059": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Infonavit Villas Chetumal"
+    ]
+  },
+  "77060": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Militar"
+    ]
+  },
+  "77070": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Infonavit Aarón Merino Fernández"
+    ]
+  },
+  "77079": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Bahía",
+      "Fovissste VI Etapa (Tampico)",
+      "Las Brisas",
+      "Residencial Caribe",
+      "Zona de Granjas"
+    ]
+  },
+  "77080": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Infonavit Fidel Velázquez"
+    ]
+  },
+  "77082": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Jardines de Payo Obispo",
+      "Kilómetro 5"
+    ]
+  },
+  "77083": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Nuevo Progreso",
+      "Payo Obispo",
+      "Tamalcab"
+    ]
+  },
+  "77084": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Infonavit Emancipación",
+      "Maya Real",
+      "Payo Obispo"
+    ]
+  },
+  "77085": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Hacienda Chetumal"
+    ]
+  },
+  "77086": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Andrés Quintana Roo",
+      "Bicentenario",
+      "Caribe",
+      "Comité Proterritorio",
+      "El Encanto",
+      "Espíritu Santo",
+      "Félix Gonzalez Canto",
+      "Infonavit 17 de Octubre",
+      "La Esperanza",
+      "Las Américas",
+      "Las Arboledas",
+      "Lázaro Cárdenas",
+      "Nueva Generación",
+      "Proterritorio",
+      "Residencial Arboledas",
+      "Residencial Bosque Real",
+      "Residencial Chetumal",
+      "Residencial Constituyentes",
+      "Residencial del Sol",
+      "Sian Kaan II",
+      "Solidaridad",
+      "Territorio Federal de Quintana Roo"
+    ]
+  },
+  "77087": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Sian Kaan"
+    ]
+  },
+  "77090": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Plutarco Elías Calles"
+    ]
+  },
+  "77098": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Barrio Bravo"
+    ]
+  },
+  "77099": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Primera Legislatura"
+    ]
+  },
+  "77100": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Laguna Kaná"
+    ]
+  },
+  "77104": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Chan Santa Cruz",
+      "Mixtequilla",
+      "Noh-Cah",
+      "Santa María Poniente"
+    ]
+  },
+  "77105": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "San Andrés"
+    ]
+  },
+  "77106": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "X-Hazil Sur",
+      "X-Konha"
+    ]
+  },
+  "77107": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Betania"
+    ]
+  },
+  "77108": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Chunhuás"
+    ]
+  },
+  "77110": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Tuzik"
+    ]
+  },
+  "77114": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "San José Segundo"
+    ]
+  },
+  "77115": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "San Felipe Berriozábal",
+      "Trapich"
+    ]
+  },
+  "77116": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Francisco I. Madero",
+      "Yodzonot Chico"
+    ]
+  },
+  "77117": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Francisco May"
+    ]
+  },
+  "77118": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "San Ramón",
+      "Yalchén"
+    ]
+  },
+  "77120": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Tepich"
+    ]
+  },
+  "77121": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Tihosuco"
+    ]
+  },
+  "77122": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Yoactún"
+    ]
+  },
+  "77123": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Dzoyola"
+    ]
+  },
+  "77125": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "San Francisco Aké"
+    ]
+  },
+  "77130": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Chumpón",
+      "Chun On"
+    ]
+  },
+  "77135": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Chun-Yah"
+    ]
+  },
+  "77140": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Santa Rosa Segundo",
+      "X-Pichil"
+    ]
+  },
+  "77144": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Tabi"
+    ]
+  },
+  "77145": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Yaxley"
+    ]
+  },
+  "77146": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Tixcacal Guardia"
+    ]
+  },
+  "77147": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Kampokolché"
+    ]
+  },
+  "77148": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Filomeno Mata",
+      "Hobompich"
+    ]
+  },
+  "77150": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Señor"
+    ]
+  },
+  "77156": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "José María Pino Suárez",
+      "Santa Amalia"
+    ]
+  },
+  "77158": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Kancabchén"
+    ]
+  },
+  "77160": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Chunhuhub",
+      "Dzulá",
+      "X-Yatil"
+    ]
+  },
+  "77163": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Yoactún"
+    ]
+  },
+  "77169": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Polyuc"
+    ]
+  },
+  "77170": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Presidente Juárez"
+    ]
+  },
+  "77174": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Ignacio Manuel Altamirano"
+    ]
+  },
+  "77175": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Emiliano Zapata",
+      "Nuevo Israel"
+    ]
+  },
+  "77176": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Nueva Loría"
+    ]
+  },
+  "77177": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Naranjal Poniente"
+    ]
+  },
+  "77178": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Ramonal"
+    ]
+  },
+  "77180": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Uh May"
+    ]
+  },
+  "77185": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Andrés Quintana Roo"
+    ]
+  },
+  "77188": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Chancah Veracruz"
+    ]
+  },
+  "77189": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Chancah Derrepente"
+    ]
+  },
+  "77190": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Noh-Bec"
+    ]
+  },
+  "77196": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Petcacab"
+    ]
+  },
+  "77197": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Reforma Agraria"
+    ]
+  },
+  "77198": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Kopchen"
+    ]
+  },
+  "77200": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Felipe Carrillo Puerto Centro"
+    ]
+  },
+  "77210": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Leona Vicario"
+    ]
+  },
+  "77214": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Plan de Ayala"
+    ]
+  },
+  "77215": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Plan de Ayutla"
+    ]
+  },
+  "77216": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Plan de Guadalupe"
+    ]
+  },
+  "77217": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Plan de La Noria"
+    ]
+  },
+  "77220": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Jesús Martínez Ross"
+    ]
+  },
+  "77229": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Emiliano Zapata"
+    ]
+  },
+  "77230": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Cecilio Chi"
+    ]
+  },
+  "77238": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Rafael E Melgar"
+    ]
+  },
+  "77239": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Lázaro Cárdenas"
+    ]
+  },
+  "77240": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Francisco May"
+    ]
+  },
+  "77249": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Constituyentes",
+      "María Villanueva Madrid"
+    ]
+  },
+  "77250": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Juan Bautista Vega"
+    ]
+  },
+  "77259": {
+    "municipio": "Felipe Carrillo Puerto",
+    "colonias": [
+      "Javier Rojo Gómez"
+    ]
+  },
+  "77300": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Kantunilkin Centro"
+    ]
+  },
+  "77302": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Xaman - Kah"
+    ]
+  },
+  "77303": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Borge Martín"
+    ]
+  },
+  "77304": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Unidad Deportiva"
+    ]
+  },
+  "77305": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Capa"
+    ]
+  },
+  "77306": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Terencio Tah"
+    ]
+  },
+  "77307": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Expo"
+    ]
+  },
+  "77310": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Isla de Holbox"
+    ]
+  },
+  "77320": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Chiquila"
+    ]
+  },
+  "77330": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Solferino"
+    ]
+  },
+  "77333": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "San Ángel"
+    ]
+  },
+  "77350": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Valladolid Nuevo"
+    ]
+  },
+  "77355": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Esperanza"
+    ]
+  },
+  "77360": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Ignacio Zaragoza"
+    ]
+  },
+  "77366": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "El Tintal",
+      "San Román"
+    ]
+  },
+  "77367": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "El Pocito"
+    ]
+  },
+  "77368": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "El Ideal"
+    ]
+  },
+  "77369": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "El Cedral",
+      "San Pedro",
+      "Vicente Guerrero"
+    ]
+  },
+  "77370": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Agua Azul",
+      "Benito Juárez"
+    ]
+  },
+  "77376": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Delirios",
+      "San Lorenzo",
+      "San Martiniano",
+      "Tres Marias"
+    ]
+  },
+  "77377": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Héroe de Nacozari"
+    ]
+  },
+  "77378": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Antorchista",
+      "La Ceiba",
+      "Los Almendros",
+      "Los Cedros",
+      "Nuevo Quintana Roo"
+    ]
+  },
+  "77380": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Nuevo Xcan"
+    ]
+  },
+  "77384": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Tres Reyes"
+    ]
+  },
+  "77385": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "El Naranjal",
+      "San Antonio",
+      "San Francisco",
+      "San Juan de Dios"
+    ]
+  },
+  "77386": {
+    "municipio": "Lázaro Cárdenas",
+    "colonias": [
+      "Constituyentes del Setenta y Cuatro"
+    ]
+  },
+  "77400": {
+    "municipio": "Isla Mujeres",
+    "colonias": [
+      "23 de Noviembre",
+      "Ampliación la Gloria",
+      "Caridad del Cobre",
+      "El Cañotal",
+      "Isla Blanca",
+      "Isla Mujeres",
+      "Isla Mujeres Centro",
+      "La Gloria",
+      "Lolbe",
+      "Metereológico",
+      "Miraflores",
+      "Punta Gaviota",
+      "Salina Chica",
+      "Salina Grande",
+      "Santa Rosa"
+    ]
+  },
+  "77402": {
+    "municipio": "Isla Mujeres",
+    "colonias": [
+      "Mar Caribe",
+      "Vista Alegre"
+    ]
+  },
+  "77403": {
+    "municipio": "Isla Mujeres",
+    "colonias": [
+      "Del Sureste"
+    ]
+  },
+  "77404": {
+    "municipio": "Isla Mujeres",
+    "colonias": [
+      "Lagunamar"
+    ]
+  },
+  "77406": {
+    "municipio": "Isla Mujeres",
+    "colonias": [
+      "Islote de Carbonera"
+    ]
+  },
+  "77407": {
+    "municipio": "Isla Mujeres",
+    "colonias": [
+      "Caribeña",
+      "Electricistas",
+      "Puerto de Abrigo"
+    ]
+  },
+  "77408": {
+    "municipio": "Isla Mujeres",
+    "colonias": [
+      "Islote El Yunque"
+    ]
+  },
+  "77409": {
+    "municipio": "Isla Mujeres",
+    "colonias": [
+      "Bahía",
+      "Prolongación Aeropuerto"
+    ]
+  },
+  "77410": {
+    "municipio": "Isla Mujeres",
+    "colonias": [
+      "Del Bosque",
+      "El Nazareno",
+      "La Guadalupana",
+      "Las Américas",
+      "Monte Olivo",
+      "Supermanzana 1"
+    ]
+  },
+  "77412": {
+    "municipio": "Isla Mujeres",
+    "colonias": [
+      "Nueva Tierra"
+    ]
+  },
+  "77500": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Cancún Centro",
+      "Juárez",
+      "Residencial La Cascada",
+      "Supermanzana 1 Centro",
+      "Supermanzana 2 Centro",
+      "Supermanzana 20 Centro",
+      "Supermanzana 22 Centro",
+      "Supermanzana 23 Centro",
+      "Supermanzana 2a Centro",
+      "Supermanzana 3 Centro",
+      "Supermanzana 4 A",
+      "Supermanzana 4 Centro",
+      "Supermanzana 5 Centro",
+      "Supermanzana 52",
+      "Villas Tropicales",
+      "Zona Hotelera"
+    ]
+  },
+  "77503": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Supermanzana 10",
+      "Supermanzana 6a",
+      "Supermanzana 6b",
+      "Supermanzana 6c",
+      "Supermanzana 6d",
+      "Supermanzana 6e",
+      "Supermanzana 6f",
+      "Supermanzana 7",
+      "Supermanzana 9"
+    ]
+  },
+  "77504": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Supermanzana 11",
+      "Supermanzana 12",
+      "Supermanzana 13",
+      "Supermanzana 14",
+      "Supermanzana 8"
+    ]
+  },
+  "77505": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Supermanzana 15",
+      "Supermanzana 15a",
+      "Supermanzana 16",
+      "Supermanzana 17",
+      "Supermanzana 18",
+      "Supermanzana 19",
+      "Supermanzana 21",
+      "Supermanzana 35",
+      "Supermanzana 36"
+    ]
+  },
+  "77506": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "La Herradura",
+      "Supermanzana 43",
+      "Supermanzana 44",
+      "Supermanzana 45",
+      "Supermanzana 46",
+      "Supermanzana 47",
+      "Supermanzana 48",
+      "Supermanzana 53"
+    ]
+  },
+  "77507": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Arboledas",
+      "Supermanzana 37",
+      "Supermanzana 38",
+      "Supermanzana 39",
+      "Supermanzana 40",
+      "Supermanzana 41",
+      "Supermanzana 42"
+    ]
+  },
+  "77508": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Supermanzana 29",
+      "Supermanzana 31",
+      "Supermanzana 32",
+      "Supermanzana 33",
+      "Supermanzana 34"
+    ]
+  },
+  "77509": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Supermanzana 24",
+      "Supermanzana 25",
+      "Supermanzana 26",
+      "Supermanzana 27",
+      "Supermanzana 28",
+      "Supermanzana 30"
+    ]
+  },
+  "77510": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Supermanzana 231",
+      "Supermanzana 232",
+      "Supermanzana 233",
+      "Supermanzana 234",
+      "Supermanzana 235",
+      "Supermanzana 240",
+      "Supermanzana 66",
+      "Supermanzana 67",
+      "Supermanzana 69",
+      "Supermanzana 70",
+      "Supermanzana 71",
+      "Supermanzana 72",
+      "Supermanzana 73",
+      "Supermanzana 90"
+    ]
+  },
+  "77513": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Supermanzana 62",
+      "Supermanzana 63"
+    ]
+  },
+  "77514": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Supermanzana 60",
+      "Supermanzana 61"
+    ]
+  },
+  "77515": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Supermanzana 58",
+      "Supermanzana 59"
+    ]
+  },
+  "77516": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Azul Bonampak",
+      "Bahía Real",
+      "Guerrero",
+      "Hacienda Del Rey",
+      "In House",
+      "Los García",
+      "Paseo de Las Palmas",
+      "Rinconadas del Mar",
+      "Sac-Be",
+      "Supermanzana 225",
+      "Supermanzana 226",
+      "Supermanzana 227",
+      "Supermanzana 228",
+      "Supermanzana 229",
+      "Supermanzana 230",
+      "Supermanzana 245",
+      "Supermanzana 91",
+      "Supermanzana 92",
+      "Tierra y Libertad",
+      "Villas Otoch"
+    ]
+  },
+  "77517": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Casas del Mar",
+      "Ixchel",
+      "Residencial San Antonio",
+      "Residencial Turquesa",
+      "Supermanzana 219",
+      "Supermanzana 220",
+      "Supermanzana 221",
+      "Supermanzana 222",
+      "Supermanzana 223",
+      "Supermanzana 93",
+      "Supermanzana 94",
+      "Villas del Mar",
+      "Villas del Mar \"Plus\""
+    ]
+  },
+  "77518": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Galaxia del Sol",
+      "Galaxia las Torres",
+      "La Guadalupana",
+      "Los Héroes",
+      "Los Santos",
+      "Marina Turquesa",
+      "Paseo San Ángel",
+      "Paseos Chac Mool",
+      "Paseos Kabah",
+      "Privadas Sacbe",
+      "Residencial Vista Alegre",
+      "Supermanzana 100",
+      "Supermanzana 215",
+      "Supermanzana 216",
+      "Supermanzana 217",
+      "Supermanzana 218",
+      "Supermanzana 253",
+      "Vista Real"
+    ]
+  },
+  "77519": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Esmeralda",
+      "La Joya (Supermanzana 254)",
+      "Lagos",
+      "Las Lajas",
+      "Monte Real",
+      "Paraíso",
+      "Paseo Nikté",
+      "Paseos del Mar",
+      "Paseos del Sol (Supermanzana 205)",
+      "Petén",
+      "Residencial Alejandría",
+      "Rinconada Santa María",
+      "Supermanzana 101",
+      "Supermanzana 206",
+      "Supermanzana 208",
+      "Supermanzana 209",
+      "Supermanzana 210",
+      "Supermanzana 211",
+      "Supermanzana 212",
+      "Supermanzana 213",
+      "Supermanzana 214",
+      "Tierra Nuestra Cancún",
+      "Villas del Sol",
+      "Villas del Sol II (Supermanzana 207)"
+    ]
+  },
+  "77520": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Punta Sam",
+      "Supermanzana 85",
+      "Supermanzana 86"
+    ]
+  },
+  "77524": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Donceles",
+      "Supermanzana 64",
+      "Supermanzana 65",
+      "Supermanzana 68"
+    ]
+  },
+  "77525": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Supermanzana 84"
+    ]
+  },
+  "77526": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Lombardo Toledano",
+      "Supermanzana 74"
+    ]
+  },
+  "77527": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "3 Hermanos",
+      "Francisco Villa",
+      "La Morena",
+      "Los Cedros",
+      "Los Tucanes (Supermanzana 242)",
+      "Nuevo Amanecer",
+      "Nuevo Pedregal",
+      "San Alfredo",
+      "San Martín Caballero",
+      "Supermanzana 236",
+      "Supermanzana 237",
+      "Supermanzana 238",
+      "Supermanzana 239",
+      "Supermanzana 241",
+      "Supermanzana 243",
+      "Supermanzana 244",
+      "Supermanzana 75",
+      "Supermanzana 76",
+      "Supermanzana 89"
+    ]
+  },
+  "77528": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Jardines de Banampak",
+      "Supermanzana 77",
+      "Supermanzana 78"
+    ]
+  },
+  "77530": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Supermanzana 97"
+    ]
+  },
+  "77533": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Arbolada",
+      "Chamuyil",
+      "Costa del Mar",
+      "Framboyanes",
+      "Las Torres",
+      "Malibú",
+      "Paraíso Villas",
+      "Porto Alegre",
+      "Privada Altus",
+      "Quetzales (Supermanzana 523)",
+      "Residencial Caracol",
+      "Residencial Sol del Mayab",
+      "San José Bonampack",
+      "Supermanzana 312",
+      "Supermanzana 313",
+      "Supermanzana 49",
+      "Supermanzana 50",
+      "Supermanzana 500",
+      "Supermanzana 501",
+      "Supermanzana 502",
+      "Supermanzana 503",
+      "Supermanzana 504",
+      "Supermanzana 505",
+      "Supermanzana 506",
+      "Supermanzana 507",
+      "Supermanzana 508",
+      "Supermanzana 509",
+      "Supermanzana 51",
+      "Supermanzana 54",
+      "Supermanzana 55",
+      "Supermanzana 57",
+      "Álamos I"
+    ]
+  },
+  "77534": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Santa Fe (Supermanzana 524)",
+      "Santa Fe Plus",
+      "Supermanzana 510",
+      "Supermanzana 511",
+      "Supermanzana 512",
+      "Supermanzana 525",
+      "Supermanzana 95"
+    ]
+  },
+  "77535": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Bosques San Miguel",
+      "Campestre",
+      "Gran Santa Fe",
+      "Gran Santa Fe 2",
+      "Mallorca",
+      "Residencial Cuyagua",
+      "Supermanzana 322",
+      "Supermanzana 323",
+      "Supermanzana 327",
+      "Supermanzana 514",
+      "Supermanzana 515",
+      "Supermanzana 516",
+      "Supermanzana 526",
+      "Supermanzana 527",
+      "Supermanzana 528",
+      "Supermanzana 96",
+      "Villamarino",
+      "Villas del Arte",
+      "Vitalá"
+    ]
+  },
+  "77536": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Bahía Dorada",
+      "Catania Residencial",
+      "El Milagro",
+      "Fraccionamiento Galaxia Altamar",
+      "Generación 2000",
+      "Jardines del Sur",
+      "La Amistad",
+      "La Libertad",
+      "Maderos Residencial",
+      "Nuevo Milenio",
+      "Paraíso Cancún",
+      "Privanza Stellaris",
+      "Quinta las Joyas",
+      "Quintas Kavanayen",
+      "Santa Cecilia",
+      "Supermanzana 318",
+      "Supermanzana 319",
+      "Supermanzana 320",
+      "Supermanzana 326",
+      "Supermanzana 517",
+      "Supermanzana 518",
+      "Supermanzana 519",
+      "Supermanzana 520",
+      "Supermanzana 522",
+      "Supermanzana 529",
+      "Supermanzana 530",
+      "Supermanzana 531",
+      "Supermanzana 534",
+      "Supermanzana 550",
+      "Supermanzana 99",
+      "Villas Quintana Roo",
+      "Villas de Alba"
+    ]
+  },
+  "77537": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Jardines Cancún",
+      "Puerta Del Sol",
+      "Supermanzana 98"
+    ]
+  },
+  "77538": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Supermanzana 102"
+    ]
+  },
+  "77539": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "ABC",
+      "Arcos Paraíso",
+      "Central de Abasto",
+      "Cuna Maya (Supermanzana 203)",
+      "Hacienda Real del Caribe",
+      "México",
+      "Paraíso Maya",
+      "Paseo Kusamil",
+      "Paseo de Las Palmas",
+      "Prado Norte (Supermanzana 256)",
+      "Punta Ikal",
+      "Real Las Quintas (Supermanzana 202)",
+      "Real Valencia",
+      "Supermanzana 103",
+      "Supermanzana 104",
+      "Supermanzana 105",
+      "Supermanzana 106",
+      "Supermanzana 107",
+      "Supermanzana 117",
+      "Supermanzana 200",
+      "Supermanzana 260",
+      "Tierra Maya",
+      "Urbi Villas del rey",
+      "Villas Otoch Paraíso"
+    ]
+  },
+  "77560": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Alfredo V Bonfil",
+      "Colegios",
+      "Doctores",
+      "Los Naranjos",
+      "Residencial Cumbres",
+      "Supermanzana 295",
+      "Supermanzana 296",
+      "Supermanzana 297",
+      "Supermanzana 299",
+      "Universidad Anáhuac de Cancún"
+    ]
+  },
+  "77567": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Central de Abastos",
+      "Lagos del Sol",
+      "Santa Anna (Supermanzana 301)",
+      "Santa Fe"
+    ]
+  },
+  "77569": {
+    "municipio": "Benito Juárez",
+    "colonias": [
+      "Cancún (Internacional de Cancún)"
+    ]
+  },
+  "77580": {
+    "municipio": "Puerto Morelos",
+    "colonias": [
+      "Joaquín Zetina Gasca",
+      "Puerto Morelos",
+      "Villas Morelos I"
+    ]
+  },
+  "77586": {
+    "municipio": "Puerto Morelos",
+    "colonias": [
+      "Aldea Civitas",
+      "Residencial Alborada",
+      "Residencial Civitas",
+      "Residencial Regatta",
+      "Selva Escondida",
+      "Villas La Playa"
+    ]
+  },
+  "77590": {
+    "municipio": "Puerto Morelos",
+    "colonias": [
+      "Leona Vicario"
+    ]
+  },
+  "77594": {
+    "municipio": "Puerto Morelos",
+    "colonias": [
+      "La Nueva Esperanza"
+    ]
+  },
+  "77600": {
+    "municipio": "Cozumel",
+    "colonias": [
+      "Cozumel Centro"
+    ]
+  },
+  "77609": {
+    "municipio": "Cozumel",
+    "colonias": [
+      "Cozumel (Internacional de Cozumel)"
+    ]
+  },
+  "77610": {
+    "municipio": "Cozumel",
+    "colonias": [
+      "Militar"
+    ]
+  },
+  "77613": {
+    "municipio": "Cozumel",
+    "colonias": [
+      "Zona Hotelera Norte"
+    ]
+  },
+  "77620": {
+    "municipio": "Cozumel",
+    "colonias": [
+      "Emiliano Zapata",
+      "Flamboyanes",
+      "Félix González Canto"
+    ]
+  },
+  "77622": {
+    "municipio": "Cozumel",
+    "colonias": [
+      "10 de Abril"
+    ]
+  },
+  "77645": {
+    "municipio": "Cozumel",
+    "colonias": [
+      "Altamar",
+      "Chen-tuk",
+      "Juan Bautista de La Vega",
+      "Miraflores",
+      "Nueva Generación"
+    ]
+  },
+  "77660": {
+    "municipio": "Cozumel",
+    "colonias": [
+      "Caribe",
+      "El Encanto",
+      "FOVISSSTE",
+      "Flamingos I",
+      "Flamingos II",
+      "Magisterio",
+      "Maravilla"
+    ]
+  },
+  "77664": {
+    "municipio": "Cozumel",
+    "colonias": [
+      "Andrés Q. Roo",
+      "Colonos Cuzamil",
+      "Independencia"
+    ]
+  },
+  "77665": {
+    "municipio": "Cozumel",
+    "colonias": [
+      "San Miguel 1"
+    ]
+  },
+  "77666": {
+    "municipio": "Cozumel",
+    "colonias": [
+      "Flores Magón 3",
+      "San Miguel 2",
+      "San Miguel 3"
+    ]
+  },
+  "77667": {
+    "municipio": "Cozumel",
+    "colonias": [
+      "Adolfo L. Mateos",
+      "Cuzamil",
+      "Flores Magón 1 y 2",
+      "Repobladores de 1848",
+      "San Gervasio"
+    ]
+  },
+  "77670": {
+    "municipio": "Cozumel",
+    "colonias": [
+      "C T M",
+      "Cozumel Turístico",
+      "Las Golondrinas",
+      "Naval",
+      "Taxistas",
+      "Zona Industrial"
+    ]
+  },
+  "77673": {
+    "municipio": "Cozumel",
+    "colonias": [
+      "Huerto Familiar"
+    ]
+  },
+  "77675": {
+    "municipio": "Cozumel",
+    "colonias": [
+      "Zona Hotelera Sur"
+    ]
+  },
+  "77676": {
+    "municipio": "Cozumel",
+    "colonias": [
+      "Ix-chel"
+    ]
+  },
+  "77689": {
+    "municipio": "Cozumel",
+    "colonias": [
+      "CALICA"
+    ]
+  },
+  "77710": {
+    "municipio": "Solidaridad",
+    "colonias": [
+      "Calica",
+      "Playa del Carmen",
+      "Playa del Carmen Centro"
+    ]
+  },
+  "77712": {
+    "municipio": "Solidaridad",
+    "colonias": [
+      "Bellavista",
+      "Ejidal",
+      "El Pedregal",
+      "Fundadores",
+      "Santa Fe del Carmen"
+    ]
+  },
+  "77713": {
+    "municipio": "Solidaridad",
+    "colonias": [
+      "Aviación",
+      "Playa Car Fase I"
+    ]
+  },
+  "77714": {
+    "municipio": "Solidaridad",
+    "colonias": [
+      "28 de Julio",
+      "Bosque Real",
+      "Los Olivos",
+      "Misión del Carmen",
+      "Mundo Habitat",
+      "Natura Playa del Carmen",
+      "Palmas II",
+      "Privada Riviera",
+      "Real Amalfi",
+      "Real Bilbao"
+    ]
+  },
+  "77716": {
+    "municipio": "Solidaridad",
+    "colonias": [
+      "El Bambú",
+      "Forjadores",
+      "La Joya",
+      "La Joya Xamanha",
+      "Residencial Bambú",
+      "Residencial La Escondida"
+    ]
+  },
+  "77717": {
+    "municipio": "Solidaridad",
+    "colonias": [
+      "Campestre",
+      "El Tigrillo",
+      "Las Flores",
+      "Playa Car Fase II"
+    ]
+  },
+  "77718": {
+    "municipio": "Solidaridad",
+    "colonias": [
+      "Bali"
+    ]
+  },
+  "77720": {
+    "municipio": "Solidaridad",
+    "colonias": [
+      "Brisas",
+      "Gonzalo Guerrero",
+      "INFONAVIT Colosio",
+      "INFONAVIT Gaviotas",
+      "Miramar",
+      "Paraíso del Carmen",
+      "Quintas del Carmen",
+      "Sacpacal",
+      "Tohoku",
+      "Xamanha",
+      "Zazil Ha"
+    ]
+  },
+  "77723": {
+    "municipio": "Solidaridad",
+    "colonias": [
+      "Cruz de Servicios",
+      "Galaxia del Carmen I",
+      "Galaxia del Carmen II",
+      "In House",
+      "Las Palmas",
+      "Misión Las Flores",
+      "Nuevo Centro Urbano",
+      "Palmanova",
+      "Paseos Xcacel",
+      "Pescadores Plus",
+      "Punta Estrella",
+      "Real Ibiza",
+      "Real Lucerna",
+      "Villas del Carmen",
+      "Villas del Carmen Plus",
+      "Villas del Sol \"Plus\"",
+      "Villas las Perlas"
+    ]
+  },
+  "77724": {
+    "municipio": "Solidaridad",
+    "colonias": [
+      "Bosque de Cristo Rey",
+      "El Petén",
+      "Jardines de Ciudad Mayakoba",
+      "La Guadalupana",
+      "Playa Azul",
+      "Villas Riviera"
+    ]
+  },
+  "77725": {
+    "municipio": "Solidaridad",
+    "colonias": [
+      "Cataluña",
+      "Cataluña II",
+      "Corales",
+      "Dunas",
+      "La Toscana",
+      "Los Arrecifes",
+      "Marsella",
+      "Misión Villamar I",
+      "Misión Villamar II",
+      "Parque Residencial",
+      "Porto Alto",
+      "Residencial Caribe",
+      "Residencial Real del Sol",
+      "Tumben Chilam",
+      "Vela Mar",
+      "Villas Maya"
+    ]
+  },
+  "77726": {
+    "municipio": "Solidaridad",
+    "colonias": [
+      "El Cantil",
+      "Encuentro",
+      "Playa Magna",
+      "Playa del Sol"
+    ]
+  },
+  "77727": {
+    "municipio": "Solidaridad",
+    "colonias": [
+      "Balamtun",
+      "El Cielo",
+      "Industrial",
+      "Lolkaatun",
+      "Loltun",
+      "Lunamar",
+      "Nicte-ha",
+      "Privanza del Mar",
+      "Selvamar"
+    ]
+  },
+  "77728": {
+    "municipio": "Solidaridad",
+    "colonias": [
+      "Luis Donaldo Colosio"
+    ]
+  },
+  "77730": {
+    "municipio": "Solidaridad",
+    "colonias": [
+      "Xcaret"
+    ]
+  },
+  "77733": {
+    "municipio": "Solidaridad",
+    "colonias": [
+      "Nueva Generación",
+      "Puerto Aventuras",
+      "Puerto Maya",
+      "Solidaridad"
+    ]
+  },
+  "77734": {
+    "municipio": "Solidaridad",
+    "colonias": [
+      "Barceló Maya",
+      "Grand Sirenis",
+      "Xpu Ha"
+    ]
+  },
+  "77735": {
+    "municipio": "Solidaridad",
+    "colonias": [
+      "Paa Mul"
+    ]
+  },
+  "77740": {
+    "municipio": "Solidaridad",
+    "colonias": [
+      "Playa del Secreto",
+      "Residencial Playa Paraíso"
+    ]
+  },
+  "77760": {
+    "municipio": "Tulum",
+    "colonias": [
+      "Aldea Zama",
+      "Ejidal",
+      "Guerra de Castas",
+      "La Veleta",
+      "Lúum Zama",
+      "Maya Pax",
+      "Tulum Centro",
+      "Tumben Kaa",
+      "Villas Huracanes"
+    ]
+  },
+  "77762": {
+    "municipio": "Tulum",
+    "colonias": [
+      "Las Palmas",
+      "Xul Kaa",
+      "Ya Ax Tulum"
+    ]
+  },
+  "77764": {
+    "municipio": "Tulum",
+    "colonias": [
+      "Villas Tulum"
+    ]
+  },
+  "77766": {
+    "municipio": "Tulum",
+    "colonias": [
+      "Boca Paila"
+    ]
+  },
+  "77768": {
+    "municipio": "Tulum",
+    "colonias": [
+      "Javier Rojo Gómez (Punta Allen)"
+    ]
+  },
+  "77772": {
+    "municipio": "Tulum",
+    "colonias": [
+      "Bahías de Punta Solimán",
+      "Tankah Cuatro"
+    ]
+  },
+  "77774": {
+    "municipio": "Tulum",
+    "colonias": [
+      "Ciudad Chemuyil"
+    ]
+  },
+  "77776": {
+    "municipio": "Tulum",
+    "colonias": [
+      "Akumal"
+    ]
+  },
+  "77785": {
+    "municipio": "Tulum",
+    "colonias": [
+      "Chanchén Palmar"
+    ]
+  },
+  "77786": {
+    "municipio": "Tulum",
+    "colonias": [
+      "Chanchen Primero",
+      "Hondzonot",
+      "Yaxché"
+    ]
+  },
+  "77793": {
+    "municipio": "Tulum",
+    "colonias": [
+      "Cobá"
+    ]
+  },
+  "77794": {
+    "municipio": "Tulum",
+    "colonias": [
+      "San Juan"
+    ]
+  },
+  "77795": {
+    "municipio": "Tulum",
+    "colonias": [
+      "Manuel Antonio Ay"
+    ]
+  },
+  "77796": {
+    "municipio": "Tulum",
+    "colonias": [
+      "Francisco Uh May",
+      "Macario Gómez"
+    ]
+  },
+  "77800": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "Dziuche",
+      "Guadalupana",
+      "Huay Max",
+      "México",
+      "Pocito",
+      "Sabán",
+      "Sacalaca",
+      "San Diego",
+      "X-Cabil"
+    ]
+  },
+  "77805": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "Bulukax",
+      "X-Querol"
+    ]
+  },
+  "77806": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "San Antonio Tuk"
+    ]
+  },
+  "77807": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "Javier Rojo Gómez",
+      "La Esperanza"
+    ]
+  },
+  "77808": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "Tabasco"
+    ]
+  },
+  "77809": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "San Felipe Oriente"
+    ]
+  },
+  "77850": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "Sabana San Francisco"
+    ]
+  },
+  "77858": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "Saczuquil"
+    ]
+  },
+  "77859": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "San Felipe Segundo"
+    ]
+  },
+  "77870": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "La Presumida",
+      "Santa Gertrudis"
+    ]
+  },
+  "77874": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "El Martirio",
+      "El Naranjal",
+      "Kancabchén"
+    ]
+  },
+  "77875": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "Nuevo San Marcos",
+      "San Felipe Primero"
+    ]
+  },
+  "77876": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "Benito Juárez",
+      "Cafetalito"
+    ]
+  },
+  "77878": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "San Isidro Poniente"
+    ]
+  },
+  "77880": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "Kantemó"
+    ]
+  },
+  "77882": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "Venustiano Carranza"
+    ]
+  },
+  "77883": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "San Juan Oriente"
+    ]
+  },
+  "77889": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "Puerto Arturo"
+    ]
+  },
+  "77890": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "Dolores",
+      "Guadalupe",
+      "Javier Rojo Gómez",
+      "José María Morelos",
+      "Mayab",
+      "Miraflores",
+      "Primavera",
+      "San Juan",
+      "Santa Lucia",
+      "Vicente Guerrero"
+    ]
+  },
+  "77893": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "Adolfo de la Huerta",
+      "Nuevo Cunduacán",
+      "Plan de la Noria Poniente"
+    ]
+  },
+  "77894": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "Piedras Negras"
+    ]
+  },
+  "77895": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "Adolfo López Mateos",
+      "El Triunfo",
+      "Insurgentes",
+      "Lázaro Cárdenas",
+      "Mariano Matamoros",
+      "Pozo Pirata"
+    ]
+  },
+  "77896": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "Gavilanes",
+      "Zafarrancho"
+    ]
+  },
+  "77898": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "Candelaria",
+      "Othón P. Blanco",
+      "San Carlos"
+    ]
+  },
+  "77899": {
+    "municipio": "José María Morelos",
+    "colonias": [
+      "Nueva Reforma"
+    ]
+  },
+  "77900": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Ahisamac",
+      "Año Nuevo",
+      "El Pedregal",
+      "El Sufrido",
+      "El Suspiro",
+      "Javier Sandoval",
+      "La Chata",
+      "La Primavera",
+      "Las Isabelas",
+      "Laureles",
+      "Los Socios",
+      "Reforma",
+      "Santa Julia"
+    ]
+  },
+  "77904": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "David Gustavo Gutiérrez Ruiz",
+      "División del Sur",
+      "El Remolino",
+      "La Zarza",
+      "Las Dos Eses",
+      "Las Maravillas",
+      "Las Orquídeas",
+      "Los Laureles",
+      "Río Escondido",
+      "San Antonio",
+      "San Román",
+      "San Víctor",
+      "Santa Rita"
+    ]
+  },
+  "77905": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "El Gallito",
+      "El Higuero",
+      "El Ramonal",
+      "Isidro Fabela"
+    ]
+  },
+  "77906": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Huatusco",
+      "Payo Obispo"
+    ]
+  },
+  "77907": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Astro Rey",
+      "Cuatro Hermanos",
+      "El Kiwi",
+      "José Méndez",
+      "La Esperanza",
+      "La Herradura",
+      "La Raya",
+      "Las Ilusiones",
+      "Miguel Alemán",
+      "Rosa de Saarón",
+      "Río Verde"
+    ]
+  },
+  "77910": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Altos de Sevilla",
+      "El Cedralito",
+      "El Paraíso",
+      "Lázaro Cárdenas del Río Tercero",
+      "Rafael Witzil Hau",
+      "Rancho Grande",
+      "Tierra Negra"
+    ]
+  },
+  "77913": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Dieciocho de Marzo",
+      "El Coco",
+      "El Progreso",
+      "Francisco J. Mújica",
+      "Gabino Vázquez",
+      "Jesús Martínez Ross",
+      "Nuevo Hoctún",
+      "Zamora"
+    ]
+  },
+  "77914": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Guadalupe Victoria",
+      "Gustavo Antonio",
+      "Iturbide",
+      "La Bendición de Dios",
+      "Margarita Maza de Juárez",
+      "Nuevo Jerusalén",
+      "San Fernando",
+      "San José los Lirios",
+      "San Judas Tadeo"
+    ]
+  },
+  "77915": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Cuatro Banderas",
+      "Monte Olivo"
+    ]
+  },
+  "77916": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Caanán",
+      "Francisco Villa",
+      "Los Cardenales",
+      "Melchor Ocampo",
+      "Otilio Montaño",
+      "Valentín Gómez Farías"
+    ]
+  },
+  "77917": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Nuevo Tabasco",
+      "Santa Rosa"
+    ]
+  },
+  "77920": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Limones"
+    ]
+  },
+  "77923": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Anastacio Valdez Huchin",
+      "Buenavista",
+      "Chula Vista",
+      "El Cafetal",
+      "El Naranjal",
+      "El Pedregal",
+      "El Sinaí",
+      "Iván Díaz",
+      "La Pasadita",
+      "La Piedra",
+      "Los Compadres",
+      "Pedro Antonio Santos",
+      "Sabanitas Dos",
+      "San José",
+      "San Martín",
+      "San Pedro",
+      "Santa Cruz Chico",
+      "Zak-Chakán"
+    ]
+  },
+  "77924": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Gabriel García",
+      "La Casona",
+      "Los Cinco Hermanos",
+      "Marlboro",
+      "PROFEPA [Caseta de Vigilancia]",
+      "San Gabriel"
+    ]
+  },
+  "77925": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Las Palmas",
+      "Los Alacranes",
+      "Punta Pulticub",
+      "Rancho Mayob",
+      "Rancho Tranquila"
+    ]
+  },
+  "77926": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Chacchoben",
+      "Corredor Frutícola",
+      "De Guadalupe",
+      "El Cerro de la Campana",
+      "El Esfuerzo",
+      "El Zapote",
+      "La Esperanza",
+      "La Loma",
+      "La Retranca",
+      "Los Laureles",
+      "Los Siete Hermanos",
+      "Noh-Bec",
+      "San Bernardo",
+      "San Felipe",
+      "San Juan",
+      "San Manuel"
+    ]
+  },
+  "77927": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "CECUSE",
+      "Francisco Hurtado Ibarra",
+      "La Herradura",
+      "La Prosperidad (El Aserradero)",
+      "Lázaro Cárdenas",
+      "Serviliano Cohuó Medina",
+      "Sócrates León Pérez"
+    ]
+  },
+  "77930": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Bacalar Centro"
+    ]
+  },
+  "77933": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Diego Rojas",
+      "Magisterial",
+      "Sor Juana Inés de La Cruz"
+    ]
+  },
+  "77934": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Benito Juárez",
+      "Gonzalo Guerrero",
+      "Salinas de Gortari",
+      "Serapio Flota Mass"
+    ]
+  },
+  "77935": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "5 de Mayo",
+      "Luis Donaldo Colosio",
+      "Mario Villanueva"
+    ]
+  },
+  "77936": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Aarón Merino",
+      "Agua Real",
+      "Cayuco Maya",
+      "Centro de Conservación e Investigación de la Vida",
+      "Cinco Hermanos",
+      "Cruz del Sur",
+      "Ecotucán",
+      "Eduardo Puchiga",
+      "El Buen Pastor",
+      "El Milagro",
+      "El Pedregal",
+      "El Trébol",
+      "Elsa Micaela Barquet",
+      "Jorge Alonzo Canto",
+      "Juan Herrera",
+      "La Cochinera",
+      "La Estancia",
+      "Leyda Alpuche",
+      "Los Humildes",
+      "Narciso Alpuche Rivero",
+      "Pehaltum",
+      "Puerta del Cielo",
+      "Rancho Encantado",
+      "Rancho Juanita",
+      "San Felipe Bacalar",
+      "San Juan",
+      "San Ramón",
+      "Silvia Cerecero Loyola",
+      "Villas del Sagrario",
+      "Xtomoc",
+      "Áak Abal"
+    ]
+  },
+  "77937": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Alfonso Álvarez Sánchez",
+      "Bárbara Guerrero Pérez",
+      "Colosio",
+      "Cuatro Potrillos",
+      "Cámara",
+      "Emiliano Pantín Góngora",
+      "Ernesto Chejín",
+      "Frontera de los Julios",
+      "Javier Palacios",
+      "La Carmelita",
+      "La Esmeralda",
+      "La Nueva Esperanza",
+      "Las Brisas",
+      "Las Velas",
+      "Los Ángeles",
+      "Manatí",
+      "Paraíso Segundo",
+      "Rancho Cascabel",
+      "Rancho Ramonal",
+      "Reyna",
+      "Salamanca",
+      "San Antonio",
+      "Santiago Palacios Carrillo",
+      "Sistema de Bombeo",
+      "Tito Raúl García Aguilar",
+      "Ubre Blanca",
+      "Zapata",
+      "Ángelo Cortez"
+    ]
+  },
+  "77940": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Kuchumatán",
+      "La Candelaria",
+      "Las Tres Emes",
+      "Los Cascabeles",
+      "Maya Balam",
+      "San Cosme"
+    ]
+  },
+  "77943": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Caan Lumil",
+      "El Cedral",
+      "El Encanto",
+      "El Naranjal",
+      "Miguel Hidalgo y Costilla",
+      "Rancho Sur",
+      "San Isidro la Laguna",
+      "San Martín",
+      "Santa Cruz",
+      "Santa Rita",
+      "Xtomoc Uno"
+    ]
+  },
+  "77944": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Andrés Quintana Roo",
+      "Bacalar Uno",
+      "El Encanto Segundo",
+      "Jorge Cano",
+      "La Ceiba",
+      "Paraíso Escondido",
+      "San Antonio",
+      "Tito"
+    ]
+  },
+  "77945": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Buena Esperanza",
+      "El Bajío",
+      "La Central",
+      "La Coruña",
+      "Los Cuates",
+      "San Rafael"
+    ]
+  },
+  "77946": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "Blanca Flor",
+      "El Calvario",
+      "El Diamante",
+      "El Edén",
+      "El Paraíso",
+      "El Roble",
+      "El Rubí",
+      "La Buena Fe",
+      "Las Heliconias",
+      "Los Divorciados",
+      "Manuel Ávila Camacho",
+      "Mil Millas al Sur",
+      "San José (La Silvia)"
+    ]
+  },
+  "77947": {
+    "municipio": "Bacalar",
+    "colonias": [
+      "El Mamey",
+      "Gustavo Díaz Ordaz",
+      "La Pantera",
+      "Petén Tunich",
+      "Vallehermoso",
+      "Yumpetén"
+    ]
+  },
+  "77950": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Sergio Butrón Casas"
+    ]
+  },
+  "77953": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Jesús González Ortega",
+      "Morocoy"
+    ]
+  },
+  "77954": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "10 de Septiembre",
+      "16 de Septiembre",
+      "20 de Noviembre",
+      "Cedro"
+    ]
+  },
+  "77955": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "California",
+      "El Cedral",
+      "Nuevo Bécar",
+      "Nuevo Caanán"
+    ]
+  },
+  "77957": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "La Libertad",
+      "Limonar",
+      "Lázaro Cárdenas Segundo",
+      "San Pedro Peralta"
+    ]
+  },
+  "77959": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Emiliano Zapata"
+    ]
+  },
+  "77960": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "16 de Septiembre",
+      "Centro Calderitas",
+      "La Conquista",
+      "Lázaro Cárdenas",
+      "Veracruz",
+      "Yucatán"
+    ]
+  },
+  "77963": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Xul-ha"
+    ]
+  },
+  "77965": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Huaypix",
+      "Juan Sarabia",
+      "Subteniente López"
+    ]
+  },
+  "77966": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Laguna Guerrero",
+      "Luis Echeverría Álvarez",
+      "Raudales"
+    ]
+  },
+  "77970": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Xcalak"
+    ]
+  },
+  "77976": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Mahahual"
+    ]
+  },
+  "77977": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Playa Uvero"
+    ]
+  },
+  "77980": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Javier Rojo Gómez",
+      "Álvaro Obregón"
+    ]
+  },
+  "77983": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Francisco Villa",
+      "Sabidos",
+      "Álvaro Obregón Viejo"
+    ]
+  },
+  "77984": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Cacao",
+      "Hidalgo",
+      "Pedro Joaquín Coldwell",
+      "Pucte"
+    ]
+  },
+  "77985": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Allende",
+      "Carlos A Madrazo",
+      "Nachi-cocom",
+      "Palmar",
+      "Ramonal",
+      "Sacxán",
+      "Ucum"
+    ]
+  },
+  "77986": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "San José de la Montaña"
+    ]
+  },
+  "77987": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Caobas"
+    ]
+  },
+  "77990": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Cocoyol",
+      "José Narciso Rovirosa",
+      "San Francisco Botes"
+    ]
+  },
+  "77992": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Esteban Baca Calderón",
+      "La Unión",
+      "Revolución"
+    ]
+  },
+  "77994": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Tomás Garrido"
+    ]
+  },
+  "77995": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Dos Aguadas"
+    ]
+  },
+  "77997": {
+    "municipio": "Othón P. Blanco",
+    "colonias": [
+      "Tres Garantías"
+    ]
+  }
+}

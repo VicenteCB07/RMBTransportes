@@ -1,0 +1,3881 @@
+{
+  "62000": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Cuernavaca Centro"
+    ]
+  },
+  "62009": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Palacio de Gobierno del Estado de Morelos"
+    ]
+  },
+  "62010": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Altavista",
+      "Las Piletas"
+    ]
+  },
+  "62017": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Margarita Maza de Juárez"
+    ]
+  },
+  "62018": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Altavista Barrancas"
+    ]
+  },
+  "62019": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Loma Hermosa",
+      "Plan de Ayala Barrancas",
+      "Provinciana",
+      "Tepeyehualco"
+    ]
+  },
+  "62020": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Ampliación Sacatierra",
+      "José López Portillo",
+      "Las Terrazas",
+      "Lomas de San Antón",
+      "Sacatierra",
+      "San Antón"
+    ]
+  },
+  "62028": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Loma de los Amates (Loma de la Lagunilla)",
+      "Nueva Santa María",
+      "Santa Fe"
+    ]
+  },
+  "62029": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Chulavista"
+    ]
+  },
+  "62030": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Club de Golf"
+    ]
+  },
+  "62037": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Benito Juárez (Lagunilla)",
+      "Jardines del Edén",
+      "La Unión"
+    ]
+  },
+  "62038": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Lagunillas Barrancas"
+    ]
+  },
+  "62039": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Lagunilla del Salto"
+    ]
+  },
+  "62040": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Miguel Hidalgo"
+    ]
+  },
+  "62050": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Benito Juárez (Centro)",
+      "Las Palmas"
+    ]
+  },
+  "62057": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Pilares"
+    ]
+  },
+  "62059": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Bondies"
+    ]
+  },
+  "62060": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Quintana Roo"
+    ]
+  },
+  "62070": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Chipitlán",
+      "Mina Cinco"
+    ]
+  },
+  "62076": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Adolfo López Mateos (Polvorín)",
+      "Bosques de Palmira",
+      "El Polvorín"
+    ]
+  },
+  "62080": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Loma Bonita",
+      "Lázaro Cárdenas"
+    ]
+  },
+  "62083": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Lázaro Cárdenas 1ra. Ampliación",
+      "Lázaro Cárdenas 2da. Ampliación"
+    ]
+  },
+  "62084": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "La Parota"
+    ]
+  },
+  "62100": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Santa María Ahuacatitlán"
+    ]
+  },
+  "62103": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Santa Elena de La Cruz"
+    ]
+  },
+  "62115": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Adolfo López Mateos",
+      "Independencia",
+      "La Caminera",
+      "Loma Bonita",
+      "Ocotera"
+    ]
+  },
+  "62116": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Balcones de Tepuente",
+      "Cruz de La Misión",
+      "Mirador Universidad",
+      "Paraje de Tepuente",
+      "Tepuente",
+      "Valle Tepuente"
+    ]
+  },
+  "62117": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Provincias de Jerusalén"
+    ]
+  },
+  "62120": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "El Monasterio",
+      "Rancho Cortes"
+    ]
+  },
+  "62123": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Ocotitla"
+    ]
+  },
+  "62130": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Ahuatlán Tzompantle",
+      "Buenavista",
+      "Jardines de Ahuatlán",
+      "Lomas de Ahuatlán",
+      "Real de Tetela",
+      "Terrazas Ahuatlán",
+      "Tetela del Monte"
+    ]
+  },
+  "62133": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Los Tepetates"
+    ]
+  },
+  "62136": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Jardín Tetela"
+    ]
+  },
+  "62137": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "La Mojonera",
+      "Lienzo El Charro"
+    ]
+  },
+  "62139": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Loma Linda"
+    ]
+  },
+  "62140": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Bellavista"
+    ]
+  },
+  "62143": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Zona Militar"
+    ]
+  },
+  "62144": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Condominios Bugambilias",
+      "El Ángel",
+      "Trevi I",
+      "Trevi II",
+      "Trevi III"
+    ]
+  },
+  "62145": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Conjunto Colorines",
+      "Lomas de La Selva Norte"
+    ]
+  },
+  "62150": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Del Bosque"
+    ]
+  },
+  "62153": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Club Felicidad"
+    ]
+  },
+  "62154": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Lomas del Pinar"
+    ]
+  },
+  "62156": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Lomas de Tetela"
+    ]
+  },
+  "62157": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Lomas de Zompantle"
+    ]
+  },
+  "62159": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Adolfo Ruiz Cortines"
+    ]
+  },
+  "62160": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Hacienda Tetela",
+      "La Cañada",
+      "Rancho Tetela"
+    ]
+  },
+  "62163": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "La Tranca",
+      "Loma Sol"
+    ]
+  },
+  "62164": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Tzompantle Norte"
+    ]
+  },
+  "62165": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Lomas de Coyuca",
+      "Tonintana"
+    ]
+  },
+  "62166": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Analco"
+    ]
+  },
+  "62170": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Jiquilpan",
+      "La Pradera",
+      "Tlaltenango"
+    ]
+  },
+  "62173": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Jardines de Tlaltenango"
+    ]
+  },
+  "62175": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Lomas de La Pradera"
+    ]
+  },
+  "62179": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "San Jerónimo"
+    ]
+  },
+  "62180": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "El Tecolote",
+      "Lomas de Atzingo",
+      "Minas de Atzingo",
+      "Plan de Ayala"
+    ]
+  },
+  "62190": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "La Carolina"
+    ]
+  },
+  "62193": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "La Esperanza"
+    ]
+  },
+  "62200": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Cuauhtémoc",
+      "Insurgentes"
+    ]
+  },
+  "62203": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "El Ocote",
+      "Salvador Elizarragaz",
+      "Tehuiztitlán"
+    ]
+  },
+  "62204": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Tlahuica"
+    ]
+  },
+  "62205": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Los Ciruelos"
+    ]
+  },
+  "62209": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Universidad Autónoma del Estado de Morelos"
+    ]
+  },
+  "62210": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Chamilpa",
+      "Los Aguacates",
+      "Morelos"
+    ]
+  },
+  "62214": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Ampliación Chamilpa",
+      "Benito Juárez (Chamilpa)",
+      "Brisas de Cuernavaca",
+      "Buenaventura",
+      "Hermanos Rodríguez (Suterm)"
+    ]
+  },
+  "62215": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Blanca Universidad",
+      "Río Balsas",
+      "Universidad",
+      "Veranda"
+    ]
+  },
+  "62217": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Lomas de Chamilpa 2a Secc."
+    ]
+  },
+  "62218": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Lomas de Chamilpa"
+    ]
+  },
+  "62219": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Centro SCT Morelos"
+    ]
+  },
+  "62220": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Ocotepec"
+    ]
+  },
+  "62226": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Texcaltepec"
+    ]
+  },
+  "62227": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Ampliación Ocotepec"
+    ]
+  },
+  "62228": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Ampliación Emiliano Zapata",
+      "Conjunto Aries"
+    ]
+  },
+  "62229": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Nogales"
+    ]
+  },
+  "62230": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Maravillas",
+      "San Cristóbal"
+    ]
+  },
+  "62233": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "La Paloma",
+      "Tlaltepexco"
+    ]
+  },
+  "62237": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Los Faroles"
+    ]
+  },
+  "62239": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Prados de Cuernavaca"
+    ]
+  },
+  "62240": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Lomas de Cortes",
+      "Rincón del Valle",
+      "Versalles"
+    ]
+  },
+  "62243": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "El Veladero",
+      "San Salvador"
+    ]
+  },
+  "62245": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Recursos Hidráulicos"
+    ]
+  },
+  "62247": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Lomas de Cortes INFONAVIT"
+    ]
+  },
+  "62248": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Lomas de Cortes",
+      "Lomas del Conde",
+      "Residencial las Flores"
+    ]
+  },
+  "62249": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Ixtacpan (Zigapan)",
+      "Tecomulco"
+    ]
+  },
+  "62250": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Base Tranquilidad",
+      "Del Empleado",
+      "Tezontepec"
+    ]
+  },
+  "62253": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Lomas de La Selva Oriente",
+      "Pilancón"
+    ]
+  },
+  "62260": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Reforma"
+    ]
+  },
+  "62269": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Jardines de Reforma",
+      "Valle Sol"
+    ]
+  },
+  "62270": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Lomas de La Selva",
+      "Lomas de Miraval",
+      "Miraval"
+    ]
+  },
+  "62280": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Gualupita"
+    ]
+  },
+  "62283": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "La Estación"
+    ]
+  },
+  "62284": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Teopanzolco"
+    ]
+  },
+  "62285": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Patios de la Estación"
+    ]
+  },
+  "62290": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Vista Hermosa"
+    ]
+  },
+  "62293": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "La Fuente",
+      "Lomas de Vista Hermosa"
+    ]
+  },
+  "62294": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Ahuehuetitla",
+      "Federación",
+      "Providencia",
+      "Tlalquiltompan"
+    ]
+  },
+  "62295": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Extensión Vista Hermosa"
+    ]
+  },
+  "62296": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Extensión Delicias"
+    ]
+  },
+  "62300": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Ahuatepec"
+    ]
+  },
+  "62303": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Lomas de La Herradura"
+    ]
+  },
+  "62304": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "El Mirador",
+      "Gloria Almada de Bejarano",
+      "Los Limoneros",
+      "San Isidro Loma Bonita"
+    ]
+  },
+  "62305": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Jardines de Ahuatepec",
+      "Los Ramos",
+      "Tepepan"
+    ]
+  },
+  "62306": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Cruz de la Curva",
+      "Jubilados y Pencionados",
+      "La Herradura",
+      "Residencial Vista Alta",
+      "Rodolfo López de Nava (Los Naranjos)",
+      "Villa Santiago"
+    ]
+  },
+  "62309": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Paraje Alarcón"
+    ]
+  },
+  "62320": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Antonio Barona Centro"
+    ]
+  },
+  "62323": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "México Lindo",
+      "Papayos",
+      "Tierra Colorada"
+    ]
+  },
+  "62324": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Ampliación la Cañada",
+      "Cerritos de García",
+      "El Universo",
+      "La Cañada",
+      "Las Flores",
+      "Lomas de Ahuatepec",
+      "Unidad Deportiva",
+      "Vista Real Ahuatepec"
+    ]
+  },
+  "62325": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Bosques de la Florida",
+      "El Copalito",
+      "Lomas Verdes de Ahuatepec",
+      "Rancho Alegre"
+    ]
+  },
+  "62326": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Cerritos",
+      "Jardines de Zoquipa",
+      "Los Guayabos",
+      "Paraíso",
+      "Paraíso Montessori",
+      "San Antonio del Jagüey",
+      "Tlaltecuáhuitl"
+    ]
+  },
+  "62328": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Antonio Barona 3a Secc."
+    ]
+  },
+  "62329": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Antonio Barona 1a Secc.",
+      "Antonio Barona 2a Secc."
+    ]
+  },
+  "62330": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Conjunto Paraíso",
+      "Delicias",
+      "Residencial Primavera"
+    ]
+  },
+  "62334": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Amate Redondo"
+    ]
+  },
+  "62335": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Rinconada Vista Hermosa"
+    ]
+  },
+  "62340": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Bello Horizonte",
+      "Bosques de Cuernavaca",
+      "Loma Bonita",
+      "Lomas de Cortes Oriente"
+    ]
+  },
+  "62343": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "El Mascareño",
+      "Jardines de Delicias",
+      "Provincias del Canadá",
+      "San Jerónimo Ahuatepec"
+    ]
+  },
+  "62345": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Rinconada Florida"
+    ]
+  },
+  "62350": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Lomas del Mirador",
+      "Los Volcanes",
+      "Teopanzolco"
+    ]
+  },
+  "62360": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Chapultepec",
+      "Jardines de Cuernavaca"
+    ]
+  },
+  "62363": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Cuatro Estaciones",
+      "La Estrella"
+    ]
+  },
+  "62370": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Ricardo Flores Magón"
+    ]
+  },
+  "62373": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Flores Magón 2a Fracción"
+    ]
+  },
+  "62374": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Villas Deportivas",
+      "Villas del Lago"
+    ]
+  },
+  "62375": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Puerta del Sol"
+    ]
+  },
+  "62376": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Flores Magón 1a Fracción"
+    ]
+  },
+  "62380": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Zodiaco"
+    ]
+  },
+  "62382": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Joyas de los Jilgueros"
+    ]
+  },
+  "62384": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Flores Magón 3a Fracción",
+      "Mártires de Río Blanco"
+    ]
+  },
+  "62385": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Flores Magón 5a Fracción",
+      "Ramón Hernandez Navarro"
+    ]
+  },
+  "62387": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Ampliación Santa Martha",
+      "Milpillas",
+      "Santa Martha Ahuatepec"
+    ]
+  },
+  "62388": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Los Tulipanes"
+    ]
+  },
+  "62389": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Morelos"
+    ]
+  },
+  "62390": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Revolución"
+    ]
+  },
+  "62398": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Ciudad Chapultepec"
+    ]
+  },
+  "62399": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Ciudad Chapultepec"
+    ]
+  },
+  "62400": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "El Vergel"
+    ]
+  },
+  "62409": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Santa Veracruz"
+    ]
+  },
+  "62410": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Amatitlán"
+    ]
+  },
+  "62420": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Jacarandas",
+      "Quintas Martha"
+    ]
+  },
+  "62428": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Copa de Oro"
+    ]
+  },
+  "62430": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Condominios Cuauhnahuac",
+      "Conjunto Omeyoacan",
+      "Vicente Guerrero"
+    ]
+  },
+  "62433": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Bosques de Chapultepec"
+    ]
+  },
+  "62440": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Poblado Acapatzingo"
+    ]
+  },
+  "62445": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Los Cizos"
+    ]
+  },
+  "62446": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "San Miguel Acapantzingo"
+    ]
+  },
+  "62447": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Jardines de Acapatzingo"
+    ]
+  },
+  "62448": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Cantarranas",
+      "Primavera"
+    ]
+  },
+  "62450": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Chapultepec",
+      "Las Quintas",
+      "Manantiales"
+    ]
+  },
+  "62460": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Ampliación Satélite",
+      "El Laurel Residencial",
+      "Las Granjas",
+      "Satélite",
+      "Vicente Estrada Cajigal"
+    ]
+  },
+  "62466": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Emiliano Zapata"
+    ]
+  },
+  "62469": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Lotes Alegría"
+    ]
+  },
+  "62470": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Del Lago",
+      "Las Águilas"
+    ]
+  },
+  "62473": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Lomas del Águila"
+    ]
+  },
+  "62474": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "FOVISSSTE las Águilas",
+      "Potrero Verde"
+    ]
+  },
+  "62475": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Chapultepec FOVISSSTE"
+    ]
+  },
+  "62480": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Ampliación Chapultepec"
+    ]
+  },
+  "62490": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Palmira Tinguindin"
+    ]
+  },
+  "62493": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Acapatzingo",
+      "Internado Palmira"
+    ]
+  },
+  "62494": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "El Salado",
+      "Lomas de Acapatzingo"
+    ]
+  },
+  "62496": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "El Palmar"
+    ]
+  },
+  "62497": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Rinconada Palmira"
+    ]
+  },
+  "62498": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Club de golf Tabachines"
+    ]
+  },
+  "62499": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Las Garzas"
+    ]
+  },
+  "62507": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Ampliación Lázaro Cárdenas del Río",
+      "Lázaro Cárdenas del Río"
+    ]
+  },
+  "62508": {
+    "municipio": "Cuernavaca",
+    "colonias": [
+      "Buenavista del Monte",
+      "El Cebadal"
+    ]
+  },
+  "62510": {
+    "municipio": "Huitzilac",
+    "colonias": [
+      "Coajomulco",
+      "Huitzilac",
+      "San José de La Montaña"
+    ]
+  },
+  "62514": {
+    "municipio": "Huitzilac",
+    "colonias": [
+      "Fierro del Toro",
+      "Kilómetro 47 (Entrada al Capulín)"
+    ]
+  },
+  "62515": {
+    "municipio": "Huitzilac",
+    "colonias": [
+      "Tres Marías"
+    ]
+  },
+  "62517": {
+    "municipio": "Huitzilac",
+    "colonias": [
+      "Guayacahuala",
+      "Huertas de San Pedro",
+      "María Candelaria",
+      "Monte Casino (Piamonte y Ensueño)"
+    ]
+  },
+  "62520": {
+    "municipio": "Tepoztlán",
+    "colonias": [
+      "El Tesoro",
+      "La Santísima",
+      "Los Ocotes",
+      "Los Reyes",
+      "San José",
+      "San Miguel",
+      "San Pedro",
+      "San Sebastián",
+      "Santa Cruz",
+      "Santo Domingo",
+      "Tepoztlán Centro",
+      "Tierra Blanca",
+      "Xilotepec"
+    ]
+  },
+  "62523": {
+    "municipio": "Tepoztlán",
+    "colonias": [
+      "San Juan Tlacotenco"
+    ]
+  },
+  "62524": {
+    "municipio": "Tepoztlán",
+    "colonias": [
+      "Achichipico",
+      "Del Carmen",
+      "Santo Domingo Ocotitlán"
+    ]
+  },
+  "62525": {
+    "municipio": "Tepoztlán",
+    "colonias": [
+      "Amatlán de Quetzalcóatl",
+      "Chichco (Chisco)",
+      "El Pedregal",
+      "Huilotepec",
+      "Ixcatepec",
+      "Tecmilco"
+    ]
+  },
+  "62526": {
+    "municipio": "Tepoztlán",
+    "colonias": [
+      "San Andrés de la Cal",
+      "Santiago Tepetlapa",
+      "Tehuixcorral (Colonia San Martín Caballero)"
+    ]
+  },
+  "62527": {
+    "municipio": "Tepoztlán",
+    "colonias": [
+      "Huachinantitla",
+      "Santa Catarina"
+    ]
+  },
+  "62528": {
+    "municipio": "Tepoztlán",
+    "colonias": [
+      "Benito Juárez",
+      "Obrera",
+      "Ángel Bocanegra (Adolfo López Mateos)"
+    ]
+  },
+  "62529": {
+    "municipio": "Tepoztlán",
+    "colonias": [
+      "Acolapan",
+      "Loma Bonita",
+      "Loma Esmeralda",
+      "Lomas del Pedregal",
+      "Rinconada Acolapa",
+      "Tetecolala"
+    ]
+  },
+  "62530": {
+    "municipio": "Tlalnepantla",
+    "colonias": [
+      "Centro Tlalnepantla",
+      "San Bartolo",
+      "San Felipe",
+      "San Nicolás",
+      "San Pedro",
+      "Santiago"
+    ]
+  },
+  "62534": {
+    "municipio": "Tlalnepantla",
+    "colonias": [
+      "El Pedregal"
+    ]
+  },
+  "62535": {
+    "municipio": "Tlalnepantla",
+    "colonias": [
+      "Colinas de San Nicolás",
+      "El Vigía (San Nicolás del Monte)",
+      "Los Robles"
+    ]
+  },
+  "62536": {
+    "municipio": "Tlalnepantla",
+    "colonias": [
+      "El Calmil",
+      "Felipe Neri (Cuatepec)"
+    ]
+  },
+  "62540": {
+    "municipio": "Tlayacapan",
+    "colonias": [
+      "Tlayacapan"
+    ]
+  },
+  "62543": {
+    "municipio": "Tlayacapan",
+    "colonias": [
+      "Cuauhtempan (San Andrés Cuautempan)",
+      "Emiliano Zapata",
+      "La Mixtepec",
+      "Tres de Mayo"
+    ]
+  },
+  "62544": {
+    "municipio": "Tlayacapan",
+    "colonias": [
+      "Camino Real los Reyes",
+      "Jardines de Tlayacapan",
+      "Joyas del Astillero",
+      "Las Calandrias",
+      "Lázaro Cárdenas",
+      "Nacatongo",
+      "Pedregal Tlalli",
+      "Texalo (La Cerámica)",
+      "Valle de Oaxtepec"
+    ]
+  },
+  "62545": {
+    "municipio": "Tlayacapan",
+    "colonias": [
+      "El Bebedero",
+      "El Partidor",
+      "Ex-Hacienda Pantitlán",
+      "Puente Pantitlán",
+      "Revolución XXI"
+    ]
+  },
+  "62546": {
+    "municipio": "Tlayacapan",
+    "colonias": [
+      "El Ahuehuete",
+      "El Golán",
+      "Las Vivianas"
+    ]
+  },
+  "62547": {
+    "municipio": "Tlayacapan",
+    "colonias": [
+      "Amatlipac (San Agustín Amatlipac)",
+      "Cruz Blanca",
+      "Los Ciruelos",
+      "Los Laureles (San José de los Laureles)"
+    ]
+  },
+  "62550": {
+    "municipio": "Jiutepec",
+    "colonias": [
+      "Centro Jiutepec",
+      "El Zapote",
+      "Los Almendros",
+      "Roberto Osorio Sosa",
+      "Valle de las Fuentes"
+    ]
+  },
+  "62553": {
+    "municipio": "Jiutepec",
+    "colonias": [
+      "Arcos de Jiutepec",
+      "Bambú",
+      "Campestre",
+      "Constitución",
+      "El Arroyo",
+      "Insurgentes",
+      "La Rosa",
+      "Lirios",
+      "Lázaro Cárdenas",
+      "Moctezuma",
+      "Residencial Campestre",
+      "Residencial Country",
+      "Residencial La Palma",
+      "Rinconada las Palmas",
+      "Tlahua",
+      "Tlahuapan",
+      "Villa Real"
+    ]
+  },
+  "62554": {
+    "municipio": "Jiutepec",
+    "colonias": [
+      "Cactus",
+      "El Pochotal",
+      "Fuentes de Oriente",
+      "Girasoles",
+      "Hacienda Jiutepec",
+      "La Alameda",
+      "La Cerillera",
+      "Las Fuentes",
+      "Lomas de Tlahuapan",
+      "Los Bosques",
+      "Los Mangos",
+      "Pedregal de las Fuentes",
+      "Rancho Paraíso",
+      "Valle Verde",
+      "Villas del Descanso"
+    ]
+  },
+  "62555": {
+    "municipio": "Jiutepec",
+    "colonias": [
+      "Agua Fría",
+      "Calera Oriente",
+      "Cliserio Alanís (San Gaspar)",
+      "Club de Golf Hacienda San Gaspar",
+      "El Campanario",
+      "El Naranjo",
+      "Emiliano Zapata",
+      "Esmeralda",
+      "Francisco Villa",
+      "Llanos de las Fuentes",
+      "Maravillas",
+      "San Gaspar",
+      "San Lucas"
+    ]
+  },
+  "62556": {
+    "municipio": "Jiutepec",
+    "colonias": [
+      "28 de Agosto",
+      "Acalli",
+      "Ampliación 28 de Agosto",
+      "Ampliación Joyas de Agua",
+      "Calera Chica",
+      "Calera Poniente",
+      "Huertas del Llano",
+      "Joya del Agua",
+      "La Huizachera",
+      "La Laja",
+      "Las Moras I y II",
+      "Miguel Hidalgo",
+      "Villa Santiago",
+      "Vista Hermosa"
+    ]
+  },
+  "62560": {
+    "municipio": "Jiutepec",
+    "colonias": [
+      "Atlacomulco",
+      "Los Apantles",
+      "Los Viveros",
+      "Santa Anita"
+    ]
+  },
+  "62563": {
+    "municipio": "Jiutepec",
+    "colonias": [
+      "Kloster Sumiya",
+      "Los Pinos Jiutepec",
+      "Los Soles",
+      "Real Hacienda de San José",
+      "Sumiya"
+    ]
+  },
+  "62564": {
+    "municipio": "Jiutepec",
+    "colonias": [
+      "El Castillo",
+      "El Paraíso",
+      "Guadalupe",
+      "Jardines de La Hacienda I",
+      "Jardines de La Hacienda II",
+      "José G Parres",
+      "La Nopalera",
+      "Las Mercedes",
+      "Los Electricistas",
+      "Residencial Sumiya",
+      "San Cristóbal los Lirios",
+      "Villa Real los Colorines"
+    ]
+  },
+  "62565": {
+    "municipio": "Jiutepec",
+    "colonias": [
+      "Atuey",
+      "Condominio Tepec",
+      "Conjunto la Loma",
+      "El Guayabal",
+      "La Joya",
+      "Las Canteras",
+      "Las Fincas",
+      "Xel-ha",
+      "Zaragoza"
+    ]
+  },
+  "62566": {
+    "municipio": "Jiutepec",
+    "colonias": [
+      "De los Casillas",
+      "Huertas del Jacal",
+      "Imuri",
+      "Lomas de Jiutepec",
+      "Lomas de Palmira",
+      "Residencial Lomas de Jiutepec",
+      "Rinconada Palmira",
+      "Tezontepec"
+    ]
+  },
+  "62570": {
+    "municipio": "Jiutepec",
+    "colonias": [
+      "Ampliación Tejalpa",
+      "Ampliación Vicente Guerrero",
+      "Atenatitlán",
+      "Cuauhtémoc Cárdenas",
+      "Deportiva",
+      "El Capiri",
+      "Josefa Ortiz de Domínguez",
+      "Las Torres",
+      "Los Pinos Tejalpa",
+      "Oriental",
+      "Pedregal de Tejalpa",
+      "Real el Cazahuate",
+      "San Isidro",
+      "Tejalpa",
+      "Vicente Guerrero",
+      "Villas de Cortes"
+    ]
+  },
+  "62573": {
+    "municipio": "Jiutepec",
+    "colonias": [
+      "Ampliación El Paraíso",
+      "Apatlaco",
+      "Campo Morado",
+      "Cuauchiles",
+      "El Paraje Texcal",
+      "El Paraíso",
+      "Hacienda de las Flores",
+      "Ojo de Agua",
+      "San Francisco Texcalpa",
+      "San Lucas"
+    ]
+  },
+  "62574": {
+    "municipio": "Jiutepec",
+    "colonias": [
+      "José López Portillo",
+      "La Mesa",
+      "Lomas del Texcal",
+      "Progreso",
+      "San José",
+      "Tamoanchan"
+    ]
+  },
+  "62575": {
+    "municipio": "Jiutepec",
+    "colonias": [
+      "Alfredo V Bonfil",
+      "Cerro de la Corona",
+      "Independencia",
+      "Lomas de Chapultepec",
+      "Luis Donaldo Colosio"
+    ]
+  },
+  "62576": {
+    "municipio": "Jiutepec",
+    "colonias": [
+      "Ampliación Chapultepec",
+      "Jardín Juárez",
+      "Loma Bonita",
+      "San Francisco del Rincón"
+    ]
+  },
+  "62577": {
+    "municipio": "Jiutepec",
+    "colonias": [
+      "Ampliación Bugambilias",
+      "Ampliación Otilio Montaño",
+      "Bugambilias",
+      "El Edén",
+      "El Porvenir",
+      "Morelos",
+      "Otilio Montaño",
+      "Puente Blanco",
+      "Tarianes"
+    ]
+  },
+  "62578": {
+    "municipio": "Jiutepec",
+    "colonias": [
+      "CIVAC",
+      "CIVAC 1a Sección",
+      "CIVAC 2a Sección",
+      "CIVAC los Robles",
+      "Narciso Mendoza Terreno Dos",
+      "Narciso Mendoza Terreno Uno",
+      "Sección Kovas"
+    ]
+  },
+  "62580": {
+    "municipio": "Temixco",
+    "colonias": [
+      "Temixco Centro"
+    ]
+  },
+  "62583": {
+    "municipio": "Temixco",
+    "colonias": [
+      "Alta Palmira",
+      "Las Ánimas",
+      "Lomas de Guadalupe",
+      "Lomas del Carril",
+      "Los Presidentes",
+      "Quetzal",
+      "Rinconada los Sauces"
+    ]
+  },
+  "62584": {
+    "municipio": "Temixco",
+    "colonias": [
+      "Brisas",
+      "Burgos",
+      "Burgos Bugambilias",
+      "Burgos Sección Casa Blanca",
+      "Burgos Sección Ontario",
+      "Junto al Río",
+      "Lomas de Cuernavaca",
+      "Los Sabinos",
+      "Rinconada del Río",
+      "Valle Verde"
+    ]
+  },
+  "62585": {
+    "municipio": "Temixco",
+    "colonias": [
+      "Campo Sotelo",
+      "Geo Villas la Hacienda",
+      "Granjas Mérida",
+      "Miguel Hidalgo",
+      "Valparaíso",
+      "Vergel Santa Cruz"
+    ]
+  },
+  "62586": {
+    "municipio": "Temixco",
+    "colonias": [
+      "Acatlipa Centro",
+      "Ampliación Adolfo López Mateos",
+      "Emiliano Zapata",
+      "La Hacienda de Temixco",
+      "La Islita",
+      "La Rivera",
+      "Las Rosas",
+      "Lomas de Acatlipa",
+      "Los Arcos",
+      "Los Sabinos",
+      "Real Santa Cruz",
+      "Río Apatlaco",
+      "Río Apatlaco 2a Sección",
+      "Río Escondido"
+    ]
+  },
+  "62587": {
+    "municipio": "Temixco",
+    "colonias": [
+      "10 de Abril",
+      "Arboledas",
+      "Bugambilias",
+      "Campamento Medrano",
+      "Casa Blanca",
+      "El Estribo",
+      "La Nopalera",
+      "Rubén Jaramillo"
+    ]
+  },
+  "62588": {
+    "municipio": "Temixco",
+    "colonias": [
+      "Azteca",
+      "Colinas de Altar",
+      "Conjunto Habitacional Campo Verde",
+      "Conjunto Urbano Ayuntamiento 2000",
+      "El Deshuesadero",
+      "Lauro Ortega",
+      "Loma Bonita",
+      "Lomas del Ajonjolinar",
+      "Morelos",
+      "Pilcaya",
+      "Pueblo Viejo"
+    ]
+  },
+  "62590": {
+    "municipio": "Temixco",
+    "colonias": [
+      "Aeropuerto",
+      "Laureles",
+      "Santa Mónica"
+    ]
+  },
+  "62593": {
+    "municipio": "Temixco",
+    "colonias": [
+      "Benito Juárez (La Monera)"
+    ]
+  },
+  "62594": {
+    "municipio": "Temixco",
+    "colonias": [
+      "San Agustín Tetlama"
+    ]
+  },
+  "62595": {
+    "municipio": "Temixco",
+    "colonias": [
+      "Eterna Primavera",
+      "La Parota",
+      "Santa Úrsula",
+      "Solidaridad"
+    ]
+  },
+  "62596": {
+    "municipio": "Temixco",
+    "colonias": [
+      "Cuentepec"
+    ]
+  },
+  "62599": {
+    "municipio": "Temixco",
+    "colonias": [
+      "Cuernavaca (Mariano Matamoros)"
+    ]
+  },
+  "62600": {
+    "municipio": "Miacatlán",
+    "colonias": [
+      "La Campesina (Colonia los Tulipanes)",
+      "Miacatlán",
+      "Vista Hermosa",
+      "Álvaro Obregón"
+    ]
+  },
+  "62605": {
+    "municipio": "Miacatlán",
+    "colonias": [
+      "Brisas de Miacatlán",
+      "El Amate Amarillo",
+      "El Mirador",
+      "El Rodeo",
+      "Emiliano Zapata",
+      "La Toma",
+      "Los Linares",
+      "Mejapa (El Puente Colorado)",
+      "Xochicalco (Cirenio Longares)"
+    ]
+  },
+  "62606": {
+    "municipio": "Coatetelco",
+    "colonias": [
+      "3 de Mayo",
+      "Benito Juárez",
+      "Campo Acatzingo",
+      "Coatetelco Centro",
+      "El Llano",
+      "El Muelle",
+      "General Pedro Saavedra",
+      "Narvarte"
+    ]
+  },
+  "62607": {
+    "municipio": "Miacatlán",
+    "colonias": [
+      "Atzompa",
+      "El Tejón",
+      "El Terrero",
+      "Huertos de Miacatlán",
+      "La Lima (El Trapiche de Luna)",
+      "La Trilla",
+      "Terrero Grande"
+    ]
+  },
+  "62608": {
+    "municipio": "Miacatlán",
+    "colonias": [
+      "El Paredón",
+      "El Rincón",
+      "Palo Grande",
+      "Palpan de Baranda",
+      "Rancho Viejo",
+      "Tlajotla"
+    ]
+  },
+  "62610": {
+    "municipio": "Coatlán del Río",
+    "colonias": [
+      "Coatlán del Río"
+    ]
+  },
+  "62613": {
+    "municipio": "Coatlán del Río",
+    "colonias": [
+      "Buenavista de Aldama",
+      "San José",
+      "Tezoquipa"
+    ]
+  },
+  "62614": {
+    "municipio": "Coatlán del Río",
+    "colonias": [
+      "Apancingo",
+      "Benito Juárez",
+      "Chavarría",
+      "Cuernavaquita",
+      "Michapa"
+    ]
+  },
+  "62615": {
+    "municipio": "Coatlán del Río",
+    "colonias": [
+      "El Axixintle (El Treinta y Cinco)",
+      "El Vado",
+      "San Antonio",
+      "Santa Márgara",
+      "Tilancingo"
+    ]
+  },
+  "62616": {
+    "municipio": "Coatlán del Río",
+    "colonias": [
+      "Cocoyotla",
+      "Cuauhtémoc",
+      "El Amate",
+      "El Canelillo",
+      "El Cerrito",
+      "Morelos",
+      "Puente el Arenal (La Joya)"
+    ]
+  },
+  "62620": {
+    "municipio": "Tetecala",
+    "colonias": [
+      "Tetecala"
+    ]
+  },
+  "62623": {
+    "municipio": "Tetecala",
+    "colonias": [
+      "El Cerrito (Cerrito de las Cruces)"
+    ]
+  },
+  "62624": {
+    "municipio": "Tetecala",
+    "colonias": [
+      "Actopan",
+      "El Charco",
+      "Llano Viejo",
+      "Sonora"
+    ]
+  },
+  "62625": {
+    "municipio": "Tetecala",
+    "colonias": [
+      "Cuautlita",
+      "El Aguacate",
+      "El Calicanto",
+      "Francisco Sarabia",
+      "Mariano Matamoros",
+      "Tonantzicalli"
+    ]
+  },
+  "62626": {
+    "municipio": "Tetecala",
+    "colonias": [
+      "Contlalco",
+      "El Móvil",
+      "Palos de Fierro"
+    ]
+  },
+  "62630": {
+    "municipio": "Mazatepec",
+    "colonias": [
+      "Centro Mazatepec"
+    ]
+  },
+  "62633": {
+    "municipio": "Mazatepec",
+    "colonias": [
+      "El Florido",
+      "Puentes de Fierro",
+      "Valle Verde"
+    ]
+  },
+  "62634": {
+    "municipio": "Mazatepec",
+    "colonias": [
+      "Justo Sierra",
+      "Vista Hermosa"
+    ]
+  },
+  "62635": {
+    "municipio": "Mazatepec",
+    "colonias": [
+      "Carmelo Rivera",
+      "Cuauchichinola",
+      "La Vuelta",
+      "Ojos de Agua de Cuahuchichinola"
+    ]
+  },
+  "62636": {
+    "municipio": "Mazatepec",
+    "colonias": [
+      "El Calvario",
+      "La Melena",
+      "La Trilla",
+      "Las Huertas",
+      "Lomas de Mazatepec",
+      "Lomas del Calvario",
+      "Santa Cruz Vista Alegre"
+    ]
+  },
+  "62640": {
+    "municipio": "Amacuzac",
+    "colonias": [
+      "Amacuzac"
+    ]
+  },
+  "62643": {
+    "municipio": "Amacuzac",
+    "colonias": [
+      "Barreal",
+      "Benito Juárez",
+      "El Paraíso",
+      "Miguel Hidalgo",
+      "Progreso"
+    ]
+  },
+  "62644": {
+    "municipio": "Amacuzac",
+    "colonias": [
+      "Bungalows",
+      "El Balceadero",
+      "La Glorieta",
+      "Los Ángeles"
+    ]
+  },
+  "62645": {
+    "municipio": "Amacuzac",
+    "colonias": [
+      "Xoapa"
+    ]
+  },
+  "62646": {
+    "municipio": "Amacuzac",
+    "colonias": [
+      "Cuauhtémoc",
+      "El Mirador",
+      "La Cruz",
+      "Las Flores",
+      "Los Baños de Tula",
+      "Ocampo",
+      "San Gabriel las Palmas",
+      "Tula"
+    ]
+  },
+  "62647": {
+    "municipio": "Amacuzac",
+    "colonias": [
+      "El Paso de Miahuatlán",
+      "Miahuatlán (El Cuiji)"
+    ]
+  },
+  "62653": {
+    "municipio": "Amacuzac",
+    "colonias": [
+      "Cajones",
+      "Campo Nuevo",
+      "Coahuixtla",
+      "El Rosal (El Alacrán)",
+      "Los Arcos",
+      "Oriental",
+      "Rancho Nuevo",
+      "Zoquital"
+    ]
+  },
+  "62654": {
+    "municipio": "Amacuzac",
+    "colonias": [
+      "Benito Juárez",
+      "Casahuatlán",
+      "El Campamento",
+      "El Guamúchil",
+      "Ojo de Agua",
+      "Villa Verde"
+    ]
+  },
+  "62655": {
+    "municipio": "Amacuzac",
+    "colonias": [
+      "Ejidal",
+      "Huascuautla",
+      "La Calera",
+      "La Playa",
+      "Los Limones"
+    ]
+  },
+  "62656": {
+    "municipio": "Amacuzac",
+    "colonias": [
+      "Huajintlán",
+      "Teacalco"
+    ]
+  },
+  "62660": {
+    "municipio": "Puente de Ixtla",
+    "colonias": [
+      "Puente de Ixtla Centro"
+    ]
+  },
+  "62662": {
+    "municipio": "Puente de Ixtla",
+    "colonias": [
+      "Ampliación Guadalupe Victoria",
+      "Buenos Aires",
+      "Guadalupe Victoria",
+      "Morelos",
+      "Providencia"
+    ]
+  },
+  "62663": {
+    "municipio": "Puente de Ixtla",
+    "colonias": [
+      "10 de Mayo",
+      "Ampliación Benito Juárez",
+      "Ampliación Jardines de la Herradura",
+      "Benito Juárez",
+      "Cuauhtémoc",
+      "Gobernadores",
+      "Jardines de La Herradura",
+      "Loma Linda",
+      "Tranca del Coco",
+      "Valle Dorado"
+    ]
+  },
+  "62664": {
+    "municipio": "Puente de Ixtla",
+    "colonias": [
+      "Emiliano Zapata",
+      "Miguel Hidalgo"
+    ]
+  },
+  "62665": {
+    "municipio": "Puente de Ixtla",
+    "colonias": [
+      "24 de Febrero",
+      "El Naranjo",
+      "El Salado",
+      "INFONAVIT Casa Blanca",
+      "Los Arcos",
+      "Norte",
+      "San Mateo",
+      "Valle Bonito (Los Arcos Caídos)"
+    ]
+  },
+  "62666": {
+    "municipio": "Puente de Ixtla",
+    "colonias": [
+      "Agua Salada",
+      "Ahuehuetzingo",
+      "Kilómetro 107 (Loma Larga)"
+    ]
+  },
+  "62668": {
+    "municipio": "Puente de Ixtla",
+    "colonias": [
+      "El Coco"
+    ]
+  },
+  "62670": {
+    "municipio": "Puente de Ixtla",
+    "colonias": [
+      "Aeródromo",
+      "Las Alas",
+      "Miguel de la Madrid",
+      "Morelos",
+      "San José Vista Hermosa"
+    ]
+  },
+  "62676": {
+    "municipio": "Puente de Ixtla",
+    "colonias": [
+      "Lomas Altas"
+    ]
+  },
+  "62680": {
+    "municipio": "Xoxocotla",
+    "colonias": [
+      "Campo Anenehuilco",
+      "El Arco",
+      "Los Guajes",
+      "Prolongación Benito Juárez",
+      "Techichilco",
+      "Xoxocotla Centro"
+    ]
+  },
+  "62684": {
+    "municipio": "Xoxocotla",
+    "colonias": [
+      "Hermosa"
+    ]
+  },
+  "62685": {
+    "municipio": "Xoxocotla",
+    "colonias": [
+      "Apozonalco"
+    ]
+  },
+  "62686": {
+    "municipio": "Xoxocotla",
+    "colonias": [
+      "Las Flores (la Xochitl)"
+    ]
+  },
+  "62687": {
+    "municipio": "Xoxocotla",
+    "colonias": [
+      "Tecomulco"
+    ]
+  },
+  "62690": {
+    "municipio": "Puente de Ixtla",
+    "colonias": [
+      "Tilzapotla"
+    ]
+  },
+  "62693": {
+    "municipio": "Puente de Ixtla",
+    "colonias": [
+      "Los Papayos",
+      "Los Pinos",
+      "Los Ídolos",
+      "San Pedro"
+    ]
+  },
+  "62694": {
+    "municipio": "Puente de Ixtla",
+    "colonias": [
+      "Piedra Blanca"
+    ]
+  },
+  "62695": {
+    "municipio": "Puente de Ixtla",
+    "colonias": [
+      "El Salto",
+      "El Zapote",
+      "Los Amatitos"
+    ]
+  },
+  "62696": {
+    "municipio": "Puente de Ixtla",
+    "colonias": [
+      "El Mango",
+      "La Tigra",
+      "Las Albóndigas",
+      "Los Tanques"
+    ]
+  },
+  "62697": {
+    "municipio": "Puente de Ixtla",
+    "colonias": [
+      "El Estudiante",
+      "Loma Florida"
+    ]
+  },
+  "62700": {
+    "municipio": "Ayala",
+    "colonias": [
+      "Buenavista",
+      "Ciudad Ayala",
+      "Puente Blanco"
+    ]
+  },
+  "62704": {
+    "municipio": "Ayala",
+    "colonias": [
+      "Ampliación Cruz Verde",
+      "Cruz Verde"
+    ]
+  },
+  "62710": {
+    "municipio": "Ayala",
+    "colonias": [
+      "Anenecuilco Centro"
+    ]
+  },
+  "62713": {
+    "municipio": "Ayala",
+    "colonias": [
+      "Campo San Miguel",
+      "El Jagüey",
+      "La Joya Escondida",
+      "Las Flores",
+      "Marcelino Ortega",
+      "Olintepec",
+      "Zona Sur Anenecuilco"
+    ]
+  },
+  "62714": {
+    "municipio": "Ayala",
+    "colonias": [
+      "Benito Juárez",
+      "Campo la Escopeta",
+      "Cuahuixtla",
+      "La Doncella",
+      "La Joya",
+      "Las Arboledas",
+      "Mirador",
+      "Niños Héroes",
+      "Nuevo México ( Los Apaches )",
+      "Rafael Merino (San Antonio)",
+      "Reforma",
+      "Residencial La Cantera",
+      "Residencial Villa de los Arcos",
+      "San Pedro Apatlaco"
+    ]
+  },
+  "62715": {
+    "municipio": "Ayala",
+    "colonias": [
+      "10 de Abril",
+      "Citlalin",
+      "El Decreto",
+      "El Venadito",
+      "Huertas de Cuautla",
+      "Isla de Cuautla",
+      "Las Llaves",
+      "Mariano Matamoros",
+      "Paraíso Tlahuica",
+      "Parque Industrial Cuautla",
+      "Paseos de Ayala",
+      "Paseos de Ayala II",
+      "Prados del Sol",
+      "Residencial Los Sauces",
+      "Tlayecac"
+    ]
+  },
+  "62717": {
+    "municipio": "Ayala",
+    "colonias": [
+      "El Chivatero",
+      "General Emiliano Zapata (El Chivatero)"
+    ]
+  },
+  "62718": {
+    "municipio": "Ayala",
+    "colonias": [
+      "Moyotepec",
+      "Segunda Ampliación Moyotepec"
+    ]
+  },
+  "62720": {
+    "municipio": "Ayala",
+    "colonias": [
+      "El Sifón de la Cuera",
+      "Huacatlaco (Los Anonos)",
+      "Huitzililla",
+      "Jaloxtoc",
+      "Ojo de Agua"
+    ]
+  },
+  "62723": {
+    "municipio": "Ayala",
+    "colonias": [
+      "Chinameca",
+      "El Vergel",
+      "La Cucaracha",
+      "Las Joyas",
+      "Palo Blanco",
+      "Tecomalco"
+    ]
+  },
+  "62724": {
+    "municipio": "Ayala",
+    "colonias": [
+      "Buenavista",
+      "El Salitre",
+      "Loma Bonita",
+      "San Juan Ahuehueyo",
+      "San Vicente de Juárez (Las Piedras)",
+      "Valle de Morelos"
+    ]
+  },
+  "62725": {
+    "municipio": "Ayala",
+    "colonias": [
+      "Abelardo L. Rodríguez",
+      "Ampliación Tenextepango",
+      "Constancio Farfán (La Pascuala)",
+      "La Libertad",
+      "Las Lumbreras",
+      "Leopoldo Heredia",
+      "Rafael Merino",
+      "Tenextepango"
+    ]
+  },
+  "62730": {
+    "municipio": "Yautepec",
+    "colonias": [
+      "Centro"
+    ]
+  },
+  "62732": {
+    "municipio": "Yautepec",
+    "colonias": [
+      "13 de Septiembre",
+      "Amates",
+      "Apanquetzalco",
+      "Beit Mellat",
+      "Benito Juárez",
+      "Conjunto Tepetlixpa",
+      "Conjunto Valle Verde",
+      "El Manantial",
+      "El Rocio",
+      "Felipe Neri",
+      "Ignacio Manuel Altamirano",
+      "Ignacio Zaragoza",
+      "Ixtlahuacan",
+      "Jacarandas",
+      "La Antigua",
+      "La Gema",
+      "La Morena",
+      "La Selva",
+      "Las Quintas",
+      "Las Zamoras",
+      "Laureles",
+      "Lomas del Potrero",
+      "Los Mangos",
+      "Los Naranjos",
+      "Mi Pueblito",
+      "Oasis",
+      "Oasis Yautepec II",
+      "Residencial Yautepec",
+      "Rincón de los Ciruelos",
+      "Santiago",
+      "Tabachines",
+      "Tlacaelel",
+      "Vicente Estrada Cajigal",
+      "Villareal",
+      "Villas Jazmín",
+      "Viyautepec"
+    ]
+  },
+  "62733": {
+    "municipio": "Yautepec",
+    "colonias": [
+      "24 de Febrero",
+      "5 de Mayo",
+      "Alfredo Bonfil",
+      "Atlihuayan",
+      "Buenavista",
+      "Cuauhtémoc",
+      "El Limón",
+      "El Rocío",
+      "Emiliano Zapata",
+      "Huizachera",
+      "Jovito Serrano",
+      "La Ceiba",
+      "Lomas del Real",
+      "Los Mangos",
+      "Luis Echeverría",
+      "Otilio Montaño",
+      "Paracas",
+      "Paraíso",
+      "Rancho Nuevo",
+      "Residencial Cañaveral",
+      "Residencial Llano Grande",
+      "Residencial Maravillas",
+      "Residencial del Bosque",
+      "San Juan",
+      "San Juanito",
+      "Villas Jazmín II",
+      "Villas del Paraíso",
+      "Yautli"
+    ]
+  },
+  "62735": {
+    "municipio": "Yautepec",
+    "colonias": [
+      "Amador Salazar",
+      "Ampliación Tetillas",
+      "La Joya",
+      "Álvaro Leonel"
+    ]
+  },
+  "62736": {
+    "municipio": "Yautepec",
+    "colonias": [
+      "Alejandra",
+      "Ampliación Vicente Guerrero",
+      "Cocoyoc",
+      "Cuachixolotera",
+      "Cuauhtémoc",
+      "El Partidor",
+      "El Potrero",
+      "Francisco Villa",
+      "Hacienda Cocoyoc",
+      "La Coaxiolotera",
+      "Lucio Moreno",
+      "Tehuixtlera",
+      "Vicente Guerrero",
+      "Villas de Cocoyoc",
+      "Viveros de Cocoyoc"
+    ]
+  },
+  "62737": {
+    "municipio": "Yautepec",
+    "colonias": [
+      "10 de Abril",
+      "Arco Antiguo",
+      "El Caracol (Campo Chiquito)",
+      "El Michate",
+      "El Zarco",
+      "Francisco I. Madero (La Nopalera)",
+      "Ignacio Bastida (Santa Catarina Tlayca)",
+      "Itzamatitlán",
+      "La Nopalera",
+      "Los Arcos",
+      "Lázaro Cárdenas (El Empalme)",
+      "Oacalco",
+      "San Carlos",
+      "Santa Lucía (Ampliación Itzamatitlán)"
+    ]
+  },
+  "62738": {
+    "municipio": "Yautepec",
+    "colonias": [
+      "Altos de Oaxtepec",
+      "Amates de Oaxtepec",
+      "Ampliación el Capulín",
+      "Campo los Limones",
+      "Centro Vacacional Oaxtepec",
+      "Colinas de Oaxtepec",
+      "Corral Grande",
+      "Curva Melón Zacate",
+      "Ejidal Tezoquipa",
+      "El Capulín",
+      "Emiliano Zapata (Casahuates)",
+      "Emiliano Zapata (Palo Mocho)",
+      "Huertos de Oaxtepec",
+      "Jacarandas",
+      "José Ortiz (San Martín)",
+      "Los Ojos de Ahuilican",
+      "Oaxtepec Centro",
+      "Pedregal de Oaxtepec",
+      "Real de Oaxtepec",
+      "Santa Rosa",
+      "Vergeles de Oaxtepec"
+    ]
+  },
+  "62739": {
+    "municipio": "Yautepec",
+    "colonias": [
+      "Campo Joya de las Víboras",
+      "Diego Ruiz",
+      "El Caudillo del Sur",
+      "Huertos el Mirador",
+      "Miguel Hidalgo (Los Cuartos)",
+      "Rincón del Río",
+      "San Isidro",
+      "San Pablo",
+      "Valle Encantado"
+    ]
+  },
+  "62740": {
+    "municipio": "Cuautla",
+    "colonias": [
+      "Centro"
+    ]
+  },
+  "62742": {
+    "municipio": "Cuautla",
+    "colonias": [
+      "Ampliación Gabriel Tepepa",
+      "Casas del Río",
+      "Francisco I Madero",
+      "Gabriel Tepepa",
+      "Nueva San José",
+      "Pablo Torres Burgos",
+      "Reforma",
+      "Xochitengo"
+    ]
+  },
+  "62743": {
+    "municipio": "Cuautla",
+    "colonias": [
+      "5 de Febrero",
+      "Agua Hedionda",
+      "Ampliación 5 de Febrero",
+      "Ampliación Biznaga Uno",
+      "Ampliación Hermenegildo Galeana",
+      "Ampliación Plan de Ayala",
+      "Benito Juárez",
+      "Campo Nuevo",
+      "Hermenegildo Galeana",
+      "Iztaccihuatl",
+      "La Biznaga",
+      "La Pedregosa",
+      "Los Amates",
+      "Niño Artillero",
+      "Paraíso",
+      "Plan de Ayala",
+      "Trincheras",
+      "Villareal Lomas de Cuautla"
+    ]
+  },
+  "62744": {
+    "municipio": "Cuautla",
+    "colonias": [
+      "10 de Abril",
+      "Ampliación Emiliano Zapata",
+      "Emiliano Zapata",
+      "Héroe de Nacozari",
+      "Martínez Peña (Los Dos Puentes)",
+      "Morelos",
+      "Progreso"
+    ]
+  },
+  "62746": {
+    "municipio": "Cuautla",
+    "colonias": [
+      "5 de Diciembre",
+      "Agua Blanca",
+      "Ampliación Tepeyac",
+      "Flamingos",
+      "Guadalupe Victoria",
+      "La Cerrillera",
+      "Manantiales",
+      "Otilio Montaño",
+      "Tepeyac"
+    ]
+  },
+  "62747": {
+    "municipio": "Cuautla",
+    "colonias": [
+      "7 de Noviembre",
+      "Ampliación Santa Cruz",
+      "Araucaria",
+      "Cuautlixco",
+      "Estrella",
+      "ISSFAM",
+      "Ignacio Zaragoza",
+      "La Esperanza",
+      "Los Amates",
+      "Los Cerritos",
+      "Los Sabinos",
+      "Residencial del Bosque",
+      "Residencial los Arcos",
+      "Río Verde Infonavit",
+      "Santa Cruz",
+      "Santa Rosa",
+      "Tierra y Libertad",
+      "Valle del Sol"
+    ]
+  },
+  "62748": {
+    "municipio": "Cuautla",
+    "colonias": [
+      "Ampliación las Tazas",
+      "Antigua del Bosque",
+      "Año de Juárez",
+      "Benito Quezada",
+      "Casasano",
+      "Centenario",
+      "Empleado Postal",
+      "Eusebio Jauregui",
+      "La Ciénega",
+      "Miguel Hidalgo",
+      "Revolución",
+      "Tabachines",
+      "Vicente Guerrero"
+    ]
+  },
+  "62754": {
+    "municipio": "Cuautla",
+    "colonias": [
+      "Empleado Municipal"
+    ]
+  },
+  "62755": {
+    "municipio": "Cuautla",
+    "colonias": [
+      "3 de Mayo",
+      "Ampliación 10 de Abril",
+      "El Sifón",
+      "Jicamán (Colonia el Mirador)",
+      "La Angostura",
+      "La Esperanza-El Hospital",
+      "Puxtla",
+      "Rancho Gómez",
+      "Santa Inés"
+    ]
+  },
+  "62756": {
+    "municipio": "Cuautla",
+    "colonias": [
+      "19 de Febrero de 1812",
+      "Ampliación Narciso Mendoza",
+      "Calderón",
+      "Narciso Mendoza",
+      "Peña Flores (Palo Verde)",
+      "Polvorín",
+      "Sitio del Sol"
+    ]
+  },
+  "62757": {
+    "municipio": "Cuautla",
+    "colonias": [
+      "12 de Diciembre",
+      "2 de Mayo",
+      "Brisas de Cuautla",
+      "Central de Abastos",
+      "Condominios del Bosque",
+      "Cuauhtémoc",
+      "La Escondida",
+      "Las Cruces",
+      "Los Faroles",
+      "Lázaro Cárdenas",
+      "Magisterial",
+      "Piedra Blanca",
+      "Plaza Solidaridad",
+      "Puerta de Hierro",
+      "Salvador Esquer",
+      "Santa Bárbara",
+      "Tetelcingo",
+      "Tezahuapan",
+      "Tierra Larga",
+      "Trigo Verde",
+      "Volcanes de Cuautla"
+    ]
+  },
+  "62760": {
+    "municipio": "Emiliano Zapata",
+    "colonias": [
+      "El Zapote",
+      "Emiliano Zapata Centro"
+    ]
+  },
+  "62763": {
+    "municipio": "Emiliano Zapata",
+    "colonias": [
+      "28 de Agosto",
+      "Loma Sur",
+      "Lomas de Trujillo",
+      "Lomas del Copal",
+      "San José de las Cumbres",
+      "Tres de Mayo"
+    ]
+  },
+  "62764": {
+    "municipio": "Emiliano Zapata",
+    "colonias": [
+      "14 de Febrero",
+      "24 de Abril",
+      "Altavista",
+      "Arboleda",
+      "Calera Chica",
+      "Condominios Capiri",
+      "Conjunto Urbano la Misión",
+      "El Aguaje",
+      "El Calvario",
+      "El Capiri",
+      "El Guante",
+      "Gerardo Pérez",
+      "Las Fuentes",
+      "Las Rocas",
+      "Rancho San Pedro",
+      "Rinconada la Misión",
+      "San Francisco"
+    ]
+  },
+  "62765": {
+    "municipio": "Emiliano Zapata",
+    "colonias": [
+      "Ampliación Prohogar",
+      "Benito Juárez",
+      "El Capulín",
+      "El Mirador",
+      "Guadalupe de las Arenas",
+      "Los Agaves",
+      "Manantiales",
+      "Ojo de Agua",
+      "Ojo de Agua II",
+      "Palo Escrito (Colonia Benito Juárez)",
+      "Prohogar"
+    ]
+  },
+  "62766": {
+    "municipio": "Emiliano Zapata",
+    "colonias": [
+      "1ra Sección Villa Morelos",
+      "Ampliación el Órgano",
+      "Campo Nuevo",
+      "Condominio el Ámate",
+      "El Amate",
+      "El Tomatal",
+      "El Vigilante",
+      "El Órgano",
+      "Estación",
+      "Las Gaviotas",
+      "Modesto Rangel",
+      "Paraíso Country Club",
+      "Paseos del Río",
+      "Residencial Amarantto Habittat",
+      "Villa Morelos"
+    ]
+  },
+  "62767": {
+    "municipio": "Emiliano Zapata",
+    "colonias": [
+      "Amatitlán",
+      "Capulín",
+      "Cañaveral",
+      "Cuauhtémoc",
+      "El Castillo",
+      "Geo Villas Colorines",
+      "Jardines de Tezoyuca",
+      "La Mina",
+      "Las Flores",
+      "Las Garzas",
+      "Loma Bonita",
+      "Los Sabinos",
+      "Paseos de Tezoyuca",
+      "Real de Tezoyuca",
+      "Residencial Rancho Tezoyuca",
+      "Rinconada de Tezoyuca",
+      "Tesoros de Tezoyuca",
+      "Tezoyuca",
+      "Villas de Tezoyuca",
+      "Villas del Portezuelo",
+      "Villas del Seminario"
+    ]
+  },
+  "62768": {
+    "municipio": "Emiliano Zapata",
+    "colonias": [
+      "La Campiña",
+      "Tepetzingo",
+      "Tetecalita"
+    ]
+  },
+  "62770": {
+    "municipio": "Tlaltizapán de Zapata",
+    "colonias": [
+      "Carlos Pacheco",
+      "Tlaltizapán Centro"
+    ]
+  },
+  "62772": {
+    "municipio": "Tlaltizapán de Zapata",
+    "colonias": [
+      "10 de Mayo (La Matanza)",
+      "Echeverría",
+      "El Cajoncito",
+      "Emiliano Zapata",
+      "Ignacio Zaragoza",
+      "Independencia",
+      "Santa Rosa Treinta"
+    ]
+  },
+  "62773": {
+    "municipio": "Tlaltizapán de Zapata",
+    "colonias": [
+      "Ampliación Benito Juárez",
+      "Ampliación El Tecolote",
+      "Barranca Honda",
+      "Benito Juárez",
+      "Club Haciendas de Ticumán",
+      "El Jagüey",
+      "El Tecolote",
+      "Guadalupe Victoria",
+      "Huepalo",
+      "Huertos de Ticumán",
+      "La Curva",
+      "Morelos",
+      "Pedregal",
+      "Ticumán"
+    ]
+  },
+  "62774": {
+    "municipio": "Tlaltizapán de Zapata",
+    "colonias": [
+      "Bonifacio García (Colonia Alejandra)",
+      "La Piedra Rodada",
+      "Las Estacas",
+      "Palo Prieto (Chipitongo)",
+      "Temilpa Nuevo",
+      "Temilpa Viejo"
+    ]
+  },
+  "62775": {
+    "municipio": "Tlaltizapán de Zapata",
+    "colonias": [
+      "El Mirador",
+      "El Topil",
+      "Huertas el Mirador",
+      "Las Galeras",
+      "Las Juntas",
+      "Los Presidentes",
+      "Palmillas",
+      "Plan de Ayala",
+      "San Pablo Hidalgo",
+      "San Rafael Zaragoza"
+    ]
+  },
+  "62776": {
+    "municipio": "Tlaltizapán de Zapata",
+    "colonias": [
+      "Amador Salazar",
+      "Ampliación El Mirador (Ampliación Bomba)",
+      "El Mirador",
+      "Otilio Montaño",
+      "San Miguel 30"
+    ]
+  },
+  "62777": {
+    "municipio": "Tlaltizapán de Zapata",
+    "colonias": [
+      "Casa Blanca",
+      "El Pochote",
+      "Huatecalco",
+      "La Mina"
+    ]
+  },
+  "62778": {
+    "municipio": "Tlaltizapán de Zapata",
+    "colonias": [
+      "20 30",
+      "Acamilpa",
+      "Cuauhtémoc",
+      "El Conquistador",
+      "El Marimon",
+      "El Texcal",
+      "Francisco Javier Mina",
+      "La Cima",
+      "La Loma",
+      "Los Cajetes",
+      "Pueblo Nuevo",
+      "Tecoloapan (Aguas Vivas)",
+      "Temimilcingo"
+    ]
+  },
+  "62780": {
+    "municipio": "Zacatepec",
+    "colonias": [
+      "20 de Noviembre",
+      "Benito Juárez",
+      "Emiliano Zapata",
+      "Independencia",
+      "Lázaro Cárdenas",
+      "Miguel Alemán",
+      "Plan de Ayala",
+      "Plutarco Elías Calles",
+      "Tetelpa",
+      "Zacatepec de Hidalgo Centro"
+    ]
+  },
+  "62785": {
+    "municipio": "Zacatepec",
+    "colonias": [
+      "Alianza",
+      "Arboledas",
+      "Campo de la Presa",
+      "Galeana Centro",
+      "Guadalupe Victoria",
+      "Josefa Ortiz de Domínguez",
+      "Lázaro Cárdenas",
+      "Mártires del 10 de Abril",
+      "San Antonio Chiverías",
+      "Valle Sol",
+      "Vicente Guerrero"
+    ]
+  },
+  "62790": {
+    "municipio": "Xochitepec",
+    "colonias": [
+      "3 de Mayo",
+      "Ampliación Miguel Hidalgo",
+      "Benito Juárez",
+      "Campo Canela",
+      "Campo San Rafael",
+      "El Crucero de Atlacholoaya",
+      "El Pedregal",
+      "Francisco Villa",
+      "Jardines de Xochitepec",
+      "La Calera",
+      "La Cruz",
+      "La Esperanza",
+      "La Guamuchilera",
+      "Las Flores",
+      "Las Rosas",
+      "Loma Bonita",
+      "Lomas del Manantial",
+      "Lázaro Cárdenas",
+      "Miguel Hidalgo",
+      "Morelos 1ra Sección",
+      "Morelos 2da Sección",
+      "Morelos 3ra Sección",
+      "Nueva Morelos",
+      "Obrera Popular",
+      "Real del Puente",
+      "Rinconada de Xochitepec",
+      "San Francisco",
+      "San Miguel La Unión",
+      "San Pedro de los Pinos",
+      "Tierra Verde",
+      "Villas de Xochitepec",
+      "Xochitepec Centro"
+    ]
+  },
+  "62793": {
+    "municipio": "Xochitepec",
+    "colonias": [
+      "Atlacholoaya",
+      "Cazahuatera",
+      "Centro de Readaptación Social de Atlacholoaya",
+      "Cumbres del Campestre",
+      "El Calvario",
+      "Los Laureles",
+      "Solares",
+      "Xalipa"
+    ]
+  },
+  "62794": {
+    "municipio": "Xochitepec",
+    "colonias": [
+      "Club de Golf Santa Fe",
+      "Colinas de Santa Fe",
+      "La Pintora",
+      "Real Santa Fe",
+      "Vista Santa Fe"
+    ]
+  },
+  "62795": {
+    "municipio": "Xochitepec",
+    "colonias": [
+      "Chiconcuac"
+    ]
+  },
+  "62796": {
+    "municipio": "Xochitepec",
+    "colonias": [
+      "Arroyos Xochitepec",
+      "Dos Ríos",
+      "Encanto",
+      "Paseos de Xochitepec",
+      "Villas del Sol"
+    ]
+  },
+  "62797": {
+    "municipio": "Xochitepec",
+    "colonias": [
+      "Alpuyeca",
+      "Ampliación 3 de Mayo",
+      "Buenavista",
+      "Coaxcomac",
+      "Humberto Gutiérrez Corona",
+      "Las Palmas"
+    ]
+  },
+  "62800": {
+    "municipio": "Tetela del Volcán",
+    "colonias": [
+      "El Malinal",
+      "San Bartolo",
+      "Santiago",
+      "Tetela del Volcán",
+      "Xochicalco"
+    ]
+  },
+  "62802": {
+    "municipio": "Tetela del Volcán",
+    "colonias": [
+      "Tlalmimilulpan (San Pedro)"
+    ]
+  },
+  "62803": {
+    "municipio": "Tetela del Volcán",
+    "colonias": [
+      "Cacapola",
+      "Paluca",
+      "Tlalamayocan",
+      "Zacapechpa (Zacapezuca)"
+    ]
+  },
+  "62804": {
+    "municipio": "Tetela del Volcán",
+    "colonias": [
+      "El Encinal",
+      "Lomas Lindas",
+      "San Agustín",
+      "San Jerónimo",
+      "San Miguel",
+      "Tecla"
+    ]
+  },
+  "62805": {
+    "municipio": "Tetela del Volcán",
+    "colonias": [
+      "Cuaucorra"
+    ]
+  },
+  "62806": {
+    "municipio": "Tetela del Volcán",
+    "colonias": [
+      "El Capulín"
+    ]
+  },
+  "62810": {
+    "municipio": "Hueyapan",
+    "colonias": [
+      "Hueyapan"
+    ]
+  },
+  "62812": {
+    "municipio": "Hueyapan",
+    "colonias": [
+      "Tzitzicastla (Rancho las Flores)",
+      "Yiganechxco"
+    ]
+  },
+  "62813": {
+    "municipio": "Hueyapan",
+    "colonias": [
+      "El Chilar Tepeyehualco",
+      "Olivar"
+    ]
+  },
+  "62814": {
+    "municipio": "Hueyapan",
+    "colonias": [
+      "Ahuazutlán",
+      "Amialtenco",
+      "El Chupamirto",
+      "Matlacotla",
+      "Tlalcomulco"
+    ]
+  },
+  "62815": {
+    "municipio": "Hueyapan",
+    "colonias": [
+      "Las Mesas"
+    ]
+  },
+  "62820": {
+    "municipio": "Yecapixtla",
+    "colonias": [
+      "Yecapixtla"
+    ]
+  },
+  "62823": {
+    "municipio": "Yecapixtla",
+    "colonias": [
+      "Achichipico",
+      "Aquiles Serdán",
+      "El Matadero",
+      "La Hacienda",
+      "Los Capulines",
+      "Los Reyes",
+      "Texcala",
+      "Tezontetelco",
+      "Xochitlán",
+      "Zacahuacatla",
+      "Zahuatlán"
+    ]
+  },
+  "62824": {
+    "municipio": "Yecapixtla",
+    "colonias": [
+      "Agua Zarca",
+      "El Izote",
+      "El Rosedal (Rancho el Talín)",
+      "Los Amates",
+      "Paraíso las Flores"
+    ]
+  },
+  "62825": {
+    "municipio": "Yecapixtla",
+    "colonias": [
+      "Huexca",
+      "Los Limones",
+      "Tecajec"
+    ]
+  },
+  "62826": {
+    "municipio": "Yecapixtla",
+    "colonias": [
+      "Juan Morales",
+      "Loma Bonita",
+      "Mixtlalcingo",
+      "Noche Buena"
+    ]
+  },
+  "62827": {
+    "municipio": "Yecapixtla",
+    "colonias": [
+      "Girasoles (Campo el Guaje)",
+      "Mexquemeca",
+      "Paraíso Escondido",
+      "Residencial Los Tulipanes"
+    ]
+  },
+  "62828": {
+    "municipio": "Yecapixtla",
+    "colonias": [
+      "Adolfo López Mateos",
+      "Francisco I Madero",
+      "Los Chichicastles",
+      "Marino Galicia",
+      "Pazulco",
+      "Tlamomulco",
+      "Xalpa",
+      "Yecapixteca"
+    ]
+  },
+  "62830": {
+    "municipio": "Totolapan",
+    "colonias": [
+      "Totolapan"
+    ]
+  },
+  "62832": {
+    "municipio": "Totolapan",
+    "colonias": [
+      "San Marcos",
+      "Villa Nicolás Zapata"
+    ]
+  },
+  "62833": {
+    "municipio": "Totolapan",
+    "colonias": [
+      "Colinas del Paraíso",
+      "El Jagüey de las Marzanas"
+    ]
+  },
+  "62834": {
+    "municipio": "Totolapan",
+    "colonias": [
+      "Ahuatlán (Asunción Ahuatlán)",
+      "Palestina",
+      "Tepetlixpita"
+    ]
+  },
+  "62835": {
+    "municipio": "Totolapan",
+    "colonias": [
+      "El Fuerte (San Miguel)",
+      "La Cañada (San Sebastián)",
+      "La Joya",
+      "Nepopualco",
+      "Zacatepec"
+    ]
+  },
+  "62840": {
+    "municipio": "Atlatlahucan",
+    "colonias": [
+      "Atlatlahucan",
+      "La Asunción",
+      "Los Reyes",
+      "San Lucas",
+      "San Mateo",
+      "San Sebastián",
+      "Santa Bárbara"
+    ]
+  },
+  "62843": {
+    "municipio": "Atlatlahucan",
+    "colonias": [
+      "Ampliación San Antonio",
+      "El Mirador",
+      "Emiliano Zapata",
+      "San Antonio",
+      "Santo Tomás"
+    ]
+  },
+  "62844": {
+    "municipio": "Atlatlahucan",
+    "colonias": [
+      "Hacienda del Rey",
+      "La Guadalupana",
+      "San Andrés",
+      "San Marcos",
+      "Santa Ana"
+    ]
+  },
+  "62845": {
+    "municipio": "Atlatlahucan",
+    "colonias": [
+      "Centro Asturiano de México",
+      "El Astillero",
+      "Hacienda la Alborada",
+      "Malpaís",
+      "Pozo Mancera",
+      "Rancho Santa Cruz",
+      "San Diego Tepantongo",
+      "Santa Inés",
+      "Telchicayac (El Cabellito)",
+      "Tlaltetelco (San Miguel Tlaltetelco)"
+    ]
+  },
+  "62846": {
+    "municipio": "Atlatlahucan",
+    "colonias": [
+      "El Jaral",
+      "El Salto",
+      "Framboyanes",
+      "Kilómetro 88",
+      "La Tortuga",
+      "Los Cerritos",
+      "Puntas de Malpaís (Malpaís)",
+      "San Francisco",
+      "Telminca"
+    ]
+  },
+  "62847": {
+    "municipio": "Atlatlahucan",
+    "colonias": [
+      "El Puente",
+      "Lomas de Cocoyoc",
+      "Lomas de San Juan Texcalpan",
+      "San Juan Texcalpan",
+      "Vicente Guerrero"
+    ]
+  },
+  "62850": {
+    "municipio": "Ocuituco",
+    "colonias": [
+      "Ocuituco",
+      "Tecamachalco",
+      "Tepexi"
+    ]
+  },
+  "62853": {
+    "municipio": "Ocuituco",
+    "colonias": [
+      "La Asunción",
+      "San Nicolás"
+    ]
+  },
+  "62854": {
+    "municipio": "Ocuituco",
+    "colonias": [
+      "5 de Mayo"
+    ]
+  },
+  "62855": {
+    "municipio": "Ocuituco",
+    "colonias": [
+      "Chignahuapan",
+      "Huauscuautla",
+      "La Cebada",
+      "La Finca",
+      "La Higuera",
+      "La Ixtla",
+      "La Rosita (Rancho el Paraíso)",
+      "Los Espino",
+      "Metepec",
+      "Zacamilpa"
+    ]
+  },
+  "62856": {
+    "municipio": "Ocuituco",
+    "colonias": [
+      "Mahoma"
+    ]
+  },
+  "62857": {
+    "municipio": "Ocuituco",
+    "colonias": [
+      "Casahuatitla",
+      "Cerrito Colorado",
+      "Colinas del Sol",
+      "Cruz de Lima",
+      "La Ponderosa",
+      "Piedra Rajada",
+      "Santa Elena de la Cruz",
+      "Santa Mónica",
+      "Tlacuatzingo"
+    ]
+  },
+  "62860": {
+    "municipio": "Ocuituco",
+    "colonias": [
+      "Jumiltepec"
+    ]
+  },
+  "62863": {
+    "municipio": "Ocuituco",
+    "colonias": [
+      "Atenco",
+      "El Cedral"
+    ]
+  },
+  "62864": {
+    "municipio": "Ocuituco",
+    "colonias": [
+      "Atataco",
+      "El Naranjo"
+    ]
+  },
+  "62865": {
+    "municipio": "Ocuituco",
+    "colonias": [
+      "Cuestepec",
+      "Huejotengo (San Marcos)",
+      "Huepalcalco (San Miguel)",
+      "Ocotitla",
+      "Ocoxaltepec"
+    ]
+  },
+  "62866": {
+    "municipio": "Ocuituco",
+    "colonias": [
+      "Temaxquiticla",
+      "Tomayo"
+    ]
+  },
+  "62867": {
+    "municipio": "Ocuituco",
+    "colonias": [
+      "Huecahuasco"
+    ]
+  },
+  "62870": {
+    "municipio": "Temoac",
+    "colonias": [
+      "Temoac"
+    ]
+  },
+  "62873": {
+    "municipio": "Temoac",
+    "colonias": [
+      "Los Cuatecomates",
+      "Popotlán ( Barrio de Santo Tomás )"
+    ]
+  },
+  "62880": {
+    "municipio": "Temoac",
+    "colonias": [
+      "Campo el Limón",
+      "Huazulco"
+    ]
+  },
+  "62885": {
+    "municipio": "Temoac",
+    "colonias": [
+      "Amilcingo"
+    ]
+  },
+  "62887": {
+    "municipio": "Temoac",
+    "colonias": [
+      "El Puente Nuevo",
+      "Escuela Normal Rural Amilcingo"
+    ]
+  },
+  "62890": {
+    "municipio": "Zacualpan de Amilpas",
+    "colonias": [
+      "Guadalupe Victoria",
+      "Las Presas",
+      "Zacualpan de Amilpas"
+    ]
+  },
+  "62893": {
+    "municipio": "Zacualpan de Amilpas",
+    "colonias": [
+      "Barranca Amatzinac",
+      "Curiel"
+    ]
+  },
+  "62895": {
+    "municipio": "Zacualpan de Amilpas",
+    "colonias": [
+      "La Compuerta",
+      "Tlacotepec"
+    ]
+  },
+  "62896": {
+    "municipio": "Zacualpan de Amilpas",
+    "colonias": [
+      "Toribio Rivera"
+    ]
+  },
+  "62897": {
+    "municipio": "Zacualpan de Amilpas",
+    "colonias": [
+      "La Presa (El Cerro de la Era)"
+    ]
+  },
+  "62900": {
+    "municipio": "Jojutla",
+    "colonias": [
+      "Benito Juárez",
+      "Cuauhtémoc",
+      "Del Bosque",
+      "El Higuerón",
+      "El Jagüey",
+      "El Pochote",
+      "El Zapatito",
+      "Emiliano Zapata",
+      "Jojutla Centro",
+      "La Pastrana",
+      "Las Calaveras",
+      "Las Cañas",
+      "Los Arrozales",
+      "Panchimalco",
+      "Reforma",
+      "San Jerónimo"
+    ]
+  },
+  "62905": {
+    "municipio": "Jojutla",
+    "colonias": [
+      "Nexpa",
+      "Álamos (La Frontera)"
+    ]
+  },
+  "62906": {
+    "municipio": "Jojutla",
+    "colonias": [
+      "Ampliación Lázaro Cárdenas (El Molino)",
+      "Higuerón",
+      "Pedro Amaro"
+    ]
+  },
+  "62907": {
+    "municipio": "Jojutla",
+    "colonias": [
+      "Independencia",
+      "Ricardo Soto",
+      "Santa María",
+      "Tlatenchi",
+      "Vicente Guerrero"
+    ]
+  },
+  "62908": {
+    "municipio": "Jojutla",
+    "colonias": [
+      "Ampliación Santa María",
+      "Bonanza",
+      "Buenos Aires",
+      "Las Fincas de Tequesquitengo"
+    ]
+  },
+  "62909": {
+    "municipio": "Jojutla",
+    "colonias": [
+      "Ampliación Nicolás Bravo",
+      "Constitución del 57",
+      "Jicarero",
+      "José María Morelos y Pavón",
+      "Los Pilares",
+      "Nicolás Bravo"
+    ]
+  },
+  "62910": {
+    "municipio": "Jojutla",
+    "colonias": [
+      "Tehuixtla"
+    ]
+  },
+  "62912": {
+    "municipio": "Jojutla",
+    "colonias": [
+      "Campo San Pablo"
+    ]
+  },
+  "62913": {
+    "municipio": "Jojutla",
+    "colonias": [
+      "Loma Bonita (arenales)"
+    ]
+  },
+  "62914": {
+    "municipio": "Jojutla",
+    "colonias": [
+      "Azuchilera",
+      "Emiliano Zapata",
+      "Guadalupe",
+      "La Mesa de los Indios"
+    ]
+  },
+  "62915": {
+    "municipio": "Jojutla",
+    "colonias": [
+      "Tequesquitengo"
+    ]
+  },
+  "62916": {
+    "municipio": "Jojutla",
+    "colonias": [
+      "Las Brasileras"
+    ]
+  },
+  "62917": {
+    "municipio": "Jojutla",
+    "colonias": [
+      "Chisco",
+      "Los Lagartos",
+      "Río Seco",
+      "Tenerías",
+      "Vicente Aranda (San Rafael)"
+    ]
+  },
+  "62920": {
+    "municipio": "Tepalcingo",
+    "colonias": [
+      "Buenos Aires",
+      "Emiliano Zapata",
+      "Guadalupe",
+      "La Concepción",
+      "Los Reyes",
+      "Palo Revuelto",
+      "San Francisco",
+      "San Martín",
+      "Santuario",
+      "Tepalcingo"
+    ]
+  },
+  "62923": {
+    "municipio": "Tepalcingo",
+    "colonias": [
+      "Adolfo López Mateos",
+      "Cruz de Jaramalla ( Lauro Ortega )",
+      "Huitchila"
+    ]
+  },
+  "62924": {
+    "municipio": "Tepalcingo",
+    "colonias": [
+      "El Bambú (La Presa)",
+      "Ixtlilco El Chico",
+      "Mano Pintada"
+    ]
+  },
+  "62925": {
+    "municipio": "Tepalcingo",
+    "colonias": [
+      "20 de Noviembre",
+      "Atotonilco",
+      "La Vía",
+      "Los Tulipanes",
+      "Los Vergeles"
+    ]
+  },
+  "62926": {
+    "municipio": "Tepalcingo",
+    "colonias": [
+      "El Pozo",
+      "Ixtlilco El Grande",
+      "La Joyita de Piedra Grande",
+      "La Junta",
+      "Las Joyas"
+    ]
+  },
+  "62927": {
+    "municipio": "Tepalcingo",
+    "colonias": [
+      "El Limón de Cuahuchichinola",
+      "El Tepehuaje",
+      "Emiliano Zapata",
+      "Los Sauces",
+      "Molotlál ( Mogotlán )",
+      "Pitzotlán",
+      "Zacapalco"
+    ]
+  },
+  "62930": {
+    "municipio": "Jonacatepec de Leandro Valle",
+    "colonias": [
+      "Jonacatepec de Leandro Valle Centro"
+    ]
+  },
+  "62933": {
+    "municipio": "Jonacatepec de Leandro Valle",
+    "colonias": [
+      "La Capilla",
+      "López de Nava",
+      "Zull Ayot"
+    ]
+  },
+  "62934": {
+    "municipio": "Jonacatepec de Leandro Valle",
+    "colonias": [
+      "Leandro Valle"
+    ]
+  },
+  "62935": {
+    "municipio": "Jonacatepec de Leandro Valle",
+    "colonias": [
+      "El Carrizal",
+      "Ex-Hacienda Montefalco"
+    ]
+  },
+  "62936": {
+    "municipio": "Jonacatepec de Leandro Valle",
+    "colonias": [
+      "El Abrevadero (Campo Mata Redonda)",
+      "El Puente Angosto",
+      "La Casa de Piedra",
+      "La Divina Providencia",
+      "La Yesera",
+      "Las Bugambilias",
+      "Santa Cruz"
+    ]
+  },
+  "62937": {
+    "municipio": "Jonacatepec de Leandro Valle",
+    "colonias": [
+      "Amacuitlapilco",
+      "Emiliano Zapata",
+      "Juárez",
+      "Tlayca"
+    ]
+  },
+  "62940": {
+    "municipio": "Jonacatepec de Leandro Valle",
+    "colonias": [
+      "Tetelilla"
+    ]
+  },
+  "62943": {
+    "municipio": "Jonacatepec de Leandro Valle",
+    "colonias": [
+      "El Puente Colorado"
+    ]
+  },
+  "62950": {
+    "municipio": "Axochiapan",
+    "colonias": [
+      "Axochiapan",
+      "La Luz",
+      "Otilio Montaño"
+    ]
+  },
+  "62952": {
+    "municipio": "Axochiapan",
+    "colonias": [
+      "Bugambilias",
+      "Industrial",
+      "Vista Hermosa"
+    ]
+  },
+  "62953": {
+    "municipio": "Axochiapan",
+    "colonias": [
+      "Del Carmen",
+      "Las Ardillas",
+      "Las Palmas",
+      "Progreso"
+    ]
+  },
+  "62954": {
+    "municipio": "Axochiapan",
+    "colonias": [
+      "Biznaga",
+      "Centenario",
+      "Emiliano Zapata",
+      "Florida"
+    ]
+  },
+  "62955": {
+    "municipio": "Axochiapan",
+    "colonias": [
+      "5 de Mayo",
+      "Carrillo Olea (La Primavera)",
+      "Cuauhtémoc",
+      "El C.B.T.A.",
+      "El Mirador",
+      "La Estación",
+      "Los Gavilanes",
+      "Los Linderos (Fábrica de Yeso)",
+      "Los Tres Reyes",
+      "Rubén Carrillo",
+      "Tlalayo"
+    ]
+  },
+  "62956": {
+    "municipio": "Axochiapan",
+    "colonias": [
+      "Ahuaxtla",
+      "Benito Juárez",
+      "Cabrera",
+      "El Guamúchil",
+      "El Papagayo",
+      "Juan Ortega Sánchez",
+      "La Piedra Colorada",
+      "Los Laureles",
+      "Los Límites",
+      "Palo Blanco"
+    ]
+  },
+  "62957": {
+    "municipio": "Axochiapan",
+    "colonias": [
+      "Campo la Laguna",
+      "El Edén",
+      "El Mezquital",
+      "Joaquín Camaño",
+      "Las Palmas (La Poza del Pajarito)",
+      "Las Tinajas",
+      "Quebrantadero"
+    ]
+  },
+  "62962": {
+    "municipio": "Axochiapan",
+    "colonias": [
+      "Cayehuacán",
+      "La Nopalera",
+      "La Toma",
+      "Los Carros",
+      "Marcelino Rodríguez (San Ignacio)",
+      "Nueva Esperanza"
+    ]
+  },
+  "62963": {
+    "municipio": "Axochiapan",
+    "colonias": [
+      "Atlacahualoya",
+      "Coayuca de Morelos",
+      "La Huerta (La Bomba Dos)",
+      "La Joya del Zompa",
+      "Los Nacahuites"
+    ]
+  },
+  "62965": {
+    "municipio": "Axochiapan",
+    "colonias": [
+      "Campo Jicamal",
+      "Telixtac"
+    ]
+  },
+  "62966": {
+    "municipio": "Axochiapan",
+    "colonias": [
+      "2000"
+    ]
+  },
+  "62970": {
+    "municipio": "Jantetelco",
+    "colonias": [
+      "Jantetelco Centro",
+      "Manuel Alarcón",
+      "Mariana Díaz"
+    ]
+  },
+  "62972": {
+    "municipio": "Jantetelco",
+    "colonias": [
+      "Amayuca",
+      "Gabriel Tepepa"
+    ]
+  },
+  "62973": {
+    "municipio": "Jantetelco",
+    "colonias": [
+      "Serafín Marcial Bonilla"
+    ]
+  },
+  "62974": {
+    "municipio": "Jantetelco",
+    "colonias": [
+      "Alondra",
+      "Cuatro Caminos",
+      "Mariano Matamoros",
+      "Nuevo Xochimilco",
+      "Santa Lucía"
+    ]
+  },
+  "62975": {
+    "municipio": "Jantetelco",
+    "colonias": [
+      "La Renta",
+      "La Y",
+      "Los Bordos"
+    ]
+  },
+  "62976": {
+    "municipio": "Jantetelco",
+    "colonias": [
+      "La Laja"
+    ]
+  },
+  "62977": {
+    "municipio": "Jantetelco",
+    "colonias": [
+      "Chalcatzingo",
+      "La Joya"
+    ]
+  },
+  "62978": {
+    "municipio": "Jantetelco",
+    "colonias": [
+      "Emiliano Zapata (La Granja)",
+      "La Huerta",
+      "Peñón de los Baños",
+      "San Antonio La Esperanza",
+      "Tenango (Santa Ana)"
+    ]
+  },
+  "62980": {
+    "municipio": "Tlaquiltenango",
+    "colonias": [
+      "Alfredo V. Bonfil (Chacampalco)",
+      "Cantora",
+      "El Texcal",
+      "Gabriel Tepepa",
+      "Los Presidentes",
+      "Plan de Ayala",
+      "Tlaquiltenango",
+      "Vista Alegre"
+    ]
+  },
+  "62982": {
+    "municipio": "Tlaquiltenango",
+    "colonias": [
+      "Villas de Jojutla"
+    ]
+  },
+  "62983": {
+    "municipio": "Tlaquiltenango",
+    "colonias": [
+      "3 de Mayo (El Tepiolol)",
+      "Miguel Hidalgo"
+    ]
+  },
+  "62984": {
+    "municipio": "Tlaquiltenango",
+    "colonias": [
+      "Celerino Manzanares",
+      "Emiliano Zapata",
+      "Palo Grande"
+    ]
+  },
+  "62985": {
+    "municipio": "Tlaquiltenango",
+    "colonias": [
+      "La Era (Calalpa)",
+      "La Mezquitera (El Astillero)",
+      "Las Bóvedas",
+      "Las Carpas"
+    ]
+  },
+  "62986": {
+    "municipio": "Tlaquiltenango",
+    "colonias": [
+      "Chimalacatlán",
+      "Lorenzo Vázquez (Santa Cruz)",
+      "Los Dormidos",
+      "Quilamula",
+      "San José de Pala",
+      "Valle de Vázquez (Los Hornos)"
+    ]
+  },
+  "62987": {
+    "municipio": "Tlaquiltenango",
+    "colonias": [
+      "Los Elotes (San Miguel de los Elotes)",
+      "Nexpa",
+      "Paso de Palapa",
+      "Pueblo Viejo",
+      "Xicatlacotla"
+    ]
+  },
+  "62988": {
+    "municipio": "Tlaquiltenango",
+    "colonias": [
+      "Coaxitlán",
+      "El Calabazal (Rancho la Ceiba)",
+      "Huixastla"
+    ]
+  },
+  "62990": {
+    "municipio": "Tlaquiltenango",
+    "colonias": [
+      "Huautla"
+    ]
+  },
+  "62993": {
+    "municipio": "Tlaquiltenango",
+    "colonias": [
+      "Ajuchitlán"
+    ]
+  },
+  "62994": {
+    "municipio": "Tlaquiltenango",
+    "colonias": [
+      "Rancho Viejo"
+    ]
+  },
+  "62995": {
+    "municipio": "Tlaquiltenango",
+    "colonias": [
+      "Huaxtla",
+      "La Bomba"
+    ]
+  },
+  "62996": {
+    "municipio": "Tlaquiltenango",
+    "colonias": [
+      "Santiopa",
+      "Xochipala"
+    ]
+  }
+}

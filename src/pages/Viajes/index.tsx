@@ -3,7 +3,7 @@
  * Gestión completa de viajes con integración a rutas, clientes, costos
  */
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   Truck,
   Plus,
@@ -39,28 +39,190 @@ import {
   actualizarViaje,
   iniciarViaje,
   registrarLlegada,
+  iniciarEspera,
+  registrarPartida,
   completarViaje,
   cancelarViaje,
   obtenerEstadisticasViajes,
   obtenerViajesActivos,
 } from '../../services/trip.service';
 import { obtenerClientes } from '../../services/client.service';
-import { obtenerTractocamionesSelect } from '../../services/truck.service';
+import { obtenerTractocamionesSelect, type TractocamionSelectItem } from '../../services/truck.service';
 import { obtenerOperadoresSelect } from '../../services/operator.service';
-import { obtenerAditamentosSelect } from '../../services/attachment.service';
+import { obtenerAditamentosSelect, type AditamentoSelectItem } from '../../services/attachment.service';
 import { obtenerManiobristasSelect } from '../../services/maniobrista.service';
+import { getDirections } from '../../services/mapbox.service';
+import { ORIGEN_BASE_RMB } from '../../types/workload.types';
 import type { Cliente, ObraCliente } from '../../types/client.types';
 import toast from 'react-hot-toast';
 import { useAuth } from '../../context/AuthContext';
 import { Container, Users, AlertTriangle, History } from 'lucide-react';
-import type { Viaje, ViajeFormInput, FiltrosViaje, StatusViaje, TipoServicioViaje, CondicionesSeguridad, ArchivoAdjunto } from '../../types/trip.types';
+import type { Viaje, ViajeFormInput, FiltrosViaje, StatusViaje, TipoServicioViaje, CondicionesSeguridad, ArchivoAdjunto, EquipoCargaViaje } from '../../types/trip.types';
 import { CONDICIONES_SEGURIDAD_DEFAULT } from '../../types/trip.types';
+import { CATALOGO_EQUIPOS, MARCAS_EQUIPO, buscarEquipoPorModelo } from '../../types/equipment.types';
+import type { MarcaEquipo } from '../../types/equipment.types';
+import { Package } from 'lucide-react';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage } from '../../services/firebase';
 import { Image, FileUp, Trash2 } from 'lucide-react';
 
 // Generador simple de ID único
 const generarId = () => `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+
+// Tipo para resultado de validación de capacidad
+interface ValidacionCapacidad {
+  valido: boolean;
+  tipo: 'warning' | 'error' | null;
+  mensaje: string;
+  detalles: string[];
+}
+
+/**
+ * Valida si los equipos de carga caben en la capacidad de transporte
+ * @param equiposCarga - Equipos a transportar
+ * @param tracto - Tractocamión seleccionado (con plataforma si es rolloff)
+ * @param aditamentosSeleccionados - Aditamentos seleccionados (lowboys, etc)
+ * @param aditamentosCatalogo - Catálogo de aditamentos con capacidades
+ */
+function validarCapacidadCarga(
+  equiposCarga: EquipoCargaViaje[],
+  tracto: TractocamionSelectItem | undefined,
+  aditamentosSeleccionados: string[],
+  aditamentosCatalogo: AditamentoSelectItem[]
+): ValidacionCapacidad {
+  // Si no hay equipos de carga, no hay nada que validar
+  if (equiposCarga.length === 0) {
+    return { valido: true, tipo: null, mensaje: '', detalles: [] };
+  }
+
+  // Calcular totales de la carga
+  const pesoTotalKg = equiposCarga.reduce((sum, e) => sum + e.peso, 0);
+  const pesoTotalTon = pesoTotalKg / 1000;
+
+  // Calcular dimensiones totales
+  // Largo: suma de todos los equipos (asumiendo que van en línea)
+  const largoTotalEquipos = equiposCarga.reduce((sum, e) => sum + e.dimensiones.largo, 0);
+  // Ancho: el más ancho de todos (los equipos van uno detrás de otro)
+  const anchoMaxEquipo = Math.max(...equiposCarga.map(e => e.dimensiones.ancho));
+
+  const detalles: string[] = [];
+  let tipoAlerta: 'warning' | 'error' | null = null;
+
+  // Determinar capacidades disponibles
+  let capacidadToneladas = 0;
+  let largoDisponible = 0;
+  let anchoDisponible = 0;
+  let tipoTransporte = '';
+
+  if (tracto?.tipoUnidad === 'rolloff-plataforma' && tracto.plataformaCarga) {
+    // Roll-off con plataforma integrada
+    capacidadToneladas = tracto.plataformaCarga.capacidadToneladas;
+    largoDisponible = tracto.plataformaCarga.largo;
+    anchoDisponible = tracto.plataformaCarga.ancho;
+    tipoTransporte = 'Roll-Off';
+  } else if (tracto?.tipoUnidad === 'tractocamion' && aditamentosSeleccionados.length > 0) {
+    // Tractocamión con aditamento - buscar el aditamento con mayor capacidad
+    const aditamentosConCapacidad = aditamentosSeleccionados
+      .map(id => aditamentosCatalogo.find(a => a.id === id))
+      .filter((a): a is AditamentoSelectItem => a !== undefined && a.capacidadCarga !== undefined);
+
+    if (aditamentosConCapacidad.length > 0) {
+      // Usar el aditamento con mayor capacidad (normalmente solo hay uno)
+      const aditamento = aditamentosConCapacidad[0];
+      capacidadToneladas = aditamento.capacidadCarga || 0;
+      largoDisponible = aditamento.largo || 0;
+      anchoDisponible = aditamento.ancho || 0;
+      tipoTransporte = aditamento.label;
+    }
+  }
+
+  // Si no hay capacidades definidas, mostrar advertencia
+  if (capacidadToneladas === 0 && largoDisponible === 0 && anchoDisponible === 0) {
+    if (tracto?.tipoUnidad === 'rolloff-plataforma') {
+      return {
+        valido: true,
+        tipo: 'warning',
+        mensaje: 'Sin datos de capacidad',
+        detalles: ['La unidad Roll-Off no tiene configuradas las dimensiones de su plataforma.']
+      };
+    } else if (tracto?.tipoUnidad === 'tractocamion' && aditamentosSeleccionados.length === 0) {
+      return {
+        valido: true,
+        tipo: 'warning',
+        mensaje: 'Sin aditamento seleccionado',
+        detalles: ['Selecciona un aditamento (lowboy) para validar la capacidad de carga.']
+      };
+    } else if (tracto?.tipoUnidad === 'tractocamion') {
+      return {
+        valido: true,
+        tipo: 'warning',
+        mensaje: 'Sin datos de capacidad',
+        detalles: ['El aditamento seleccionado no tiene configuradas las dimensiones.']
+      };
+    }
+    // Sin tracto seleccionado
+    return { valido: true, tipo: null, mensaje: '', detalles: [] };
+  }
+
+  // Validar peso
+  if (capacidadToneladas > 0 && pesoTotalTon > capacidadToneladas) {
+    tipoAlerta = 'error';
+    detalles.push(`⚠️ Peso excedido: ${pesoTotalTon.toFixed(1)} ton > ${capacidadToneladas} ton de capacidad`);
+  } else if (capacidadToneladas > 0 && pesoTotalTon > capacidadToneladas * 0.9) {
+    tipoAlerta = tipoAlerta || 'warning';
+    detalles.push(`⚡ Peso cercano al límite: ${pesoTotalTon.toFixed(1)} ton / ${capacidadToneladas} ton (${((pesoTotalTon / capacidadToneladas) * 100).toFixed(0)}%)`);
+  }
+
+  // Validar largo
+  if (largoDisponible > 0 && largoTotalEquipos > largoDisponible) {
+    tipoAlerta = 'error';
+    detalles.push(`⚠️ Largo excedido: ${largoTotalEquipos.toFixed(2)}m > ${largoDisponible}m disponibles`);
+  } else if (largoDisponible > 0 && largoTotalEquipos > largoDisponible * 0.95) {
+    tipoAlerta = tipoAlerta || 'warning';
+    detalles.push(`⚡ Largo ajustado: ${largoTotalEquipos.toFixed(2)}m / ${largoDisponible}m disponibles`);
+  }
+
+  // Validar ancho
+  if (anchoDisponible > 0 && anchoMaxEquipo > anchoDisponible) {
+    tipoAlerta = 'error';
+    detalles.push(`⚠️ Ancho excedido: ${anchoMaxEquipo.toFixed(2)}m > ${anchoDisponible}m disponibles`);
+  } else if (anchoDisponible > 0 && anchoMaxEquipo > anchoDisponible * 0.95) {
+    tipoAlerta = tipoAlerta || 'warning';
+    detalles.push(`⚡ Ancho ajustado: ${anchoMaxEquipo.toFixed(2)}m / ${anchoDisponible}m disponibles`);
+  }
+
+  // Si todo está bien, mostrar resumen positivo
+  if (tipoAlerta === null && detalles.length === 0) {
+    const usoPeso = capacidadToneladas > 0 ? ((pesoTotalTon / capacidadToneladas) * 100).toFixed(0) : '-';
+    const detallesOK: string[] = [];
+
+    // Mostrar peso
+    if (capacidadToneladas > 0) {
+      detallesOK.push(`Peso: ${pesoTotalTon.toFixed(1)}t / ${capacidadToneladas}t (${usoPeso}%)`);
+    }
+
+    // Mostrar dimensiones
+    if (largoDisponible > 0 || anchoDisponible > 0) {
+      const dimEquipo = `${largoTotalEquipos.toFixed(2)}m × ${anchoMaxEquipo.toFixed(2)}m`;
+      const dimDisp = `${largoDisponible}m × ${anchoDisponible}m`;
+      detallesOK.push(`Dimensiones: ${dimEquipo} en plataforma de ${dimDisp}`);
+    }
+
+    return {
+      valido: true,
+      tipo: null,
+      mensaje: `✓ Capacidad OK - ${tipoTransporte}`,
+      detalles: detallesOK
+    };
+  }
+
+  return {
+    valido: tipoAlerta !== 'error',
+    tipo: tipoAlerta,
+    mensaje: tipoAlerta === 'error' ? 'Capacidad excedida' : 'Revisar capacidad',
+    detalles
+  };
+}
 
 const TIPOS_SERVICIO: TipoServicioViaje[] = [
   'Entrega',
@@ -73,6 +235,7 @@ const TIPOS_SERVICIO: TipoServicioViaje[] = [
 ];
 
 const STATUS_COLORS: Record<StatusViaje, { bg: string; text: string; label: string }> = {
+  sin_asignar: { bg: 'bg-gray-100', text: 'text-gray-700', label: 'Sin Asignar' },
   programado: { bg: 'bg-blue-100', text: 'text-blue-700', label: 'Programado' },
   en_curso: { bg: 'bg-amber-100', text: 'text-amber-700', label: 'En Curso' },
   en_destino: { bg: 'bg-purple-100', text: 'text-purple-700', label: 'En Destino' },
@@ -92,10 +255,10 @@ export default function Viajes() {
 
   // Catálogos
   const [clientes, setClientes] = useState<Cliente[]>([]);
-  const [tractocamiones, setTractocamiones] = useState<{ id: string; label: string; marca: string; tipoUnidad: string }[]>([]);
+  const [tractocamiones, setTractocamiones] = useState<TractocamionSelectItem[]>([]);
   const [operadores, setOperadores] = useState<{ id: string; nombre: string; licenciaTipo: string; sueldoDiario: number; tractosAutorizados: string[] }[]>([]);
   const [maniobristas, setManiobristas] = useState<{ id: string; nombre: string; sueldoDiario: number }[]>([]);
-  const [aditamentos, setAditamentos] = useState<{ id: string; label: string; tipo: string }[]>([]);
+  const [aditamentos, setAditamentos] = useState<AditamentoSelectItem[]>([]);
   const [viajesActivos, setViajesActivos] = useState<Viaje[]>([]);
 
   // Selecciones del formulario
@@ -103,9 +266,19 @@ export default function Viajes() {
   const [obraSeleccionada, setObraSeleccionada] = useState<ObraCliente | null>(null);
   const [equiposSeleccionados, setEquiposSeleccionados] = useState<string[]>([]);
 
+  // Equipos de carga (maquinaria a transportar)
+  const [equiposCargaSeleccionados, setEquiposCargaSeleccionados] = useState<EquipoCargaViaje[]>([]);
+  const [filtroMarcaCarga, setFiltroMarcaCarga] = useState<MarcaEquipo | ''>('');
+  const [busquedaCarga, setBusquedaCarga] = useState('');
+
   // Alertas de validación
   const [alertaOperador, setAlertaOperador] = useState<string | null>(null);
   const [alertaTracto, setAlertaTracto] = useState<string | null>(null);
+  const [alertaCapacidad, setAlertaCapacidad] = useState<{
+    tipo: 'warning' | 'error';
+    mensaje: string;
+    detalles?: string[];
+  } | null>(null);
 
   // Historial del cliente seleccionado
   const [historialCliente, setHistorialCliente] = useState<Viaje[]>([]);
@@ -121,6 +294,13 @@ export default function Viajes() {
   const [subiendoImagen, setSubiendoImagen] = useState(false);
   const [documentosViaje, setDocumentosViaje] = useState<ArchivoAdjunto[]>([]);
   const [imagenesViaje, setImagenesViaje] = useState<ArchivoAdjunto[]>([]);
+
+  // Timeline - estado de carga
+  const [procesandoTimeline, setProcesandoTimeline] = useState(false);
+
+  // AbortController para cancelar operaciones de upload pendientes
+  const uploadAbortControllerRef = useRef<AbortController | null>(null);
+  const isUploadCancelledRef = useRef(false);
 
   // Handler cuando se selecciona un cliente
   function handleClienteChange(clienteId: string) {
@@ -179,17 +359,23 @@ export default function Viajes() {
   }
 
   // Handler cuando se selecciona una obra
-  function handleObraChange(obra: ObraCliente) {
+  async function handleObraChange(obra: ObraCliente) {
     setObraSeleccionada(obra);
 
     // Buscar contacto principal de la obra
     const contactoPrincipal = obra.contactos?.find(c => c.esPrincipal) || obra.contactos?.[0];
+
+    // Obtener coordenadas de la obra
+    const coordenadas = obra.direccion.coordenadas;
 
     setFormData(prev => ({
       ...prev,
       destino: {
         nombre: obra.nombre,
         direccion: `${obra.direccion.calle || ''} ${obra.direccion.numeroExterior || ''}, ${obra.direccion.colonia || ''}, ${obra.direccion.municipio || ''}, ${obra.direccion.estado || ''}`.trim(),
+        coordenadas: coordenadas,
+        municipio: obra.direccion.municipio,
+        estado: obra.direccion.estado,
         contactoNombre: contactoPrincipal?.nombre || '',
         contactoTelefono: contactoPrincipal?.celular || contactoPrincipal?.telefono || '',
         ventanaInicio: obra.condicionesAcceso?.horarioRecepcion?.inicio || '',
@@ -210,6 +396,24 @@ export default function Viajes() {
         cursosRequeridos: obra.condicionesAcceso?.cursosRequeridos || [],
         notasAcceso: obra.condicionesAcceso?.instruccionesEspeciales || '',
       }));
+    }
+
+    // Calcular distancia automáticamente si hay coordenadas
+    if (coordenadas) {
+      try {
+        const resultado = await getDirections([ORIGEN_BASE_RMB, coordenadas]);
+        if (resultado) {
+          const distanciaKm = Math.round(resultado.distance / 1000); // metros a km
+          setFormData(prev => ({
+            ...prev,
+            distanciaKm,
+          }));
+          toast.success(`Distancia calculada: ${distanciaKm} km`);
+        }
+      } catch (error) {
+        console.error('Error calculando distancia:', error);
+        // No mostrar error al usuario, simplemente no se calculará
+      }
     }
   }
 
@@ -243,11 +447,44 @@ export default function Viajes() {
     distanciaKm: 0,
     precioFlete: 0,
     equipos: [],
+    equiposCarga: [],
   });
 
   useEffect(() => {
     cargarDatos();
   }, [filtroStatus]);
+
+  // Validar capacidad de carga cuando cambian los equipos, tracto o aditamentos
+  useEffect(() => {
+    if (modalAbierto && equiposCargaSeleccionados.length > 0) {
+      const tracto = tractocamiones.find(t => t.id === formData.tractoId);
+      const validacion = validarCapacidadCarga(
+        equiposCargaSeleccionados,
+        tracto,
+        equiposSeleccionados,
+        aditamentos
+      );
+
+      if (validacion.tipo) {
+        setAlertaCapacidad({
+          tipo: validacion.tipo,
+          mensaje: validacion.mensaje,
+          detalles: validacion.detalles
+        });
+      } else if (validacion.mensaje) {
+        // Mostrar mensaje positivo de capacidad OK
+        setAlertaCapacidad({
+          tipo: 'warning', // Usamos warning para el estilo pero el mensaje es positivo
+          mensaje: validacion.mensaje,
+          detalles: validacion.detalles
+        });
+      } else {
+        setAlertaCapacidad(null);
+      }
+    } else {
+      setAlertaCapacidad(null);
+    }
+  }, [equiposCargaSeleccionados, formData.tractoId, equiposSeleccionados, modalAbierto, tractocamiones, aditamentos]);
 
   async function cargarDatos() {
     setLoading(true);
@@ -288,30 +525,103 @@ export default function Viajes() {
   );
 
   async function handleIniciarViaje(viaje: Viaje) {
+    setProcesandoTimeline(true);
     try {
       await iniciarViaje(viaje.id);
+      toast.success('Viaje iniciado');
+      setViajeDetalle({
+        ...viaje,
+        status: 'en_curso',
+        tiempos: { ...viaje.tiempos, inicio: new Date() }
+      });
       cargarDatos();
     } catch (error) {
       console.error('Error al iniciar viaje:', error);
+      toast.error('Error al iniciar viaje');
+    } finally {
+      setProcesandoTimeline(false);
     }
   }
 
   async function handleLlegada(viaje: Viaje) {
+    setProcesandoTimeline(true);
     try {
       await registrarLlegada(viaje.id);
+      toast.success('Llegada registrada');
+      setViajeDetalle({
+        ...viaje,
+        status: 'en_destino',
+        tiempos: { ...viaje.tiempos, llegada: new Date() }
+      });
       cargarDatos();
     } catch (error) {
       console.error('Error al registrar llegada:', error);
+      toast.error('Error al registrar llegada');
+    } finally {
+      setProcesandoTimeline(false);
+    }
+  }
+
+  async function handleIniciarEspera(viaje: Viaje) {
+    setProcesandoTimeline(true);
+    try {
+      await iniciarEspera(viaje.id);
+      toast.success('Espera iniciada');
+      // Actualizar el viaje en detalle con el nuevo tiempo
+      setViajeDetalle({
+        ...viaje,
+        tiempos: { ...viaje.tiempos, inicioEspera: new Date() }
+      });
+      cargarDatos();
+    } catch (error) {
+      console.error('Error al iniciar espera:', error);
+      toast.error('Error al iniciar espera');
+    } finally {
+      setProcesandoTimeline(false);
+    }
+  }
+
+  async function handleRegistrarPartida(viaje: Viaje) {
+    setProcesandoTimeline(true);
+    try {
+      await registrarPartida(viaje.id);
+      toast.success('Partida registrada');
+      // Calcular tiempo de espera para actualizar la UI
+      let tiempoEsperaCalculado: number | undefined;
+      if (viaje.tiempos.inicioEspera) {
+        tiempoEsperaCalculado = Math.round(
+          (Date.now() - viaje.tiempos.inicioEspera.getTime()) / 60000
+        );
+      }
+      setViajeDetalle({
+        ...viaje,
+        tiempos: {
+          ...viaje.tiempos,
+          partida: new Date(),
+          tiempoEspera: tiempoEsperaCalculado
+        }
+      });
+      cargarDatos();
+    } catch (error) {
+      console.error('Error al registrar partida:', error);
+      toast.error('Error al registrar partida');
+    } finally {
+      setProcesandoTimeline(false);
     }
   }
 
   async function handleCompletar(viaje: Viaje) {
+    setProcesandoTimeline(true);
     try {
       await completarViaje(viaje.id);
+      toast.success('Viaje completado');
       cargarDatos();
       setViajeDetalle(null);
     } catch (error) {
       console.error('Error al completar viaje:', error);
+      toast.error('Error al completar viaje');
+    } finally {
+      setProcesandoTimeline(false);
     }
   }
 
@@ -333,11 +643,38 @@ export default function Viajes() {
     return fecha.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' });
   }
 
+  function formatearFechaCorta(fecha?: Date): string {
+    if (!fecha) return '--/--/--';
+    const d = fecha.getDate().toString().padStart(2, '0');
+    const m = (fecha.getMonth() + 1).toString().padStart(2, '0');
+    const y = fecha.getFullYear().toString().slice(-2);
+    return `${d}/${m}/${y}`;
+  }
+
   function formatearDuracion(minutos?: number): string {
     if (!minutos) return '--';
     const horas = Math.floor(minutos / 60);
     const mins = minutos % 60;
     return horas > 0 ? `${horas}h ${mins}m` : `${mins}m`;
+  }
+
+  // Función para cerrar el modal y cancelar operaciones pendientes
+  function cerrarModalViaje() {
+    // Cancelar cualquier upload en progreso
+    isUploadCancelledRef.current = true;
+    if (uploadAbortControllerRef.current) {
+      uploadAbortControllerRef.current.abort();
+      uploadAbortControllerRef.current = null;
+    }
+
+    // Resetear estados de carga
+    setSubiendoDocumento(false);
+    setSubiendoImagen(false);
+
+    // Cerrar modal y limpiar estados
+    setModalAbierto(false);
+    setModoEdicion(false);
+    setViajeEditando(null);
   }
 
   return (
@@ -361,16 +698,19 @@ export default function Viajes() {
             setClienteSeleccionado(null);
             setObraSeleccionada(null);
             setEquiposSeleccionados([]);
+            setEquiposCargaSeleccionados([]);
             setCondicionesSeguridad({ ...CONDICIONES_SEGURIDAD_DEFAULT });
             setDocumentosViaje([]);
             setImagenesViaje([]);
             setAlertaOperador(null);
             setAlertaTracto(null);
+            setAlertaCapacidad(null);
             setHistorialCliente([]);
             setModoEdicion(false);
             setViajeEditando(null);
             setFormData({
               fecha: new Date(),
+              fechaCompromiso: new Date(),
               tractoId: '',
               operadorId: '',
               clienteId: '',
@@ -516,9 +856,10 @@ export default function Viajes() {
               <thead className="bg-gray-50 border-b">
                 <tr>
                   <th className="text-left p-4 font-medium text-gray-600">Folio</th>
-                  <th className="text-left p-4 font-medium text-gray-600">Fecha</th>
+                  <th className="text-left p-4 font-medium text-gray-600">Fecha Compromiso</th>
                   <th className="text-left p-4 font-medium text-gray-600">Cliente</th>
                   <th className="text-left p-4 font-medium text-gray-600">Destino</th>
+                  <th className="text-left p-4 font-medium text-gray-600">Carga</th>
                   <th className="text-left p-4 font-medium text-gray-600">Unidad</th>
                   <th className="text-center p-4 font-medium text-gray-600">Km</th>
                   <th className="text-right p-4 font-medium text-gray-600">Utilidad</th>
@@ -541,7 +882,7 @@ export default function Viajes() {
                       <td className="p-4">
                         <div className="flex items-center gap-2 text-sm">
                           <Calendar className="w-4 h-4 text-gray-400" />
-                          {viaje.fecha?.toLocaleDateString('es-MX')}
+                          {formatearFechaCorta(viaje.fechaCompromiso)}
                         </div>
                       </td>
                       <td className="p-4">
@@ -557,7 +898,23 @@ export default function Viajes() {
                         </div>
                       </td>
                       <td className="p-4">
-                        <span className="text-sm font-medium">{viaje.tractoId}</span>
+                        {viaje.equiposCarga && viaje.equiposCarga.length > 0 ? (
+                          <div className="flex items-center gap-1">
+                            <Package className="w-4 h-4 text-blue-500" />
+                            <span className="text-sm text-blue-700 font-medium">
+                              {viaje.equiposCarga.length === 1
+                                ? viaje.equiposCarga[0].modelo
+                                : `${viaje.equiposCarga.length} equipos`}
+                            </span>
+                          </div>
+                        ) : (
+                          <span className="text-xs text-gray-400">Sin carga</span>
+                        )}
+                      </td>
+                      <td className="p-4">
+                        <span className="text-sm font-medium">
+                          {tractocamiones.find(t => t.id === viaje.tractoId)?.label?.split(' - ')[0] || viaje.tractoId}
+                        </span>
                       </td>
                       <td className="p-4 text-center">
                         <span className="text-sm">{viaje.distanciaKm} km</span>
@@ -650,7 +1007,7 @@ export default function Viajes() {
               </div>
               <div className="flex items-center gap-2">
                 {/* Botón editar - disponible para viajes que no están completados o cancelados */}
-                {(viajeDetalle.status === 'programado' || viajeDetalle.status === 'en_curso' || viajeDetalle.status === 'en_destino') && (
+                {(viajeDetalle.status === 'sin_asignar' || viajeDetalle.status === 'programado' || viajeDetalle.status === 'en_curso' || viajeDetalle.status === 'en_destino') && (
                   <button
                     onClick={() => {
                       // Cargar datos del viaje en el formulario
@@ -658,12 +1015,15 @@ export default function Viajes() {
                       setClienteSeleccionado(cliente || null);
                       setObraSeleccionada(null);
                       setEquiposSeleccionados(viajeDetalle.equipos || []);
+                      setEquiposCargaSeleccionados(viajeDetalle.equiposCarga || []);
                       setCondicionesSeguridad(viajeDetalle.condicionesSeguridad || { ...CONDICIONES_SEGURIDAD_DEFAULT });
                       setAlertaOperador(null);
                       setAlertaTracto(null);
+                      setAlertaCapacidad(null);
                       setHistorialCliente([]);
                       setFormData({
                         fecha: viajeDetalle.fecha || new Date(),
+                        fechaCompromiso: viajeDetalle.fechaCompromiso,
                         tractoId: viajeDetalle.tractoId,
                         operadorId: viajeDetalle.operadorId,
                         clienteId: viajeDetalle.clienteId,
@@ -718,63 +1078,152 @@ export default function Viajes() {
             </div>
 
             <div className="p-6 space-y-6">
-              {/* Timeline de tiempos */}
+              {/* Timeline de tiempos - Clickeable */}
               <div className="bg-gray-50 rounded-lg p-4">
-                <h3 className="font-medium mb-4">Timeline del Viaje</h3>
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-medium">Timeline del Viaje</h3>
+                  <span className="text-xs text-gray-500">Click en cada paso para registrar</span>
+                </div>
                 <div className="flex items-center justify-between">
+                  {/* 1. Inicio - Click cuando está programado */}
                   <div className="text-center">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2 ${viajeDetalle.tiempos.inicio ? 'bg-green-100 text-green-600' : 'bg-gray-200 text-gray-400'
-                      }`}>
+                    <button
+                      onClick={() => viajeDetalle.status === 'programado' && !procesandoTimeline && handleIniciarViaje(viajeDetalle)}
+                      disabled={viajeDetalle.status !== 'programado' || procesandoTimeline}
+                      className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2 transition-all
+                        ${viajeDetalle.tiempos.inicio
+                          ? 'bg-green-100 text-green-600'
+                          : viajeDetalle.status === 'programado'
+                            ? 'bg-green-500 text-white hover:bg-green-600 cursor-pointer ring-2 ring-green-300 ring-offset-2 animate-pulse'
+                            : 'bg-gray-200 text-gray-400'
+                        }
+                        disabled:cursor-not-allowed disabled:opacity-70`}
+                      title={viajeDetalle.status === 'programado' ? 'Click para iniciar viaje' : ''}
+                    >
                       <Play className="w-5 h-5" />
-                    </div>
+                    </button>
                     <p className="text-xs text-gray-500">Inicio</p>
-                    <p className="font-medium">{formatearHora(viajeDetalle.tiempos.inicio)}</p>
+                    <p className="font-medium text-sm">{formatearHora(viajeDetalle.tiempos.inicio)}</p>
                   </div>
 
-                  <div className="flex-1 h-0.5 bg-gray-200 mx-2" />
+                  <div className={`flex-1 h-1 mx-2 rounded ${viajeDetalle.tiempos.inicio ? 'bg-green-300' : 'bg-gray-200'}`} />
 
+                  {/* 2. Llegada - Click cuando está en_curso */}
                   <div className="text-center">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2 ${viajeDetalle.tiempos.llegada ? 'bg-blue-100 text-blue-600' : 'bg-gray-200 text-gray-400'
-                      }`}>
+                    <button
+                      onClick={() => viajeDetalle.status === 'en_curso' && !procesandoTimeline && handleLlegada(viajeDetalle)}
+                      disabled={viajeDetalle.status !== 'en_curso' || procesandoTimeline}
+                      className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2 transition-all
+                        ${viajeDetalle.tiempos.llegada
+                          ? 'bg-blue-100 text-blue-600'
+                          : viajeDetalle.status === 'en_curso'
+                            ? 'bg-blue-500 text-white hover:bg-blue-600 cursor-pointer ring-2 ring-blue-300 ring-offset-2 animate-pulse'
+                            : 'bg-gray-200 text-gray-400'
+                        }
+                        disabled:cursor-not-allowed disabled:opacity-70`}
+                      title={viajeDetalle.status === 'en_curso' ? 'Click para registrar llegada' : ''}
+                    >
                       <MapPin className="w-5 h-5" />
-                    </div>
+                    </button>
                     <p className="text-xs text-gray-500">Llegada</p>
-                    <p className="font-medium">{formatearHora(viajeDetalle.tiempos.llegada)}</p>
+                    <p className="font-medium text-sm">{formatearHora(viajeDetalle.tiempos.llegada)}</p>
                   </div>
 
-                  <div className="flex-1 h-0.5 bg-gray-200 mx-2" />
+                  <div className={`flex-1 h-1 mx-2 rounded ${viajeDetalle.tiempos.llegada ? 'bg-blue-300' : 'bg-gray-200'}`} />
 
+                  {/* 3. Espera - Click cuando en_destino y no hay inicioEspera */}
                   <div className="text-center">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2 ${viajeDetalle.tiempos.tiempoEspera ? 'bg-amber-100 text-amber-600' : 'bg-gray-200 text-gray-400'
-                      }`}>
+                    <button
+                      onClick={() => viajeDetalle.status === 'en_destino' && !viajeDetalle.tiempos.inicioEspera && !procesandoTimeline && handleIniciarEspera(viajeDetalle)}
+                      disabled={viajeDetalle.status !== 'en_destino' || !!viajeDetalle.tiempos.inicioEspera || procesandoTimeline}
+                      className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2 transition-all
+                        ${viajeDetalle.tiempos.tiempoEspera !== undefined && viajeDetalle.tiempos.tiempoEspera !== null
+                          ? 'bg-amber-100 text-amber-600'
+                          : viajeDetalle.tiempos.inicioEspera
+                            ? 'bg-amber-400 text-white animate-pulse'
+                          : viajeDetalle.status === 'en_destino'
+                            ? 'bg-amber-500 text-white hover:bg-amber-600 cursor-pointer ring-2 ring-amber-300 ring-offset-2 animate-pulse'
+                            : 'bg-gray-200 text-gray-400'
+                        }
+                        disabled:cursor-not-allowed disabled:opacity-70`}
+                      title={viajeDetalle.status === 'en_destino' && !viajeDetalle.tiempos.inicioEspera ? 'Click para iniciar espera' : viajeDetalle.tiempos.inicioEspera && !viajeDetalle.tiempos.partida ? 'Espera en curso...' : ''}
+                    >
                       <Clock className="w-5 h-5" />
-                    </div>
+                    </button>
                     <p className="text-xs text-gray-500">Espera</p>
-                    <p className="font-medium">{formatearDuracion(viajeDetalle.tiempos.tiempoEspera)}</p>
+                    {viajeDetalle.tiempos.inicioEspera && !viajeDetalle.tiempos.partida ? (
+                      <p className="font-medium text-sm text-amber-600">En espera...</p>
+                    ) : (
+                      <p className="font-medium text-sm">{formatearDuracion(viajeDetalle.tiempos.tiempoEspera)}</p>
+                    )}
                   </div>
 
-                  <div className="flex-1 h-0.5 bg-gray-200 mx-2" />
+                  <div className={`flex-1 h-1 mx-2 rounded ${viajeDetalle.tiempos.inicioEspera ? 'bg-amber-300' : 'bg-gray-200'}`} />
 
+                  {/* 4. Partida - Click cuando hay inicioEspera pero no partida */}
                   <div className="text-center">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2 ${viajeDetalle.tiempos.partida ? 'bg-purple-100 text-purple-600' : 'bg-gray-200 text-gray-400'
-                      }`}>
+                    <button
+                      onClick={() => viajeDetalle.status === 'en_destino' && viajeDetalle.tiempos.inicioEspera && !viajeDetalle.tiempos.partida && !procesandoTimeline && handleRegistrarPartida(viajeDetalle)}
+                      disabled={!(viajeDetalle.status === 'en_destino' && viajeDetalle.tiempos.inicioEspera && !viajeDetalle.tiempos.partida) || procesandoTimeline}
+                      className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2 transition-all
+                        ${viajeDetalle.tiempos.partida
+                          ? 'bg-purple-100 text-purple-600'
+                          : viajeDetalle.tiempos.inicioEspera && !viajeDetalle.tiempos.partida
+                            ? 'bg-purple-500 text-white hover:bg-purple-600 cursor-pointer ring-2 ring-purple-300 ring-offset-2 animate-pulse'
+                            : 'bg-gray-200 text-gray-400'
+                        }
+                        disabled:cursor-not-allowed disabled:opacity-70`}
+                      title={viajeDetalle.tiempos.inicioEspera && !viajeDetalle.tiempos.partida ? 'Click para registrar partida' : ''}
+                    >
                       <Navigation className="w-5 h-5" />
-                    </div>
+                    </button>
                     <p className="text-xs text-gray-500">Partida</p>
-                    <p className="font-medium">{formatearHora(viajeDetalle.tiempos.partida)}</p>
+                    <p className="font-medium text-sm">{formatearHora(viajeDetalle.tiempos.partida)}</p>
                   </div>
 
-                  <div className="flex-1 h-0.5 bg-gray-200 mx-2" />
+                  <div className={`flex-1 h-1 mx-2 rounded ${viajeDetalle.tiempos.partida ? 'bg-purple-300' : 'bg-gray-200'}`} />
 
+                  {/* 5. Fin - Click cuando hay partida pero no fin */}
                   <div className="text-center">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2 ${viajeDetalle.tiempos.fin ? 'bg-green-100 text-green-600' : 'bg-gray-200 text-gray-400'
-                      }`}>
+                    <button
+                      onClick={() => viajeDetalle.status === 'en_destino' && viajeDetalle.tiempos.partida && !viajeDetalle.tiempos.fin && !procesandoTimeline && handleCompletar(viajeDetalle)}
+                      disabled={!(viajeDetalle.status === 'en_destino' && viajeDetalle.tiempos.partida && !viajeDetalle.tiempos.fin) || procesandoTimeline}
+                      className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2 transition-all
+                        ${viajeDetalle.tiempos.fin
+                          ? 'bg-green-100 text-green-600'
+                          : viajeDetalle.tiempos.partida && !viajeDetalle.tiempos.fin
+                            ? 'bg-green-500 text-white hover:bg-green-600 cursor-pointer ring-2 ring-green-300 ring-offset-2 animate-pulse'
+                            : 'bg-gray-200 text-gray-400'
+                        }
+                        disabled:cursor-not-allowed disabled:opacity-70`}
+                      title={viajeDetalle.tiempos.partida && !viajeDetalle.tiempos.fin ? 'Click para completar viaje' : ''}
+                    >
                       <CheckCircle className="w-5 h-5" />
-                    </div>
+                    </button>
                     <p className="text-xs text-gray-500">Fin</p>
-                    <p className="font-medium">{formatearHora(viajeDetalle.tiempos.fin)}</p>
+                    <p className="font-medium text-sm">{formatearHora(viajeDetalle.tiempos.fin)}</p>
                   </div>
                 </div>
+
+                {/* Indicador de estado actual */}
+                {viajeDetalle.status !== 'completado' && viajeDetalle.status !== 'cancelado' && (
+                  <div className="mt-4 text-center">
+                    <span className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium
+                      ${viajeDetalle.status === 'programado' ? 'bg-green-100 text-green-700' : ''}
+                      ${viajeDetalle.status === 'en_curso' ? 'bg-blue-100 text-blue-700' : ''}
+                      ${viajeDetalle.status === 'en_destino' && !viajeDetalle.tiempos.inicioEspera ? 'bg-amber-100 text-amber-700' : ''}
+                      ${viajeDetalle.status === 'en_destino' && viajeDetalle.tiempos.inicioEspera && !viajeDetalle.tiempos.partida ? 'bg-amber-100 text-amber-700' : ''}
+                      ${viajeDetalle.status === 'en_destino' && viajeDetalle.tiempos.partida ? 'bg-green-100 text-green-700' : ''}
+                    `}>
+                      {procesandoTimeline && <span className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />}
+                      {viajeDetalle.status === 'programado' && 'Click en Inicio para comenzar'}
+                      {viajeDetalle.status === 'en_curso' && 'Click en Llegada al arribar'}
+                      {viajeDetalle.status === 'en_destino' && !viajeDetalle.tiempos.inicioEspera && 'Click en Espera para iniciar conteo'}
+                      {viajeDetalle.status === 'en_destino' && viajeDetalle.tiempos.inicioEspera && !viajeDetalle.tiempos.partida && 'Click en Partida al salir'}
+                      {viajeDetalle.status === 'en_destino' && viajeDetalle.tiempos.partida && !viajeDetalle.tiempos.fin && 'Click en Fin para completar'}
+                    </span>
+                  </div>
+                )}
 
                 {viajeDetalle.tiempos.duracionTotal && (
                   <p className="text-center text-sm text-gray-500 mt-4">
@@ -789,8 +1238,8 @@ export default function Viajes() {
                   <h3 className="font-medium mb-3">Información del Viaje</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-gray-500">Fecha:</span>
-                      <span>{viajeDetalle.fecha?.toLocaleDateString('es-MX')}</span>
+                      <span className="text-gray-500">Fecha Compromiso:</span>
+                      <span>{formatearFechaCorta(viajeDetalle.fechaCompromiso)}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-500">Cliente:</span>
@@ -936,41 +1385,12 @@ export default function Viajes() {
                   </button>
                 )}
               </div>
-              <div className="flex gap-3">
-                {viajeDetalle.status === 'programado' && (
-                  <button
-                    onClick={() => handleIniciarViaje(viajeDetalle)}
-                    className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
-                  >
-                    <Play className="w-4 h-4" />
-                    Iniciar Viaje
-                  </button>
-                )}
-                {viajeDetalle.status === 'en_curso' && (
-                  <button
-                    onClick={() => handleLlegada(viajeDetalle)}
-                    className="flex items-center gap-2 px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700"
-                  >
-                    <MapPin className="w-4 h-4" />
-                    Registrar Llegada
-                  </button>
-                )}
-                {viajeDetalle.status === 'en_destino' && (
-                  <button
-                    onClick={() => handleCompletar(viajeDetalle)}
-                    className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
-                  >
-                    <CheckCircle className="w-4 h-4" />
-                    Completar Viaje
-                  </button>
-                )}
-                <button
-                  onClick={() => setViajeDetalle(null)}
-                  className="px-4 py-2 border rounded-lg hover:bg-gray-50"
-                >
-                  Cerrar
-                </button>
-              </div>
+              <button
+                onClick={() => setViajeDetalle(null)}
+                className="px-4 py-2 border rounded-lg hover:bg-gray-50"
+              >
+                Cerrar
+              </button>
             </div>
           </div>
         </div>
@@ -983,39 +1403,36 @@ export default function Viajes() {
             <div className="p-6 border-b flex items-center justify-between sticky top-0 bg-white z-10">
               <div>
                 <h2 className="text-xl font-bold">
-                  {modoEdicion ? 'Editar Orden de Trabajo' : 'Nueva Orden de Trabajo'}
+                  {modoEdicion ? 'Editar Orden de Servicio' : 'Nueva Orden de Servicio'}
                 </h2>
                 {modoEdicion && viajeEditando && (
                   <p className="text-sm text-gray-500 font-mono">{viajeEditando.folio}</p>
                 )}
               </div>
-              <button onClick={() => {
-                setModalAbierto(false);
-                setModoEdicion(false);
-                setViajeEditando(null);
-              }}>
+              <button onClick={cerrarModalViaje}>
                 <X className="w-6 h-6" />
               </button>
             </div>
 
             <div className="p-6 space-y-6">
-              {/* Información básica */}
+              {/* Fecha Compromiso - Parte superior */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Tipo de Servicio *
+                    <Calendar className="w-4 h-4 inline mr-1" />
+                    Fecha Compromiso *
                   </label>
-                  <select
-                    value={formData.tipoServicio}
-                    onChange={(e) => setFormData({ ...formData, tipoServicio: e.target.value as TipoServicioViaje })}
+                  <input
+                    type="date"
+                    value={formData.fechaCompromiso ? formData.fechaCompromiso.toISOString().split('T')[0] : ''}
+                    onChange={(e) => setFormData({
+                      ...formData,
+                      fechaCompromiso: e.target.value ? new Date(e.target.value + 'T12:00:00') : undefined
+                    })}
                     className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] focus:border-[#BB0034] outline-none"
-                  >
-                    {TIPOS_SERVICIO.map(tipo => (
-                      <option key={tipo} value={tipo}>{tipo}</option>
-                    ))}
-                  </select>
+                  />
+                  <p className="text-xs text-gray-500 mt-1">Fecha en que debe realizarse el flete</p>
                 </div>
-
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Cliente *
@@ -1035,6 +1452,24 @@ export default function Viajes() {
                 </div>
               </div>
 
+              {/* Tipo de Servicio */}
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Tipo de Servicio *
+                  </label>
+                  <select
+                    value={formData.tipoServicio}
+                    onChange={(e) => setFormData({ ...formData, tipoServicio: e.target.value as TipoServicioViaje })}
+                    className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] focus:border-[#BB0034] outline-none"
+                  >
+                    {TIPOS_SERVICIO.map(tipo => (
+                      <option key={tipo} value={tipo}>{tipo}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
               {/* Historial del Cliente */}
               {clienteSeleccionado && historialCliente.length > 0 && (
                 <div className="bg-gray-50 rounded-lg p-4 space-y-3">
@@ -1050,7 +1485,7 @@ export default function Viajes() {
                           <span>{viaje.destino.nombre}</span>
                         </div>
                         <div className="flex items-center gap-3">
-                          <span className="text-gray-500">{viaje.fecha?.toLocaleDateString('es-MX')}</span>
+                          <span className="text-gray-500">{formatearFechaCorta(viaje.fechaCompromiso)}</span>
                           <span className={`px-2 py-0.5 rounded-full text-xs ${STATUS_COLORS[viaje.status]?.bg} ${STATUS_COLORS[viaje.status]?.text}`}>
                             {STATUS_COLORS[viaje.status]?.label}
                           </span>
@@ -1282,51 +1717,190 @@ export default function Viajes() {
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         <Container className="w-3 h-3 inline mr-1" />
-                        Aditamentos / Equipos (opcional)
+                        Aditamento (opcional)
                       </label>
-                      <div className="grid grid-cols-2 gap-2 max-h-40 overflow-y-auto p-2 border rounded-lg bg-white">
-                        {aditamentos.length === 0 ? (
-                          <p className="text-sm text-gray-400 col-span-2 text-center py-2">
-                            No hay aditamentos registrados
-                          </p>
-                        ) : (
-                          aditamentos.map(a => (
-                            <label
-                              key={a.id}
-                              className={`flex items-center gap-2 p-2 rounded-lg cursor-pointer transition-colors ${
-                                equiposSeleccionados.includes(a.id)
-                                  ? 'bg-amber-100 border-amber-300 border'
-                                  : 'hover:bg-gray-50 border border-transparent'
-                              }`}
-                            >
-                              <input
-                                type="checkbox"
-                                checked={equiposSeleccionados.includes(a.id)}
-                                onChange={(e) => {
-                                  if (e.target.checked) {
-                                    setEquiposSeleccionados([...equiposSeleccionados, a.id]);
-                                    setFormData({ ...formData, equipos: [...equiposSeleccionados, a.id] });
-                                  } else {
-                                    const nuevosEquipos = equiposSeleccionados.filter(id => id !== a.id);
-                                    setEquiposSeleccionados(nuevosEquipos);
-                                    setFormData({ ...formData, equipos: nuevosEquipos });
-                                  }
-                                }}
-                                className="rounded border-gray-300 text-[#BB0034] focus:ring-[#BB0034]"
-                              />
-                              <span className="text-sm">{a.label}</span>
-                            </label>
-                          ))
-                        )}
-                      </div>
+                      <select
+                        value={equiposSeleccionados[0] || ''}
+                        onChange={(e) => {
+                          const nuevoEquipo = e.target.value;
+                          if (nuevoEquipo) {
+                            setEquiposSeleccionados([nuevoEquipo]);
+                            setFormData({ ...formData, equipos: [nuevoEquipo] });
+                          } else {
+                            setEquiposSeleccionados([]);
+                            setFormData({ ...formData, equipos: [] });
+                          }
+                        }}
+                        className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] outline-none"
+                      >
+                        <option value="">Sin aditamento</option>
+                        {aditamentos.map(a => (
+                          <option key={a.id} value={a.id}>{a.label}</option>
+                        ))}
+                      </select>
                       {equiposSeleccionados.length > 0 && (
                         <p className="text-xs text-amber-600 mt-1">
-                          {equiposSeleccionados.length} equipo(s) seleccionado(s)
+                          1 aditamento asignado
                         </p>
                       )}
                     </div>
                   );
                 })()}
+              </div>
+
+              {/* Equipos de Carga (Maquinaria a transportar) */}
+              <div className="bg-blue-50 rounded-lg p-4 space-y-4">
+                <h3 className="font-medium flex items-center gap-2">
+                  <Package className="w-4 h-4 text-blue-600" />
+                  Equipos de Carga (Maquinaria)
+                  {equiposCargaSeleccionados.length > 0 && (
+                    <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-2">
+                      {equiposCargaSeleccionados.length} equipo(s)
+                    </span>
+                  )}
+                </h3>
+
+                {/* Equipos seleccionados */}
+                {equiposCargaSeleccionados.length > 0 && (
+                  <div className="space-y-2">
+                    <p className="text-sm text-gray-600 font-medium">Equipos a transportar:</p>
+                    <div className="space-y-2">
+                      {equiposCargaSeleccionados.map((equipo, idx) => (
+                        <div key={equipo.id} className="flex items-center justify-between bg-white p-3 rounded-lg border border-blue-200">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2">
+                              <span className="font-medium text-blue-700">{equipo.marca}</span>
+                              <span className="text-gray-700">{equipo.modelo}</span>
+                            </div>
+                            <div className="text-xs text-gray-500 mt-1">
+                              {equipo.dimensiones.largo}m × {equipo.dimensiones.ancho}m × {equipo.dimensiones.alto}m | {equipo.peso.toLocaleString()} kg
+                            </div>
+                            {(equipo.numeroSerie || equipo.numeroEconomico) && (
+                              <div className="text-xs text-gray-400 mt-0.5">
+                                {equipo.numeroSerie && <span>S/N: {equipo.numeroSerie}</span>}
+                                {equipo.numeroSerie && equipo.numeroEconomico && <span> | </span>}
+                                {equipo.numeroEconomico && <span>Eco: {equipo.numeroEconomico}</span>}
+                              </div>
+                            )}
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              const nuevos = equiposCargaSeleccionados.filter((_, i) => i !== idx);
+                              setEquiposCargaSeleccionados(nuevos);
+                              setFormData({ ...formData, equiposCarga: nuevos });
+                            }}
+                            className="p-1 text-red-500 hover:bg-red-50 rounded"
+                          >
+                            <X className="w-4 h-4" />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                    {/* Resumen de peso total */}
+                    <div className="text-sm text-blue-700 bg-blue-100 p-2 rounded">
+                      <strong>Peso total:</strong> {equiposCargaSeleccionados.reduce((sum, e) => sum + e.peso, 0).toLocaleString()} kg
+                      {' '}({(equiposCargaSeleccionados.reduce((sum, e) => sum + e.peso, 0) / 1000).toFixed(2)} ton)
+                    </div>
+
+                    {/* Alerta de validación de capacidad */}
+                    {alertaCapacidad && (
+                      <div className={`p-3 rounded-lg border ${
+                        alertaCapacidad.tipo === 'error'
+                          ? 'bg-red-50 border-red-300 text-red-800'
+                          : alertaCapacidad.mensaje.includes('✓')
+                            ? 'bg-green-50 border-green-300 text-green-800'
+                            : 'bg-amber-50 border-amber-300 text-amber-800'
+                      }`}>
+                        <div className="flex items-center gap-2 font-medium">
+                          {alertaCapacidad.tipo === 'error' ? (
+                            <AlertTriangle className="w-4 h-4" />
+                          ) : alertaCapacidad.mensaje.includes('✓') ? (
+                            <Check className="w-4 h-4" />
+                          ) : (
+                            <AlertCircle className="w-4 h-4" />
+                          )}
+                          {alertaCapacidad.mensaje}
+                        </div>
+                        {alertaCapacidad.detalles && alertaCapacidad.detalles.length > 0 && (
+                          <ul className="mt-1 text-sm space-y-0.5">
+                            {alertaCapacidad.detalles.map((detalle, idx) => (
+                              <li key={idx}>{detalle}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Agregar equipo */}
+                <div className="border-t border-blue-200 pt-3">
+                  <p className="text-sm text-gray-600 mb-2">Agregar equipo del catálogo:</p>
+                  <div className="flex gap-2 mb-2">
+                    <select
+                      value={filtroMarcaCarga}
+                      onChange={(e) => setFiltroMarcaCarga(e.target.value as MarcaEquipo | '')}
+                      className="px-2 py-1 border rounded text-sm"
+                    >
+                      <option value="">Todas las marcas</option>
+                      {MARCAS_EQUIPO.map(m => (
+                        <option key={m} value={m}>{m}</option>
+                      ))}
+                    </select>
+                    <input
+                      type="text"
+                      value={busquedaCarga}
+                      onChange={(e) => setBusquedaCarga(e.target.value)}
+                      placeholder="Buscar modelo..."
+                      className="flex-1 px-2 py-1 border rounded text-sm"
+                    />
+                  </div>
+                  <div className="max-h-48 overflow-y-auto border rounded bg-white">
+                    {CATALOGO_EQUIPOS
+                      .filter(e => !filtroMarcaCarga || e.marca === filtroMarcaCarga)
+                      .filter(e => !busquedaCarga || e.modelo.toLowerCase().includes(busquedaCarga.toLowerCase()))
+                      .slice(0, 20)
+                      .map(equipo => (
+                        <button
+                          key={equipo.modelo}
+                          type="button"
+                          onClick={() => {
+                            const nuevoEquipo: EquipoCargaViaje = {
+                              id: generarId(),
+                              modelo: equipo.modelo,
+                              marca: equipo.marca,
+                              categoria: equipo.categoria,
+                              dimensiones: { ...equipo.dimensiones },
+                              peso: equipo.peso,
+                            };
+                            const nuevos = [...equiposCargaSeleccionados, nuevoEquipo];
+                            setEquiposCargaSeleccionados(nuevos);
+                            setFormData({ ...formData, equiposCarga: nuevos });
+                            toast.success(`${equipo.marca} ${equipo.modelo} agregado`);
+                          }}
+                          className="w-full text-left px-3 py-2 hover:bg-blue-50 border-b last:border-b-0 flex justify-between items-center"
+                        >
+                          <div>
+                            <span className="font-medium text-blue-600">{equipo.marca}</span>
+                            <span className="ml-2 text-gray-700">{equipo.modelo}</span>
+                          </div>
+                          <span className="text-xs text-gray-400">
+                            {equipo.peso.toLocaleString()} kg
+                          </span>
+                        </button>
+                      ))}
+                    {CATALOGO_EQUIPOS
+                      .filter(e => !filtroMarcaCarga || e.marca === filtroMarcaCarga)
+                      .filter(e => !busquedaCarga || e.modelo.toLowerCase().includes(busquedaCarga.toLowerCase()))
+                      .length === 0 && (
+                      <p className="text-sm text-gray-400 text-center py-4">No se encontraron equipos</p>
+                    )}
+                  </div>
+                  <p className="text-xs text-gray-400 mt-1">
+                    Mostrando máx. 20 resultados. Usa los filtros para encontrar el equipo.
+                  </p>
+                </div>
               </div>
 
               {/* Destino */}
@@ -1419,6 +1993,57 @@ export default function Viajes() {
                         destino: { ...formData.destino!, ventanaFin: e.target.value }
                       })}
                       className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] focus:border-[#BB0034] outline-none"
+                    />
+                  </div>
+                </div>
+
+                {/* Distancia */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <Navigation className="w-3 h-3 inline mr-1" />
+                      Distancia (km)
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="number"
+                        value={formData.distanciaKm || ''}
+                        onChange={(e) => setFormData({
+                          ...formData,
+                          distanciaKm: parseInt(e.target.value) || 0
+                        })}
+                        className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] focus:border-[#BB0034] outline-none"
+                        placeholder="0"
+                        min="0"
+                      />
+                      {formData.destino?.coordenadas && (
+                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-green-600">
+                          Auto
+                        </span>
+                      )}
+                    </div>
+                    {!formData.destino?.coordenadas && formData.distanciaKm === 0 && (
+                      <p className="text-xs text-amber-600 mt-1">
+                        Sin coordenadas. Ingresa la distancia manualmente.
+                      </p>
+                    )}
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <DollarSign className="w-3 h-3 inline mr-1" />
+                      Precio del Flete
+                    </label>
+                    <input
+                      type="number"
+                      value={formData.precioFlete || ''}
+                      onChange={(e) => setFormData({
+                        ...formData,
+                        precioFlete: parseFloat(e.target.value) || 0
+                      })}
+                      className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] focus:border-[#BB0034] outline-none"
+                      placeholder="0.00"
+                      min="0"
+                      step="100"
                     />
                   </div>
                 </div>
@@ -1686,28 +2311,92 @@ export default function Viajes() {
                       const files = e.target.files;
                       if (!files || files.length === 0) return;
 
+                      // Validar tamaño máximo (10MB)
+                      const maxSize = 10 * 1024 * 1024;
+                      for (const file of Array.from(files)) {
+                        if (file.size > maxSize) {
+                          toast.error(`El archivo "${file.name}" excede el tamaño máximo de 10MB`);
+                          return;
+                        }
+                      }
+
+                      // Resetear flag de cancelación
+                      isUploadCancelledRef.current = false;
                       setSubiendoDocumento(true);
+
+                      const loadingToast = toast.loading('Subiendo documento...');
+
                       try {
                         const nuevosDocumentos: ArchivoAdjunto[] = [];
+                        let uploadedCount = 0;
+
                         for (const file of Array.from(files)) {
+                          // Verificar si se canceló la operación
+                          if (isUploadCancelledRef.current) {
+                            toast.dismiss(loadingToast);
+                            toast.error('Subida de documentos cancelada');
+                            break;
+                          }
+
                           const id = generarId();
-                          const storageRef = ref(storage, `viajes/documentos/${id}_${file.name}`);
-                          await uploadBytes(storageRef, file);
+                          // Limpiar nombre de archivo (remover caracteres especiales)
+                          const nombreLimpio = file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
+                          const path = `viajes/documentos/${id}_${nombreLimpio}`;
+
+                          console.log('Intentando subir a:', path);
+                          console.log('Archivo:', file.name, 'Tamaño:', file.size, 'bytes');
+
+                          const storageRef = ref(storage, path);
+
+                          // Subir archivo
+                          const snapshot = await uploadBytes(storageRef, file);
+                          console.log('Upload completado:', snapshot.metadata.fullPath);
+
+                          // Obtener URL
                           const url = await getDownloadURL(storageRef);
+                          console.log('URL obtenida:', url);
+
                           nuevosDocumentos.push({
                             id,
                             nombre: file.name,
                             url,
-                            tipo: file.type,
+                            tipo: file.type || 'application/octet-stream',
                             tamanio: file.size,
                             fechaSubida: new Date(),
                           });
+                          uploadedCount++;
                         }
-                        setDocumentosViaje([...documentosViaje, ...nuevosDocumentos]);
-                      } catch (error) {
-                        console.error('Error subiendo documento:', error);
+
+                        toast.dismiss(loadingToast);
+
+                        if (nuevosDocumentos.length > 0 && !isUploadCancelledRef.current) {
+                          setDocumentosViaje(prev => [...prev, ...nuevosDocumentos]);
+                          toast.success(`${uploadedCount} documento${uploadedCount > 1 ? 's' : ''} subido${uploadedCount > 1 ? 's' : ''}`);
+                        }
+                      } catch (error: any) {
+                        toast.dismiss(loadingToast);
+                        console.error('Error completo subiendo documento:', error);
+                        console.error('Código de error:', error?.code);
+                        console.error('Mensaje:', error?.message);
+
+                        if (!isUploadCancelledRef.current) {
+                          // Mensajes de error más específicos
+                          let mensajeError = 'Error desconocido';
+                          if (error?.code === 'storage/unauthorized') {
+                            mensajeError = 'Sin permisos. Verifica las reglas de Firebase Storage.';
+                          } else if (error?.code === 'storage/canceled') {
+                            mensajeError = 'Subida cancelada';
+                          } else if (error?.code === 'storage/unknown') {
+                            mensajeError = 'Error de red. Verifica tu conexión.';
+                          } else if (error?.message) {
+                            mensajeError = error.message;
+                          }
+                          toast.error(`Error: ${mensajeError}`);
+                        }
                       } finally {
                         setSubiendoDocumento(false);
+                        // Limpiar el input para permitir subir el mismo archivo de nuevo
+                        e.target.value = '';
                       }
                     }}
                   />
@@ -1769,28 +2458,92 @@ export default function Viajes() {
                       const files = e.target.files;
                       if (!files || files.length === 0) return;
 
+                      // Validar tamaño máximo (10MB)
+                      const maxSize = 10 * 1024 * 1024;
+                      for (const file of Array.from(files)) {
+                        if (file.size > maxSize) {
+                          toast.error(`La imagen "${file.name}" excede el tamaño máximo de 10MB`);
+                          return;
+                        }
+                      }
+
+                      // Resetear flag de cancelación
+                      isUploadCancelledRef.current = false;
                       setSubiendoImagen(true);
+
+                      const loadingToast = toast.loading('Subiendo imagen...');
+
                       try {
                         const nuevasImagenes: ArchivoAdjunto[] = [];
+                        let uploadedCount = 0;
+
                         for (const file of Array.from(files)) {
+                          // Verificar si se canceló la operación
+                          if (isUploadCancelledRef.current) {
+                            toast.dismiss(loadingToast);
+                            toast.error('Subida de imágenes cancelada');
+                            break;
+                          }
+
                           const id = generarId();
-                          const storageRef = ref(storage, `viajes/imagenes/${id}_${file.name}`);
-                          await uploadBytes(storageRef, file);
+                          // Limpiar nombre de archivo (remover caracteres especiales)
+                          const nombreLimpio = file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
+                          const path = `viajes/imagenes/${id}_${nombreLimpio}`;
+
+                          console.log('Intentando subir imagen a:', path);
+                          console.log('Archivo:', file.name, 'Tamaño:', file.size, 'bytes');
+
+                          const storageRef = ref(storage, path);
+
+                          // Subir archivo
+                          const snapshot = await uploadBytes(storageRef, file);
+                          console.log('Upload imagen completado:', snapshot.metadata.fullPath);
+
+                          // Obtener URL
                           const url = await getDownloadURL(storageRef);
+                          console.log('URL imagen obtenida:', url);
+
                           nuevasImagenes.push({
                             id,
                             nombre: file.name,
                             url,
-                            tipo: file.type,
+                            tipo: file.type || 'image/jpeg',
                             tamanio: file.size,
                             fechaSubida: new Date(),
                           });
+                          uploadedCount++;
                         }
-                        setImagenesViaje([...imagenesViaje, ...nuevasImagenes]);
-                      } catch (error) {
-                        console.error('Error subiendo imagen:', error);
+
+                        toast.dismiss(loadingToast);
+
+                        if (nuevasImagenes.length > 0 && !isUploadCancelledRef.current) {
+                          setImagenesViaje(prev => [...prev, ...nuevasImagenes]);
+                          toast.success(`${uploadedCount} imagen${uploadedCount > 1 ? 'es' : ''} subida${uploadedCount > 1 ? 's' : ''}`);
+                        }
+                      } catch (error: any) {
+                        toast.dismiss(loadingToast);
+                        console.error('Error completo subiendo imagen:', error);
+                        console.error('Código de error:', error?.code);
+                        console.error('Mensaje:', error?.message);
+
+                        if (!isUploadCancelledRef.current) {
+                          // Mensajes de error más específicos
+                          let mensajeError = 'Error desconocido';
+                          if (error?.code === 'storage/unauthorized') {
+                            mensajeError = 'Sin permisos. Verifica las reglas de Firebase Storage.';
+                          } else if (error?.code === 'storage/canceled') {
+                            mensajeError = 'Subida cancelada';
+                          } else if (error?.code === 'storage/unknown') {
+                            mensajeError = 'Error de red. Verifica tu conexión.';
+                          } else if (error?.message) {
+                            mensajeError = error.message;
+                          }
+                          toast.error(`Error: ${mensajeError}`);
+                        }
                       } finally {
                         setSubiendoImagen(false);
+                        // Limpiar el input para permitir subir la misma imagen de nuevo
+                        e.target.value = '';
                       }
                     }}
                   />
@@ -1835,11 +2588,7 @@ export default function Viajes() {
 
             <div className="p-6 border-t flex justify-between sticky bottom-0 bg-white">
               <button
-                onClick={() => {
-                  setModalAbierto(false);
-                  setModoEdicion(false);
-                  setViajeEditando(null);
-                }}
+                onClick={cerrarModalViaje}
                 className="px-4 py-2 border rounded-lg hover:bg-gray-50"
               >
                 Cancelar
@@ -1848,21 +2597,17 @@ export default function Viajes() {
                 <button
                   disabled={guardandoViaje}
                   onClick={async () => {
-                    // Validaciones
+                    // Validaciones mínimas
                     if (!formData.clienteId) {
                       toast.error('Selecciona un cliente');
                       return;
                     }
-                    if (!formData.tractoId) {
-                      toast.error('Selecciona un tractocamión');
-                      return;
-                    }
-                    if (!formData.operadorId) {
-                      toast.error('Selecciona un operador');
-                      return;
-                    }
                     if (!formData.destino?.nombre) {
                       toast.error('Ingresa el nombre del destino');
+                      return;
+                    }
+                    if (!formData.fechaCompromiso) {
+                      toast.error('Selecciona la fecha compromiso');
                       return;
                     }
 
@@ -1881,8 +2626,13 @@ export default function Viajes() {
                       const sueldoManiobrista = maniobrista?.sueldoDiario || 0;
                       const sueldoTotal = sueldoOperador + sueldoManiobrista;
 
+                      // Determinar status basado en si tiene asignación
+                      const tieneAsignacion = formData.tractoId && formData.operadorId;
+                      const statusViaje = tieneAsignacion ? 'programado' : 'sin_asignar';
+
                       const viajeInput: ViajeFormInput = {
                         fecha: formData.fecha || new Date(),
+                        fechaCompromiso: formData.fechaCompromiso,
                         tractoId: formData.tractoId || '',
                         operadorId: formData.operadorId || '',
                         clienteId: formData.clienteId || '',
@@ -1893,7 +2643,9 @@ export default function Viajes() {
                         distanciaKm: formData.distanciaKm || 0,
                         precioFlete: formData.precioFlete || 0,
                         equipos: equiposSeleccionados,
+                        equiposCarga: equiposCargaSeleccionados,
                         notas: formData.notas,
+                        status: statusViaje,
                       };
 
                       const datosAdicionales = {
@@ -1906,11 +2658,11 @@ export default function Viajes() {
                       if (modoEdicion && viajeEditando) {
                         // Actualizar viaje existente
                         await actualizarViaje(viajeEditando.id, viajeInput, datosAdicionales);
-                        toast.success('Orden de trabajo actualizada correctamente');
+                        toast.success('Orden de servicio actualizada correctamente');
                       } else {
                         // Crear nuevo viaje
                         await crearViaje(viajeInput, user?.uid || 'sistema', datosAdicionales);
-                        toast.success('Orden de trabajo creada correctamente');
+                        toast.success('Orden de servicio creada correctamente');
                       }
 
                       setModalAbierto(false);
@@ -1922,6 +2674,9 @@ export default function Viajes() {
                       setClienteSeleccionado(null);
                       setObraSeleccionada(null);
                       setEquiposSeleccionados([]);
+                      setEquiposCargaSeleccionados([]);
+                      setFiltroMarcaCarga('');
+                      setBusquedaCarga('');
                       setCondicionesSeguridad({ ...CONDICIONES_SEGURIDAD_DEFAULT });
                       setDocumentosViaje([]);
                       setImagenesViaje([]);
