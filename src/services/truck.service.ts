@@ -299,6 +299,7 @@ export async function eliminarTractocamion(id: string): Promise<void> {
 export interface TractocamionSelectItem {
   id: string;
   label: string;
+  numeroEconomico: string;
   marca: string;
   tipoUnidad: string;
   // Capacidades de carga (para rolloff-plataforma)
@@ -316,6 +317,7 @@ export async function obtenerTractocamionesSelect(): Promise<TractocamionSelectI
     return tractocamiones.map(t => ({
       id: t.id,
       label: `${t.numeroEconomico} - ${t.marca} ${t.modelo}`,
+      numeroEconomico: t.numeroEconomico,
       marca: t.marca,
       tipoUnidad: t.tipoUnidad || 'tractocamion',
       plataformaCarga: t.plataformaCarga,

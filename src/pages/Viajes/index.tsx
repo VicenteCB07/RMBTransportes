@@ -51,7 +51,7 @@ import { obtenerTractocamionesSelect, type TractocamionSelectItem } from '../../
 import { obtenerOperadoresSelect } from '../../services/operator.service';
 import { obtenerAditamentosSelect, type AditamentoSelectItem } from '../../services/attachment.service';
 import { obtenerManiobristasSelect } from '../../services/maniobrista.service';
-import { getDirections } from '../../services/mapbox.service';
+import { getDirections, geocode } from '../../services/mapbox.service';
 import { ORIGEN_BASE_RMB } from '../../types/workload.types';
 import type { Cliente, ObraCliente } from '../../types/client.types';
 import toast from 'react-hot-toast';
@@ -369,14 +369,32 @@ export default function Viajes() {
     // Buscar contacto principal de la obra
     const contactoPrincipal = obra.contactos?.find(c => c.esPrincipal) || obra.contactos?.[0];
 
-    // Obtener coordenadas de la obra
-    const coordenadas = obra.direccion.coordenadas;
+    // Obtener coordenadas de la obra (o geocodificar si no existen)
+    let coordenadas = obra.direccion.coordenadas;
+    const direccionCompleta = `${obra.direccion.calle || ''} ${obra.direccion.numeroExterior || ''}, ${obra.direccion.colonia || ''}, ${obra.direccion.municipio || ''}, ${obra.direccion.estado || ''}`.trim();
+
+    // Si no hay coordenadas, intentar geocodificar la dirección
+    if (!coordenadas && direccionCompleta) {
+      try {
+        const resultados = await geocode(direccionCompleta, {
+          country: 'mx',
+          types: ['address', 'poi', 'place'],
+          limit: 1,
+        });
+        if (resultados.length > 0) {
+          coordenadas = resultados[0].coordinates;
+          toast.success('Ubicación encontrada automáticamente');
+        }
+      } catch (error) {
+        console.error('Error geocodificando dirección:', error);
+      }
+    }
 
     setFormData(prev => ({
       ...prev,
       destino: {
         nombre: obra.nombre,
-        direccion: `${obra.direccion.calle || ''} ${obra.direccion.numeroExterior || ''}, ${obra.direccion.colonia || ''}, ${obra.direccion.municipio || ''}, ${obra.direccion.estado || ''}`.trim(),
+        direccion: direccionCompleta,
         coordenadas: coordenadas,
         municipio: obra.direccion.municipio,
         estado: obra.direccion.estado,
@@ -416,7 +434,6 @@ export default function Viajes() {
         }
       } catch (error) {
         console.error('Error calculando distancia:', error);
-        // No mostrar error al usuario, simplemente no se calculará
       }
     }
   }
@@ -452,6 +469,7 @@ export default function Viajes() {
     precioFlete: 0,
     equipos: [],
     equiposCarga: [],
+    regresaABase: false,
   });
 
   useEffect(() => {
@@ -731,6 +749,7 @@ export default function Viajes() {
               distanciaKm: 0,
               precioFlete: 0,
               equipos: [],
+              regresaABase: false,
             });
             setModalAbierto(true);
           }}
@@ -1039,6 +1058,7 @@ export default function Viajes() {
                         precioFlete: viajeDetalle.ingresos?.flete || 0,
                         equipos: viajeDetalle.equipos || [],
                         notas: viajeDetalle.notas,
+                        regresaABase: viajeDetalle.regresaABase || false,
                       });
                       setModoEdicion(true);
                       setViajeEditando(viajeDetalle);
@@ -2072,6 +2092,23 @@ export default function Viajes() {
                     />
                   </div>
                 </div>
+
+                {/* Checkbox regresa a base */}
+                <label className="flex items-center gap-3 p-3 border rounded-lg hover:bg-gray-50 cursor-pointer mt-4">
+                  <input
+                    type="checkbox"
+                    checked={formData.regresaABase || false}
+                    onChange={(e) => setFormData({
+                      ...formData,
+                      regresaABase: e.target.checked
+                    })}
+                    className="w-4 h-4 rounded border-gray-300 text-[#BB0034] focus:ring-[#BB0034]"
+                  />
+                  <div>
+                    <span className="text-sm font-medium text-gray-700">Regresa a Base</span>
+                    <p className="text-xs text-gray-500">La unidad vuelve a base después de este servicio (cargar/descargar equipos)</p>
+                  </div>
+                </label>
               </div>
 
               {/* Condiciones de Seguridad (expandible) */}
@@ -2671,6 +2708,7 @@ export default function Viajes() {
                         equiposCarga: equiposCargaSeleccionados,
                         notas: formData.notas,
                         status: statusViaje,
+                        regresaABase: formData.regresaABase || false,
                       };
 
                       const datosAdicionales = {

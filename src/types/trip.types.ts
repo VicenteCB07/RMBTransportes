@@ -64,6 +64,10 @@ export interface Viaje {
   rutaId?: string;
   coordenadasRuta?: Array<{ lat: number; lng: number }>;
 
+  // Indica si la unidad regresa a base después de este viaje
+  // Útil para calcular ETA cuando hay múltiples viajes en el día
+  regresaABase?: boolean;
+
   // Costos (calculados automáticamente)
   costos: CostosViaje;
 
@@ -217,6 +221,7 @@ export interface ViajeFormInput {
   tipoServicio: TipoServicioViaje;
   distanciaKm: number;
   rutaId?: string;
+  regresaABase?: boolean; // Indica si regresa a base después de este viaje
   precioFlete: number;
   recargos?: number;
   comidas?: number;

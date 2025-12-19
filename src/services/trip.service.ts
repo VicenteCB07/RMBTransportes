@@ -175,6 +175,7 @@ export async function crearViaje(
       distanciaKm: input.distanciaKm,
       rutaId: input.rutaId || null,
       coordenadasRuta: null,
+      regresaABase: input.regresaABase || false,
       costos,
       ingresos,
       utilidad,
@@ -416,6 +417,7 @@ export async function actualizarViaje(
     if (input.notas !== undefined) updateData.notas = input.notas;
     if (input.condicionesSeguridad !== undefined) updateData.condicionesSeguridad = input.condicionesSeguridad;
     if (input.status !== undefined) updateData.status = input.status;
+    if (input.regresaABase !== undefined) updateData.regresaABase = input.regresaABase;
 
     // Actualizar datos adicionales
     if (datosAdicionales?.tractoNumero !== undefined) {
@@ -694,6 +696,7 @@ function convertirDocAViaje(docSnap: any): Viaje {
     distanciaKm: data.distanciaKm,
     rutaId: data.rutaId,
     coordenadasRuta: data.coordenadasRuta,
+    regresaABase: data.regresaABase || false,
     costos: data.costos,
     ingresos: data.ingresos,
     utilidad: data.utilidad,
@@ -757,6 +760,28 @@ export async function obtenerEstadisticasViajes(
     return stats;
   } catch (error) {
     console.error('Error al obtener estadísticas:', error);
+    throw error;
+  }
+}
+
+// Obtener viajes por fecha específica
+export async function obtenerViajesPorFecha(fecha: Date): Promise<Viaje[]> {
+  try {
+    const inicioDia = new Date(fecha);
+    inicioDia.setHours(0, 0, 0, 0);
+    const finDia = new Date(fecha);
+    finDia.setHours(23, 59, 59, 999);
+
+    const q = query(
+      collection(db, COLLECTION),
+      where('fecha', '>=', Timestamp.fromDate(inicioDia)),
+      where('fecha', '<=', Timestamp.fromDate(finDia))
+    );
+
+    const snapshot = await getDocs(q);
+    return snapshot.docs.map(doc => convertirDocAViaje(doc));
+  } catch (error) {
+    console.error('Error al obtener viajes por fecha:', error);
     throw error;
   }
 }

@@ -121,25 +121,43 @@ export default function MapView({
   }, [center.lat, center.lng, zoom])
 
   // Manejar marcadores
+  // Usamos un ref para guardar los datos previos y detectar cambios en labels
+  const prevMarkersDataRef = useRef<Map<string, { label?: string; popup?: string }>>(new Map())
+
   useEffect(() => {
     if (!map.current || !mapLoaded) return
 
+    // Obtener IDs actuales
+    const currentIds = new Set(markers.map(m => m.id))
+
     // Remover marcadores que ya no existen
     markersRef.current.forEach((marker, id) => {
-      if (!markers.find((m) => m.id === id)) {
+      if (!currentIds.has(id)) {
         marker.remove()
         markersRef.current.delete(id)
+        prevMarkersDataRef.current.delete(id)
       }
     })
 
     // Añadir o actualizar marcadores
     markers.forEach((markerData) => {
       const existingMarker = markersRef.current.get(markerData.id)
+      const prevData = prevMarkersDataRef.current.get(markerData.id)
 
-      if (existingMarker) {
-        // Actualizar posición
+      // Detectar si cambió el label o popup (requiere re-crear el marcador)
+      const labelChanged = prevData && prevData.label !== markerData.label
+      const popupChanged = prevData && prevData.popup !== markerData.popup
+
+      if (existingMarker && !labelChanged && !popupChanged) {
+        // Solo actualizar posición si no cambió el label
         existingMarker.setLngLat([markerData.coordinates.lng, markerData.coordinates.lat])
       } else {
+        // Eliminar marcador existente si cambió el label
+        if (existingMarker) {
+          existingMarker.remove()
+          markersRef.current.delete(markerData.id)
+        }
+
         // Crear nuevo marcador
         const el = document.createElement('div')
         el.className = 'custom-marker'
@@ -170,6 +188,12 @@ export default function MapView({
 
         markersRef.current.set(markerData.id, marker)
       }
+
+      // Guardar datos actuales para comparación futura
+      prevMarkersDataRef.current.set(markerData.id, {
+        label: markerData.label,
+        popup: markerData.popup,
+      })
     })
   }, [markers, mapLoaded, onMarkerDrag])
 

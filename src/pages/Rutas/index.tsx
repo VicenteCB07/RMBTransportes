@@ -1,9 +1,10 @@
 /**
  * Página de Gestión de Rutas
  * Planificación, visualización y seguimiento de rutas
+ * Incluye vista de itinerario diario por unidad
  */
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import {
   Plus,
   Search,
@@ -16,10 +17,21 @@ import {
   Trash2,
   Navigation,
   ChevronRight,
+  ChevronLeft,
+  ChevronUp,
+  ChevronDown,
   RefreshCw,
   X,
   Loader2,
   Map as MapIcon,
+  Calendar,
+  Building2,
+  User,
+  Package,
+  Play,
+  CheckCircle,
+  Home,
+  ArrowDownUp,
 } from 'lucide-react'
 import { collection, getDocs, addDoc, deleteDoc, doc, query, orderBy, Timestamp } from 'firebase/firestore'
 import { db } from '../../services/firebase'
@@ -43,9 +55,14 @@ import { NIVELES_RIESGO, ESTADOS_VIAJE } from '../../types/route.types'
 import MapView from '../../components/maps/MapView'
 import AddressSearch from '../../components/maps/AddressSearch'
 import RouteInfo from '../../components/maps/RouteInfo'
+import { obtenerViajesPorFecha, actualizarViaje } from '../../services/trip.service'
+import { obtenerTractocamionesSelect } from '../../services/truck.service'
+import { obtenerOperadoresSelect } from '../../services/operator.service'
+import { ORIGEN_BASE_RMB, type ViajeParaCarga, type RutaCriticaInfo } from '../../types/workload.types'
+import type { Viaje } from '../../types/trip.types'
 
 // Tabs disponibles
-type TabType = 'rutas' | 'planificar' | 'puntos' | 'mapa'
+type TabType = 'itinerario' | 'rutas' | 'planificar' | 'puntos' | 'mapa'
 
 // Interfaz para ruta guardada
 interface RutaGuardada {
@@ -101,11 +118,35 @@ interface VehiculoSimple {
   asignadoA?: string // Para accesorios: ID del tractocamión
 }
 
+// Interfaz para unidad con itinerario
+interface UnidadConItinerario {
+  id: string
+  numeroEconomico: string
+  marca: string
+  tipoUnidad: string
+  operadorNombre: string
+  viajes: Viaje[]
+  kmTotales: number
+  rutaCritica: RutaCriticaInfo | null
+}
+
 export default function Rutas() {
   // Estado principal
-  const [activeTab, setActiveTab] = useState<TabType>('rutas')
+  const [activeTab, setActiveTab] = useState<TabType>('itinerario')
   const [rutas, setRutas] = useState<RutaGuardada[]>([])
   const [puntos, setPuntos] = useState<PuntoGuardado[]>([])
+
+  // Estado para itinerario diario
+  const [fechaItinerario, setFechaItinerario] = useState<Date>(new Date())
+  const [unidadesConViajes, setUnidadesConViajes] = useState<UnidadConItinerario[]>([])
+  const [unidadSeleccionada, setUnidadSeleccionada] = useState<string | null>(null)
+  const [loadingItinerario, setLoadingItinerario] = useState(false)
+  const [calculandoRutaItinerario, setCalculandoRutaItinerario] = useState(false)
+  const [incluirRegresoBase, setIncluirRegresoBase] = useState(true) // Toggle para regreso a base final
+
+  // Set de IDs de viajes que regresan a base (independiente del orden)
+  // Esto asegura que el "regresa a base" sigue al viaje específico, no a la posición
+  const [viajesConRegresoABase, setViajesConRegresoABase] = useState<Set<string>>(new Set())
   const [vehiculos, setVehiculos] = useState<VehiculoSimple[]>([])
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
@@ -208,6 +249,391 @@ export default function Rutas() {
       setLoading(false)
     }
   }
+
+  // Cargar itinerario del día
+  const cargarItinerario = useCallback(async () => {
+    setLoadingItinerario(true)
+    try {
+      // Obtener viajes de la fecha seleccionada
+      const viajes = await obtenerViajesPorFecha(fechaItinerario)
+
+      // Obtener catálogos
+      const [tractocamiones, operadores] = await Promise.all([
+        obtenerTractocamionesSelect(),
+        obtenerOperadoresSelect(),
+      ])
+
+      // Agrupar viajes por unidad
+      const viajesPorUnidad = new Map<string, Viaje[]>()
+      viajes.forEach((viaje: Viaje) => {
+        if (!viaje.tractoId) return
+        const viajesUnidad = viajesPorUnidad.get(viaje.tractoId) || []
+        viajesUnidad.push(viaje)
+        viajesPorUnidad.set(viaje.tractoId, viajesUnidad)
+      })
+
+      // Crear lista de unidades con itinerario
+      const unidades: UnidadConItinerario[] = []
+
+      for (const [tractoId, viajesUnidad] of viajesPorUnidad) {
+        const tracto = tractocamiones.find(t => t.id === tractoId)
+        if (!tracto) continue
+
+        // Buscar operador del primer viaje (asumimos mismo operador para todos)
+        const operadorId = viajesUnidad[0]?.operadorId
+        const operador = operadores.find(o => o.id === operadorId)
+
+        // Calcular km totales
+        const kmTotales = viajesUnidad.reduce((sum, v) => sum + (v.distanciaKm || 0), 0)
+
+        unidades.push({
+          id: tractoId,
+          numeroEconomico: tracto.numeroEconomico,
+          marca: tracto.marca || '',
+          tipoUnidad: tracto.tipoUnidad,
+          operadorNombre: operador?.nombre || 'Sin asignar',
+          viajes: viajesUnidad.sort((a, b) => {
+            // Ordenar por hora de inicio si existe
+            const horaA = a.tiempos?.inicio?.getTime() || 0
+            const horaB = b.tiempos?.inicio?.getTime() || 0
+            return horaA - horaB
+          }),
+          kmTotales,
+          rutaCritica: null,
+        })
+      }
+
+      // Ordenar por número económico
+      unidades.sort((a, b) => a.numeroEconomico.localeCompare(b.numeroEconomico))
+
+      // Inicializar Set de viajes que regresan a base (desde Firebase)
+      const viajesRegreso = new Set<string>()
+      unidades.forEach(u => {
+        u.viajes.forEach(v => {
+          if (v.regresaABase) {
+            viajesRegreso.add(v.id)
+          }
+        })
+      })
+      setViajesConRegresoABase(viajesRegreso)
+
+      setUnidadesConViajes(unidades)
+
+      // Si había una unidad seleccionada, mantenerla o limpiar si ya no tiene viajes
+      if (unidadSeleccionada && !unidades.find(u => u.id === unidadSeleccionada)) {
+        setUnidadSeleccionada(null)
+      }
+    } catch (error) {
+      console.error('Error cargando itinerario:', error)
+      toast.error('Error al cargar itinerario')
+    } finally {
+      setLoadingItinerario(false)
+    }
+  }, [fechaItinerario, unidadSeleccionada])
+
+  // Calcular ruta para una unidad
+  // Recibe el Set de viajes que regresan a base para evitar closures stale
+  const calcularRutaUnidad = useCallback(async (
+    unidadId: string,
+    conRegresoBase: boolean = true,
+    viajesRegreso: Set<string> = viajesConRegresoABase
+  ) => {
+    const unidad = unidadesConViajes.find(u => u.id === unidadId)
+    if (!unidad || unidad.viajes.length === 0) return
+
+    setCalculandoRutaItinerario(true)
+    try {
+      // Construir waypoints: Base -> Destinos de cada viaje -> (Base si regresa) -> (Base final opcional)
+      // Usamos el Set viajesRegreso para determinar qué viajes regresan a base
+      const waypoints: Coordenadas[] = [ORIGEN_BASE_RMB]
+
+      // Mapeo para saber qué índices de waypoint corresponden a regresos intermedios
+      const indicesRegresoIntermedio: number[] = []
+
+      for (let i = 0; i < unidad.viajes.length; i++) {
+        const viaje = unidad.viajes[i]
+        if (viaje.destino?.coordenadas) {
+          waypoints.push(viaje.destino.coordenadas)
+
+          // Si el viaje está en el Set de regresos Y NO es el último viaje, agregar regreso a base
+          if (viajesRegreso.has(viaje.id) && i < unidad.viajes.length - 1) {
+            indicesRegresoIntermedio.push(waypoints.length) // Índice del próximo waypoint (la base)
+            waypoints.push(ORIGEN_BASE_RMB)
+          }
+        }
+      }
+
+      // Agregar regreso a base al final solo si está activado el toggle global
+      if (conRegresoBase && waypoints.length > 1) {
+        waypoints.push(ORIGEN_BASE_RMB)
+      }
+
+      if (waypoints.length < 2) {
+        toast.error('No hay destinos con coordenadas')
+        return
+      }
+
+      const result = await getDirections(waypoints)
+
+      if (result) {
+        // Calcular horas de llegada
+        const horaInicio = '07:00' // Hora de salida por defecto
+        let tiempoAcumulado = 7 * 60 // minutos desde medianoche
+        const horasLlegada: string[] = []
+        const cumpleVentanasArr: boolean[] = []
+
+        // Tiempo de servicio por defecto: 40 min (reglamento del cliente)
+        const TIEMPO_SERVICIO_DEFAULT_MIN = 40
+
+        // Factor de ajuste para velocidad promedio según tipo de unidad
+        // Mapbox asume ~60 km/h promedio
+        // Tractocamion: 15 km/h efectivos -> Factor = 60/15 = 4.0
+        // Rolloff: 20 km/h efectivos -> Factor = 60/20 = 3.0
+        const VELOCIDAD_MAPBOX_KMH = 60
+        const velocidadEfectiva = unidad.tipoUnidad === 'rolloff-plataforma' ? 20 : 15 // tractocamion = 15 km/h
+        const FACTOR_VELOCIDAD = VELOCIDAD_MAPBOX_KMH / velocidadEfectiva
+
+        // Calcular llegadas a cada destino considerando regresos intermedios
+        // Los legs ahora pueden incluir regresos intermedios a base
+        let legIndex = 0
+        let kmMuertos = 0
+
+        for (let viajeIndex = 0; viajeIndex < unidad.viajes.length; viajeIndex++) {
+          const viaje = unidad.viajes[viajeIndex]
+          if (!viaje.destino?.coordenadas) continue
+
+          // Leg de ida al destino
+          if (legIndex < result.legs.length) {
+            const tiempoTrasladoMin = Math.round((result.legs[legIndex].duration / 60) * FACTOR_VELOCIDAD)
+            tiempoAcumulado += tiempoTrasladoMin
+            legIndex++
+          }
+
+          const h = Math.floor(tiempoAcumulado / 60) % 24
+          const m = tiempoAcumulado % 60
+          horasLlegada.push(`${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`)
+
+          // Verificar ventana de tiempo
+          if (viaje?.destino?.ventanaInicio || viaje?.destino?.ventanaFin) {
+            const llegadaMin = tiempoAcumulado
+            const inicioMin = viaje.destino.ventanaInicio
+              ? parseInt(viaje.destino.ventanaInicio.split(':')[0]) * 60 + parseInt(viaje.destino.ventanaInicio.split(':')[1])
+              : 0
+            const finMin = viaje.destino.ventanaFin
+              ? parseInt(viaje.destino.ventanaFin.split(':')[0]) * 60 + parseInt(viaje.destino.ventanaFin.split(':')[1])
+              : 1440
+            cumpleVentanasArr.push(llegadaMin >= inicioMin && llegadaMin <= finMin)
+          } else {
+            cumpleVentanasArr.push(true)
+          }
+
+          // Usar tiempo de espera real si existe, sino usar default de 40 min
+          const tiempoServicio = viaje?.tiempos?.tiempoEspera ?? TIEMPO_SERVICIO_DEFAULT_MIN
+          tiempoAcumulado += tiempoServicio
+
+          // Si este viaje está en el Set de regresos y no es el último, agregar el tiempo de regreso
+          if (viajesRegreso.has(viaje.id) && viajeIndex < unidad.viajes.length - 1 && legIndex < result.legs.length) {
+            const tiempoRegresoIntermedio = Math.round((result.legs[legIndex].duration / 60) * FACTOR_VELOCIDAD)
+            tiempoAcumulado += tiempoRegresoIntermedio
+            // Sumar km muertos del regreso intermedio
+            kmMuertos += metersToKm(result.legs[legIndex].distance || 0)
+            legIndex++
+          }
+        }
+
+        // Hora de fin (llegada a base o último destino)
+        let horaFin = ''
+        // Leg final de regreso a base (si está activado el toggle global)
+        if (conRegresoBase && legIndex < result.legs.length) {
+          const tiempoRegresoMin = Math.round((result.legs[legIndex].duration || 0) / 60 * FACTOR_VELOCIDAD)
+          const finMinutos = tiempoAcumulado + tiempoRegresoMin
+          const finH = Math.floor(finMinutos / 60) % 24
+          const finM = Math.floor(finMinutos % 60)
+          horaFin = `${finH.toString().padStart(2, '0')}:${finM.toString().padStart(2, '0')}`
+          kmMuertos += metersToKm(result.legs[legIndex]?.distance || 0)
+        } else {
+          // Sin regreso: la hora fin es la llegada al último destino
+          horaFin = horasLlegada[horasLlegada.length - 1] || horaInicio
+        }
+
+        const rutaCritica: RutaCriticaInfo = {
+          secuencia: unidad.viajes.map(v => ({
+            id: v.id,
+            folio: v.folio,
+            clienteNombre: v.clienteNombre,
+            destino: v.destino?.nombre || v.destino?.direccion || 'Sin destino',
+            destinoCoordenadas: v.destino?.coordenadas,
+            distanciaKm: v.distanciaKm,
+            tipoServicio: v.tipoServicio,
+            tractoId: v.tractoId,
+            operadorId: v.operadorId,
+            status: v.status,
+            fecha: v.fecha,
+            ventanaInicio: v.destino?.ventanaInicio,
+            ventanaFin: v.destino?.ventanaFin,
+          })),
+          kmTotales: metersToKm(result.distance),
+          kmMuertos,
+          tiempoTotalMin: Math.round(result.duration / 60),
+          horaInicio,
+          horaFin,
+          horasLlegada,
+          cumpleVentanas: cumpleVentanasArr,
+          geometry: result.geometry,
+        }
+
+        // Actualizar unidad con la ruta calculada
+        setUnidadesConViajes(prev => prev.map(u =>
+          u.id === unidadId ? { ...u, rutaCritica } : u
+        ))
+
+        toast.success('Ruta calculada')
+      }
+    } catch (error) {
+      console.error('Error calculando ruta:', error)
+      toast.error('Error al calcular ruta')
+    } finally {
+      setCalculandoRutaItinerario(false)
+    }
+  }, [unidadesConViajes, viajesConRegresoABase])
+
+  // Función para reordenar viajes (subir/bajar)
+  const reordenarViaje = useCallback((unidadId: string, viajeIndex: number, direccion: 'up' | 'down') => {
+    setUnidadesConViajes(prev => prev.map(u => {
+      if (u.id !== unidadId) return u
+
+      const viajes = [...u.viajes]
+      const nuevoIndex = direccion === 'up' ? viajeIndex - 1 : viajeIndex + 1
+
+      // Validar límites
+      if (nuevoIndex < 0 || nuevoIndex >= viajes.length) return u
+
+      // Intercambiar posiciones
+      const temp = viajes[viajeIndex]
+      viajes[viajeIndex] = viajes[nuevoIndex]
+      viajes[nuevoIndex] = temp
+
+      // Limpiar ruta calculada para recalcular
+      return { ...u, viajes, rutaCritica: undefined }
+    }))
+
+    // Recalcular ruta después de reordenar (pasar el Set actual)
+    setTimeout(() => {
+      calcularRutaUnidad(unidadId, incluirRegresoBase, viajesConRegresoABase)
+    }, 100)
+  }, [calcularRutaUnidad, incluirRegresoBase, viajesConRegresoABase])
+
+  // Función para toggle de regreso a base de un viaje específico
+  // Actualiza tanto el estado local como Firebase
+  const toggleRegresoABase = useCallback(async (viajeId: string) => {
+    const nuevoValor = !viajesConRegresoABase.has(viajeId)
+
+    // Actualizar estado local inmediatamente
+    setViajesConRegresoABase(prev => {
+      const nuevoSet = new Set(prev)
+      if (nuevoValor) {
+        nuevoSet.add(viajeId)
+      } else {
+        nuevoSet.delete(viajeId)
+      }
+      return nuevoSet
+    })
+
+    // Guardar en Firebase (sin bloquear la UI)
+    try {
+      await actualizarViaje(viajeId, { regresaABase: nuevoValor })
+    } catch (error) {
+      console.error('Error al guardar regresaABase:', error)
+      // Revertir el estado local si falla
+      setViajesConRegresoABase(prev => {
+        const revertSet = new Set(prev)
+        if (nuevoValor) {
+          revertSet.delete(viajeId)
+        } else {
+          revertSet.add(viajeId)
+        }
+        return revertSet
+      })
+      toast.error('Error al guardar cambio')
+    }
+
+    // Recalcular ruta si hay unidad seleccionada
+    if (unidadSeleccionada) {
+      setTimeout(() => {
+        const nuevoSet = new Set(viajesConRegresoABase)
+        if (nuevoValor) {
+          nuevoSet.add(viajeId)
+        } else {
+          nuevoSet.delete(viajeId)
+        }
+        calcularRutaUnidad(unidadSeleccionada, incluirRegresoBase, nuevoSet)
+      }, 100)
+    }
+  }, [unidadSeleccionada, incluirRegresoBase, calcularRutaUnidad, viajesConRegresoABase])
+
+  // Cargar itinerario cuando cambia la fecha
+  useEffect(() => {
+    if (activeTab === 'itinerario') {
+      cargarItinerario()
+    }
+  }, [fechaItinerario, activeTab, cargarItinerario])
+
+  // Calcular ruta automáticamente cuando se selecciona una unidad
+  useEffect(() => {
+    if (unidadSeleccionada && !calculandoRutaItinerario) {
+      const unidad = unidadesConViajes.find(u => u.id === unidadSeleccionada)
+      // Solo calcular si no tiene ruta ya calculada
+      if (unidad && !unidad.rutaCritica && unidad.viajes.length > 0) {
+        calcularRutaUnidad(unidadSeleccionada, incluirRegresoBase)
+      }
+    }
+  }, [unidadSeleccionada, unidadesConViajes, incluirRegresoBase])
+
+  // Recalcular cuando cambia el toggle de regreso a base
+  useEffect(() => {
+    if (unidadSeleccionada) {
+      const unidad = unidadesConViajes.find(u => u.id === unidadSeleccionada)
+      if (unidad && unidad.viajes.length > 0) {
+        calcularRutaUnidad(unidadSeleccionada, incluirRegresoBase)
+      }
+    }
+  }, [incluirRegresoBase])
+
+  // Helpers de fecha
+  const irDiaAnterior = () => {
+    setFechaItinerario(prev => {
+      const d = new Date(prev)
+      d.setDate(d.getDate() - 1)
+      return d
+    })
+  }
+
+  const irDiaSiguiente = () => {
+    setFechaItinerario(prev => {
+      const d = new Date(prev)
+      d.setDate(d.getDate() + 1)
+      return d
+    })
+  }
+
+  const irAHoy = () => setFechaItinerario(new Date())
+
+  const formatearFecha = (fecha: Date) => {
+    return fecha.toLocaleDateString('es-MX', {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    })
+  }
+
+  const esHoy = fechaItinerario.toDateString() === new Date().toDateString()
+
+  // Unidad actualmente seleccionada
+  const unidadActual = useMemo(() =>
+    unidadesConViajes.find(u => u.id === unidadSeleccionada),
+    [unidadesConViajes, unidadSeleccionada]
+  )
 
   // Calcular ruta con Mapbox
   const calcularRuta = useCallback(async () => {
@@ -635,6 +1061,7 @@ export default function Rutas() {
         <div className="border-b border-gray-200">
           <nav className="flex gap-0 overflow-x-auto">
             {[
+              { id: 'itinerario', label: 'Itinerario Diario', icon: Calendar },
               { id: 'rutas', label: 'Rutas Guardadas', icon: Route },
               { id: 'planificar', label: 'Planificar Ruta', icon: Navigation },
               { id: 'puntos', label: 'Puntos de Entrega', icon: MapPin },
@@ -659,6 +1086,441 @@ export default function Rutas() {
 
         {/* Contenido según tab */}
         <div className="p-4">
+          {/* Tab: Itinerario Diario */}
+          {activeTab === 'itinerario' && (
+            <div className="space-y-4">
+              {/* Selector de fecha */}
+              <div className="flex items-center justify-between gap-4 flex-wrap">
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={irDiaAnterior}
+                    className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                    title="Día anterior"
+                  >
+                    <ChevronLeft size={20} />
+                  </button>
+
+                  <div className="flex items-center gap-2">
+                    <Calendar size={20} className="text-[#BB0034]" />
+                    <span className="font-medium capitalize">
+                      {formatearFecha(fechaItinerario)}
+                    </span>
+                    {esHoy && (
+                      <span className="px-2 py-0.5 bg-green-100 text-green-700 text-xs font-medium rounded">
+                        Hoy
+                      </span>
+                    )}
+                  </div>
+
+                  <button
+                    onClick={irDiaSiguiente}
+                    className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                    title="Día siguiente"
+                  >
+                    <ChevronRight size={20} />
+                  </button>
+
+                  {!esHoy && (
+                    <button
+                      onClick={irAHoy}
+                      className="ml-2 px-3 py-1.5 text-sm bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+                    >
+                      Ir a hoy
+                    </button>
+                  )}
+                </div>
+
+                <div className="flex items-center gap-2 text-sm text-gray-500">
+                  <Truck size={16} />
+                  <span>{unidadesConViajes.length} unidad(es) con viajes</span>
+                </div>
+              </div>
+
+              {loadingItinerario ? (
+                <div className="flex items-center justify-center py-12">
+                  <Loader2 size={32} className="animate-spin text-[#BB0034]" />
+                </div>
+              ) : unidadesConViajes.length === 0 ? (
+                <div className="text-center py-12">
+                  <Calendar size={48} className="mx-auto text-gray-300 mb-4" />
+                  <h3 className="text-lg font-medium text-gray-800 mb-2">
+                    No hay viajes programados
+                  </h3>
+                  <p className="text-gray-500">
+                    No se encontraron viajes para {formatearFecha(fechaItinerario)}
+                  </p>
+                </div>
+              ) : (
+                <div className="grid lg:grid-cols-3 gap-4">
+                  {/* Lista de unidades */}
+                  <div className="space-y-3">
+                    <h4 className="font-medium text-gray-700">Unidades</h4>
+                    {unidadesConViajes.map(unidad => (
+                      <div
+                        key={unidad.id}
+                        onClick={() => setUnidadSeleccionada(unidad.id)}
+                        className={cn(
+                          'p-4 rounded-lg border-2 cursor-pointer transition-all',
+                          unidadSeleccionada === unidad.id
+                            ? 'border-[#BB0034] bg-red-50'
+                            : 'border-gray-200 hover:border-gray-300 bg-white'
+                        )}
+                      >
+                        <div className="flex items-center justify-between mb-2">
+                          <div className="flex items-center gap-2">
+                            <Truck size={18} className="text-[#BB0034]" />
+                            <span className="font-bold">{unidad.numeroEconomico}</span>
+                          </div>
+                          <span className={cn(
+                            'px-2 py-0.5 text-xs font-medium rounded',
+                            unidad.tipoUnidad === 'tractocamion'
+                              ? 'bg-blue-100 text-blue-700'
+                              : 'bg-amber-100 text-amber-700'
+                          )}>
+                            {unidad.tipoUnidad === 'tractocamion' ? 'Tracto' : 'Roll-Off'}
+                          </span>
+                        </div>
+
+                        <div className="space-y-1 text-sm">
+                          <div className="flex items-center gap-1.5 text-gray-600">
+                            <User size={14} />
+                            <span className="truncate">{unidad.operadorNombre}</span>
+                          </div>
+                          <div className="flex items-center justify-between text-gray-500">
+                            <span className="flex items-center gap-1">
+                              <Package size={14} />
+                              {unidad.viajes.length} viaje(s)
+                            </span>
+                            <span className="font-medium text-[#BB0034]">
+                              {unidad.kmTotales.toFixed(0)} km
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Mini status de viajes */}
+                        <div className="flex gap-1 mt-2">
+                          {unidad.viajes.map((v, i) => (
+                            <div
+                              key={i}
+                              className={cn(
+                                'w-2 h-2 rounded-full',
+                                v.status === 'completado' ? 'bg-green-500' :
+                                v.status === 'en_curso' || v.status === 'en_destino' ? 'bg-amber-500' :
+                                'bg-blue-500'
+                              )}
+                              title={`${v.folio}: ${v.status}`}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Panel central - Mapa */}
+                  <div className="lg:col-span-2">
+                    {unidadActual ? (
+                      <div className="space-y-4">
+                        {/* Header de la unidad */}
+                        <div className="flex items-center justify-between flex-wrap gap-3">
+                          <div>
+                            <h4 className="font-bold text-lg">
+                              Itinerario {unidadActual.numeroEconomico}
+                            </h4>
+                            <p className="text-sm text-gray-500">
+                              {unidadActual.operadorNombre} • {unidadActual.viajes.length} viaje(s)
+                            </p>
+                          </div>
+
+                          <div className="flex items-center gap-3">
+                            {/* Toggle regreso a base */}
+                            <label className="flex items-center gap-2 text-sm cursor-pointer">
+                              <input
+                                type="checkbox"
+                                checked={incluirRegresoBase}
+                                onChange={(e) => setIncluirRegresoBase(e.target.checked)}
+                                className="w-4 h-4 rounded border-gray-300 text-[#BB0034] focus:ring-[#BB0034]"
+                              />
+                              <span className="text-gray-600">Regreso a base</span>
+                            </label>
+
+                            <button
+                              onClick={() => calcularRutaUnidad(unidadActual.id, incluirRegresoBase)}
+                              disabled={calculandoRutaItinerario}
+                              className={cn(
+                                'px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition-colors',
+                                'bg-gray-100 text-gray-700 hover:bg-gray-200',
+                                'disabled:opacity-50'
+                              )}
+                            >
+                              {calculandoRutaItinerario ? (
+                                <Loader2 size={18} className="animate-spin" />
+                              ) : (
+                                <RefreshCw size={18} />
+                              )}
+                              Recalcular
+                            </button>
+                          </div>
+                        </div>
+
+                        {/* Mapa */}
+                        <MapView
+                          center={ORIGEN_BASE_RMB}
+                          zoom={unidadActual.rutaCritica ? 7 : 10}
+                          markers={[
+                            // Base RMB
+                            {
+                              id: 'base',
+                              coordinates: ORIGEN_BASE_RMB,
+                              type: 'origin',
+                              label: 'B',
+                              popup: '<strong>Base RMB</strong><br/>Tecámac, Estado de México',
+                            },
+                            // Destinos de cada viaje - usar índice del array original para numeración correcta
+                            ...unidadActual.viajes
+                              .map((v, index) => ({ viaje: v, indexOriginal: index }))
+                              .filter(({ viaje }) => viaje.destino?.coordenadas)
+                              .map(({ viaje, indexOriginal }) => ({
+                                id: `${viaje.id}-pos-${indexOriginal}`, // Key única que cambia con el orden
+                                coordinates: viaje.destino!.coordenadas!,
+                                type: 'waypoint' as const,
+                                label: String(indexOriginal + 1),
+                                popup: `<strong>${indexOriginal + 1}. ${viaje.clienteNombre}</strong><br/>${viaje.destino?.nombre || viaje.destino?.direccion || ''}<br/><small>${viaje.tipoServicio}</small>`,
+                              })),
+                          ]}
+                          route={unidadActual.rutaCritica?.geometry
+                            ? { geometry: unidadActual.rutaCritica.geometry, color: '#BB0034' }
+                            : undefined
+                          }
+                          className="h-[400px] rounded-lg"
+                        />
+
+                        {/* Métricas de ruta */}
+                        {unidadActual.rutaCritica && (
+                          <div className="grid grid-cols-4 gap-3">
+                            <div className="bg-gray-50 rounded-lg p-3 text-center">
+                              <div className="text-2xl font-bold text-[#BB0034]">
+                                {unidadActual.rutaCritica.kmTotales.toFixed(0)}
+                              </div>
+                              <div className="text-xs text-gray-500">km totales</div>
+                            </div>
+                            <div className="bg-gray-50 rounded-lg p-3 text-center">
+                              <div className="text-2xl font-bold text-gray-700">
+                                {Math.floor(unidadActual.rutaCritica.tiempoTotalMin / 60)}h {unidadActual.rutaCritica.tiempoTotalMin % 60}m
+                              </div>
+                              <div className="text-xs text-gray-500">tiempo total</div>
+                            </div>
+                            <div className="bg-gray-50 rounded-lg p-3 text-center">
+                              <div className="text-2xl font-bold text-green-600">
+                                {unidadActual.rutaCritica.horaInicio}
+                              </div>
+                              <div className="text-xs text-gray-500">salida</div>
+                            </div>
+                            <div className="bg-gray-50 rounded-lg p-3 text-center">
+                              <div className="text-2xl font-bold text-blue-600">
+                                {unidadActual.rutaCritica.horaFin}
+                              </div>
+                              <div className="text-xs text-gray-500">
+                                {incluirRegresoBase ? 'regreso base' : 'fin jornada'}
+                              </div>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Lista de paradas */}
+                        <div className="border rounded-lg overflow-hidden">
+                          <div className="bg-gray-50 px-4 py-2 font-medium text-sm border-b">
+                            Secuencia de Paradas
+                          </div>
+                          <div className="divide-y">
+                            {/* Salida de base */}
+                            <div className="px-4 py-3 flex items-center gap-3 bg-green-50">
+                              <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-sm font-bold">
+                                B
+                              </div>
+                              <div className="flex-1">
+                                <div className="font-medium">Base RMB - Tecámac</div>
+                                <div className="text-sm text-gray-500">Salida</div>
+                              </div>
+                              <div className="text-right">
+                                <div className="font-bold text-green-600">
+                                  {unidadActual.rutaCritica?.horaInicio || '07:00'}
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Viajes */}
+                            {unidadActual.viajes.map((viaje, index) => {
+                              const horaLlegada = unidadActual.rutaCritica?.horasLlegada[index]
+                              const cumpleVentana = unidadActual.rutaCritica?.cumpleVentanas[index] ?? true
+                              const esViajeEnCurso = viaje.status === 'en_curso' || viaje.status === 'en_destino'
+                              const puedeSubir = index > 0 && !esViajeEnCurso
+                              const puedeBajar = index < unidadActual.viajes.length - 1 && !esViajeEnCurso
+                              // Usar el Set para determinar si regresa a base
+                              const tieneRegresoABase = viajesConRegresoABase.has(viaje.id)
+                              const esUltimoViaje = index === unidadActual.viajes.length - 1
+
+                              return (
+                                <div key={viaje.id}>
+                                  <div
+                                    className={cn(
+                                      'px-4 py-3 flex items-center gap-3',
+                                      !cumpleVentana && 'bg-red-50'
+                                    )}
+                                  >
+                                    {/* Botones de reordenamiento */}
+                                    <div className="flex flex-col gap-0.5">
+                                      <button
+                                        onClick={() => reordenarViaje(unidadActual.id, index, 'up')}
+                                        disabled={!puedeSubir}
+                                        className={cn(
+                                          'p-0.5 rounded transition-colors',
+                                          puedeSubir
+                                            ? 'hover:bg-gray-200 text-gray-500'
+                                            : 'text-gray-200 cursor-not-allowed'
+                                        )}
+                                        title="Subir"
+                                      >
+                                        <ChevronUp size={14} />
+                                      </button>
+                                      <button
+                                        onClick={() => reordenarViaje(unidadActual.id, index, 'down')}
+                                        disabled={!puedeBajar}
+                                        className={cn(
+                                          'p-0.5 rounded transition-colors',
+                                          puedeBajar
+                                            ? 'hover:bg-gray-200 text-gray-500'
+                                            : 'text-gray-200 cursor-not-allowed'
+                                        )}
+                                        title="Bajar"
+                                      >
+                                        <ChevronDown size={14} />
+                                      </button>
+                                    </div>
+
+                                    <div className={cn(
+                                      'w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold',
+                                      viaje.status === 'completado'
+                                        ? 'bg-green-500 text-white'
+                                        : esViajeEnCurso
+                                        ? 'bg-amber-500 text-white'
+                                        : 'bg-[#BB0034] text-white'
+                                    )}>
+                                      {index + 1}
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                      <div className="flex items-center gap-2">
+                                        <span className="font-medium truncate">{viaje.clienteNombre}</span>
+                                        <span className="text-xs px-1.5 py-0.5 bg-gray-100 rounded">
+                                          {viaje.tipoServicio}
+                                        </span>
+                                      </div>
+                                      <div className="text-sm text-gray-500 truncate">
+                                        {viaje.destino?.nombre || viaje.destino?.direccion || 'Sin destino'}
+                                      </div>
+                                      {(viaje.destino?.ventanaInicio || viaje.destino?.ventanaFin) && (
+                                        <div className="text-xs text-gray-400 flex items-center gap-1">
+                                          <Clock size={10} />
+                                          Ventana: {viaje.destino.ventanaInicio || '00:00'} - {viaje.destino.ventanaFin || '23:59'}
+                                        </div>
+                                      )}
+                                    </div>
+                                    <div className="text-right">
+                                      {viaje.status === 'completado' ? (
+                                        <CheckCircle size={20} className="text-green-500" />
+                                      ) : esViajeEnCurso ? (
+                                        <Play size={20} className="text-amber-500" />
+                                      ) : horaLlegada ? (
+                                        <div>
+                                          <div className={cn(
+                                            'font-bold',
+                                            cumpleVentana ? 'text-blue-600' : 'text-red-600'
+                                          )}>
+                                            {horaLlegada}
+                                          </div>
+                                          {!cumpleVentana && (
+                                            <div className="text-xs text-red-500">Fuera de ventana</div>
+                                          )}
+                                        </div>
+                                      ) : (
+                                        <div className="text-sm text-gray-400">--:--</div>
+                                      )}
+                                    </div>
+                                  </div>
+
+                                  {/* Fila de regreso intermedio a base (toggle clickeable) */}
+                                  {!esUltimoViaje && (
+                                    <button
+                                      onClick={() => toggleRegresoABase(viaje.id)}
+                                      className={cn(
+                                        'w-full px-4 py-2 flex items-center gap-3 transition-colors border-l-4 ml-8 text-left',
+                                        tieneRegresoABase
+                                          ? 'bg-blue-50 border-blue-400 hover:bg-blue-100'
+                                          : 'bg-gray-50 border-transparent hover:bg-gray-100'
+                                      )}
+                                      title={tieneRegresoABase ? 'Quitar regreso a base' : 'Agregar regreso a base'}
+                                    >
+                                      <Home size={16} className={tieneRegresoABase ? 'text-blue-500' : 'text-gray-400'} />
+                                      <div className="flex-1">
+                                        <div className={cn(
+                                          'text-sm font-medium',
+                                          tieneRegresoABase ? 'text-blue-700' : 'text-gray-500'
+                                        )}>
+                                          {tieneRegresoABase ? 'Regreso a Base' : '+ Agregar regreso a base'}
+                                        </div>
+                                        {tieneRegresoABase && (
+                                          <div className="text-xs text-blue-500">Cargar/descargar equipos</div>
+                                        )}
+                                      </div>
+                                      {tieneRegresoABase && (
+                                        <X size={14} className="text-blue-400 hover:text-blue-600" />
+                                      )}
+                                    </button>
+                                  )}
+                                </div>
+                              )
+                            })}
+
+                            {/* Regreso a base (solo si está habilitado) */}
+                            {incluirRegresoBase && (
+                              <div className="px-4 py-3 flex items-center gap-3 bg-blue-50">
+                                <div className="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center text-sm font-bold">
+                                  B
+                                </div>
+                                <div className="flex-1">
+                                  <div className="font-medium">Base RMB - Tecámac</div>
+                                  <div className="text-sm text-gray-500">
+                                    Regreso ({unidadActual.rutaCritica?.kmMuertos.toFixed(0) || '?'} km)
+                                  </div>
+                                </div>
+                                <div className="text-right">
+                                  <div className="font-bold text-blue-600">
+                                    {unidadActual.rutaCritica?.horaFin || '--:--'}
+                                  </div>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="flex items-center justify-center h-[500px] bg-gray-50 rounded-lg border-2 border-dashed border-gray-300">
+                        <div className="text-center">
+                          <Truck size={48} className="mx-auto text-gray-300 mb-4" />
+                          <h4 className="font-medium text-gray-700 mb-1">
+                            Selecciona una unidad
+                          </h4>
+                          <p className="text-sm text-gray-500">
+                            Haz clic en una unidad para ver su itinerario
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
           {/* Tab: Rutas Guardadas */}
           {activeTab === 'rutas' && (
             <div className="space-y-4">
