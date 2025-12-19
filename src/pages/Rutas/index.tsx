@@ -514,7 +514,7 @@ export default function Rutas() {
       viajes[nuevoIndex] = temp
 
       // Limpiar ruta calculada para recalcular
-      return { ...u, viajes, rutaCritica: undefined }
+      return { ...u, viajes, rutaCritica: null }
     }))
 
     // Recalcular ruta después de reordenar (pasar el Set actual)

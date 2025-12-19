@@ -25,6 +25,7 @@ import {
   ArrowUp,
   RefreshCcw,
   XCircle,
+  Container,
 } from 'lucide-react';
 import { obtenerViajes, actualizarViaje } from '../../services/trip.service';
 import { obtenerTractocamionesSelect, type TractocamionSelectItem } from '../../services/truck.service';
