@@ -21,7 +21,10 @@ import {
   Package,
   BarChart3,
   X,
-  Container,
+  ArrowDown,
+  ArrowUp,
+  RefreshCcw,
+  XCircle,
 } from 'lucide-react';
 import { obtenerViajes, actualizarViaje } from '../../services/trip.service';
 import { obtenerTractocamionesSelect, type TractocamionSelectItem } from '../../services/truck.service';
@@ -775,7 +778,25 @@ export default function Planificador() {
 
           <div className="flex items-center justify-between text-xs text-gray-500">
             <span className="flex items-center gap-1">
-              <Container className="w-3 h-3" />
+              {/* Icono según tipo de servicio */}
+              {viaje.tipoServicio === 'Entrega' && (
+                <ArrowDown className="w-3.5 h-3.5 text-green-600" />
+              )}
+              {viaje.tipoServicio === 'Recolección' && (
+                <ArrowUp className="w-3.5 h-3.5 text-red-600" />
+              )}
+              {viaje.tipoServicio === 'Cambio' && (
+                <RefreshCcw className="w-3.5 h-3.5 text-blue-600" />
+              )}
+              {viaje.tipoServicio === 'Entrega / Recoleccion' && (
+                <span className="flex">
+                  <ArrowDown className="w-3 h-3 text-green-600" />
+                  <ArrowUp className="w-3 h-3 text-red-600 -ml-1" />
+                </span>
+              )}
+              {viaje.tipoServicio === 'Flete en falso' && (
+                <XCircle className="w-3.5 h-3.5 text-red-500" />
+              )}
               {viaje.tipoServicio}
             </span>
             <span>{viaje.distanciaKm} km</span>

@@ -229,10 +229,8 @@ const TIPOS_SERVICIO: TipoServicioViaje[] = [
   'Entrega',
   'Recolección',
   'Cambio',
-  'Flete en falso',
-  'Movimiento',
-  'Regreso',
   'Entrega / Recoleccion',
+  'Flete en falso',
 ];
 
 const STATUS_COLORS: Record<StatusViaje, { bg: string; text: string; label: string }> = {
@@ -301,6 +299,11 @@ export default function Viajes() {
 
   // Editor visual de carga
   const [mostrarEditorCarga, setMostrarEditorCarga] = useState(false);
+
+  // Modal de reagendamiento para Flete en falso
+  const [mostrarModalReagendar, setMostrarModalReagendar] = useState(false);
+  const [fechaReagendamiento, setFechaReagendamiento] = useState<Date>(new Date());
+  const [tipoServicioAnterior, setTipoServicioAnterior] = useState<TipoServicioViaje>('Entrega');
 
   // AbortController para cancelar operaciones de upload pendientes
   const uploadAbortControllerRef = useRef<AbortController | null>(null);
@@ -1484,7 +1487,19 @@ export default function Viajes() {
                   </label>
                   <select
                     value={formData.tipoServicio}
-                    onChange={(e) => setFormData({ ...formData, tipoServicio: e.target.value as TipoServicioViaje })}
+                    onChange={(e) => {
+                      const nuevoTipo = e.target.value as TipoServicioViaje;
+                      // Si se selecciona "Flete en falso", mostrar modal de reagendamiento
+                      if (nuevoTipo === 'Flete en falso' && formData.tipoServicio !== 'Flete en falso') {
+                        setTipoServicioAnterior(formData.tipoServicio || 'Entrega');
+                        // Inicializar fecha de reagendamiento al día siguiente
+                        const manana = new Date();
+                        manana.setDate(manana.getDate() + 1);
+                        setFechaReagendamiento(manana);
+                        setMostrarModalReagendar(true);
+                      }
+                      setFormData({ ...formData, tipoServicio: nuevoTipo });
+                    }}
                     className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] focus:border-[#BB0034] outline-none"
                   >
                     {TIPOS_SERVICIO.map(tipo => (
@@ -2866,6 +2881,134 @@ export default function Viajes() {
                   className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
                 >
                   Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modal de Reagendamiento para Flete en falso */}
+      {mostrarModalReagendar && (
+        <div className="fixed inset-0 z-[70] overflow-y-auto">
+          <div className="flex items-center justify-center min-h-screen px-4">
+            <div
+              className="fixed inset-0 bg-black/50"
+              onClick={() => {
+                setMostrarModalReagendar(false);
+                // Revertir al tipo de servicio anterior si se cierra sin confirmar
+                setFormData(prev => ({ ...prev, tipoServicio: tipoServicioAnterior }));
+              }}
+            />
+
+            <div className="relative bg-white rounded-xl shadow-xl w-full max-w-md p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
+                  <Calendar className="w-5 h-5 text-[#BB0034]" />
+                  Reagendar Servicio
+                </h3>
+                <button
+                  onClick={() => {
+                    setMostrarModalReagendar(false);
+                    setFormData(prev => ({ ...prev, tipoServicio: tipoServicioAnterior }));
+                  }}
+                  className="p-1 hover:bg-gray-100 rounded-full"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="space-y-4">
+                <div className="p-3 bg-amber-50 border border-amber-200 rounded-lg">
+                  <p className="text-sm text-amber-800">
+                    Al marcar como <strong>Flete en falso</strong>, este intento de servicio quedara registrado
+                    en la planificacion del dia. Se creara una nueva OS para la fecha de reagendamiento.
+                  </p>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Fecha de Reagendamiento *
+                  </label>
+                  <input
+                    type="date"
+                    value={fechaReagendamiento.toISOString().split('T')[0]}
+                    min={new Date().toISOString().split('T')[0]}
+                    onChange={(e) => setFechaReagendamiento(new Date(e.target.value))}
+                    className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#BB0034] focus:border-[#BB0034] outline-none"
+                  />
+                </div>
+
+                <div className="text-sm text-gray-600">
+                  <p><strong>OS Original:</strong> Quedara marcada como Flete en falso</p>
+                  <p><strong>Nueva OS:</strong> Se creara para {fechaReagendamiento.toLocaleDateString('es-MX', {
+                    weekday: 'long',
+                    day: 'numeric',
+                    month: 'long'
+                  })}</p>
+                </div>
+              </div>
+
+              <div className="flex justify-end gap-3 mt-6">
+                <button
+                  onClick={() => {
+                    setMostrarModalReagendar(false);
+                    setFormData(prev => ({ ...prev, tipoServicio: tipoServicioAnterior }));
+                  }}
+                  className="px-4 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200"
+                >
+                  Cancelar
+                </button>
+                <button
+                  onClick={async () => {
+                    // Crear la OS duplicada para la nueva fecha
+                    try {
+                      const cliente = clientes.find(c => c.id === formData.clienteId);
+                      const tracto = tractocamiones.find(t => t.id === formData.tractoId);
+                      const operador = operadores.find(o => o.id === formData.operadorId);
+
+                      // Crear input para la nueva OS reagendada
+                      const nuevaOSInput: ViajeFormInput = {
+                        fecha: fechaReagendamiento,
+                        fechaCompromiso: fechaReagendamiento,
+                        tractoId: formData.tractoId || '',
+                        operadorId: formData.operadorId || '',
+                        maniobristaId: formData.maniobristaId,
+                        clienteId: formData.clienteId || '',
+                        destino: formData.destino!,
+                        condicionesSeguridad,
+                        tipoServicio: tipoServicioAnterior, // Usar el tipo original (Entrega, Recoleccion, etc)
+                        distanciaKm: formData.distanciaKm || 0,
+                        precioFlete: formData.precioFlete || 0,
+                        equipos: equiposSeleccionados,
+                        equiposCarga: equiposCargaSeleccionados,
+                        notas: `Reagendado desde Flete en falso del ${new Date().toLocaleDateString('es-MX')}. ${formData.notas || ''}`.trim(),
+                        status: 'programado',
+                        regresaABase: formData.regresaABase || false,
+                      };
+
+                      const datosAdicionales = {
+                        tractoNumero: tracto?.label?.split(' - ')[0] || formData.tractoId || '',
+                        operadorSueldoDia: operador?.sueldoDiario || 0,
+                        vehiculoSeguroDia: 200,
+                        clienteNombre: cliente?.nombreComercial || cliente?.nombre || '',
+                      };
+
+                      // Crear la nueva OS
+                      await crearViaje(nuevaOSInput, user?.uid || 'sistema', datosAdicionales);
+                      toast.success(`Nueva OS creada para ${fechaReagendamiento.toLocaleDateString('es-MX')}`);
+
+                      setMostrarModalReagendar(false);
+                      // El tipo de servicio ya esta en "Flete en falso" en formData
+                    } catch (error) {
+                      console.error('Error al crear OS reagendada:', error);
+                      toast.error('Error al crear la OS reagendada');
+                    }
+                  }}
+                  className="px-4 py-2 bg-[#BB0034] text-white rounded-lg hover:bg-[#9a002b] flex items-center gap-2"
+                >
+                  <Calendar className="w-4 h-4" />
+                  Confirmar Reagendamiento
                 </button>
               </div>
             </div>
