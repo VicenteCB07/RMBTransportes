@@ -27,6 +27,7 @@ src/
 │   ├── forms/           # Formularios (ClienteForm)
 │   ├── layout/          # Layout principal (MainLayout, Sidebar)
 │   ├── maps/            # Componentes de mapas (MapView, AddressSearch)
+│   ├── pdf/             # Componentes PDF (PlanTrabajoOperadorPDF, PlanTrabajoAdminPDF)
 │   └── planificador/    # Componentes del planificador (WorkloadBar, CriticalPath)
 │
 ├── context/             # Contextos React
@@ -55,7 +56,7 @@ src/
 │   ├── Mantenimiento/   # Control de mantenimiento
 │   ├── Operadores/      # Catalogo de choferes
 │   ├── Planificador/    # Optimizacion de carga de trabajo
-│   ├── Rutas/           # Gestion de rutas (pendiente)
+│   ├── Rutas/           # Gestion de rutas e itinerario diario
 │   ├── Telemetria/      # Datos GPS de Mastrack
 │   ├── Tractocamiones/  # Catalogo de unidades
 │   ├── Usuarios/        # Gestion de usuarios del sistema
@@ -85,7 +86,8 @@ src/
 │   ├── currency.service.ts
 │   ├── export.service.ts
 │   ├── staff.service.ts
-│   └── codigopostal.service.ts
+│   ├── codigopostal.service.ts
+│   └── plantrabajo.service.ts
 │
 ├── store/               # Stores de Zustand
 │   └── authStore.ts     # Estado de autenticacion
@@ -824,4 +826,4 @@ flowchart LR
 
 ---
 
-*Ultima actualizacion: 17 Diciembre 2025*
+*Ultima actualizacion: 21 Diciembre 2025*
