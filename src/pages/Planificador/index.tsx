@@ -114,7 +114,7 @@ export default function Planificador() {
   const [filtroTipo, setFiltroTipo] = useState<'todos' | 'tractocamion' | 'rolloff-plataforma'>('todos');
 
   // Estados para panel de optimización
-  const [showWorkloadPanel, setShowWorkloadPanel] = useState(true);
+  const [showWorkloadPanel, setShowWorkloadPanel] = useState(false);
   const [selectedUnitId, setSelectedUnitId] = useState<string | null>(null);
   const [isOptimizing, setIsOptimizing] = useState(false);
 
@@ -350,17 +350,17 @@ export default function Planificador() {
     return t.tipoUnidad === filtroTipo;
   });
 
-  // Verificar si un viaje está en curso (no se puede mover)
-  function viajeEnCurso(viaje: ViajeCard): boolean {
-    return viaje.status === 'en_curso' || viaje.status === 'en_destino';
+  // Verificar si un viaje está bloqueado para edición (en curso, en destino o completado)
+  function viajeBloqueado(viaje: ViajeCard): boolean {
+    return viaje.status === 'en_curso' || viaje.status === 'en_destino' || viaje.status === 'completado';
   }
 
   // Drag handlers
   function handleDragStart(e: DragEvent<HTMLDivElement>, viaje: ViajeCard) {
-    // Bloquear arrastre si el viaje está en curso
-    if (viajeEnCurso(viaje)) {
+    // Bloquear arrastre si el viaje está en curso o completado
+    if (viajeBloqueado(viaje)) {
       e.preventDefault();
-      toast.error('No se puede mover un viaje en curso');
+      toast.error('No se puede mover un viaje en curso o completado');
       return;
     }
 
@@ -725,45 +725,51 @@ export default function Planificador() {
 
   // Componente de tarjeta de viaje
   function ViajeCardComponent({ viaje }: { viaje: ViajeCard }) {
-    const enCurso = viajeEnCurso(viaje);
+    const bloqueado = viajeBloqueado(viaje);
 
     const statusColors: Record<string, string> = {
       sin_asignar: 'border-l-gray-400 bg-gray-50',
       programado: 'border-l-blue-500 bg-blue-50',
       en_curso: 'border-l-amber-500 bg-amber-50',
       en_destino: 'border-l-purple-500 bg-purple-50',
+      completado: 'border-l-green-500 bg-green-50',
     };
 
     const statusLabels: Record<string, string> = {
       en_curso: 'En curso',
       en_destino: 'En destino',
+      completado: 'Completado',
     };
 
     return (
       <div
-        draggable={!enCurso}
+        draggable={!bloqueado}
         onDragStart={(e) => handleDragStart(e, viaje)}
         onDragEnd={handleDragEnd}
         className={`
           p-3 rounded-lg border-l-4 shadow-sm transition-all
           ${statusColors[viaje.status] || 'border-l-gray-300 bg-white'}
           ${draggedViaje?.id === viaje.id ? 'opacity-50 scale-95' : ''}
-          ${enCurso
+          ${bloqueado
             ? 'cursor-not-allowed opacity-75'
             : 'cursor-grab active:cursor-grabbing hover:shadow-md'}
         `}
-        title={enCurso ? 'No se puede mover: viaje en curso' : ''}
+        title={bloqueado ? 'No se puede mover: viaje en curso o completado' : ''}
       >
         <div className="flex items-start justify-between mb-2">
           <div className="flex items-center gap-2">
             <span className="text-xs font-mono text-gray-500">{viaje.folio}</span>
-            {enCurso && (
-              <span className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-amber-100 text-amber-700">
+            {bloqueado && (
+              <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${
+                viaje.status === 'completado'
+                  ? 'bg-green-100 text-green-700'
+                  : 'bg-amber-100 text-amber-700'
+              }`}>
                 {statusLabels[viaje.status] || 'En proceso'}
               </span>
             )}
           </div>
-          <GripVertical className={`w-4 h-4 ${enCurso ? 'text-gray-300' : 'text-gray-400'}`} />
+          <GripVertical className={`w-4 h-4 ${bloqueado ? 'text-gray-300' : 'text-gray-400'}`} />
         </div>
 
         <div className="space-y-1.5">

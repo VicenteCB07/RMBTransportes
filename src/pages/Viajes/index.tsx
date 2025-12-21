@@ -477,7 +477,7 @@ export default function Viajes() {
 
   useEffect(() => {
     cargarDatos();
-  }, [filtroStatus]);
+  }, []);
 
   // Validar capacidad de carga cuando cambian los equipos, tracto o aditamentos
   useEffect(() => {
@@ -514,11 +514,9 @@ export default function Viajes() {
   async function cargarDatos() {
     setLoading(true);
     try {
-      const filtros: FiltrosViaje = {};
-      if (filtroStatus) filtros.status = filtroStatus;
-
+      // Cargar todos los viajes, el filtro por status se hace en el cliente
       const [viajesData, statsData, clientesData, tractosData, operadoresData, maniobristasData, aditamentosData, viajesActivosData] = await Promise.all([
-        obtenerViajes(filtros),
+        obtenerViajes(),
         obtenerEstadisticasViajes(),
         obtenerClientes({ activo: true }),
         obtenerTractocamionesSelect(),
@@ -543,11 +541,22 @@ export default function Viajes() {
     }
   }
 
-  const viajesFiltrados = viajes.filter(v =>
-    v.folio.toLowerCase().includes(busqueda.toLowerCase()) ||
-    v.clienteNombre.toLowerCase().includes(busqueda.toLowerCase()) ||
-    v.destino.nombre.toLowerCase().includes(busqueda.toLowerCase())
-  );
+  const viajesFiltrados = viajes.filter(v => {
+    // Filtro por status
+    if (filtroStatus && v.status !== filtroStatus) return false;
+
+    // Filtro por búsqueda de texto
+    if (busqueda) {
+      const busquedaLower = busqueda.toLowerCase();
+      return (
+        v.folio.toLowerCase().includes(busquedaLower) ||
+        v.clienteNombre.toLowerCase().includes(busquedaLower) ||
+        v.destino.nombre.toLowerCase().includes(busquedaLower)
+      );
+    }
+
+    return true;
+  });
 
   async function handleIniciarViaje(viaje: Viaje) {
     setProcesandoTimeline(true);

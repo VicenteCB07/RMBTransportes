@@ -32,6 +32,7 @@ import {
   CheckCircle,
   Home,
   ArrowDownUp,
+  FileDown,
 } from 'lucide-react'
 import { collection, getDocs, addDoc, deleteDoc, doc, query, orderBy, Timestamp } from 'firebase/firestore'
 import { db } from '../../services/firebase'
@@ -60,6 +61,10 @@ import { obtenerTractocamionesSelect } from '../../services/truck.service'
 import { obtenerOperadoresSelect } from '../../services/operator.service'
 import { ORIGEN_BASE_RMB, type ViajeParaCarga, type RutaCriticaInfo } from '../../types/workload.types'
 import type { Viaje } from '../../types/trip.types'
+import { pdf } from '@react-pdf/renderer'
+import { prepararDatosPlanTrabajo, type UnidadItinerarioInput } from '../../services/plantrabajo.service'
+import PlanTrabajoOperadorPDF from '../../components/pdf/PlanTrabajoOperadorPDF'
+import PlanTrabajoAdminPDF from '../../components/pdf/PlanTrabajoAdminPDF'
 
 // Tabs disponibles
 type TabType = 'itinerario' | 'rutas' | 'planificar' | 'puntos' | 'mapa'
@@ -634,6 +639,53 @@ export default function Rutas() {
     unidadesConViajes.find(u => u.id === unidadSeleccionada),
     [unidadesConViajes, unidadSeleccionada]
   )
+
+  // Exportar PDF del plan de trabajo
+  const exportarPlanTrabajo = useCallback(async (conCostos: boolean) => {
+    if (!unidadActual) {
+      toast.error('Selecciona una unidad primero')
+      return
+    }
+
+    try {
+      toast.loading('Generando PDF...', { id: 'pdf-export' })
+
+      // Preparar datos para el PDF
+      const unidadInput: UnidadItinerarioInput = {
+        id: unidadActual.id,
+        numeroEconomico: unidadActual.numeroEconomico,
+        marca: unidadActual.marca,
+        tipoUnidad: unidadActual.tipoUnidad,
+        operadorNombre: unidadActual.operadorNombre,
+        viajes: unidadActual.viajes,
+        kmTotales: unidadActual.kmTotales,
+        rutaCritica: unidadActual.rutaCritica,
+      }
+
+      const planData = prepararDatosPlanTrabajo(unidadInput, fechaItinerario, conCostos)
+
+      // Generar PDF
+      const PdfComponent = conCostos ? PlanTrabajoAdminPDF : PlanTrabajoOperadorPDF
+      const blob = await pdf(<PdfComponent data={planData} />).toBlob()
+
+      // Descargar archivo
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      const fechaStr = fechaItinerario.toISOString().split('T')[0]
+      const tipoStr = conCostos ? 'admin' : 'operador'
+      link.download = `plan-trabajo-${unidadActual.numeroEconomico}-${fechaStr}-${tipoStr}.pdf`
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      URL.revokeObjectURL(url)
+
+      toast.success('PDF descargado', { id: 'pdf-export' })
+    } catch (error) {
+      console.error('Error generando PDF:', error)
+      toast.error('Error al generar PDF', { id: 'pdf-export' })
+    }
+  }, [unidadActual, fechaItinerario])
 
   // Calcular ruta con Mapbox
   const calcularRuta = useCallback(async () => {
@@ -1259,6 +1311,26 @@ export default function Rutas() {
                               )}
                               Recalcular
                             </button>
+
+                            {/* Botones de exportar PDF */}
+                            <div className="flex items-center gap-1 border-l pl-3 ml-1">
+                              <button
+                                onClick={() => exportarPlanTrabajo(false)}
+                                title="Exportar PDF para Operador (sin costos)"
+                                className="px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-1.5 transition-colors bg-green-50 text-green-700 hover:bg-green-100"
+                              >
+                                <FileDown size={16} />
+                                Operador
+                              </button>
+                              <button
+                                onClick={() => exportarPlanTrabajo(true)}
+                                title="Exportar PDF para Admin (con costos)"
+                                className="px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-1.5 transition-colors bg-blue-50 text-blue-700 hover:bg-blue-100"
+                              >
+                                <FileDown size={16} />
+                                Admin
+                              </button>
+                            </div>
                           </div>
                         </div>
 
